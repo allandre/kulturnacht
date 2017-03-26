@@ -1,2 +1,12 @@
 
 - logo: font
+
+- Title :: richtiges bild, bild zu text
+- Übersichtsplan :: komplette Liste + link
+- Übersichtsplan :: bild -> map
+- Info :: Download flyer
+- Zeitplan :: korrekte daten
+- sponsoren: original bilder
+- add footer
+
+-- Countdown

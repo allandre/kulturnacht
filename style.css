@@ -27,9 +27,13 @@ a.anchor {
     visibility: hidden;
 }
 
+b {
+    font-weight: bold;
+}
+
 section {
     border-bottom: 0.25em solid #ed1255;
-    padding: 4% 2%;
+    padding: 5%;
 }
 
 h1 {
@@ -64,10 +68,10 @@ p {
 }
 
 
-
 /* NAV start */
 nav {
     position: fixed;
+    z-index: 100;
 
     display: flex;
     width: 100%;
@@ -168,12 +172,53 @@ nav li a div {
 
 /* PLAN SECTION */
 
+#plan-section div {
+    text-align: center;
+}
+
 #plan-section img {
     width: 100%;
+    max-width: 60em;
     margin-top: 3em;
 }
 
 /* PLAN SECTION */
+
+/* TIMETABLE SECTION start */
+
+#timetable-section tr:first-of-type th {
+    font-weight: bold;
+    font-size: 100%;
+    text-align: center;
+
+    color: #ed1255;
+}
+
+#timetable-section tr th:first-of-type {
+    color: black;
+
+    font-weight: bold;
+    font-size: 100%;
+
+    text-align: center;
+}
+
+#timetable-section th {
+    padding: 0.5em;
+    border-bottom: 1px solid black;
+    border-right: 1px dotted #ed1255;;
+
+    font-size: 75%;
+    text-align: left;
+
+    vertical-align: middle;
+}
+
+#timetable-section tr th:last-of-type {
+    border-right: unset;
+}
+
+/* TIMETABLE SECTION end */
 
 /* CONTACT SECTION */
 .ad {

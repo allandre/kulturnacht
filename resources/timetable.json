@@ -1,0 +1,24 @@
+[
+  {
+    "location": "Ortsmuseum",
+    "events": [
+      {
+        "event": "Grusel, Glamour und Frivoles",
+        "times": [1800, 1900, 2200, 2300, 2400]
+      },
+      {
+        "event": "Test",
+        "times": [2000, 2100]
+      }
+    ]
+  },
+  {
+    "location": "Ortsmuseum2",
+    "events": [
+      {
+        "event": "Grusel, Glamour und Frivoles2",
+        "times": [1800, 1930, 2000, 2130, 2200, 2300, 2400]
+      }
+    ]
+  }
+]

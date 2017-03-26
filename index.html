@@ -12,7 +12,7 @@
 
     <script src="http://maps.googleapis.com/maps/api/js"></script>
     <script>
-        window.onload = function() {
+        function loadMap() {
             var kuesnacht = {lat: 47.316667, lng: 8.583333};
             var center = {lat: 47.35, lng: 8.54};
             var map = new google.maps.Map(document.getElementById('map'), {
@@ -25,6 +25,90 @@
                 map: map
             });
         }
+
+        function loadTimetable() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    var table = document.createElement("table");
+                    var timetable = JSON.parse(this.responseText);
+
+                    var div = document.getElementById("timetable");
+                    var times = [];
+
+
+                    for (var i in timetable) {
+                        var location = timetable[i];
+                        for (var j in location.events) {
+
+                            var event = location.events[j];
+                            for (var k in event.times) {
+                                var time = event.times[k];
+                                if (times.indexOf(time) === -1) {
+                                    times.push(time);
+                                }
+                            }
+
+                        }
+                    }
+
+                    times.sort();
+                    console.log(JSON.stringify(times));
+
+                    var row = document.createElement("tr");
+
+                    var element = document.createElement("th");
+                    element.innerHTML = "Ort";
+                    row.appendChild(element);
+
+                    for (var i in times) {
+                        element = document.createElement("th");
+                        var time = times[i];
+                        var minutes = "0" + time % 100;
+                        var timeString = Math.floor(time / 100) + "." + minutes.substr(-2);
+                        element.innerHTML = timeString;
+                        row.appendChild(element);
+                    }
+
+                    table.appendChild(row);
+
+                    for (var i in timetable) {
+                        var location = timetable[i];
+                        row = document.createElement("tr");
+                        element = document.createElement("th");
+                        element.innerHTML = location.location;
+                        row.appendChild(element);
+
+                        for (var j in times) {
+                            var time = times[j];
+                            element = document.createElement("th");
+                            for (var k in location.events) {
+                                var event = location.events[k];
+                                if (event.times.indexOf(time) !== -1) {
+                                    element.innerHTML = event.event;
+                                    break;
+                                }
+                            }
+
+                            row.appendChild(element);
+                        }
+                        table.appendChild(row);
+                    }
+
+                    div.appendChild(table);
+                }
+            };
+            xmlhttp.open("GET", "resources/timetable.json", true);
+            xmlhttp.send();
+        }
+
+        window.onload = function() {
+            loadMap();
+            loadTimetable();
+        }
+    </script>
+
+    <script>
     </script>
 </head>
 <body>
@@ -39,7 +123,7 @@
         <ul>
             <li><a href="#info-anchor"><div>Info</div></a></li>
             <li><a href="#plan-anchor"><div>Übersichtsplan</div></a></li>
-            <li><a href="#"><div>Zeitplan</div></a></li>
+            <li><a href="#timetable-anchor"><div>Zeitplan</div></a></li>
             <li><a href="#contact-anchor"><div>Kontakt</div></a></li>
             <li><a href="#sponsoren-anchor"><div>Sponsoren</div></a></li>
         </ul>
@@ -67,11 +151,15 @@
         <a id="plan-anchor" class="anchor"></a>
         <section id="plan-section">
             <h1>Die Veranstaltungsorte im Dorfzentrum</h1>
-            <img src="resources/übersichtsplan.png">
+            <div>
+                <img src="resources/übersichtsplan.png">
+            </div>
         </section>
 
-        <section>
-            Zeitplan
+        <a id="timetable-anchor" class="anchor"></a>
+        <section id="timetable-section">
+            <h1>Zeitplan</h1>
+            <div id="timetable"></div>
         </section>
 
         <a id="contact-anchor" class="anchor"></a>
@@ -96,9 +184,9 @@
 
             <div id="location">
                 <ul>
-                    <li><i>Bahn:</i> S16 in Richtung Uetikon bzw. Meilen bis &laquo;Küsnacht ZH&raquo;</li>
-                    <li>Bus 916 ab Zürich-Bellevue bis Haltestelle &laquo;Oberwacht&raquo; oder &laquo;obere Heslistrasse&raquo;.</li>
-                    <li>Mit dem Auto auf der Seestrasse: Abzweigen in Küsnacht bei der Ampel, durch die Unterführung bis zum Parkplatz beim Bahnhof.</li>
+                    <li><b>Bahn:</b> S6 oder S16 in Richtung Uetikon bzw. Meilen bis &laquo;Küsnacht ZH&raquo;</li>
+                    <li><b>Bus</b> 916 ab Zürich-Bellevue bis Haltestelle &laquo;Oberwacht&raquo; oder &laquo;obere Heslistrasse&raquo;.</li>
+                    <li>Mit dem <b>Auto</b> auf der Seestrasse: Abzweigen in Küsnacht bei der Ampel, durch die Unterführung bis zum Parkplatz beim Bahnhof.</li>
                 </ul>
 
                 <div id="map"></div>
@@ -107,7 +195,7 @@
 
         </section>
 
-        <a id="sponsoren-anchor" class="anchor"></a>  
+        <a id="sponsoren-anchor" class="anchor"></a>
         <section id="sponsoren-section">
             <h1>Herzlichen Dank unseren Sponsoren und Gönnern für die finanzielle Unterstützung!</h1>
             <h2>Goldsponsoren</h2>
@@ -137,7 +225,7 @@
                 <p>Norbert Cajochen, Treuhand und Steuerrechtspraxis, Küsnacht</p>
                 <p>Silvia Spescha, DDS Data-Design Spescha, Untersiggental</p>
                 <p>Zuber Maler, Küsnacht</p>
-                <p>Zürcher Kantonalbank, Küsnacht</p> 
+                <p>Zürcher Kantonalbank, Küsnacht</p>
             </div>
 
             <h2>Gönner</h2>
