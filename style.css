@@ -1,10 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400');
 
 body {
+    line-height: 1.5;
     font-family: "Helvetica", sans-serif;
+}
 
+#container {
     max-width: 1600px;
     margin: 0 auto;
+
+    border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+
+
+    background-color: white;
 }
 
 #main {
@@ -18,15 +27,35 @@ a.anchor {
     visibility: hidden;
 }
 
+section {
+    border-bottom: 0.25em solid #ed1255;
+    padding: 4% 2%;
+}
+
 h1 {
+    margin: 0.5em 0;
+    text-align: center;
+
     font-size: 1.5em;
     font-weight: bold;
 }
 
 h2 {
+    margin: 0.5em 0;
+    text-align: center;
+
     font-size: 1.2em;
     font-weight: bold;
 }
+
+p {
+    margin: 2em auto;
+    max-width: 55em;
+
+    text-align: justify;
+}
+
+
 
 /* NAV start */
 nav {
@@ -75,21 +104,13 @@ nav li a div {
 
 /* NAV end */
 
-/* SECTION */
-
-section {
-    border-bottom: 1em solid #ed1255;
-}
-
-/* SECTION end */
-
 
 /* LOGO start */
 .logo {
     font-family: "Lato", sans-serif;
     font-weight: lighter;
 
-    margin: 0 1%;
+    margin: 0 2%;
 }
 
 #logo-ref {
@@ -104,6 +125,8 @@ section {
 
 #logo-K {
     display: inline-block;
+    margin-left: 5%;
+
     font-size: 3em;
 }
 
@@ -124,13 +147,13 @@ section {
 /* LOGO end */
 
 /* TITLE SECTION */
-
 #title-section {
+    padding: 0;
+
     background-color: #ed1255;
 }
 
 #title-section img {
     width: 100%;
 }
-
 /* TITLE SECTION */
