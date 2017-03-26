@@ -4,12 +4,28 @@
     <meta charset="UTF-8">
     <meta name="description" content="Dies ist die Webseite der Kulturnacht Küsnacht."/>
     <title>Kulturnacht Küsnacht</title>
+
+
     <link href="reset.css" rel="stylesheet"/>
     <link href="style.css" rel="stylesheet"/>
-    <style>
 
-    </style>
 
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script>
+        window.onload = function() {
+            var kuesnacht = {lat: 47.316667, lng: 8.583333};
+            var center = {lat: 47.35, lng: 8.54};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 11,
+                center: center
+            });
+
+            var marker = new google.maps.Marker({
+                position: kuesnacht,
+                map: map
+            });
+        }
+    </script>
 </head>
 <body>
 
@@ -24,7 +40,7 @@
             <li><a href="#info-anchor"><div>Info</div></a></li>
             <li><a href="#"><div>Übersichtsplan</div></a></li>
             <li><a href="#"><div>Zeitplan</div></a></li>
-            <li><a href="#"><div>Kontakt</div></a></li>
+            <li><a href="#contact-anchor"><div>Kontakt</div></a></li>
             <li><a href="#"><div>Sponsoren</div></a></li>
         </ul>
     </nav>
@@ -56,29 +72,35 @@
             Zeitplan
         </section>
 
-        <section>
+        <a id="contact-anchor" class="anchor"></a>
+        <section class="contact-section">
+            <h1>Kontakt KVK und Info Anfahrt</h1>
             <h3>Die Kulturnacht Küsnacht ist eine Initiative der Kulturellen Vereinigung Küsnacht - KVK</h3>
-            <p>Die KVK gewährleistet zusammen mit der Gemeinde den Betrieb des Ortsmuseums Küsnacht, betreut die Galerie im Hochhuus und veranstalted Vorträge und Exkursiionen mit
-            kulturgeschichtlichem Hintergrund.</p>
-            <p class="ad">Werden Sie Mitglied der KVK und unterstützen Sie unsere Aktivitäten.</p>
+            <p>Die KVK gewährleistet zusammen mit der Gemeinde den Betrieb des Ortsmuseums Küsnacht, betreut die Galerie im Hochhuus und veranstalted Vorträge und Exkursionen mit
+                kulturgeschichtlichem Hintergrund. <br />
+                <span class="ad">Werden Sie Mitglied der KVK und unterstützen Sie unsere Aktivitäten.</span> </p>
 
             <h3>Die Kulturnacht Küsnacht 2017 wird von einem Nonprofit-Team organisiert:</h3>
-            <ul>
+            <ul id="organisator-list">
                 <li>Martine Peyer, Kulturelle Vereinigung Küsnacht</li>
                 <li>Ilka Allenspach, Kulturelle Vereinigung Küsnacht</li>
                 <li>Elisabeth Abgottspon, Ortsmuseum Küsnacht</li>
                 <li>Hans-Peter Fehr, Theaterverein Die Kulisse Küsnacht</li>
             </ul>
 
-            <p>Interessenten können sich per E-Mail anmelden:</p>
-            <a href="mailto:vorstand@kulturelle-vereinigung-kuesnacht.ch">vorstand@kulturelle-vereinigung-kuesnacht.ch</a>
+            <p>Interessenten können sich per E-Mail anmelden: <a href="mailto:vorstand@kulturelle-vereinigung-kuesnacht.ch">vorstand@kulturelle-vereinigung-kuesnacht.ch</a></p>
 
             <h3>Anfahrt mit Bahn, Bus oder Auto</h3>
-            <ul>
-                <li>Bahn: S16 in Richtung Uetikon bzw. Meilen bis &ltKüsnacht ZH&gt</li>
-                <li>Bus 916 ab Zürich-Bellevue bis Haltestelle &ltOberwacht&gt oder &ltobere Heslistrasse&gt.</li>
-                <li>Mit dem Auto auf der Seestrasse: Abzweigen in Küsnacht bei der Ampel, durch die Unterführung bis zum Parkplatz beim Bahnhof.</li>
-            </ul>
+
+            <div id="location">
+                <ul>
+                    <li><i>Bahn:</i> S16 in Richtung Uetikon bzw. Meilen bis &laquo;Küsnacht ZH&raquo;</li>
+                    <li>Bus 916 ab Zürich-Bellevue bis Haltestelle &laquo;Oberwacht&raquo; oder &laquo;obere Heslistrasse&raquo;.</li>
+                    <li>Mit dem Auto auf der Seestrasse: Abzweigen in Küsnacht bei der Ampel, durch die Unterführung bis zum Parkplatz beim Bahnhof.</li>
+                </ul>
+
+                <div id="map"></div>
+            </div>
 
 
         </section>
