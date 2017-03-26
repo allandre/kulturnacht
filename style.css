@@ -33,7 +33,7 @@ section {
 }
 
 h1 {
-    margin: 0.5em 0;
+    margin: 1em 0;
     text-align: center;
 
     font-size: 1.5em;
@@ -166,6 +166,15 @@ nav li a div {
 }
 /* TITLE SECTION */
 
+/* PLAN SECTION */
+
+#plan-section img {
+    width: 100%;
+    margin-top: 3em;
+}
+
+/* PLAN SECTION */
+
 /* CONTACT SECTION */
 .ad {
     color: red;
@@ -206,4 +215,43 @@ nav li a div {
     width: 20em;
     height: 20em;
 }
-/* CONTACT SECTION
+/* CONTACT SECTION */
+
+/* SPONSOREN SECTION */
+
+#sponsoren-section {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+#sponsoren-section h2 {
+    margin-top: 5em;
+}
+
+#sponsoren-section div {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#sponsoren-section div#bronzesponsoren {
+    justify-content: center;
+    padding-left: 4em;
+}
+
+#sponsoren-section div#bronzesponsoren p {
+    margin: 1em;
+    width: 30em;
+}
+
+#sponsoren-section img {
+  display: block;
+  max-width:430px;
+  max-height:95px;
+  width: auto;
+  height: auto;
+  margin: 1%;
+}
+
+/* SPONSOREN SECTION */
