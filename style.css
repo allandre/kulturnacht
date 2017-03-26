@@ -85,39 +85,42 @@ section {
 
 
 /* LOGO start */
-
 .logo {
     font-family: "Lato", sans-serif;
     font-weight: lighter;
+
+    margin: 0 1%;
+}
+
+#logo-ref {
+    flex-basis: 18em;
+    display: flex;
+    align-items: center;
+
+    color: white;
+
+    text-decoration: none;
 }
 
 #logo-K {
+    display: inline-block;
     font-size: 3em;
-
-    text-align: center;
-    margin: auto;
-
-    margin-left: 0.75%;
 }
 
 #logo-border {
     height: 70%;
     width: 1px;
-    margin: auto;
-    margin-left: 0.75%;
-    margin-right: 0.75%;
+    min-width: 1px;
 
     background-color: white;
 }
 
 #logo-text {
-    margin: auto;
-    width: 15em;
+    display: inline-block;
 
     line-height: 1.4;
     text-transform: uppercase;
 }
-
 /* LOGO end */
 
 /* TITLE SECTION */
