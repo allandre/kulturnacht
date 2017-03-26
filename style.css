@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+
+body {
+    font-family: "Helvetica", sans-serif;
+
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+#main {
+    padding-top: 5em;
+}
+
+/* NAV start */
+nav {
+    position: fixed;
+
+    display: flex;
+    width: 100%;
+    max-width: inherit;
+    height: 5em;
+
+    color: white;
+    background-color:  #ed1255;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+
+    font-size: 1.5em;
+}
+
+nav li {
+}
+
+nav li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    color: lightgrey;
+}
+
+/* NAV end */
+
+/* SECTION */
+
+section {
+    border-bottom: 1em solid #ed1255;
+}
+
+/* SECTION end */
+
+
+/* LOGO start */
+.logo {
+    font-family: "Lato", sans-serif;
+    font-weight: lighter;
+}
+
+#logo-K {
+    font-size: 3em;
+
+    text-align: center;
+    margin: auto;
+    margin-left: 0.75%;
+}
+
+#logo-border {
+    height: 70%;
+    width: 1px;
+    margin: auto;
+    margin-left: 0.75%;
+    margin-right: 0.75%;
+
+    background-color: white;
+}
+
+#logo-text {
+    margin: auto;
+    width: 15em;
+
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+/* LOGO end */
+
