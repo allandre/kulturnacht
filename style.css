@@ -11,6 +11,23 @@ body {
     padding-top: 5em;
 }
 
+a.anchor {
+    display: block;
+    position: relative;
+    top: -5em;
+    visibility: hidden;
+}
+
+h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 /* NAV start */
 nav {
     position: fixed;
@@ -103,3 +120,14 @@ section {
 
 /* LOGO end */
 
+/* TITLE SECTION */
+
+#title-section {
+    background-color: #ed1255;
+}
+
+#title-section img {
+    width: 100%;
+}
+
+/* TITLE SECTION */
