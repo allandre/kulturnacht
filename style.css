@@ -11,19 +11,16 @@ body {
 
     border-left: 1px solid lightgrey;
     border-right: 1px solid lightgrey;
-
-
-    background-color: white;
 }
 
 #main {
-    padding-top: 5em;
+    padding-top: 3em;
 }
 
 a.anchor {
     display: block;
     position: relative;
-    top: -5em;
+    top: -3em;
     visibility: hidden;
 }
 
@@ -76,7 +73,7 @@ nav {
     display: flex;
     width: 100%;
     max-width: inherit;
-    height: 5em;
+    height: 3em;
 
     color: white;
     background-color: #ed1255;
@@ -87,7 +84,9 @@ nav ul {
     justify-content: space-around;
     flex-grow: 1;
 
-    font-size: 1.5em;
+    padding-right: 1em;
+
+    font-size: 1.1em;
 }
 
 nav li {
@@ -111,7 +110,42 @@ nav li:hover {
 }
 
 nav li a div {
-    padding-top: 1em;
+    padding-top: .7em;
+}
+
+/* HAMBURGER */
+
+input[type=checkbox]{
+    display: none;
+}
+
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+
+input[type=checkbox]:checked ~ #menu li {
+    float: bottom;
+    width: 100%;
+    background-color: #ed1255;
+}
+
+.hamburger {
+    position: relative;
+    width: 1.25em;
+    height: 0.8em;
+    border-top: 0.2em solid white;
+    border-bottom: 0.2em solid white;
+
+    display: none;
+}
+
+.hamburger:before {
+    content: "";
+    position: absolute;
+    top: 0.3em;
+    left: 0;
+    width: 100%;
+    border-top: 0.2em solid white;
 }
 
 /* NAV end */
@@ -126,7 +160,7 @@ nav li a div {
 }
 
 #logo-ref {
-    flex-basis: 18em;
+    flex-basis: 15em;
     display: flex;
     align-items: center;
 
@@ -139,7 +173,7 @@ nav li a div {
     display: inline-block;
     margin-left: 5%;
 
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 #logo-border {
@@ -155,6 +189,8 @@ nav li a div {
 
     line-height: 1.4;
     text-transform: uppercase;
+
+    font-size: .8em;
 }
 /* LOGO end */
 
@@ -283,6 +319,7 @@ nav li a div {
 #sponsoren-section div#bronzesponsoren {
     justify-content: center;
     padding-left: 4em;
+    width: calc(100% - 4em);
 }
 
 #sponsoren-section div#bronzesponsoren p {
@@ -300,3 +337,36 @@ nav li a div {
 }
 
 /* SPONSOREN SECTION */
+
+@media screen and (max-width: 683px) {
+    .logo {
+        margin: 0 8.6%; 
+    }
+
+    #logo-text {
+        display: none;
+    }
+
+    #logo-ref {
+        flex-basis: 3.5em;
+        
+    }
+
+    #logo-K {
+        margin-left: 21.4%;
+    }
+}
+
+@media screen and (max-width: 467px ) {
+    .hamburger {
+        position: absolute;
+        display: block;
+        left: 50%;
+        top: 30%;
+        transform: translateX(-50%);
+    }
+
+    nav ul {
+        display: none;
+    }
+}
