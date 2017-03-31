@@ -93,4 +93,8 @@ function loadTimetable() {
 window.onload = function() {
 	loadMap();
 	loadTimetable();
-}
+};
+
+window.onresize = function(event) {
+	
+};

@@ -121,13 +121,30 @@ input[type=checkbox]{
 
 input[type=checkbox]:checked ~ #menu{
     display: block;
+    width: 100vw;
+    position: fixed;
+    top: 2.7em; /*nav.height / ul.fontSize*/
+    left: 0;
+    padding-top: .5em;
+    padding-bottom: .2em;
+    background-color: #ed1255;
 }
 
 input[type=checkbox]:checked ~ #menu li {
-    float: bottom;
-    width: 100%;
+    width: 80%;
+    margin: auto;
     background-color: #ed1255;
+    border-top: 1px solid #861d3d;
 }
+
+input[type=checkbox]:checked ~ #menu li:hover {
+    background-color: #d70e3e;
+}
+
+input[type=checkbox]:checked ~ #menu li a div {
+    padding: .3em;
+}
+
 
 .hamburger {
     position: relative;
