@@ -238,6 +238,9 @@ input[type=checkbox]:checked ~ #menu li a div {
 /* PLAN SECTION */
 
 /* TIMETABLE SECTION start */
+#timetable-section table {
+    margin: 0 auto;
+}
 
 #timetable-section tr:first-of-type th {
     font-weight: bold;

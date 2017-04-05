@@ -14,16 +14,107 @@ function loadMap() {
 	});
 }
 
+function timeToString(time) {
+	var minutes = "0" + time % 100;
+	var timeString = Math.floor(time / 100) + "." + minutes.substr(-2);
+	return timeString;
+}
+
+function drawTimetable() {
+	var div = document.getElementById("timetable");
+	div.innerHTML = "";
+
+	var table = document.createElement("table");
+	var row = document.createElement("tr");
+
+	var element = document.createElement("th");
+	element.innerHTML = "Ort";
+	row.appendChild(element);
+
+	for (var i in times) {
+		element = document.createElement("th");
+		var time = times[i];
+		
+		element.innerHTML = timeToString(time);
+		row.appendChild(element);
+	}
+
+	table.appendChild(row);
+
+	for (var i in timetable) {
+		var location = timetable[i];
+		row = document.createElement("tr");
+		element = document.createElement("th");
+		element.innerHTML = location.location;
+		row.appendChild(element);
+
+		for (var j in times) {
+			var time = times[j];
+			element = document.createElement("th");
+			for (var k in location.events) {
+				var event = location.events[k];
+				if (event.times.indexOf(time) !== -1) {
+					element.innerHTML = event.event;
+					break;
+				}
+			}
+
+			row.appendChild(element);
+		}
+		table.appendChild(row);
+	}
+
+	div.appendChild(table);
+}
+
+function drawTimelist() {
+	var div = document.getElementById("timetable");
+	div.innerHTML = "";
+
+	var table = document.createElement("table");
+	div.appendChild(table);
+
+	for (var i in times) {
+		var time = times[i];
+		var timeRow = document.createElement("tr");
+		var timeCell = document.createElement("th");
+		timeCell.innerHTML = timeToString(time);
+		timeCell.colSpan = "2";
+		timeRow.appendChild(timeCell);
+		table.appendChild(timeRow);
+
+		for (var j in timetable) {
+			var location = timetable[j];
+
+			for (var k in location.events) {
+				var event = location.events[k];
+				if (event.times.indexOf(time) !== -1) {
+					var eventRow = document.createElement("tr");
+					table.appendChild(eventRow);
+					var locationCell = document.createElement("th");
+					locationCell.innerHTML = location.location;
+					eventRow.appendChild(locationCell);
+					var eventCell = document.createElement("th");
+					eventCell.innerHTML = event.event;
+					eventRow.appendChild(eventCell);
+					break;
+				}
+			}
+		}
+	}
+
+}
+
+var times = [];
+var timetable = [];
+
 function loadTimetable() {
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState === 4 && this.status === 200) {
-			var table = document.createElement("table");
-			var timetable = JSON.parse(this.responseText);
+			timetable = JSON.parse(this.responseText);
 
-			var div = document.getElementById("timetable");
-			var times = [];
-
+			times = [];
 
 			for (var i in timetable) {
 				var location = timetable[i];
@@ -41,52 +132,25 @@ function loadTimetable() {
 			}
 
 			times.sort();
-
-			var row = document.createElement("tr");
-
-			var element = document.createElement("th");
-			element.innerHTML = "Ort";
-			row.appendChild(element);
-
-			for (var i in times) {
-				element = document.createElement("th");
-				var time = times[i];
-				var minutes = "0" + time % 100;
-				var timeString = Math.floor(time / 100) + "." + minutes.substr(-2);
-				element.innerHTML = timeString;
-				row.appendChild(element);
-			}
-
-			table.appendChild(row);
-
-			for (var i in timetable) {
-				var location = timetable[i];
-				row = document.createElement("tr");
-				element = document.createElement("th");
-				element.innerHTML = location.location;
-				row.appendChild(element);
-
-				for (var j in times) {
-					var time = times[j];
-					element = document.createElement("th");
-					for (var k in location.events) {
-						var event = location.events[k];
-						if (event.times.indexOf(time) !== -1) {
-							element.innerHTML = event.event;
-							break;
-						}
-					}
-
-					row.appendChild(element);
-				}
-				table.appendChild(row);
-			}
-
-			div.appendChild(table);
+			
+			drawTimeSection(true);
 		}
 	};
 	xmlhttp.open("GET", "resources/timetable.json", true);
 	xmlhttp.send();
+}
+
+var timeSectionState = -1;
+
+function drawTimeSection(force) {
+	var containerWidth = document.getElementById("container").clientWidth;
+	if (containerWidth > 743 && (timeSectionState === -1 || timeSectionState === 0 || force)) {
+		drawTimetable();
+		timeSectionState = 1;
+	} else if (containerWidth <= 743 && (timeSectionState === -1 || timeSectionState === 1 || force)) {
+		drawTimelist();
+		timeSectionState = 0;
+	}
 }
 
 window.onload = function() {
@@ -95,5 +159,11 @@ window.onload = function() {
 };
 
 window.onresize = function(event) {
-	
+	var containerWidth = document.getElementById("container").clientWidth;
+
+	if (containerWidth > 467) {
+		document.getElementById("nav-trigger").checked = false;
+	}
+
+	drawTimeSection(false);
 };
