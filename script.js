@@ -41,7 +41,6 @@ function loadTimetable() {
 			}
 
 			times.sort();
-			console.log(JSON.stringify(times));
 
 			var row = document.createElement("tr");
 
