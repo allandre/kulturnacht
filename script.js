@@ -143,7 +143,7 @@ function loadTimetable() {
 var timeSectionState = -1;
 
 function drawTimeSection(force) {
-	var containerWidth = document.getElementById("container").clientWidth;
+	var containerWidth = document.getElementById("container").offsetWidth;
 	if (containerWidth > 743 && (timeSectionState === -1 || timeSectionState === 0 || force)) {
 		drawTimetable();
 		timeSectionState = 1;
@@ -163,8 +163,7 @@ window.onload = function() {
 };
 
 window.onresize = function(event) {
-	var containerWidth = document.getElementById("container").clientWidth;
-
+	var containerWidth = document.getElementById("container").offsetWidth;
 	if (containerWidth > 467) {
 		hideMenu();
 	}
