@@ -24,6 +24,11 @@ a.anchor {
     visibility: hidden;
 }
 
+a:link {
+    color: #ed1255;
+    color: grey;
+}
+
 b {
     font-weight: bold;
 }
@@ -278,7 +283,7 @@ input[type=checkbox]:checked ~ #menu li a div {
 
 /* CONTACT SECTION */
 .ad {
-    color: red;
+    color: #ed1255;
 }
 
 #organisator-list {
@@ -296,15 +301,21 @@ input[type=checkbox]:checked ~ #menu li a div {
 
 #location {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 
     width: 100%;
     max-width: 55em;
     margin: auto;
+
+    flex-wrap: wrap;
 }
 
 #location ul {
-    margin-right: 4em;
+    max-width: 20em;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 2em;
+    padding-right: 1em;
 }
 
 #location li {
@@ -315,6 +326,10 @@ input[type=checkbox]:checked ~ #menu li a div {
     flex-shrink: 0;
     width: 20em;
     height: 20em;
+
+    margin: auto;
+    border: 1px solid grey;
+    margin-top: 1em;
 }
 /* CONTACT SECTION */
 
@@ -388,5 +403,15 @@ input[type=checkbox]:checked ~ #menu li a div {
 
     nav ul {
         display: none;
+    }
+}
+
+@media screen and (max-width: 725px) {
+    #location ul {
+        max-width: 100%;
+    }
+
+    #map {
+        width: 80%;
     }
 }

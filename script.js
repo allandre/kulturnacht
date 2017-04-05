@@ -153,6 +153,10 @@ function drawTimeSection(force) {
 	}
 }
 
+function hideMenu() {
+	document.getElementById("nav-trigger").checked = false;
+}
+
 window.onload = function() {
 	loadMap();
 	loadTimetable();
@@ -162,7 +166,7 @@ window.onresize = function(event) {
 	var containerWidth = document.getElementById("container").clientWidth;
 
 	if (containerWidth > 467) {
-		document.getElementById("nav-trigger").checked = false;
+		hideMenu();
 	}
 
 	drawTimeSection(false);
