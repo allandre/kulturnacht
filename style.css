@@ -24,7 +24,7 @@ a.anchor {
     visibility: hidden;
 }
 
-a:link {
+a:link, a:visited {
     color: #ed1255;
     color: grey;
 }
@@ -38,25 +38,29 @@ section {
     padding: 5%;
 }
 
+h1, h2, h3, p {
+    text-align: left;
+    max-width: 800px;
+    margin: auto;
+
+}
+
 h1 {
-    margin: 1em 0;
-    text-align: center;
+    /*margin: 1em 0;*/
 
     font-size: 1.5em;
     font-weight: bold;
 }
 
 h2 {
-    margin: 0.5em 0;
-    text-align: center;
+    /*margin: 0.5em 0;*/
 
     font-size: 1.2em;
     font-weight: bold;
 }
 
 h3 {
-    margin: 1.0em 0;
-    text-align: center;
+    /*margin: 1.0em 0;*/
 
     font-size: 1em;
     font-weight: bold;
@@ -64,9 +68,6 @@ h3 {
 
 p {
     margin: 2em auto;
-    max-width: 55em;
-
-    text-align: justify;
 }
 
 
@@ -99,6 +100,11 @@ nav li {
     height: 100%;
 }
 
+
+nav li:hover {
+    background-color: #d70e3e;
+}
+
 nav li a {
     display: inline-block;
     width: 100%;
@@ -110,9 +116,10 @@ nav li a {
     text-align: center;
 }
 
-nav li:hover {
-    background-color: #d70e3e;
+nav li a:link, nav li a:visited {
+    color: white;
 }
+
 
 nav li a div {
     padding-top: .7em;
@@ -243,8 +250,12 @@ input[type=checkbox]:checked ~ #menu li a div {
 /* PLAN SECTION */
 
 /* TIMETABLE SECTION start */
+#timetable-section h1 {
+    max-width: unset;
+}
 #timetable-section table {
     margin: 0 auto;
+    margin-top: 2em;
 }
 
 #timetable-section tr:first-of-type th {
@@ -288,7 +299,7 @@ input[type=checkbox]:checked ~ #menu li a div {
 
 #organisator-list {
     width: 100%;
-    max-width: 55em;
+    max-width: 800px;
 
     margin: 2em auto;
 }
@@ -304,7 +315,7 @@ input[type=checkbox]:checked ~ #menu li a div {
     justify-content: space-between;
 
     width: 100%;
-    max-width: 55em;
+    max-width: 800px;
     margin: auto;
 
     flex-wrap: wrap;
@@ -313,9 +324,6 @@ input[type=checkbox]:checked ~ #menu li a div {
 #location ul {
     max-width: 20em;
     width: 100%;
-    margin: auto;
-    margin-bottom: 2em;
-    padding-right: 1em;
 }
 
 #location li {
@@ -324,12 +332,13 @@ input[type=checkbox]:checked ~ #menu li a div {
 
 #map {
     flex-shrink: 0;
+    flex-grow: 1;
     width: 20em;
     height: 20em;
 
-    margin: auto;
     border: 1px solid grey;
     margin-top: 1em;
+    margin-left: 5em;
 }
 /* CONTACT SECTION */
 
@@ -341,7 +350,13 @@ input[type=checkbox]:checked ~ #menu li a div {
 }
 
 #sponsoren-section h2 {
-    margin-top: 5em;
+    margin-top: 3em;
+    margin-bottom: 2em;
+    border-bottom: 1px solid grey;
+}
+
+#sponsoren-section h2:first-of-type {
+    margin-top: 2em;
 }
 
 #sponsoren-section div {
@@ -351,27 +366,38 @@ input[type=checkbox]:checked ~ #menu li a div {
     flex-wrap: wrap;
 }
 
-#sponsoren-section div#bronzesponsoren {
-    justify-content: center;
-    padding-left: 4em;
-    width: calc(100% - 4em);
+#sponsoren-section ul {
+    max-width: 800px;
+    margin: auto;
 }
 
-#sponsoren-section div#bronzesponsoren p {
-    margin: 1em;
-    width: 30em;
+#sponsoren-section li {
+    margin-bottom: 1em;
 }
 
 #sponsoren-section img {
   display: block;
-  max-width:430px;
-  max-height:95px;
+  max-width: 430px;
+  max-height: 95px;
   width: auto;
   height: auto;
   margin: 1%;
 }
 
 /* SPONSOREN SECTION */
+@media screen and (max-width: 467px ) {
+    .hamburger {
+        position: absolute;
+        display: block;
+        left: 50%;
+        top: 30%;
+        transform: translateX(-50%);
+    }
+
+    nav ul {
+        display: none;
+    }
+}
 
 @media screen and (max-width: 683px) {
     .logo {
@@ -392,26 +418,21 @@ input[type=checkbox]:checked ~ #menu li a div {
     }
 }
 
-@media screen and (max-width: 467px ) {
-    .hamburger {
-        position: absolute;
-        display: block;
-        left: 50%;
-        top: 30%;
-        transform: translateX(-50%);
-    }
-
-    nav ul {
-        display: none;
+/* -> see js (table vs list generation) */
+@media screen and (max-width: 747px) {
+    #timetable-section h1 {
+        text-align: center;
     }
 }
 
-@media screen and (max-width: 725px) {
+@media screen and (max-width: 810px) {
     #location ul {
         max-width: 100%;
     }
 
     #map {
         width: 80%;
+        margin: auto;
+        margin-top: 2em;
     }
 }
