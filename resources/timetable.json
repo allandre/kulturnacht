@@ -4,11 +4,20 @@
     "events": [
       {
         "event": "Grusel, Glamour und Frivoles",
-        "times": [1800, 1900, 2200, 2300, 2400]
+        "times": [
+          1800,
+          1900,
+          2200,
+          2300,
+          2400
+        ]
       },
       {
         "event": "Test",
-        "times": [2000, 2100]
+        "times": [
+          2000,
+          2100
+        ]
       }
     ]
   },
@@ -17,7 +26,420 @@
     "events": [
       {
         "event": "Grusel, Glamour und Frivoles2",
-        "times": [1800, 1930, 2000, 2130, 2200, 2300, 2400]
+        "times": [
+          1800,
+          1930,
+          2000,
+          2130,
+          2200,
+          2300,
+          2400
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Alters- u. Gesundheitszentrum Wangensbach",
+    "events": [
+      {
+        "event": "Alfred Egli",
+        "times": [
+          1800,
+          2000,
+          2200
+        ]
+      },
+      {
+        "event": "Theaterverein \"Die Kulisse\"",
+        "times": [
+          1900,
+          2000,
+          2100
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Bibliothek Küsnacht",
+    "events": [
+      {
+        "event": "Film",
+        "times": [
+          1900,
+          2300
+        ]
+      },
+      {
+        "event": "Simon Chen",
+        "times": [
+          2000,
+          2100,
+          2200
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Chrottegrotte",
+    "events": [
+      {
+        "event": "Schülerinnen der Musikschule & MKZ",
+        "times": [
+          1800
+        ]
+      },
+      {
+        "event": "XotniX",
+        "times": [
+          1900
+        ]
+      },
+      {
+        "event": "Anita Lehmann & Rosa Hess",
+        "times": [
+          2000
+        ]
+      },
+      {
+        "event": "AmarOn & bügelfrei",
+        "times": [
+          2100
+        ]
+      },
+      {
+        "event": "Duo Coeur rouge",
+        "times": [
+          2200
+        ]
+      },
+      {
+        "event": "Ueli Bär, Sax & Tony Majdalani, Perc.",
+        "times": [
+          2300
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Freihof Küsnacht",
+    "events": [
+      {
+        "event": "Freihof Küsnacht",
+        "times": [
+          1800,
+          1900,
+          2000,
+          2100,
+          2200,
+          2300
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Freizeitanlage Sunnemetzg",
+    "events": [
+      {
+        "event": "Schülerband",
+        "times": [
+          1800,
+          1900
+        ]
+      },
+      {
+        "event": "Magic Ride",
+        "times": [
+          2000
+        ]
+      },
+      {
+        "event": "XotniX",
+        "times": [
+          2100
+        ]
+      },
+      {
+        "event": "FUNTASTIC / XtoniX",
+        "times": [
+          2200
+        ]
+      },
+      {
+        "event": "Bregy & Friends",
+        "times": [
+          2300
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Fussgängerunterführung Dorfstrasse",
+    "events": [
+      {
+        "event": "b-live chor acappella",
+        "times": [
+          1930,
+          2030,
+          2130
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Galerie im Höchhuus",
+    "events": [
+      {
+        "event": "Fred Bauer und Manuel Bauer",
+        "times": [
+          1800,
+          1900,
+          2000,
+          2100,
+          2200,
+          2300
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Gasthof Ochsen",
+    "events": [
+      {
+        "event": "Familie Wildhaber",
+        "times": [
+          1800,
+          1900,
+          2000,
+          2100,
+          2200,
+          2300
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Gemeindehaus",
+    "events": [
+      {
+        "event": "Rebecca Gericke-Budliger",
+        "times": [
+          1900,
+          2100
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Kägi Confiserie",
+    "events": [
+      {
+        "event": "Dramolett",
+        "times": [
+          1900,
+          2100
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Kantonsschule Küsnacht",
+    "events": [
+      {
+        "event": "SchülerInnen der Kantonsschule Küsnacht",
+        "times": [
+          1800,
+          1900,
+          2000,
+          2100,
+          2200,
+          2300
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Mehrzweckraum Tobelweg, 4.OG",
+    "events": [
+      {
+        "event": "booXkey-Literaturforum",
+        "times": [
+          1800,
+          1900,
+          2000,
+          2100,
+          2200,
+          2300
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Musikschule Küsnacht",
+    "events": [
+      {
+        "event": "Tatjana Ruckstuhl-Nikic",
+        "times": [
+          1900
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Ortsmuseum Küsnacht",
+    "events": [
+      {
+        "event": "Franziskus & Elisabeth Abgottspon",
+        "times": [
+          1800,
+          1900,
+          2000,
+          2100,
+          2200,
+          2300
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Reformierte Kirche",
+    "events": [
+      {
+        "event": "Turmbläser",
+        "times": [
+          1745,
+          1830
+        ]
+      },
+      {
+        "event": "Ref. Kirchenchor",
+        "times": [
+          1800
+        ]
+      },
+      {
+        "event": "Führung",
+        "times": [
+          1900
+        ]
+      },
+      {
+        "event": "Gian Tumasch Appenzeller",
+        "times": [
+          2000
+        ]
+      },
+      {
+        "event": "Aaron Wegmann",
+        "times": [
+          2100
+        ]
+      },
+      {
+        "event": "Ueli Bär, Sax & Tony Majdalani, Perc.",
+        "times": [
+          2200
+        ]
+      },
+      {
+        "event": "Martin Wettstein, Orgel",
+        "times": [
+          2300
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Ref. Kirchgemeindehaus",
+    "events": [
+      {
+        "event": "Harmonie Eintracht",
+        "times": [
+          1900,
+          2000
+        ]
+      },
+      {
+        "event": "Fanfare Terrible",
+        "times": [
+          2100,
+          2200,
+          2300
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Restaurant Falken",
+    "events": [
+      {
+        "event": "Les ésprits",
+        "times": [
+          1800,
+          1900,
+          2000,
+          2100
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Romantik Seehotel",
+    "events": [
+      {
+        "event": "Romantik Seehotel",
+        "times": [
+          1900,
+          2000,
+          2100
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Seehof, C.G. Jung-Institut, OG",
+    "events": [
+      {
+        "event": "Sonja Leutwyler, Mezz, Vio, Klav.",
+        "times": [
+          1900,
+          2000,
+          2100
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Seehof, C.G. Jung-Institut, UG",
+    "events": [
+      {
+        "event": "Andreas Moser",
+        "times": [
+          1800,
+          2000,
+          2100
+        ]
+      },
+      {
+        "event": "Kunstverein Artischock",
+        "times": [
+          1800,
+          1900,
+          2000,
+          2100
+        ]
+      }
+    ]
+  },
+  {
+    "location": "Wolf Buchhandlung",
+    "events": [
+      {
+        "event": "Hans Martin Ulbrich mit Trio Poetico",
+        "times": [
+          1900,
+          2000,
+          2100
+        ]
       }
     ]
   }
