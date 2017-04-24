@@ -34,8 +34,13 @@ b {
 }
 
 section {
-    border-bottom: 0.25em solid #ed1255;
+    position: relative;
+    border-bottom: 0.5em solid #ed1255;
     padding: 5%;
+}
+
+section:last-of-type {
+    border-bottom: none;
 }
 
 h1, h2, h3, p {
@@ -230,6 +235,24 @@ input[type=checkbox]:checked ~ #menu li a div {
     background-color: #ed1255;
 }
 
+#countdown {
+    display: none;
+    position: absolute;
+    top: 18%;
+    left: 50%;
+
+    width: 30%;
+    border-radius: 5px;
+
+    color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(0,0,0,0.8);
+
+    font-size: 3.4vw;
+    text-align: center;
+
+    transform: translateX(-50%);
+}
+
 #title-section img {
     width: 100%;
 }
@@ -383,20 +406,33 @@ input[type=checkbox]:checked ~ #menu li a div {
   height: auto;
   margin: 1%;
 }
-
 /* SPONSOREN SECTION */
-@media screen and (max-width: 467px ) {
-    .hamburger {
-        position: absolute;
-        display: block;
-        left: 50%;
-        top: 30%;
-        transform: translateX(-50%);
-    }
 
-    nav ul {
-        display: none;
-    }
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: .7em;
+
+    background-color: #ed1255;
+    color: white;
+}
+
+footer p {
+    width: 33%;
+    margin: 0;
+    padding: 0 .5em;
+    display: inline-block;
+
+    font-size: 0.8em;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+footer a:link, footer a:visited {
+    color: white;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 683px) {
@@ -425,6 +461,20 @@ input[type=checkbox]:checked ~ #menu li a div {
     }
 }
 
+@media screen and (max-width: 798px ) {
+    .hamburger {
+        position: absolute;
+        display: block;
+        left: 50%;
+        top: 30%;
+        transform: translateX(-50%);
+    }
+
+    nav ul {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 810px) {
     #location ul {
         max-width: 100%;
@@ -434,5 +484,11 @@ input[type=checkbox]:checked ~ #menu li a div {
         width: 80%;
         margin: auto;
         margin-top: 2em;
+    }
+}
+
+@media screen and (max-width: 1077px) {
+    footer p {
+        width: unset;
     }
 }

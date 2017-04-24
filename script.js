@@ -1,4 +1,4 @@
-
+var eventDate = new Date(2017, 9, 29, 18, 0, 0, 0);
 
 function loadMap() {
 	var kuesnacht = {lat: 47.316667, lng: 8.583333};
@@ -13,6 +13,7 @@ function loadMap() {
 		map: map
 	});
 }
+
 
 function timeToString(time) {
 	var minutes = "0" + time % 100;
@@ -157,9 +158,19 @@ function hideMenu() {
 	document.getElementById("nav-trigger").checked = false;
 }
 
+function calculateDays() {
+	// get remaining days until event
+	var days = Math.floor(new Date(eventDate - new Date()).getTime() / (1000 * 3600 * 24));
+
+	var countdown = document.getElementById("countdown");
+	countdown.innerHTML = "Noch " + days + " Tage";
+	countdown.style.display = "unset";
+}
+
 window.onload = function() {
+	calculateDays();
 	loadMap();
-	loadTimetable();
+	loadTimetable();	
 };
 
 window.onresize = function(event) {
