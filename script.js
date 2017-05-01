@@ -163,7 +163,7 @@ function calculateDays() {
 	var days = Math.floor(new Date(eventDate - new Date()).getTime() / (1000 * 3600 * 24));
 
 	var countdown = document.getElementById("countdown");
-	countdown.innerHTML = "Noch " + days + " Tage";
+	countdown.innerHTML = "Noch " + days + " Tage bis zur";
 	countdown.style.display = "unset";
 }
 

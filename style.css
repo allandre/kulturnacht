@@ -238,10 +238,10 @@ input[type=checkbox]:checked ~ #menu li a div {
 #countdown {
     display: none;
     position: absolute;
-    top: 18%;
-    left: 50%;
+    top: 30%;
+    left: 28.5%;
 
-    width: 30%;
+    width: 50%;
     border-radius: 5px;
 
     color: rgba(255, 255, 255, 0.7);
@@ -251,6 +251,18 @@ input[type=checkbox]:checked ~ #menu li a div {
     text-align: center;
 
     transform: translateX(-50%);
+}
+
+#blackout {
+    position: absolute;
+
+    bottom: 1%;
+    right: 0px;
+
+    height: 18%;
+    width: 40%;
+
+    background-color: #050505;
 }
 
 #title-section img {
@@ -320,11 +332,19 @@ input[type=checkbox]:checked ~ #menu li a div {
     color: #ed1255;
 }
 
+.contact-section h3 {
+    margin-top: 2em;
+}
+
+.contact-section p {
+    margin-top: 0;
+}
+
 #organisator-list {
     width: 100%;
     max-width: 800px;
 
-    margin: 2em auto;
+    margin: 0 auto;
 }
 .contact-section li {
     text-align: justify;
@@ -461,7 +481,7 @@ footer a:link, footer a:visited {
     }
 }
 
-@media screen and (max-width: 798px ) {
+@media screen and (max-width: 1045px ) {
     .hamburger {
         position: absolute;
         display: block;

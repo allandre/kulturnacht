@@ -28,8 +28,9 @@
         <label for="nav-trigger"><span class="hamburger"></span></label>
         <ul id="menu" onclick="hideMenu()">
             <li><a href="#info-anchor"><div>Info</div></a></li>
-            <li><a href="#plan-anchor"><div>Ortsplan</div></a></li>
+            <li><a href="#plan-anchor"><div>Übersichtsplan</div></a></li>
             <li><a href="#timetable-anchor"><div>Programm</div></a></li>
+            <li><a href="#"><div>Mitwirkende</div></a></li>
             <li><a href="#"><div>Essen &amp; Trinken</div></a></li>
             <li><a href="#contact-anchor"><div>Kontakt</div></a></li>
             <li><a href="#sponsoren-anchor"><div>Sponsoren</div></a></li>
@@ -42,24 +43,25 @@
         <div id="countdown">
         Noch ... Tage
         </div>
+        <div id="blackout"></div>
             <img src="resources/title-image-1600.png">
         </section>
 
         <a id="info-anchor" class="anchor"></a>
         <section>
             <h1>Willkommen an der Kulturnacht Küsnacht</h1>
-            <p>Reservieren Sie sich den <b>Abend am Freitag, 29. September 2017!</b> Von <b>18 bis 4 Uhr</b> steht das Küsnachter Dorfzentrum im Zeichen der Kultur. Mit mehr als 100 Künstlern finden an rund 20 Orten über 40 Veranstaltungen statt.</p>
-            <p>Die Kulturnacht bietet historische und kunsthistorische Führungen, Konzerte, Kunstaustellungen, Lesungen, Gesangskünste, Literatur, Poetry Slam, Gedichte, Sprache, theater und Film an. Stellen Sie sich aus diesem reichhaltigen Angebot Ihr eigenes Programm zusammen. die Veranstaltungen beginnen jeweils zur vollen Stunde und dauern maximal 30 Minuten.</p>
+            <p>Reservieren Sie sich den <b>Abend am Freitag, 29. September 2017!</b> Von <b>18 bis 24 Uhr</b> steht das Küsnachter Dorfzentrum im Zeichen der Kultur. Mit mehr als 100 Künstlern finden an rund 20 Orten über 40 Veranstaltungen statt.</p>
+            <p>Die Kulturnacht bietet historische und kunsthistorische Führungen, Konzerte, Kunstaustellungen, Lesungen, Gesangskünste, Literatur, Poetry Slam, Gedichte, Sprache, Theater und Film an. Stellen Sie sich aus diesem reichhaltigen Angebot Ihr eigenes Programm zusammen. Die Veranstaltungen beginnen jeweils zur vollen Stunde und dauern maximal 30 Minuten.</p>
             <p>Der <b>Eintritt</b> zu allen Veranstaltungen ist <b>frei</b> dank des unentgeltlichen Engagements vieler Beteiligter.</p>
             <p>Das detaillierte Programmheft erscheint im August 2017.</p>
-            <p><a href="resources/knk_flyer.pdf" target="_blank">Flyer</a></p>
+            <p><a href="resources/knk_flyer.pdf" target="_blank">Ankündingsflyer</a></p>
         </section>
 
         <a id="plan-anchor" class="anchor"></a>
         <section id="plan-section">
             <h1>Die Veranstaltungsorte im Dorfzentrum</h1>
             <div>
-                <img src="resources/übersichtsplan.png">
+                <img src="resources/plan.png">
             </div>
         </section>
 
@@ -72,10 +74,10 @@
         <a id="contact-anchor" class="anchor"></a>
         <section class="contact-section">
             <h1>Kontakt KVK und Info Anfahrt</h1>
-            <h3>Die Kulturnacht Küsnacht ist eine Initiative der Kulturellen Vereinigung Küsnacht - KVK</h3>
+            <h3>Die Kulturnacht Küsnacht ist eine Initiative der Kulturellen Vereinigung Küsnacht (KVK).</h3>
             <p>Die KVK gewährleistet zusammen mit der Gemeinde den Betrieb des Ortsmuseums Küsnacht, betreut die Galerie im Hochhuus und veranstalted Vorträge und Exkursionen mit
                 kulturgeschichtlichem Hintergrund. <br />
-                <span class="ad">Werden Sie Mitglied der KVK und unterstützen Sie unsere Aktivitäten.</span> </p>
+                <span class="ad">Werden Sie Mitglied der KVK und unterstützen Sie unsere Aktivitäten</span> (<a href="mailto:vorstand@kulturelle-vereinigung-kuesnacht.ch">vorstand@kulturelle-vereinigung-kuesnacht.ch</a>)</p>
 
             <h3>Die Kulturnacht Küsnacht 2017 wird von einem Nonprofit-Team organisiert:</h3>
             <ul id="organisator-list">
@@ -83,17 +85,15 @@
                 <li>Ilka Allenspach, Kulturelle Vereinigung Küsnacht</li>
                 <li>Elisabeth Abgottspon, Ortsmuseum Küsnacht</li>
                 <li>Hans-Peter Fehr, Theaterverein Die Kulisse Küsnacht</li>
-            </ul>
-
-            <p>Interessenten können sich per E-Mail anmelden: <a href="mailto:vorstand@kulturelle-vereinigung-kuesnacht.ch">vorstand@kulturelle-vereinigung-kuesnacht.ch</a></p>
+            </ul>            
 
             <h3>Anfahrt mit Bahn, Bus oder Auto</h3>
 
             <div id="location">
                 <ul>
-                    <li><b>Bahn:</b> S6 oder S16 in Richtung Uetikon bzw. Meilen bis &laquo;Küsnacht ZH&raquo;</li>
-                    <li><b>Bus</b> 916 ab Zürich-Bellevue bis Haltestelle &laquo;Oberwacht&raquo; oder &laquo;obere Heslistrasse&raquo;.</li>
-                    <li>Mit dem <b>Auto</b> auf der Seestrasse: Abzweigen in Küsnacht bei der Ampel, durch die Unterführung bis zum Parkplatz beim Bahnhof.</li>
+                    <li><b>Bahn:</b> S6 oder S16 in Richtung &laquo;Uetikon&raquo; bzw. &laquo;Meilen&raquo; bis &laquo;Küsnacht ZH&raquo;. <a href="http://www.sbb.ch" target="_blank">Fahrplan</a></li>
+                    <li><b>Bus:</b> Ab &laquo;Zürich, Bellevue&raquo; Linie 916 bis Haltestelle &laquo;Oberwacht&raquo; oder &laquo;obere Heslistrasse&raquo; oder Linie 912 bis Haltestelle &laquo;Schiedhaldenstrasse&raquo;. <a href="http://www.sbb.ch" target="_blank">Fahrplan</a></li>
+                    <li><b>Auto:</b> Seestrasse, Abzweigen bei der Ampel in Küsnacht auf Oberwachtstrasse, durch die Unterführung bis zum Parkplatz beim Bahnhof. <a href="https://www.google.ch/maps/dir//K%C3%BCsnacht/@47.3189174,8.5494512,13z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x479aa68104cc861f:0xd07bdddc85fcb02e!2m2!1d8.5844705!2d47.3189227!3e0?hl=de" target="_blank">Routenplaner</a></li>
                 </ul>
 
                 <div id="map"></div>
@@ -136,7 +136,7 @@
                 <li>Zürcher Kantonalbank, Küsnacht</li>
             </ul>
 
-            <h2>Gönner</h2>
+            <h2>Öffentliche Hand, Stiftungen</h2>
             <div>
                 <img src="resources/sponsoren/Gemeinde Küsnacht.png">
                 <img src="resources/sponsoren/SK-Stiftung.png">
