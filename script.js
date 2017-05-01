@@ -1,5 +1,32 @@
 var eventDate = new Date(2017, 9, 29, 18, 0, 0, 0);
 
+var times = [1800, 1900, 2000, 2100, 2200, 2300];
+var program = [];
+
+var programStates = {
+	undef: -1,
+	table: 0,
+	list: 1
+}
+var programSectionState = programStates.undef;
+
+
+window.onload = function() {
+	showCountdown();
+	loadMap();
+	loadProgram();	
+};
+
+window.onresize = function(event) {
+	var containerWidth = $("#container").width();
+	console.log(containerWidth);
+	if (containerWidth > 1045) {
+		hideMenu();
+	}
+
+	drawProgramSection(false);
+};
+
 function loadMap() {
 	var kuesnacht = {lat: 47.316667, lng: 8.583333};
 	var center = {lat: 47.35, lng: 8.54};
@@ -14,113 +41,25 @@ function loadMap() {
 	});
 }
 
-
 function timeToString(time) {
 	var minutes = "0" + time % 100;
 	var timeString = Math.floor(time / 100) + "." + minutes.substr(-2);
 	return timeString;
 }
 
-function drawTimetable() {
-	var div = document.getElementById("timetable");
-	div.innerHTML = "";
-
-	var table = document.createElement("table");
-	var row = document.createElement("tr");
-
-	var element = document.createElement("th");
-	element.innerHTML = "Ort";
-	row.appendChild(element);
-
-	for (var i in times) {
-		element = document.createElement("th");
-		var time = times[i];
-		
-		element.innerHTML = timeToString(time);
-		row.appendChild(element);
-	}
-
-	table.appendChild(row);
-
-	for (var i in timetable) {
-		var location = timetable[i];
-		row = document.createElement("tr");
-		element = document.createElement("th");
-		element.innerHTML = location.location;
-		row.appendChild(element);
-
-		for (var j in times) {
-			var time = times[j];
-			element = document.createElement("th");
-			for (var k in location.events) {
-				var event = location.events[k];
-				if (event.times.indexOf(time) !== -1) {
-					element.innerHTML = event.event;
-					break;
-				}
-			}
-
-			row.appendChild(element);
-		}
-		table.appendChild(row);
-	}
-
-	div.appendChild(table);
-}
-
-function drawTimelist() {
-	var div = document.getElementById("timetable");
-	div.innerHTML = "";
-
-	var table = document.createElement("table");
-	div.appendChild(table);
-
-	for (var i in times) {
-		var time = times[i];
-		var timeRow = document.createElement("tr");
-		var timeCell = document.createElement("th");
-		timeCell.innerHTML = timeToString(time);
-		timeCell.colSpan = "2";
-		timeRow.appendChild(timeCell);
-		table.appendChild(timeRow);
-
-		for (var j in timetable) {
-			var location = timetable[j];
-
-			for (var k in location.events) {
-				var event = location.events[k];
-				if (event.times.indexOf(time) !== -1) {
-					var eventRow = document.createElement("tr");
-					table.appendChild(eventRow);
-					var locationCell = document.createElement("th");
-					locationCell.innerHTML = location.location;
-					eventRow.appendChild(locationCell);
-					var eventCell = document.createElement("th");
-					eventCell.innerHTML = event.event;
-					eventRow.appendChild(eventCell);
-					break;
-				}
-			}
-		}
-	}
-
-}
-
-var times = [];
-var timetable = [];
-
-function loadTimetable() {
+function loadProgram() {
 	var xmlhttp = new XMLHttpRequest();
+
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState === 4 && this.status === 200) {
-			timetable = JSON.parse(this.responseText);
+			program = JSON.parse(this.responseText);
+			drawProgramSection(true);
 
-			times = [];
+		/*	times = [];
 
-			for (var i in timetable) {
-				var location = timetable[i];
+			for (var i in program) {
+				var location = program[i];
 				for (var j in location.events) {
-
 					var event = location.events[j];
 					for (var k in event.times) {
 						var time = event.times[k];
@@ -132,52 +71,128 @@ function loadTimetable() {
 				}
 			}
 
-			times.sort();
-			
-			drawTimeSection(true);
+			times.sort();*/
 		}
 	};
+
 	xmlhttp.open("GET", "resources/timetable.json", true);
 	xmlhttp.send();
 }
 
-var timeSectionState = -1;
+function drawTimetable() {
+	var $programDiv = $("#program");
+	$programDiv.html("");
 
-function drawTimeSection(force) {
-	var containerWidth = document.getElementById("container").offsetWidth;
-	if (containerWidth > 743 && (timeSectionState === -1 || timeSectionState === 0 || force)) {
+	var $table = $("<table></table>");
+	$programDiv.append($table);
+
+	var $row = $("<tr></tr>");
+	$table.append($row);
+
+	var $locationElement = $("<th>Ort</th>");
+	$row.append($locationElement);
+
+	for (var i in times) {
+		var $headerElement = $("<th></th>");		
+		$headerElement.html(timeToString(times[i]));
+		$row.append($headerElement);
+	}
+
+	var $element;
+	for (var i in program) {
+		var location = program[i];
+
+		$row = $("<tr></tr>");
+		$table.append($row);
+
+		$element = $("<td></td>");
+		$element.html(location.location);
+		$row.append($element);
+
+		for (var j in times) {
+			var time = times[j];
+			$element = $("<td></td>");
+			$row.append($element);
+
+			for (var k in location.events) {
+				var event = location.events[k];
+				if (event.times.indexOf(time) !== -1) {
+					$element.html(event.event);
+					break;
+				}
+			}
+		}
+	}
+}
+
+function drawTimelist() {
+	var $programDiv = $("#program");
+	$programDiv.html("");
+
+	var $table = $("<table></table>");
+	$programDiv.append($table);
+
+	for (var i in times) {
+		var time = times[i];
+
+		var $timeRow = $("<tr></tr>");
+		$table.append($timeRow);
+		
+		var $timeCell = $("<th></th>");
+		$timeRow.append($timeCell);
+		$timeCell.html(timeToString(time));
+		$timeCell.prop("colspan", "2");
+		
+
+		for (var j in program) {
+			var location = program[j];
+
+			for (var k in location.events) {
+				var event = location.events[k];
+
+				if (event.times.indexOf(time) !== -1) {
+					var $eventRow = $("<tr></tr>");
+					$table.append($eventRow);
+
+					var $locationCell = $("<td></td>");
+					$eventRow.append($locationCell);
+					$locationCell.html(location.location);
+					
+					var $eventCell = $("<td></td>");
+					$eventRow.append($eventCell);
+					$eventCell.html(event.event);
+					
+					break;
+				}
+			}
+		}
+	}
+
+}
+
+
+function drawProgramSection(force) {
+	var containerWidth = $("#container").width();
+	console.log(programSectionState);
+	if (containerWidth > 747 && (force || programSectionState === programStates.undef || programSectionState === programStates.list)) {
 		drawTimetable();
-		timeSectionState = 1;
-	} else if (containerWidth <= 743 && (timeSectionState === -1 || timeSectionState === 1 || force)) {
+		timeSectionState = programStates.table;
+	} else if (containerWidth <= 747 && (force || programSectionState === programStates.undef || programSectionState === programStates.table)) {
 		drawTimelist();
-		timeSectionState = 0;
+		timeSectionState = programStates.list;
 	}
 }
 
 function hideMenu() {
-	document.getElementById("nav-trigger").checked = false;
+	$("#nav-trigger").prop("checked", false);
 }
 
-function calculateDays() {
+// calculate days until eventDate, and display on title image
+function showCountdown() {
 	// get remaining days until event
 	var days = Math.floor(new Date(eventDate - new Date()).getTime() / (1000 * 3600 * 24));
 
-	var countdown = document.getElementById("countdown");
-	countdown.innerHTML = "Noch " + days + " Tage bis zur";
-	countdown.style.display = "unset";
+	var $countdown = $("#countdown");
+	$countdown.html("Noch " + days + " Tage bis zur");
+	$countdown.css("display", "unset");
 }
-
-window.onload = function() {
-	calculateDays();
-	loadMap();
-	loadTimetable();	
-};
-
-window.onresize = function(event) {
-	var containerWidth = document.getElementById("container").offsetWidth;
-	if (containerWidth > 467) {
-		hideMenu();
-	}
-
-	drawTimeSection(false);
-};

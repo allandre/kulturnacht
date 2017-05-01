@@ -51,22 +51,16 @@ h1, h2, h3, p {
 }
 
 h1 {
-    /*margin: 1em 0;*/
-
     font-size: 1.5em;
     font-weight: bold;
 }
 
 h2 {
-    /*margin: 0.5em 0;*/
-
     font-size: 1.2em;
     font-weight: bold;
 }
 
 h3 {
-    /*margin: 1.0em 0;*/
-
     font-size: 1em;
     font-weight: bold;
 }
@@ -130,8 +124,7 @@ nav li a div {
     padding-top: .7em;
 }
 
-/* HAMBURGER */
-
+/* NAV->HAMBURGER start */
 input[type=checkbox]{
     display: none;
 }
@@ -181,7 +174,7 @@ input[type=checkbox]:checked ~ #menu li a div {
     width: 100%;
     border-top: 0.2em solid white;
 }
-
+/* NAV->HAMBURGER end */
 /* NAV end */
 
 
@@ -228,7 +221,7 @@ input[type=checkbox]:checked ~ #menu li a div {
 }
 /* LOGO end */
 
-/* TITLE SECTION */
+/* TITLE SECTION start */
 #title-section {
     padding: 0;
 
@@ -268,10 +261,9 @@ input[type=checkbox]:checked ~ #menu li a div {
 #title-section img {
     width: 100%;
 }
-/* TITLE SECTION */
+/* TITLE SECTION end */
 
-/* PLAN SECTION */
-
+/* PLAN SECTION start */
 #plan-section div {
     text-align: center;
 }
@@ -281,19 +273,19 @@ input[type=checkbox]:checked ~ #menu li a div {
     max-width: 60em;
     margin-top: 3em;
 }
+/* PLAN SECTION end */
 
-/* PLAN SECTION */
-
-/* TIMETABLE SECTION start */
-#timetable-section h1 {
+/* PROGRAM SECTION start */
+#program-section h1 {
     max-width: unset;
 }
-#timetable-section table {
+
+#program-section table {
     margin: 0 auto;
     margin-top: 2em;
 }
 
-#timetable-section tr:first-of-type th {
+#program-section th {
     font-weight: bold;
     font-size: 100%;
     text-align: center;
@@ -301,16 +293,7 @@ input[type=checkbox]:checked ~ #menu li a div {
     color: #ed1255;
 }
 
-#timetable-section tr th:first-of-type {
-    color: black;
-
-    font-weight: bold;
-    font-size: 100%;
-
-    text-align: center;
-}
-
-#timetable-section th {
+#program-section td {
     padding: 0.5em;
     border-bottom: 1px solid black;
     border-right: 1px dotted #ed1255;;
@@ -321,13 +304,18 @@ input[type=checkbox]:checked ~ #menu li a div {
     vertical-align: middle;
 }
 
-#timetable-section tr th:last-of-type {
-    border-right: unset;
+#program-section tr td:first-of-type {
+    color: black;
+
+    font-weight: bold;
 }
 
-/* TIMETABLE SECTION end */
+#program-section tr td:last-of-type {
+    border-right: unset;
+}
+/* PROGRAM SECTION end */
 
-/* CONTACT SECTION */
+/* CONTACT SECTION start */
 .ad {
     color: #ed1255;
 }
@@ -383,10 +371,9 @@ input[type=checkbox]:checked ~ #menu li a div {
     margin-top: 1em;
     margin-left: 5em;
 }
-/* CONTACT SECTION */
+/* CONTACT SECTION end */
 
-/* SPONSOREN SECTION */
-
+/* SPONSOREN SECTION start */
 #sponsoren-section {
     padding-left: 3%;
     padding-right: 3%;
@@ -426,8 +413,9 @@ input[type=checkbox]:checked ~ #menu li a div {
   height: auto;
   margin: 1%;
 }
-/* SPONSOREN SECTION */
+/* SPONSOREN SECTION end */
 
+/* FOOTER start */
 footer {
     display: flex;
     justify-content: space-around;
@@ -454,7 +442,10 @@ footer a:link, footer a:visited {
     color: white;
     text-decoration: none;
 }
+/* FOOTER end */
 
+/* MEDIA QUERIES start */
+/* -> make 'Kulturelle Vereinigung Küsnacht' part of logo disappear */
 @media screen and (max-width: 683px) {
     .logo {
         margin: 0 8.6%; 
@@ -474,13 +465,14 @@ footer a:link, footer a:visited {
     }
 }
 
-/* -> see js (table vs list generation) */
+/* -> recenter program title */
 @media screen and (max-width: 747px) {
-    #timetable-section h1 {
+    #program-section h1 {
         text-align: center;
     }
 }
 
+/* -> make hamburger appear */
 @media screen and (max-width: 1045px ) {
     .hamburger {
         position: absolute;
@@ -495,6 +487,7 @@ footer a:link, footer a:visited {
     }
 }
 
+/* -> behaviour of location -> gmap */
 @media screen and (max-width: 810px) {
     #location ul {
         max-width: 100%;
@@ -507,8 +500,10 @@ footer a:link, footer a:visited {
     }
 }
 
+/* -> prevent footer text from multi-row */
 @media screen and (max-width: 1077px) {
     footer p {
         width: unset;
     }
 }
+/* MEDIA QUERIES end */
