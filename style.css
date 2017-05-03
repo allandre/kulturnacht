@@ -69,6 +69,9 @@ p {
     margin: 2em auto;
 }
 
+table {
+    border-collapse: separate;
+}
 
 /* NAV start */
 nav {
@@ -304,10 +307,15 @@ input[type=checkbox]:checked ~ #menu li a div {
     vertical-align: middle;
 }
 
-#program-section tr td:first-of-type {
+#program-section table td.locationCell {
     color: black;
-
     font-weight: bold;
+
+    border-bottom: 1px solid black;
+}
+
+#program-section .intermediateRow td {
+    border-bottom: 1px solid lightgrey;
 }
 
 #program-section tr td:last-of-type {

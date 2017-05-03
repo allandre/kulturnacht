@@ -1,9 +1,13 @@
 [
   {
     "location": "Alters- u. Gesundheitszentrum Wangensbach",
+    "address": "Alte Landstr. 136",
     "events": [
       {
         "event": "Alfred Egli",
+        "categories": [
+          "guide"
+        ],
         "times": [
           1800,
           2000,
@@ -12,6 +16,9 @@
       },
       {
         "event": "Theaterverein \"Die Kulisse\"",
+        "categories": [
+          "theater"
+        ],
         "times": [
           1900,
           2000,
@@ -22,9 +29,13 @@
   },
   {
     "location": "Bibliothek Küsnacht",
+    "address": "Seestrasse 123",
     "events": [
       {
         "event": "Film",
+        "categories": [
+          "movie"
+        ],
         "times": [
           1900,
           2300
@@ -32,6 +43,9 @@
       },
       {
         "event": "Simon Chen",
+        "categories": [
+          "language"
+        ],
         "times": [
           2000,
           2100,
@@ -42,39 +56,58 @@
   },
   {
     "location": "Chrottegrotte",
+    "address": "Obere Dorfstrasse 27",
     "events": [
       {
         "event": "Schülerinnen der Musikschule & MKZ",
+        "categories": [
+          "music"
+        ],
         "times": [
           1800
         ]
       },
       {
         "event": "XotniX",
+        "categories": [
+          "music"
+        ],
         "times": [
           1900
         ]
       },
       {
         "event": "Anita Lehmann & Rosa Hess",
+        "categories": [
+          "music"
+        ],
         "times": [
           2000
         ]
       },
       {
-        "event": "AmarOn & bügelfrei",
+        "event": "AmarÔn & bügelfrei",
+        "categories": [
+          "music"
+        ],
         "times": [
           2100
         ]
       },
       {
-        "event": "Duo Coeur rouge",
+        "event": "Duo Cœur rouge",
+        "categories": [
+          "music"
+        ],
         "times": [
           2200
         ]
       },
       {
         "event": "Ueli Bär, Sax & Tony Majdalani, Perc.",
+        "categories": [
+          "music"
+        ],
         "times": [
           2300
         ]
@@ -83,9 +116,13 @@
   },
   {
     "location": "Freihof Küsnacht",
+    "address": "Oberwachtstrasse 15",
     "events": [
       {
         "event": "Freihof Küsnacht",
+        "categories": [
+          "language"
+        ],
         "times": [
           1800,
           1900,
@@ -99,9 +136,13 @@
   },
   {
     "location": "Freizeitanlage Sunnemetzg",
+    "address": "Ludwig-Snell-Weg 1",
     "events": [
       {
-        "event": "Schülerband",
+        "event": "Schülerband Küsnacht",
+        "categories": [
+          "music"
+        ],
         "times": [
           1800,
           1900
@@ -109,24 +150,36 @@
       },
       {
         "event": "Magic Ride",
+        "categories": [
+          "music"
+        ],
         "times": [
           2000
         ]
       },
       {
         "event": "XotniX",
+        "categories": [
+          "music"
+        ],
         "times": [
           2100
         ]
       },
       {
         "event": "FUNTASTIC / XtoniX",
+        "categories": [
+          "music"
+        ],
         "times": [
           2200
         ]
       },
       {
         "event": "Bregy & Friends",
+        "categories": [
+          "music"
+        ],
         "times": [
           2300
         ]
@@ -135,9 +188,13 @@
   },
   {
     "location": "Fussgängerunterführung Dorfstrasse",
+    "address": "",
     "events": [
       {
         "event": "b-live chor acappella",
+        "categories": [
+          "music"
+        ],
         "times": [
           1930,
           2030,
@@ -148,9 +205,14 @@
   },
   {
     "location": "Galerie im Höchhuus",
+    "address": "Seestrasse 123",
     "events": [
       {
         "event": "Fred Bauer und Manuel Bauer",
+        "categories": [
+          "exposition",
+          "guide"
+        ],
         "times": [
           1800,
           1900,
@@ -164,9 +226,11 @@
   },
   {
     "location": "Gasthof Ochsen",
+    "address": "Dorfstrasse 25",
     "events": [
       {
         "event": "Familie Wildhaber",
+        "categories": [],
         "times": [
           1800,
           1900,
@@ -180,9 +244,13 @@
   },
   {
     "location": "Gemeindehaus",
+    "address": "Obere Dorfstrasse 32",
     "events": [
       {
-        "event": "Rebecca Gericke-Budliger",
+        "event": "Kulturkommission",
+        "categories": [
+          "guide"
+        ],
         "times": [
           1900,
           2100
@@ -192,9 +260,14 @@
   },
   {
     "location": "Kägi Confiserie",
+    "address": "Bahnhofstrasse 8",
     "events": [
       {
         "event": "Dramolett",
+        "categories": [
+          "language",
+          "music"
+        ],
         "times": [
           1900,
           2100
@@ -204,9 +277,14 @@
   },
   {
     "location": "Kantonsschule Küsnacht",
+    "address": "Dorfstrasse 30",
     "events": [
       {
         "event": "SchülerInnen der Kantonsschule Küsnacht",
+        "categories": [
+          "exposition",
+          "music"
+        ],
         "times": [
           1800,
           1900,
@@ -220,9 +298,13 @@
   },
   {
     "location": "Mehrzweckraum Tobelweg, 4.OG",
+    "address": "Tobelweg 4",
     "events": [
       {
         "event": "booXkey-Literaturforum",
+        "categories": [
+          "language"
+        ],
         "times": [
           1800,
           1900,
@@ -236,9 +318,13 @@
   },
   {
     "location": "Musikschule Küsnacht",
+    "address": "Dachstock, Tobelweg 1",
     "events": [
       {
-        "event": "Tatjana Ruckstuhl-Nikic",
+        "categories": [
+          "music"
+        ],
+        "event": "Tatjana Ruckstuhl-Nikić & Kinder. Klavier, Gesang",
         "times": [
           1900
         ]
@@ -247,9 +333,15 @@
   },
   {
     "location": "Ortsmuseum Küsnacht",
+    "address": "Tobelweg 1",
     "events": [
       {
         "event": "Franziskus & Elisabeth Abgottspon",
+        "categories": [
+          "language",
+          "guide",
+          "exposition"
+        ],
         "times": [
           1800,
           1900,
@@ -263,9 +355,13 @@
   },
   {
     "location": "Reformierte Kirche",
+    "address": "Untere Heslibachstrasse 2",
     "events": [
       {
         "event": "Turmbläser",
+        "categories": [
+          "music"
+        ],
         "times": [
           1745,
           1830
@@ -273,36 +369,54 @@
       },
       {
         "event": "Ref. Kirchenchor",
+        "categories": [
+          "music"
+        ],
         "times": [
           1800
         ]
       },
       {
         "event": "Führung",
+        "categories": [
+          "guide"
+        ],
         "times": [
           1900
         ]
       },
       {
         "event": "Gian Tumasch Appenzeller",
+        "categories": [
+          "exposition"
+        ],
         "times": [
           2000
         ]
       },
       {
         "event": "Aaron Wegmann",
+        "categories": [
+          "music"
+        ],
         "times": [
           2100
         ]
       },
       {
         "event": "Ueli Bär, Sax & Tony Majdalani, Perc.",
+        "categories": [
+          "music"
+        ],
         "times": [
           2200
         ]
       },
       {
         "event": "Martin Wettstein, Orgel",
+        "categories": [
+          "music"
+        ],
         "times": [
           2300
         ]
@@ -311,9 +425,13 @@
   },
   {
     "location": "Ref. Kirchgemeindehaus",
+    "address": "OG, Untere Heslibachstrasse 5",
     "events": [
       {
         "event": "Harmonie Eintracht",
+        "categories": [
+          "music"
+        ],
         "times": [
           1900,
           2000
@@ -321,6 +439,9 @@
       },
       {
         "event": "Fanfare Terrible",
+        "categories": [
+          "music"
+        ],
         "times": [
           2100,
           2200,
@@ -331,9 +452,13 @@
   },
   {
     "location": "Restaurant Falken",
+    "address": "Dorfstrasse 52",
     "events": [
       {
-        "event": "Les ésprits",
+        "event": "Les ésprits, Qfl, Vio",
+        "categories": [
+          "music"
+        ],
         "times": [
           1800,
           1900,
@@ -345,9 +470,13 @@
   },
   {
     "location": "Romantik Seehotel",
+    "address": "Seestrasse 120",
     "events": [
       {
-        "event": "Romantik Seehotel",
+        "event": "Romantik Seehotel Sonne",
+        "categories": [
+          "guide"
+        ],
         "times": [
           1900,
           2000,
@@ -357,34 +486,39 @@
     ]
   },
   {
-    "location": "Seehof, C.G. Jung-Institut, OG",
+    "location": "Seehof, C.G. Jung-Institut",
+    "address": "Hornweg 28",
     "events": [
-      {
-        "event": "Sonja Leutwyler, Mezz, Vio, Klav.",
-        "times": [
-          1900,
-          2000,
-          2100
-        ]
-      }
-    ]
-  },
-  {
-    "location": "Seehof, C.G. Jung-Institut, UG",
-    "events": [
-      {
-        "event": "Andreas Moser",
+        {
+        "event": "Kunstverein Artischock",
+        "categories": [
+          "exposition"
+        ],
         "times": [
           1800,
+          1900,
           2000,
           2100
         ]
       },
       {
-        "event": "Kunstverein Artischock",
+        "event": "Sonja Leutwyler, Mezz, Vio, Klav.",
+        "categories": [
+          "music"
+        ],
+        "times": [
+          1900,
+          2000,
+          2100
+        ]
+      },
+      {
+        "event": "Andreas Moser",
+        "categories": [
+          "language"
+        ],
         "times": [
           1800,
-          1900,
           2000,
           2100
         ]
@@ -393,9 +527,14 @@
   },
   {
     "location": "Wolf Buchhandlung",
+    "address" : "Zürichstrasse 149",
     "events": [
       {
         "event": "Hans Martin Ulbrich mit Trio Poetico",
+        "categories": [
+          "language",
+          "music"
+        ],
         "times": [
           1900,
           2000,
