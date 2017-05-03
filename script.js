@@ -102,7 +102,7 @@ function drawTimetable() {
         $headerElement.prop("colspan", "2");
     }
 
-    // create content rows
+    // create location rows
     for (var i in program) {
         var location = program[i];
         var rowNumber = calculateRowNumber(location);
@@ -170,10 +170,32 @@ function createLocationColumn(location, rows) {
     var $locationCell = $('<td></td>', { class: "locationCell" });
     rows[0].append($locationCell);
     $locationCell.prop("rowspan", "" + rows.length);
-    $locationCell.prop("colspan", "3");
-
     var text = location.location + "\<br \/\>" + location.address;
     $locationCell.html(text);
+
+    var event1745 = get1745EventForLocation(location);
+    if (!event1745) {
+    	$locationCell.prop("colspan", "3");	
+    } else {
+    	$locationCell.prop("colspan", "2");
+    	var $eventCell = $('<td></td>');
+    	rows[0].append($eventCell);
+    	$eventCell.html("17.45: " + createTextForEvent(event1745));
+    }
+    
+
+    
+}
+
+function get1745EventForLocation(location) {
+	for (var i in location.events) {
+		for (var j in location.events[i].times) {
+			if (location.events[i].times[j] === 1745) {
+				return location.events[i];
+			}
+		}
+	}
+	return null;
 }
 
 function createContentRows(events, rows) {
@@ -196,6 +218,7 @@ function createContentRows(events, rows) {
         			$cell.prop('colspan', '2');
         		} else {
         			// empty 00 cell followed by 30 cell
+        			$cell.html('&nbsp;');
         			$cell2 = $('<td></td>');
         			row.append($cell2);
         			$cell2.html(timeToString(timeColumn.times[1]) + ": " + text30);

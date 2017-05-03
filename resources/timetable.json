@@ -259,6 +259,20 @@
     ]
   },
   {
+    "location": "Haus C.G. Jung",
+    "address": "Seestr. 228",
+    "events": [
+      {
+        "event": "Film",
+        "categories": ["movie"],
+        "times": [
+          2100,
+          2200
+        ]
+      }
+    ]
+  },
+  {
     "location": "Kägi Confiserie",
     "address": "Bahnhofstrasse 8",
     "events": [
