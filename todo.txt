@@ -1,13 +1,19 @@
 
+- mitwirkende section
+- programm: legende
+- programm: js
+
 - logo: font
 
 - Title :: richtiges bild, bild zu text
 - Übersichtsplan :: komplette Liste + link
 - Übersichtsplan :: bild -> map
-- Info :: Download flyer
-- Zeitplan :: korrekte daten
 - sponsoren: original bilder
-- add footer
+- essen & trinken
 
--- Countdown
--- hamburger menu animation expand
+-- hover on hamburger -> click pointer
+-- ersetzen emojis / fix // font awesome / bootstrap
+
+---- markieren aktuelle section
+---- hamburger menu animation expand
+---- tabelle design
