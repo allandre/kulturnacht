@@ -321,6 +321,10 @@ input[type=checkbox]:checked ~ #menu li a div {
 #program-section tr td:last-of-type {
     border-right: unset;
 }
+
+#program-section .time-cell {
+    text-align: center;
+}
 /* PROGRAM SECTION end */
 
 /* CONTACT SECTION start */
