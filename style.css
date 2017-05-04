@@ -249,18 +249,6 @@ input[type=checkbox]:checked ~ #menu li a div {
     transform: translateX(-50%);
 }
 
-#blackout {
-    position: absolute;
-
-    bottom: 1%;
-    right: 0px;
-
-    height: 18%;
-    width: 40%;
-
-    background-color: #050505;
-}
-
 #title-section img {
     width: 100%;
 }
@@ -397,12 +385,14 @@ input[type=checkbox]:checked ~ #menu li a div {
     margin-top: 2em;
 }
 
+/*
 #sponsoren-section div {
     display: flex;
     width: 100%;
     justify-content: space-around;
     flex-wrap: wrap;
 }
+*/
 
 #sponsoren-section ul {
     max-width: 800px;
@@ -413,14 +403,30 @@ input[type=checkbox]:checked ~ #menu li a div {
     margin-bottom: 1em;
 }
 
-#sponsoren-section img {
-  display: block;
-  max-width: 430px;
-  max-height: 95px;
-  width: auto;
-  height: auto;
-  margin: 1%;
+.sponsoren-block {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
 }
+
+.sponsoren-block img {
+    width: unset;
+    max-width: unset;
+    height: 71px;
+    max-height: unset;
+    padding: 1em .5em;
+}
+
+#schererHeizungen {
+    max-height: 12vw;
+}
+
+#STFS {
+    max-height: 12vw;
+}
+
 /* SPONSOREN SECTION end */
 
 /* FOOTER start */
