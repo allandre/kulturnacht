@@ -1,6 +1,8 @@
 var page = require('webpage').create();
 var fs = require('fs');
 
+var pathPrefix = '../../resources/program/';
+
 page.onConsoleMessage = function(msg) {
     console.log('page >' + msg);
 }
@@ -30,12 +32,12 @@ page.open('skeleton.html', function(status) {
     var programTable = page.evaluate(function(_program) {
         return createProgramTable(_program);
     }, program);
-    writeToFile('program-table.html', programTable);
+    writeToFile(pathPrefix + 'program-table.html', programTable);
 
     var programList = page.evaluate(function(_program) {
         return createProgramList(_program);
     }, program);
-    writeToFile('program-list.html', programList);
+    writeToFile(pathPrefix + 'program-list.html', programList);
     
 
     phantom.exit();

@@ -11,9 +11,9 @@
 - sponsoren: original bilder
 - essen & trinken
 
--- hover on hamburger -> click pointer
+-- tabelle design
+-- hover on hamburger -> click pointer // -> done?
 -- ersetzen emojis / fix // font awesome / bootstrap
 
 ---- markieren aktuelle section
 ---- hamburger menu animation expand
----- tabelle design

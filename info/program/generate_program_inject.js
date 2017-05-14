@@ -280,7 +280,7 @@ function createLocationColumn(location, rows, include1745) {
     var $locationCell = $('<td></td>', { class: "locationCell" });
     rows[0].append($locationCell);
     $locationCell.prop("rowspan", "" + rows.length);
-    var text = location.location + "\<br \/\>" + location.address;
+    var text = location.location + "\<br\>" + location.address;
     $locationCell.html(text);
 
     if (include1745) {
