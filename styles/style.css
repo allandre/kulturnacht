@@ -127,6 +127,19 @@ nav li a div {
     padding-top: .7em;
 }
 
+#position-indication {
+    position: fixed;
+    z-index: 20;
+    height: 3em;
+
+    display: none;
+
+    position: absolute;
+    background-color: rgba(0,0,0,0.1);
+    border-left: 1px lightgrey solid;
+    border-right: 1px lightgrey solid;
+}
+
 /* NAV->HAMBURGER start */
 input[type=checkbox]{
     display: none;

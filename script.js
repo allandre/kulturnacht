@@ -1,6 +1,16 @@
 var eventDate = new Date(2017, 9, 29, 18, 0, 0, 0);
 var map;
 
+var hamburgerMenuWidth = 1045;
+
+var $positionIndication;
+
+var positionIndicationData;
+var showPositionVisible = {
+    visible: false,
+    hasSwitched: true
+}
+
 var programStates = {
     undef: -1,
     table: 0,
@@ -9,21 +19,34 @@ var programStates = {
 var programSectionState = programStates.undef;
 
 
-window.onload = function() {
+$(document).ready(function() {
     showCountdown();
     loadMap();
 
-    updateProgramSection(true);
-};
+    $positionIndication = $('#position-indication');
 
-window.onresize = function(event) {
+    updateProgramSection(true);
+    initPositionIndication();
+});
+
+$(window).on('resize', function(event) {
     var containerWidth = $("#container").width();
-    if (containerWidth > 1045) {
+    if (containerWidth > hamburgerMenuWidth) {
         hideMenu();
     }
 
     updateProgramSection(false);
-};
+
+    initPositionIndication();
+    updatePositionIndication();
+});
+
+$(window).on('scroll', function() {
+    setScrollingWithMouseWheel(false);
+
+    updatePositionIndication();
+});
+
 $('body').on('mousedown', function(evt) {
     var clickInsideMap = $(evt.target).parents('#map').length > 0;
 
@@ -32,16 +55,12 @@ $('body').on('mousedown', function(evt) {
     }
 });
 
-$(window).scroll(function() {
-    setScrollingWithMouseWheel(false);
-});
 
 function setScrollingWithMouseWheel(isEnable) {
     if (map) {
         map.setOptions({ scrollwheel: isEnable });
     }
 }
-
 
 function loadMap() {
     var kuesnacht = { lat: 47.316667, lng: 8.583333 };
@@ -64,8 +83,6 @@ function loadMap() {
 }
 
 
-
-
 function updateProgramSection(force) {
     var containerWidth = $("#container").width();
     if (containerWidth > 747 && (force || programSectionState === programStates.undef || programSectionState === programStates.list)) {
@@ -84,6 +101,9 @@ function loadProgram(file) {
         if (this.readyState === 4 && this.status === 200) {
             var $programDiv = $("#program");
             $programDiv.html(this.responseText);
+
+            // readjust positionIndication for new html length!!
+            createPositionIndicationData();
         }
     };
 
@@ -95,6 +115,7 @@ function hideMenu() {
     $("#nav-trigger").prop("checked", false);
 }
 
+
 // calculate days until eventDate, and display on title image
 function showCountdown() {
     // get remaining days until event
@@ -103,4 +124,61 @@ function showCountdown() {
     var $countdown = $("#countdown");
     $countdown.html("Noch " + days + " Tage bis zur");
     $countdown.css("display", "unset");
+}
+
+function initPositionIndication() {
+    function updateShowPositionVisible(newValue) {
+        showPositionVisible.hasSwitched = (showPositionVisible.visible !== newValue);
+        showPositionVisible.visible = newValue;
+    }
+
+    if ($('#container').width() > hamburgerMenuWidth) {
+        updateShowPositionVisible(true);
+        createPositionIndicationData();
+    } else {
+        updateShowPositionVisible(false);        
+        setPositionIndicationDisplay(false);
+    }
+}
+
+function createPositionIndicationData() {
+    var windowHeight = $(window).height();
+    var totalHeight = $(document).height();
+    var navWidth = $('nav').width();
+    var width = windowHeight / totalHeight * navWidth;
+
+    $positionIndication.css('width', width);
+
+    positionIndicationData = {
+        distanceFactor: navWidth / totalHeight
+    }
+}
+
+function updatePositionIndication() {
+    if (!showPositionVisible.visible) {
+        return;
+    }
+
+    if (showPositionVisible.hasSwitched) {
+        setPositionIndicationDisplay(true);
+        showPositionVisible.hasSwitched = false;
+    }
+
+    if (!positionIndicationData) {
+        initPositionIndication();
+    }
+
+    var offset = $(document).scrollTop();
+    var distance = positionIndicationData.distanceFactor * offset;
+    console.log(distance);
+
+    $positionIndication.css('left', distance);
+}
+
+function setPositionIndicationDisplay(isShow) {
+    if (isShow) {
+        $positionIndication.css('display', 'unset');
+    } else {
+        $positionIndication.css('display', 'none');
+    }
 }
