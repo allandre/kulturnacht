@@ -73,6 +73,13 @@ table {
     border-collapse: separate;
 }
 
+.in-section-list {
+    width: 100%;
+    max-width: 800px;
+
+    margin: 0 auto;
+}
+
 /* NAV start */
 nav {
     position: fixed;
@@ -351,6 +358,12 @@ input[type=checkbox]:checked ~ #menu li a div {
 /* legend table end*/
 /* PROGRAM SECTION end */
 
+/* FOOD SECTION start */
+.food-section p {
+    margin: 1em auto;
+}
+/* FOOD SECTION end */
+
 /* CONTACT SECTION start */
 .ad {
     color: #ed1255;
@@ -364,12 +377,6 @@ input[type=checkbox]:checked ~ #menu li a div {
     margin-top: 0;
 }
 
-#organisator-list {
-    width: 100%;
-    max-width: 800px;
-
-    margin: 0 auto;
-}
 .contact-section li {
     text-align: justify;
 }
