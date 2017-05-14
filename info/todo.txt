@@ -1,14 +1,12 @@
 
 - mitwirkende section
-- programm: legende
-- programm: js
 
 - logo: font
 
-- Title :: richtiges bild, bild zu text
+- Title :: richtiges bild, bild zu text // aufgegeben?
 - Übersichtsplan :: komplette Liste + link
 - Übersichtsplan :: bild -> map
-- sponsoren: original bilder
+- sponsoren: original bilder // done?
 - essen & trinken
 
 -- tabelle design

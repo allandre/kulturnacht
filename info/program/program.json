@@ -4,7 +4,11 @@
     "address": "Alte Landstr. 136",
     "events": [
       {
+        "id": "alfred_egli",
         "event": "Alfred Egli",
+        "title": "Wangensbach - ein Streifzug durch 4 Jahrhunderte",
+        "description": "Jede Küsnachterin und jeder Küsnachter sollte das anmutige Wangensbach-Areal und sein aus dem 17. Jahrhundert stammendes ehrwürdiges Landhaus mit seiner wechselvollen Geschichte kennenlernen!",
+        "team": "Alfred Egli, VOG",
         "categories": [
           "guide"
         ],
@@ -15,7 +19,11 @@
         ]
       },
       {
-        "event": "Theaterverein \"Die Kulisse\"",
+        "id": "die_kulisse",
+        "event": "Theaterverein \"Die Kulisse\"<br>Miriam Buchmann, Spiel, Larissa Münch, Spiel, Krishan Krone, Regie, Lea Gottheil, Text",
+        "title": "Blind Date - Theaterszenen von Lea Gottheil",
+        "description": "Die App &laquo;Blind Date&raquo; von Aline und Kathie begeistert! Nur mittels Stimme werden damit Partner vermittelt. Das Fernsehmagazin &laquo;Glamour und Glück&raquo; lädt die beiden Freundinnen auf ihr Sofa ein. Bestehen sie wohl den Girlfriendtest?",
+        "team": "Theaterverein &laquo;Die Kulisse&raquo;",
         "categories": [
           "theater"
         ],
@@ -23,7 +31,8 @@
           1900,
           2000,
           2100
-        ]
+        ],
+        "images": ["die_kulisse.jpg"]
       }
     ]
   },
@@ -32,7 +41,10 @@
     "address": "Seestrasse 123",
     "events": [
       {
+        "id": "bibliothek_film",
         "event": "Film",
+        "title": "Küsnachter Vergangenheit lebendig erleben",
+        "description" : "Es werden Ausschnitte aus dem Film „Ziitsprüng: Ein Theaterspaziergang in Küsnachts Vergangenheit“ gezeigt. Der Film entstand aus einem Projekt der Kulisse und der Kantonsschule Küsnacht.",
         "categories": [
           "movie"
         ],
@@ -42,7 +54,11 @@
         ]
       },
       {
+        "id": "simon_chen",
         "event": "Simon Chen",
+        "title" : "Simon Chen - Spken Words in der Bibliothek!",
+        "description" : "Wenn’s im Zuschauerraum mehr Bücher als Zuschauer hat, dann ist Simon Chen in seinem Element. Performte Literatur – eine wortwitzige Hommage an das Buch und an die Sprache!",
+        "team": "Simon Chen",
         "categories": [
           "language"
         ],
@@ -50,7 +66,8 @@
           2000,
           2100,
           2200
-        ]
+        ],
+        "images": ["simon_chen.jpg"]
       }
     ]
   },
@@ -59,58 +76,88 @@
     "address": "Obere Dorfstrasse 27",
     "events": [
       {
+        "id": "mkz",
         "event": "Schülerinnen der Musikschule & MKZ",
+        "title" : "Musikalischer Reigen",
+        "description" : "Kammermusikalische Carte blanche – lassen Sie sich verzaubern!",
+        "team": "Schülerinnen der Musikschule Küsnacht & MKZ: Alina Durisch, Violine, Julia Durisch, Violoncello & friends",
         "categories": [
           "music"
         ],
         "times": [
           1800
-        ]
+        ],
+        "images": ["mkz1.jpg", "mkz2.jpg"]
       },
       {
+        "id": "xotnix",
         "event": "XotniX",
+        "title": "XotniX - unplugged",
+        "description" : "Mundartrock vom Feinsten",
+        "team": "XotniX: Thomas Kauflin, Gesang, Dominik Dozza, Gitarre, Daniel Franzen, Piano, Daniel Bucher, Bass, Marc Haltiner, Perkussion",
         "categories": [
           "music"
         ],
         "times": [
           1900
-        ]
+        ],
+        "images": ["xotnix.jpg"]
       },
       {
+        "id": "singbar",
         "event": "Anita Lehmann & Rosa Hess",
+        "title": "SingBar - eifach singe!",
+        "description" : "SingBar – eifach singe! Eintauchen in Klänge, die von Ost nach West, von Nord nach Süd führen, folkig, jazzig, groovig, zäuerlig, einstimmig, mehrstimmig, Kanons. Veranstaltung zum Mitmachen.",
+        "team": "Anita Lehmann-Gabrieli und Rosa Hess Felder",
         "categories": [
           "music"
         ],
         "times": [
           2000
-        ]
+        ],
+        "images": ["singbar.jpg"]
       },
       {
+        "id": "amaron",
         "event": "AmarÔn & bügelfrei",
+        "title": "AmarÔn meets bügelfrei",
+        "description": "Herzerfrischende Musik von Ost bis Südwest: mal fröhlich, feurig, bewegt – mal innig, sehnsüchtig, melancholisch. Dazu betörende Lieder, dargeboten von drei Stimmen und einem Bass.",
+        "team": "AmarÔn: Elsbeth Schweizer, acc., Rosa Hess, clar., Gerold Lotmar, git., Tony Majdalani, perc.<br>bügelfrei: Christine Sommer, voc., Diana Fischer, voc., Dana Wassner, voc., Martin Gut, Bass.",
         "categories": [
           "music"
         ],
         "times": [
           2100
-        ]
+        ],
+        "images": ["amaron.jpg", "bügelfrei.jpg"]
       },
       {
+        "id": "duo_coeur_rouge",
         "event": "Duo Cœur rouge",
+        "title": "Alles Liebe oder was?",
+        "description" : "Heitere, witzige und melancholische Chansons von 1930 bis 1980. Es geht um Sehnsucht, Pariser Leben, Frust und um Versöhnung mit sich selbst. Musik und Texte von M. Dietrich, H. Knef, R. Stolz, G. Kreisel u.a.",
+        "team": "Duo Cœur rouge: Maria Eidam, Gesang und Martin Günthardt, Piano",
         "categories": [
           "music"
         ],
         "times": [
           2200
-        ]
+        ],
+        "images": ["coeur_rouge.jpg"]
       },
       {
+        "id": "ueli_baer",
         "event": "Ueli Bär, Sax & Tony Majdalani, Perc.",
+        "title" : "Musik zum Ausklang",
+        "description": "Entspannte Musik, um den Abend ausklingen zu lassen.",
+        "team": "Ueli Bär, Saxofon und Tony Majdalani, Rahmentrommel, Cajon, Hand Pan, div. Perkussion und GastmusikerIn",
         "categories": [
           "music"
         ],
         "times": [
           2300
-        ]
+        ],
+        "images": ["ueli_baer.jpg", "tony.jpg"]
       }
     ]
   },
@@ -119,7 +166,10 @@
     "address": "Oberwachtstrasse 15",
     "events": [
       {
+        "id": "freihof",
         "event": "Freihof Küsnacht",
+        "title": "Wort und Geschichten",
+        "description": "Verrückte Geschichten aus dem ganz normalen Alltag werden mitgebracht, gelesen und erzählt von Ursula Hohler, Germanistin und Psychologin, und Mitarbeitenden der Sozialtherapie Freihof Küsnacht.",
         "categories": [
           "language"
         ],
@@ -130,7 +180,8 @@
           2100,
           2200,
           2300
-        ]
+        ],
+        "images": ["freihof.jpg"]
       }
     ]
   },
@@ -184,7 +235,8 @@
           2300
         ]
       }
-    ]
+    ],
+    "participants": {}
   },
   {
     "location": "Fussgängerunterführung Dorfstrasse",

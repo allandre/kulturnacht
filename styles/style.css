@@ -274,7 +274,7 @@ input[type=checkbox]:checked ~ #menu li a div {
 /* PLAN SECTION end */
 
 /* PROGRAM SECTION start */
-#program-section h1 {
+#program-section h1, #program-section h3 {
     max-width: unset;
 }
 
@@ -320,6 +320,19 @@ input[type=checkbox]:checked ~ #menu li a div {
 #program-section .time-cell {
     text-align: center;
 }
+
+/* legend table start*/
+#program-section #legend caption {
+    text-align: left;
+    font-style: italic;
+}
+#program-section #legend {
+    margin-left: 0;
+}
+#program-section #legend td {
+    border: 0;
+}
+/* legend table end*/
 /* PROGRAM SECTION end */
 
 /* CONTACT SECTION start */

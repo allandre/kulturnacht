@@ -1,164 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="initial-scale=1.0 width=device-width"/>
-    <meta name="description" content="Dies ist die Webseite der Kulturnacht Küsnacht."/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0 width=device-width" />
+    <meta name="description" content="Dies ist die Webseite der Kulturnacht Küsnacht." />
     <title>Kulturnacht Küsnacht</title>
-
-    <link href="styles/reset.css" rel="stylesheet"/>
-    <link href="styles/style.css" rel="stylesheet"/>
-
+    <link href="styles/reset.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
     <!-- include jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApj0IpVSQ6vMs4wQhviW-hC4wj78HNXD8"></script> -->
     <!-- debug key -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfB0FSnbs6cQHpZBiBm44j-yxYGD6H3Jc"></script>
-
     <script src="script.js"></script>
 </head>
+
 <body>
-
-<div id="container">
-    <nav>
-        <a id="logo-ref" href="#">
-            <span id="logo-K" class="logo">K</span>
-            <div id="logo-border" class="logo"></div>
-            <span id="logo-text" class="logo">Kulturelle Vereinigung Küsnacht</span>
-        </a>
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-            <span id="hamburger-wrapper">
+    <div id="container">
+        <nav>
+            <a id="logo-ref" href="#">
+                <span id="logo-K" class="logo">K</span>
+                <div id="logo-border" class="logo"></div>
+                <span id="logo-text" class="logo">Kulturelle Vereinigung Küsnacht</span>
+            </a>
+            <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+            <label for="nav-trigger">
+                <span id="hamburger-wrapper">
                 <span class="hamburger"></span>
-            </span>
-        </label>
-        <ul id="menu" onclick="hideMenu()">
-            <li><a href="#info-anchor"><div>Info</div></a></li>
-            <li><a href="#plan-anchor"><div>Übersichtsplan</div></a></li>
-            <li><a href="#program-anchor"><div>Programm</div></a></li>
-            <li><a href="#"><div>Mitwirkende</div></a></li>
-            <li><a href="#"><div>Essen &amp; Trinken</div></a></li>
-            <li><a href="#contact-anchor"><div>Kontakt</div></a></li>
-            <li><a href="#sponsoren-anchor"><div>Sponsoren</div></a></li>
-        </ul>
-    </nav>
-
-    <div id="main">
-
-        <section id="title-section">
-        <div id="countdown">
-        Noch ... Tage
-        </div>
-            <img src="resources/title-image-1600.png">
-        </section>
-
-        <a id="info-anchor" class="anchor"></a>
-        <section>
-            <h1>Willkommen an der Kulturnacht Küsnacht</h1>
-            <p>Reservieren Sie sich den <b>Abend am Freitag, 29. September 2017!</b> Von <b>18 bis 24 Uhr</b> steht das Küsnachter Dorfzentrum im Zeichen der Kultur. Mit mehr als 100 Künstlern finden an rund 20 Orten über 40 Veranstaltungen statt.</p>
-            <p>Die Kulturnacht bietet historische und kunsthistorische Führungen, Konzerte, Kunstausstellungen, Lesungen, Gesangskünste, Literatur, Poetry Slam, Gedichte, Sprache, Theater und Film an. Stellen Sie sich aus diesem reichhaltigen Angebot Ihr eigenes Programm zusammen. Die Veranstaltungen beginnen jeweils zur vollen Stunde und dauern maximal 30 Minuten.</p>
-            <p>Der <b>Eintritt</b> zu allen Veranstaltungen ist <b>frei</b> dank des unentgeltlichen Engagements vieler Beteiligter.</p>
-            <p>Das detaillierte Programmheft erscheint im August 2017.</p>
-            <p><a href="resources/knk_flyer.pdf" target="_blank">Ankündigungsflyer</a></p>
-        </section>
-
-        <a id="plan-anchor" class="anchor"></a>
-        <section id="plan-section">
-            <h1>Die Veranstaltungsorte im Dorfzentrum</h1>
-            <div>
-                <img src="resources/event-plan.png">
-            </div>
-        </section>
-
-        <a id="program-anchor" class="anchor"></a>
-        <section id="program-section">
-            <h1>Programm</h1>
-            <div id="program"></div>
-        </section>
-
-        <a id="contact-anchor" class="anchor"></a>
-        <section class="contact-section">
-            <h1>Kontakt KVK und Info Anfahrt</h1>
-            <h3>Die Kulturnacht Küsnacht ist eine Initiative der Kulturellen Vereinigung Küsnacht (KVK).</h3>
-            <p>Die KVK gewährleistet zusammen mit der Gemeinde den Betrieb des Ortsmuseums Küsnacht, betreut die Galerie im Hochhuus und veranstaltet Vorträge und Exkursionen mit kulturgeschichtlichem Hintergrund. <br />
-                <span class="ad">Werden Sie Mitglied der KVK und unterstützen Sie unsere Aktivitäten</span> (<a href="mailto:vorstand@kulturelle-vereinigung-kuesnacht.ch">vorstand@kulturelle-vereinigung-kuesnacht.ch</a>)</p>
-
-            <h3>Die Kulturnacht Küsnacht 2017 wird von einem Nonprofit-Team organisiert:</h3>
-            <ul id="organisator-list">
-                <li>Martine Peyer, Kulturelle Vereinigung Küsnacht</li>
-                <li>Ilka Allenspach, Kulturelle Vereinigung Küsnacht</li>
-                <li>Elisabeth Abgottspon, Ortsmuseum Küsnacht</li>
-                <li>Hans-Peter Fehr, Theaterverein Die Kulisse Küsnacht</li>
-            </ul>            
-
-            <h3>Anfahrt mit Bahn, Bus oder Auto</h3>
-
-            <div id="location">
-                <ul>
-                    <li><b>Bahn:</b> S6 oder S16 in Richtung &laquo;Uetikon&raquo; bzw. &laquo;Meilen&raquo; bis &laquo;Küsnacht ZH&raquo;. <a href="http://www.sbb.ch" target="_blank">Fahrplan</a></li>
-                    <li><b>Bus:</b> Ab &laquo;Zürich, Bellevue&raquo; Linie 916 bis Haltestelle &laquo;Oberwacht&raquo; oder &laquo;obere Heslibachstrasse&raquo; oder Linie 912 bis Haltestelle &laquo;Schiedhaldenstrasse&raquo;. <a href="http://www.sbb.ch" target="_blank">Fahrplan</a></li>
-                    <li><b>Auto:</b> Seestrasse, Abzweigen bei der Ampel in Küsnacht auf Oberwachtstrasse, durch die Unterführung bis zum Parkplatz beim Bahnhof. <a href="https://www.google.ch/maps/dir//K%C3%BCsnacht/@47.3189174,8.5494512,13z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x479aa68104cc861f:0xd07bdddc85fcb02e!2m2!1d8.5844705!2d47.3189227!3e0?hl=de" target="_blank">Routenplaner</a></li>
-                </ul>
-
-                <div id="map"></div>
-            </div>
-
-
-        </section>
-
-        <a id="sponsoren-anchor" class="anchor"></a>
-        <section id="sponsoren-section">
-            <h1>Herzlichen Dank unseren Sponsoren und Gönnern für die finanzielle Unterstützung!</h1>
-            <h2>Goldsponsoren</h2>
-            <div class="sponsoren-block">
-                <img id="schererHeizungen" src="resources/sponsoren/scherer_heizungen.png">
-                <img src="resources/sponsoren/ms_druck.png">
-                <img src="resources/sponsoren/spleiss.png">
-            </div>
-
-            <h2>Silbersponsoren</h2>
-            <div class="sponsoren-block">
-                <img src="resources/sponsoren/apotheke_hotz.png">
-                <img src="resources/sponsoren/elektro4.png">
-                <img src="resources/sponsoren/ernst.png">
-                <img src="resources/sponsoren/evergreen.png">
-                <img src="resources/sponsoren/home_instead.png">
-                <img src="resources/sponsoren/micro.png">
-                <img id="STFS" src="resources/sponsoren/stfs.png">
-                <img src="resources/sponsoren/diederik.png">
-                <img src="resources/sponsoren/werke_am_zuerichsee.png">
-            </div>
-
-            <h2>Bronzesponsoren</h2>
-            
-            <ul>
-                <li>LEC Leutenberger Energie Control, Küsnacht</li>
-                <li>MODEKELLER, Küsnacht</li>
-                <li>Norbert Cajochen, Treuhand und Steuerrechtspraxis, Küsnacht</li>
-                <li>Silvia Spescha, DDS Data-Design Spescha, Untersiggental</li>
-                <li>Zuber Maler, Küsnacht</li>
-                <li>Zürcher Kantonalbank, Küsnacht</li>
+                </span>
+            </label>
+            <ul id="menu" onclick="hideMenu()">
+                <li>
+                    <a href="#info-anchor">
+                        <div>Info</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#plan-anchor">
+                        <div>Übersichtsplan</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#program-anchor">
+                        <div>Programm</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div>Mitwirkende</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div>Essen &amp; Trinken</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact-anchor">
+                        <div>Kontakt</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#sponsoren-anchor">
+                        <div>Sponsoren</div>
+                    </a>
+                </li>
             </ul>
-
-            <h2>Öffentliche Hand, Stiftungen</h2>
-            <div class="sponsoren-block">
-                <img src="resources/sponsoren/kuesnacht.png">
-                <img src="resources/sponsoren/sk_stiftung.png">
-            </div>
-
-            <h2>Medienpartner</h2>
-            <div class="sponsoren-block">
-                <img src="resources/sponsoren/kuesnachter.png">
-            </div>
-            
-        </section>
-        <footer>
-            <p>&copy; 2017 KVK</p>
-            <p>Design: Thomas Ernst</p>
-            <p>Webseite: <a href="http://www.milanbombsch.ch" targe="_blank">M. Bombsch</a>, A. Allenspach</p>            
-        </footer>
-        
+        </nav>
+        <div id="main">
+            <section id="title-section">
+                <div id="countdown">
+                    Noch ... Tage
+                </div>
+                <img src="resources/title-image-1600.png">
+            </section>
+            <a id="info-anchor" class="anchor"></a>
+            <section>
+                <h1>Willkommen an der Kulturnacht Küsnacht</h1>
+                <p>Reservieren Sie sich den <b>Abend am Freitag, 29. September 2017!</b> Von <b>18 bis 24 Uhr</b> steht das Küsnachter Dorfzentrum im Zeichen der Kultur. Mit mehr als 100 Künstlern finden an rund 20 Orten über 40 Veranstaltungen statt.</p>
+                <p>Die Kulturnacht bietet historische und kunsthistorische Führungen, Konzerte, Kunstausstellungen, Lesungen, Gesangskünste, Literatur, Poetry Slam, Gedichte, Sprache, Theater und Film an. Stellen Sie sich aus diesem reichhaltigen Angebot Ihr eigenes Programm zusammen. Die Veranstaltungen beginnen jeweils zur vollen Stunde und dauern maximal 30 Minuten.</p>
+                <p>Der <b>Eintritt</b> zu allen Veranstaltungen ist <b>frei</b> dank des unentgeltlichen Engagements vieler Beteiligter.</p>
+                <p>Das detaillierte Programmheft erscheint im August 2017.</p>
+                <p><a href="resources/knk_flyer.pdf" target="_blank">Ankündigungsflyer</a></p>
+            </section>
+            <a id="plan-anchor" class="anchor"></a>
+            <section id="plan-section">
+                <h1>Die Veranstaltungsorte im Dorfzentrum</h1>
+                <div>
+                    <img src="resources/event-plan.png">
+                </div>
+            </section>
+            <a id="program-anchor" class="anchor"></a>
+            <section id="program-section">
+                <h1>Programm</h1>
+                <div id="program"></div>
+                <table id="legend">
+                    <caption>Legende</caption>
+                    <tr>
+                        <td>👮</td>
+                        <td>Führung</td>
+                    </tr>
+                    <tr>
+                        <td>🎜</td>
+                        <td>Konzert, Gesang</td>
+                    </tr>
+                    <tr>
+                        <td>💬</td>
+                        <td>Lesung, Literatur, Poetry Slam, Gedichte, Sprache</td>
+                    </tr>
+                    <tr>
+                        <td>🖽</td>
+                        <td>Ausstellung</td>
+                    </tr>
+                    <tr>
+                        <td>🎥</td>
+                        <td>Film</td>
+                    </tr>
+                    <tr>
+                        <td>🎭</td>
+                        <td>Theater</td>
+                    </tr>
+                    <tr>
+                        <td>🍴</td>
+                        <td>Verpflegung</td>
+                    </tr>
+                </table>
+            </section>
+            <a id="contact-anchor" class="anchor"></a>
+            <section class="contact-section">
+                <h1>Kontakt KVK und Info Anfahrt</h1>
+                <h3>Die Kulturnacht Küsnacht ist eine Initiative der Kulturellen Vereinigung Küsnacht (KVK).</h3>
+                <p>Die KVK gewährleistet zusammen mit der Gemeinde den Betrieb des Ortsmuseums Küsnacht, betreut die Galerie im Hochhuus und veranstaltet Vorträge und Exkursionen mit kulturgeschichtlichem Hintergrund.
+                    <br />
+                    <span class="ad">Werden Sie Mitglied der KVK und unterstützen Sie unsere Aktivitäten</span> (<a href="mailto:vorstand@kulturelle-vereinigung-kuesnacht.ch">vorstand@kulturelle-vereinigung-kuesnacht.ch</a>)</p>
+                <h3>Die Kulturnacht Küsnacht 2017 wird von einem Nonprofit-Team organisiert:</h3>
+                <ul id="organisator-list">
+                    <li>Martine Peyer, Kulturelle Vereinigung Küsnacht</li>
+                    <li>Ilka Allenspach, Kulturelle Vereinigung Küsnacht</li>
+                    <li>Elisabeth Abgottspon, Ortsmuseum Küsnacht</li>
+                    <li>Hans-Peter Fehr, Theaterverein Die Kulisse Küsnacht</li>
+                </ul>
+                <h3>Anfahrt mit Bahn, Bus oder Auto</h3>
+                <div id="location">
+                    <ul>
+                        <li><b>Bahn:</b> S6 oder S16 in Richtung &laquo;Uetikon&raquo; bzw. &laquo;Meilen&raquo; bis &laquo;Küsnacht ZH&raquo;. <a href="http://www.sbb.ch" target="_blank">Fahrplan</a></li>
+                        <li><b>Bus:</b> Ab &laquo;Zürich, Bellevue&raquo; Linie 916 bis Haltestelle &laquo;Oberwacht&raquo; oder &laquo;obere Heslibachstrasse&raquo; oder Linie 912 bis Haltestelle &laquo;Schiedhaldenstrasse&raquo;. <a href="http://www.sbb.ch" target="_blank">Fahrplan</a></li>
+                        <li><b>Auto:</b> Seestrasse, Abzweigen bei der Ampel in Küsnacht auf Oberwachtstrasse, durch die Unterführung bis zum Parkplatz beim Bahnhof. <a href="https://www.google.ch/maps/dir//K%C3%BCsnacht/@47.3189174,8.5494512,13z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x479aa68104cc861f:0xd07bdddc85fcb02e!2m2!1d8.5844705!2d47.3189227!3e0?hl=de" target="_blank">Routenplaner</a></li>
+                    </ul>
+                    <div id="map"></div>
+                </div>
+            </section>
+            <a id="sponsoren-anchor" class="anchor"></a>
+            <section id="sponsoren-section">
+                <h1>Herzlichen Dank unseren Sponsoren und Gönnern für die finanzielle Unterstützung!</h1>
+                <h2>Goldsponsoren</h2>
+                <div class="sponsoren-block">
+                    <img id="schererHeizungen" src="resources/sponsoren/scherer_heizungen.png">
+                    <img src="resources/sponsoren/ms_druck.png">
+                    <img src="resources/sponsoren/spleiss.png">
+                </div>
+                <h2>Silbersponsoren</h2>
+                <div class="sponsoren-block">
+                    <img src="resources/sponsoren/apotheke_hotz.png">
+                    <img src="resources/sponsoren/elektro4.png">
+                    <img src="resources/sponsoren/ernst.png">
+                    <img src="resources/sponsoren/evergreen.png">
+                    <img src="resources/sponsoren/home_instead.png">
+                    <img src="resources/sponsoren/micro.png">
+                    <img id="STFS" src="resources/sponsoren/stfs.png">
+                    <img src="resources/sponsoren/diederik.png">
+                    <img src="resources/sponsoren/werke_am_zuerichsee.png">
+                </div>
+                <h2>Bronzesponsoren</h2>
+                <ul>
+                    <li>LEC Leutenberger Energie Control, Küsnacht</li>
+                    <li>MODEKELLER, Küsnacht</li>
+                    <li>Norbert Cajochen, Treuhand und Steuerrechtspraxis, Küsnacht</li>
+                    <li>Silvia Spescha, DDS Data-Design Spescha, Untersiggental</li>
+                    <li>Zuber Maler, Küsnacht</li>
+                    <li>Zürcher Kantonalbank, Küsnacht</li>
+                </ul>
+                <h2>Öffentliche Hand, Stiftungen</h2>
+                <div class="sponsoren-block">
+                    <img src="resources/sponsoren/kuesnacht.png">
+                    <img src="resources/sponsoren/sk_stiftung.png">
+                </div>
+                <h2>Medienpartner</h2>
+                <div class="sponsoren-block">
+                    <img src="resources/sponsoren/kuesnachter.png">
+                </div>
+            </section>
+            <footer>
+                <p>&copy; 2017 KVK</p>
+                <p>Design: Thomas Ernst</p>
+                <p>Webseite: <a href="http://www.milanbombsch.ch" targe="_blank">M. Bombsch</a>, A. Allenspach</p>
+            </footer>
+        </div>
     </div>
-</div>
 </body>
+
 </html>

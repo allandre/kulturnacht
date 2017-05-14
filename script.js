@@ -25,19 +25,21 @@ window.onresize = function(event) {
     updateProgramSection(false);
 };
 $('body').on('mousedown', function(evt) {
-	var clickInsideMap = $(evt.target).parents('#map').length > 0;
+    var clickInsideMap = $(evt.target).parents('#map').length > 0;
 
-	if(!clickInsideMap) {
-		setScrollingWithMouseWheel(false);
-	}
+    if (!clickInsideMap) {
+        setScrollingWithMouseWheel(false);
+    }
 });
 
 $(window).scroll(function() {
-	setScrollingWithMouseWheel(false);
+    setScrollingWithMouseWheel(false);
 });
 
 function setScrollingWithMouseWheel(isEnable) {
-    map.setOptions({ scrollwheel: isEnable });
+    if (map) {
+        map.setOptions({ scrollwheel: isEnable });
+    }
 }
 
 
