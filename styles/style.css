@@ -451,6 +451,11 @@ input[type=checkbox]:checked ~ #menu li a div {
     max-height: 12vw;
 }
 
+#sponsoren-section a {
+    text-decoration: none;
+    color: black;
+}
+
 /* SPONSOREN SECTION end */
 
 /* FOOTER start */

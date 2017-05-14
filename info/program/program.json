@@ -20,10 +20,10 @@
       },
       {
         "id": "die_kulisse",
-        "event": "Theaterverein \"Die Kulisse\"<br>Miriam Buchmann, Spiel, Larissa Münch, Spiel, Krishan Krone, Regie, Lea Gottheil, Text",
+        "event": "Theaterverein \"Die Kulisse\"",
         "title": "Blind Date - Theaterszenen von Lea Gottheil",
         "description": "Die App &laquo;Blind Date&raquo; von Aline und Kathie begeistert! Nur mittels Stimme werden damit Partner vermittelt. Das Fernsehmagazin &laquo;Glamour und Glück&raquo; lädt die beiden Freundinnen auf ihr Sofa ein. Bestehen sie wohl den Girlfriendtest?",
-        "team": "Theaterverein &laquo;Die Kulisse&raquo;",
+        "team": "Theaterverein &laquo;Die Kulisse&raquo;<br><br>Miriam Buchmann, Spiel, Larissa Münch, Spiel, Krishan Krone, Regie, Lea Gottheil, Text",
         "categories": [
           "theater"
         ],
