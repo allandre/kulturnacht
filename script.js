@@ -113,6 +113,7 @@ function loadProgram(file) {
 
 function hideMenu() {
     $("#nav-trigger").prop("checked", false);
+    $('nav li').removeClass('current');
 }
 
 
@@ -136,7 +137,7 @@ function initPositionIndication() {
         updateShowPositionVisible(true);
         createPositionIndicationData();
     } else {
-        updateShowPositionVisible(false);        
+        updateShowPositionVisible(false);
         setPositionIndicationDisplay(false);
     }
 }
@@ -170,7 +171,6 @@ function updatePositionIndication() {
 
     var offset = $(document).scrollTop();
     var distance = positionIndicationData.distanceFactor * offset;
-    console.log(distance);
 
     $positionIndication.css('left', distance);
 }
@@ -181,4 +181,27 @@ function setPositionIndicationDisplay(isShow) {
     } else {
         $positionIndication.css('display', 'none');
     }
+}
+
+function setActiveMenuEntry() {
+    var minOffset = 10000;
+    var minIndex = -1;
+    if ($('#nav-trigger').is(':checked')) {
+        var windowOffset = $(document).scrollTop();
+        $('a.anchor').each(function(index) {
+            var relPosition = Math.abs($(this).offset().top - windowOffset);
+            if (relPosition < minOffset) {
+                minOffset = relPosition;
+                minIndex = index; 
+            }
+        });
+
+        if (minIndex !== -1) {
+            $('nav li').eq(minIndex).addClass('current');
+        }
+
+    } else {
+        $('nav li').removeClass('current');
+    }
+
 }

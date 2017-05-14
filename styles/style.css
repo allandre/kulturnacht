@@ -102,6 +102,9 @@ nav li {
     height: 100%;
 }
 
+nav li.current {
+    background-color: rgba(134, 29, 61, 0.5) !important;
+}
 
 nav li:hover {
     background-color: #d70e3e;
