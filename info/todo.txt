@@ -13,5 +13,4 @@
 
 -- essen & trinken: schönere liste
 
----- markieren aktuelle section
 ---- hamburger menu animation expand

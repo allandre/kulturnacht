@@ -303,7 +303,7 @@ input[type=checkbox]:checked ~ #menu li a div {
 
 #program-section table {
     margin: 0 auto;
-    margin-top: 2em;
+    margin-top: 0.5em;
 }
 
 #program-section th {
@@ -345,16 +345,25 @@ input[type=checkbox]:checked ~ #menu li a div {
 }
 
 /* legend table start*/
-#program-section #legend caption {
+#program-section h6 {
     text-align: left;
     font-style: italic;
+    font-size: 75%;
 }
 #program-section #legend {
     margin-left: 0;
+    max-width: 800px;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: : row;
+    justify-content: space-between;
 }
-#program-section #legend td {
-    border: 0;
+#program-section #legend div {
+    display: inline;
+    font-size: 75%;
 }
+
 /* legend table end*/
 /* PROGRAM SECTION end */
 
