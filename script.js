@@ -3,7 +3,8 @@ var map;
 
 var hamburgerMenuWidth = 1045;
 
-var $positionIndication;
+var currentPosition = null;
+
 
 var positionIndicationData;
 var showPositionVisible = {
@@ -26,7 +27,6 @@ $(document).ready(function() {
     $positionIndication = $('#position-indication');
 
     updateProgramSection(true);
-    initPositionIndication();
 });
 
 $(window).on('resize', function(event) {
@@ -36,15 +36,12 @@ $(window).on('resize', function(event) {
     }
 
     updateProgramSection(false);
-
-    initPositionIndication();
-    updatePositionIndication();
 });
 
 $(window).on('scroll', function() {
     setScrollingWithMouseWheel(false);
 
-    updatePositionIndication();
+    updateNavigation();
 });
 
 $('body').on('mousedown', function(evt) {
@@ -101,9 +98,6 @@ function loadProgram(file) {
         if (this.readyState === 4 && this.status === 200) {
             var $programDiv = $("#program");
             $programDiv.html(this.responseText);
-
-            // readjust positionIndication for new html length!!
-            createPositionIndicationData();
         }
     };
 
@@ -127,81 +121,36 @@ function showCountdown() {
     $countdown.css("display", "unset");
 }
 
-function initPositionIndication() {
-    function updateShowPositionVisible(newValue) {
-        showPositionVisible.hasSwitched = (showPositionVisible.visible !== newValue);
-        showPositionVisible.visible = newValue;
-    }
 
-    if ($('#container').width() > hamburgerMenuWidth) {
-        updateShowPositionVisible(true);
-        createPositionIndicationData();
-    } else {
-        updateShowPositionVisible(false);
-        setPositionIndicationDisplay(false);
-    }
-}
+function updateUrl() {}
 
-function createPositionIndicationData() {
+function updateNavigation() {
+    // reset state
+    $('nav li').removeClass('current');
+
+    var windowOffset = $(document).scrollTop();
     var windowHeight = $(window).height();
-    var totalHeight = $(document).height();
-    var navWidth = $('nav').width();
-    var width = windowHeight / totalHeight * navWidth;
 
-    $positionIndication.css('width', width);
-
-    positionIndicationData = {
-        distanceFactor: navWidth / totalHeight
-    }
-}
-
-function updatePositionIndication() {
-    if (!showPositionVisible.visible) {
-        return;
-    }
-
-    if (showPositionVisible.hasSwitched) {
-        setPositionIndicationDisplay(true);
-        showPositionVisible.hasSwitched = false;
-    }
-
-    if (!positionIndicationData) {
-        initPositionIndication();
-    }
-
-    var offset = $(document).scrollTop();
-    var distance = positionIndicationData.distanceFactor * offset;
-
-    $positionIndication.css('left', distance);
-}
-
-function setPositionIndicationDisplay(isShow) {
-    if (isShow) {
-        $positionIndication.css('display', 'unset');
+    if (windowOffset < 0.8 * windowHeight) {
+        currentPosition = null;
     } else {
-        $positionIndication.css('display', 'none');
-    }
-}
-
-function setActiveMenuEntry() {
-    var minOffset = 10000;
-    var minIndex = -1;
-    if ($('#nav-trigger').is(':checked')) {
-        var windowOffset = $(document).scrollTop();
+        var prio = false;
         $('a.anchor').each(function(index) {
-            var relPosition = Math.abs($(this).offset().top - windowOffset);
-            if (relPosition < minOffset) {
-                minOffset = relPosition;
-                minIndex = index; 
+            var $section = $(this).next();
+            var relPositionTop = $section.offset().top - windowOffset;
+            var relPositionBottom = relPositionTop + $section.height();
+            if ((relPositionTop >= 0 && relPositionTop <= 0.5 * windowHeight)
+             || (!prio && relPositionBottom >= 0 && relPositionBottom < 0.5 * windowHeight)) {
+                prio = true;
+                currentPosition = { $anchor: $(this), index: index };
             }
         });
-
-        if (minIndex !== -1) {
-            $('nav li').eq(minIndex).addClass('current');
-        }
-
-    } else {
-        $('nav li').removeClass('current');
     }
 
+    if (currentPosition !== null) {
+        $('nav li').eq(currentPosition.index).addClass('current');
+        history.replaceState(undefined, undefined, '#' + currentPosition.$anchor.prop('id'));
+    } else {
+        history.replaceState(undefined, undefined, '#');
+    }
 }
