@@ -121,9 +121,6 @@ function showCountdown() {
     $countdown.css("display", "unset");
 }
 
-
-function updateUrl() {}
-
 function updateNavigation() {
     // reset state
     $('nav li').removeClass('current');
