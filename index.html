@@ -19,13 +19,12 @@
 <body>
     <div id="container">
         <nav>
-            <div id="position-indication" title="Aktueller Ausschnitt der Webseite"></div>
             <a id="logo-ref" href="">
                 <span id="logo-K" class="logo">K</span>
                 <div id="logo-border" class="logo"></div>
                 <span id="logo-text" class="logo">Kulturelle Vereinigung Küsnacht</span>
             </a>
-            <input type="checkbox" id="nav-trigger" class="nav-trigger" onclick="setActiveMenuEntry()" />
+            <input type="checkbox" id="nav-trigger" class="nav-trigger" />
             <label for="nav-trigger">
                 <span id="hamburger-wrapper">
                 <span class="hamburger"></span>
@@ -48,7 +47,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#participants-anchor">
                         <div>Mitwirkende</div>
                     </a>
                 </li>
@@ -95,50 +94,35 @@
             <a id="program-anchor" class="anchor"></a>
             <section id="program-section">
                 <h1>Programm</h1>
+                <h6>Legende</h6>
+                <div id="legend">
+                        <div>&#x1F46E; Führung</div>
+                        <div>&#x1F3B5; Konzert, Gesang</div>                        
+                        <div>&#x1F3A5; Film</div>
+                        <div>&#x1F5BC; Ausstellung</div>
+                        <div>&#x1F374; Verpflegung</div>
+                        <div>&#x1F3AD; Theater</div>
+                        <div>&#x1F4AC; Lesung, Literatur, Poetry Slam, Gedichte, Sprache</div>
+                </div>
                 <div id="program"></div>
-                <table id="legend">
-                    <caption>Legende</caption>
-                    <tr>
-                        <td>&#x1F46E;</td>
-                        <td>Führung</td>
-                    </tr>
-                    <tr>
-                        <td>&#x1F3B5;</td>
-                        <td>Konzert, Gesang</td>
-                    </tr>
-                    <tr>
-                        <td>&#x1F4AC;</td>
-                        <td>Lesung, Literatur, Poetry Slam, Gedichte, Sprache</td>
-                    </tr>
-                    <tr>
-                        <td>&#x1F5BC;</td>
-                        <td>Ausstellung</td>
-                    </tr>
-                    <tr>
-                        <td>&#x1F3A5;</td>
-                        <td>Film</td>
-                    </tr>
-                    <tr>
-                        <td>&#x1F3AD;</td>
-                        <td>Theater</td>
-                    </tr>
-                    <tr>
-                        <td>&#x1F374;</td>
-                        <td>Verpflegung</td>
-                    </tr>
-                </table>
             </section>
+            
+            <a id="participants-anchor" class="anchor"></a>
+            <section id="participants-sections">
+                Mitwirkende
+            </section>
+
             <a id="food-anchor" class="anchor"></a>
             <section class="food-section">
-            <h1>Essen &amp; Trinken</h1>
-            <p>An den meisten Veranstaltungsorten werden Getränke und Snacks angeboten.</p>
-            <p>Für grössere Verpflegungspausen empfehlen wird:</p>
-            <ul class="in-section-list">
-                <li><a href="http://www.kuesnacht-ochsen.ch" target="_blank">Gasthof Ochsen, Dorfstrasse 25</a></li>
-                <li><a href="http://www.baeckereikaegi.ch/home/standort-kuesnacht" target="_blank">Kägi Confiserie, Bahnhofstrasse 8</a></li>
-                <li><a href="http://www.falken-kuesnacht.ch" target="_blank">Restaurant Falken, Dorfstrasse 22</a></li>
-                <li><a href="http://www.sonne.ch" target="_blank">Romantik Seehotel Sonne, Seestrasse 120</a></li>
-            </ul>
+                <h1>Essen &amp; Trinken</h1>
+                <p>An den meisten Veranstaltungsorten werden Getränke und Snacks angeboten.</p>
+                <p>Für grössere Verpflegungspausen empfehlen wird:</p>
+                <ul class="in-section-list">
+                    <li><a href="http://www.kuesnacht-ochsen.ch" target="_blank">Gasthof Ochsen, Dorfstrasse 25</a></li>
+                    <li><a href="http://www.baeckereikaegi.ch/home/standort-kuesnacht" target="_blank">Kägi Confiserie, Bahnhofstrasse 8</a></li>
+                    <li><a href="http://www.falken-kuesnacht.ch" target="_blank">Restaurant Falken, Dorfstrasse 22</a></li>
+                    <li><a href="http://www.sonne.ch" target="_blank">Romantik Seehotel Sonne, Seestrasse 120</a></li>
+                </ul>
             </section>
             <a id="contact-anchor" class="anchor"></a>
             <section class="contact-section">
