@@ -441,15 +441,6 @@ input[type=checkbox]:checked ~ #menu li a div {
     margin-top: 2em;
 }
 
-/*
-#sponsoren-section div {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-*/
-
 #sponsoren-section ul {
     max-width: 800px;
     margin: auto;
@@ -470,7 +461,7 @@ input[type=checkbox]:checked ~ #menu li a div {
 .sponsoren-block img {
     width: unset;
     max-width: unset;
-    height: 71px;
+    height: 60px;/*71px;*/
     max-height: unset;
     padding: 1em .5em;
 }

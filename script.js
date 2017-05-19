@@ -60,6 +60,12 @@ function setScrollingWithMouseWheel(isEnable) {
 }
 
 function loadMap() {
+
+    if (typeof google == 'undefined') {
+        // to continue executing the rest of this file
+        return
+    }
+
     var kuesnacht = { lat: 47.316667, lng: 8.583333 };
     var center = { lat: 47.35, lng: 8.54 };
     map = new google.maps.Map(document.getElementById('map'), {

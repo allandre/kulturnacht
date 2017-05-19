@@ -6,6 +6,7 @@
 - Titelbild: zuschneiden
 - Übersichtsplan :: komplette Liste + link
 - Übersichtsplan :: bild -> map
+- webseite von Thomas Ernst im Footer verlinken
 
 -- sponsoren: kleinere bilder
 -- tabelle design
