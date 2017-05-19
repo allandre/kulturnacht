@@ -30,15 +30,18 @@ page.open('skeleton.html', function(status) {
     }
 
     var programTable = page.evaluate(function(_program) {
+        console.log('Started creating program table...')
         return createProgramTable(_program);
     }, program);
     writeToFile(pathPrefix + 'program-table.html', programTable);
+    console.log('Finished creating program table')
 
     var programList = page.evaluate(function(_program) {
+        console.log('Started creating program list...')
         return createProgramList(_program);
     }, program);
     writeToFile(pathPrefix + 'program-list.html', programList);
-    
+    console.log('Finished creating program list')
 
     phantom.exit();
 });

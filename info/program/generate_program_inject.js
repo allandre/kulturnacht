@@ -340,19 +340,19 @@ function createTextForEvent(event) {
 function getIconForCategory(category) {
     switch (category) {
         case "guide":
-            return "👮";
+            return "&#x1F46E;";
         case "music":
-            return "🎜";
+            return "&#x1F3B5;";
         case "language":
-            return "💬";
+            return "&#x1F4AC;";
         case "exposition":
-            return "🖽";
+            return "&#x1F5BC;";
         case "movie":
-            return "🎥";
+            return "&#x1F3A5;";
         case "theater":
-            return "🎭";
+            return "&#x1F3AD;";
         case "food":
-            return "🍴";
+            return "&#x1F374;";
         default:
             return "";
     }
