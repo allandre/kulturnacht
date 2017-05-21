@@ -1,4 +1,4 @@
-var program;
+var programData;
 
 var timeColumns = [{
     times: [1800, 1830]
@@ -9,21 +9,21 @@ var timeColumns = [{
 }, {
     times: [2100, 2130]
 }, {
-    times: [2200]
+    times: [2200, 2230]
 }, {
-    times: [2300]
+    times: [2300, 2330]
 }]
 
 
-function createProgramTable(_program) {
-    program = JSON.parse(_program);
+function createProgramTable(_programData) {
+    parseProgramData(_programData);
     drawProgramTable();
 
     return $("#program-table")[0].innerHTML;
 }
 
-function createProgramList(_program) {
-    program = JSON.parse(_program);
+function createProgramList(_programData) {
+    parseProgramData(_programData);
     drawProgramList();
 
     return $("#program-list")[0].innerHTML;
@@ -31,36 +31,31 @@ function createProgramList(_program) {
 
 
 function drawProgramTable() {
-    var $programDiv = $("#program-table");
-    $programDiv.html("");
+    var $table = prepareDiv($("#program-table"));
 
-    var $table = $("<table></table>", { class: "table" });
-    $programDiv.append($table);
-
-    var $row = $("<tr></tr>");
+    var $row = $("<tr>");
     $table.append($row);
 
     // create header row
     var $locationElement = $("<th>Ort</th>");
     $row.append($locationElement);
     $locationElement.prop("colspan", "3");
-    // not using array.prototype.map, b/c browser support and stuff :/
-    for (var i in timeColumns) {
-        var timeColumn = timeColumns[i];
-        var $headerElement = $("<th></th>");
-        $row.append($headerElement);
-        $headerElement.html(timeToString(timeColumn.times[0]));
-        $headerElement.prop("colspan", "2");
-    }
 
-    // create actual rows
-    for (var i in program) {
-        var location = program[i];
-        var rowNumber = calculateRowNumber_Table(location);
+    timeColumns.map(function(t) {
+        var $headerElement = $("<th>");
+        $row.append($headerElement);
+        $headerElement.html(timeToString(t.times[0]));
+        $headerElement.prop("colspan", "2");
+    });
+
+    //     create actual rows
+    for (var i in programData.eventData) {
+        var eventDatum = programData.eventData[i];
+        var rowNumber = calculateRowNumber_Table(eventDatum);
 
         var rows = [];
         for (var i = 0; i < rowNumber; i++) {
-            $row = $("<tr></tr>");
+            $row = $("<tr>");
             $table.append($row);
             rows.push($row);
 
@@ -69,12 +64,12 @@ function drawProgramTable() {
             }
         }
 
-        createLocationColumn(location, rows, true);
-        createContentRows_Table(location.events, rows);
+        createLocationColumn(eventDatum, rows, true);
+        createContentRows_Table(eventDatum, rows);
     }
 }
 
-function calculateRowNumber_Table(location) {
+function calculateRowNumber_Table(eventDatum) {
 
     function _calculateIndex(time) {
         // .00 -> y = 0
@@ -91,7 +86,6 @@ function calculateRowNumber_Table(location) {
         return { x: x, y: y };
     }
 
-
     // calculate number of rows needed
     // -> logical map behind table: 2 slots per row per time (1 slot can accomodate 1 event)(1 slot for .00, 1 slot for .30)
     var slots = [
@@ -103,16 +97,22 @@ function calculateRowNumber_Table(location) {
         [0, 0]
     ];
 
-    for (var i in location.events) {
-        var event = location.events[i];
-        for (var j in event.times) {
-            var time = event.times[j];
-            // ignore special case of 1745...
-            if (time === 1745) {
-                continue;
+    var privateRowCount = 0;
+
+    for (var i in eventDatum.events) {
+        var event = eventDatum.events[i];
+        if (event.private_row) {
+            privateRowCount++;
+        } else {
+            for (var j in event.times) {
+                var time = event.times[j];
+                // ignore special case of 1745...
+                if (time === 1745) {
+                    continue;
+                }
+                var index = _calculateIndex(time);
+                slots[index.x][index.y] += 1;
             }
-            var index = _calculateIndex(time);
-            slots[index.x][index.y] += 1;
         }
     }
 
@@ -123,75 +123,99 @@ function calculateRowNumber_Table(location) {
         }
     }
 
-    return max;
+    return max + privateRowCount;
 }
 
-function createContentRows_Table(events, rows) {
+function createContentRows_Table(eventDatum, rows) {
     // every row needs a 2column cell for every timeColumn
-    for (var i in rows) {
-        var row = rows[i];
+    var currentRow = 0;
+    var otherEvents = [];
+
+    // iterate over 'private-row' events first
+    for (var i in eventDatum.events) {
+        var event = eventDatum.events[i];
+        if (event.private_row) {
+            var row = rows[currentRow++];
+            for (var j = 0; j < timeColumns.length; j++) {
+                var timeColumn = timeColumns[j];
+                var event00 = findEventForTime([event], timeColumn.times[0]);
+                var event30 = findEventForTime([event], timeColumn.times[1]);
+
+                createEventCell_Table(row, event00, event30, timeColumn.times);
+            }
+        } else {
+            otherEvents.push(event);
+        }
+    }
+
+    // handle rest of events
+    for (; currentRow < rows.length; currentRow++) {
+        var row = rows[currentRow];
         for (var j = 0; j < timeColumns.length; j++) {
             var timeColumn = timeColumns[j];
 
-            var event00 = findEventForTime(events, timeColumn.times[0]);
-            var event30 = findEventForTime(events, timeColumn.times[1]);
+            var event00 = findEventForTime(otherEvents, timeColumn.times[0]);
+            var event30 = findEventForTime(otherEvents, timeColumn.times[1]);
 
-            var text00 = event00 ? createTextForEvent(event00) : "";
-            var text30 = event30 ? createTextForEvent(event30) : "";
+            createEventCell_Table(row, event00, event30, timeColumn.times);
+        }
+    }
+}
 
-            var $cell = $('<td></td>');
-            row.append($cell);
-            var $cell2;
+function createEventCell_Table(row, event00, event30, times) {
+    var text00 = event00 ? createTextForEvent(event00) : "";
+    var text30 = event30 ? createTextForEvent(event30) : "";
 
-            if (text00.length === 0) {
-                if (text30.length === 0) {
-                    // empty 2 cell                 
-                    $cell.prop('colspan', '2');
-                } else {
-                    // empty 00 cell followed by 30 cell
-                    $cell.html('&nbsp;');
-                    $cell2 = $('<td></td>');
-                    row.append($cell2);
-                    $cell2.html(timeToString(timeColumn.times[1]) + ": " + text30);
-                }
-            } else {
-                $cell.html(text00);
-                if (text30.length === 0) {
-                    // 'regular case': full event
-                    $cell.prop('colspan', '2');
-                } else {
-                    $cell2 = $('<td></td>');
-                    row.append($cell2);
-                    $cell2.html(timeToString(timeColumn.times[1]) + ": " + text30);
-                }
-            }
+    var $cell = $('<td>');
+    row.append($cell);
+    var $cell2;
+
+    if (text00.length === 0) {
+        if (text30.length === 0) {
+            // empty 2 cell                 
+            $cell.prop('colspan', '2');
+        } else {
+            // empty 00 cell followed by 30 cell
+            $cell.html('&nbsp;');
+            $cell2 = $('<td>');
+            row.append($cell2);
+            $cell2.html(timeToString(times[1]) + ": " + text30);
+        }
+    } else {
+        $cell.html(text00);
+        if (text30.length === 0) {
+            // 'regular case': full event
+            $cell.prop('colspan', '2');
+        } else {
+            $cell2 = $('<td>');
+            row.append($cell2);
+            $cell2.html(timeToString(times[1]) + ": " + text30);
         }
     }
 }
 
 function drawProgramList()  {
-    var $programDiv = $("#program-list");
-    $programDiv.html("");
+    var $table = prepareDiv($("#program-list"));
 
-    var $table = $("<table></table>");
-    $programDiv.append($table);
+    var _timeColumns = [{times: [1745]}].concat(timeColumns);
 
-    for (var i in timeColumns) {
-        var timeColumn = timeColumns[i];
 
-        var $timeRow = $("<tr></tr>");
+    for (var i in _timeColumns) {
+        var timeColumn = _timeColumns[i];
+
+        var $timeRow = $("<tr>");
         $table.append($timeRow);
 
-        var $timeCell = $("<th></th>", {class: "time-cell"});
+        var $timeCell = $("<th>", { class: "time-cell" });
         $timeRow.append($timeCell);
         $timeCell.html(timeToString(timeColumn.times[0]));
         $timeCell.prop("colspan", "5");
 
 
-        for (var j in program) {
-            var location = program[j];
+        for (var j in programData.eventData) {
+            var eventDatum = programData.eventData[j];
 
-            var rowNumber = calculateRowNumber_List(location, timeColumn);
+            var rowNumber = calculateRowNumber_List(eventDatum, timeColumn);
 
             if (rowNumber === 0) {
                 continue;
@@ -199,7 +223,7 @@ function drawProgramList()  {
 
             var rows = [];
             for (var k = 0; k < rowNumber; k++) {
-                var $row = $('<tr></tr>');
+                var $row = $('<tr>');
                 $table.append($row);
                 rows.push($row);
 
@@ -209,13 +233,13 @@ function drawProgramList()  {
             }
 
 
-            createLocationColumn(location, rows, i == 0);
-            createContentRow_List(location.events, rows, timeColumn);
+            createLocationColumn(eventDatum, rows, false);
+            createContentRow_List(eventDatum.events, rows, timeColumn);
         }
     }
 }
 
-function calculateRowNumber_List(location, timeColumn) {
+function calculateRowNumber_List(eventDatum, timeColumn) {
 
     function _calculateIndex(time) {
         return time % 100 === 0 ? 0 : 1;
@@ -225,8 +249,8 @@ function calculateRowNumber_List(location, timeColumn) {
 
     for (var i in timeColumn.times) {
         var time = timeColumn.times[i];
-        for (var e in location.events) {
-            var event = location.events[e];
+        for (var e in eventDatum.events) {
+            var event = eventDatum.events[e];
             for (var t in event.times) {
                 if (event.times[t] === time) {
                     slots[_calculateIndex(time)] += 1;
@@ -249,7 +273,7 @@ function createContentRow_List(events, rows, timeColumn) {
         var text00 = event00 ? createTextForEvent(event00) : "";
         var text30 = event30 ? createTextForEvent(event30) : "";
 
-        var $cell = $('<td></td>');
+        var $cell = $('<td>');
         row.append($cell);
         var $cell2;
 
@@ -258,7 +282,7 @@ function createContentRow_List(events, rows, timeColumn) {
                 $cell.prop('colspan', '2');
             } else {
                 $cell.html('&nbsp;');
-                $cell2 = $('<td></td>');
+                $cell2 = $('<td>');
                 row.append($cell2);
                 $cell2.html(timeToString(timeColumn.times[1]) + ": " + text30);
             }
@@ -267,7 +291,7 @@ function createContentRow_List(events, rows, timeColumn) {
             if (text30.length === 0) {
                 $cell.prop('colspan', '2');
             } else {
-                $cell2 = $('<td></td>');
+                $cell2 = $('<td>');
                 row.append($cell2);
                 $cell2.html(timeToString(timeColumn.times[1]) + ": " + text30);
             }
@@ -276,40 +300,38 @@ function createContentRow_List(events, rows, timeColumn) {
     }
 }
 
-function createLocationColumn(location, rows, include1745) {
-    var $locationCell = $('<td></td>', { class: "locationCell" });
+function createLocationColumn(eventDatum, rows, include1745) {
+    var location = getLocationById(eventDatum.locationId);
+
+    var $locationCell = $("<td>", { class: "locationCell" });
     rows[0].append($locationCell);
     $locationCell.prop("rowspan", "" + rows.length);
-    var text = location.location + "\<br\>" + location.address;
+    var text = location.name + (location.address ? "\<br\>" + location.address : "");
     $locationCell.html(text);
 
-    if (include1745) {
-        var event1745 = get1745EventForLocation(location);
-        if (!event1745) {
-            $locationCell.prop("colspan", "3");
-        } else {
-            $locationCell.prop("colspan", "2");
-            var $eventCell = $('<td></td>');
-            rows[0].append($eventCell);
-            $eventCell.html("17.45: " + createTextForEvent(event1745));
-        }
+    var event1745;
+    if (include1745 && (event1745 = get1745EventForEventDatum(eventDatum))) {
+        $locationCell.prop("colspan", "2");
+        var $eventCell = $("<td>");
+        rows[0].append($eventCell);
+        $eventCell.html("17.45: " + createTextForEvent(event1745));
     } else {
         $locationCell.prop("colspan", "3");
     }
 }
 
-
-
-function get1745EventForLocation(location) {
-    for (var i in location.events) {
-        for (var j in location.events[i].times) {
-            if (location.events[i].times[j] === 1745) {
-                return location.events[i];
+function get1745EventForEventDatum(eventDatum) {
+    for (var i in eventDatum.events) {
+        for (var j in eventDatum.events[i].times) {
+            if (eventDatum.events[i].times[j] === 1745) {
+                return eventDatum.events[i];
             }
         }
     }
+
     return null;
 }
+
 
 function findEventForTime(events, time) {
     var res = null;
@@ -328,11 +350,13 @@ function findEventForTime(events, time) {
 }
 
 function createTextForEvent(event) {
+    var particpant = getParticipantById(event.eventId);
+
     var text = "";
-    for (var l in event.categories) {
-        text += getIconForCategory(event.categories[l]);
+    for (var l in particpant.categories) {
+        text += getIconForCategory(particpant.categories[l]);
     }
-    text += event.event;
+    text += " " + particpant.name;
 
     return text;
 }
@@ -358,8 +382,48 @@ function getIconForCategory(category) {
     }
 }
 
+
+function getLocationById(locationId) {
+    for (var i in programData.locationData) {
+        var location = programData.locationData[i];
+        if (location.id === locationId) {
+            return location;
+        }
+    }
+
+    console.log('no location found for id: ' + locationId);
+    return null;
+}
+
+function getParticipantById(participantId) {
+    for (var i in programData.participantData) {
+        var participant = programData.participantData[i];
+        if (participant.id === participantId) {
+            return participant;
+        }
+    }
+
+    console.log('no participant found for id: ' + participantId);
+    return null;
+}
+
+function parseProgramData(_programData) {
+    programData = JSON.parse(_programData);
+    programData.eventData = JSON.parse(programData.eventData);
+    programData.locationData = JSON.parse(programData.locationData);
+    programData.participantData = JSON.parse(programData.participantData);
+}
+
 function timeToString(time) {
     var minutes = "0" + time % 100;
     var timeString = Math.floor(time / 100) + "." + minutes.substr(-2);
     return timeString;
+}
+
+function prepareDiv($div) {
+    $div.html("");
+    var $table = $("<table>");
+    $div.append($table);
+
+    return $table;
 }

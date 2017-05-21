@@ -11,7 +11,11 @@ page.onError = function(msg) {
     console.log('error>' + msg);
 }
 
-var program = fs.read('./program.json');
+var programData = JSON.stringify({
+    locationData: fs.read('./locationData.json'),
+    eventData: fs.read('./eventData.json'),
+    participantData: fs.read('./participantData.json')
+});
 
 page.open('skeleton.html', function(status) {
     if (status !== 'success') {
@@ -29,17 +33,17 @@ page.open('skeleton.html', function(status) {
         phantom.exit();
     }
 
-    var programTable = page.evaluate(function(_program) {
+    var programTable = page.evaluate(function(_programData) {
         console.log('Started creating program table...')
-        return createProgramTable(_program);
-    }, program);
+        return createProgramTable(_programData);
+    }, programData);
     writeToFile(pathPrefix + 'program-table.html', programTable);
     console.log('Finished creating program table')
 
-    var programList = page.evaluate(function(_program) {
+    var programList = page.evaluate(function(_programData) {
         console.log('Started creating program list...')
-        return createProgramList(_program);
-    }, program);
+        return createProgramList(_programData);
+    }, programData);
     writeToFile(pathPrefix + 'program-list.html', programList);
     console.log('Finished creating program list')
 

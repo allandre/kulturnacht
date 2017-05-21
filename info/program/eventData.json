@@ -1,0 +1,203 @@
+[{
+    "locationId": "wangensbach",
+    "events": [{
+        "eventId": "alfred_egli",
+        "times": [1800, 2000, 2200],
+        "private_row": true
+    }, {
+        "eventId": "die_kulisse",
+        "times": [1900, 2000, 2100],
+        "private_row": true
+    }]
+}, {
+    "locationId": "bibliothek",
+    "events": [{
+        "eventId": "bibliothek_film",
+        "times": [1900, 2300]
+    }, {
+        "eventId": "simon_chen",
+        "times": [2000, 2100, 2200]
+    }]
+}, {
+    "locationId": "chrottegrotte",
+    "events": [{
+        "eventId": "mkz",
+        "times": [1800]
+    }, {
+        "eventId": "xotnix",
+        "times": [1900]
+    }, {
+        "eventId": "singbar",
+        "times": [2000]
+    }, {
+        "eventId": "amaron",
+        "times": [2100]
+    }, {
+        "eventId": "duo_coeur_rouge",
+        "times": [2200]
+    }, {
+        "eventId": "ueli_baer",
+        "times": [2300]
+    }]
+}, {
+    "locationId": "freihof",
+    "events": [{
+        "eventId": "wort_geschicht",
+        "times": [1800, 1900, 2000, 2100, 2200, 2300]
+    }]
+}, {
+    "locationId": "sunnemetzg",
+    "events": [{
+        "eventId": "schülerband",
+        "times": [1800, 1900]
+    }, {
+        "eventId": "magic_ride",
+        "times": [2000]
+    }, {
+        "eventId": "xotnix_sunnemetzg",
+        "times": [2100]
+    }, {
+        "eventId": "funtastic",
+        "times": [2200]
+    }, {
+        "eventId": "bregy",
+        "times": [2300]
+    }]
+}, {
+    "locationId": "fussgängerunterführung",
+    "events": [{
+        "eventId": "b_live",
+        "times": [1930, 2030, 2130]
+    }]
+}, {
+    "locationId": "galerie",
+    "events": [{
+        "eventId": "fred_bauer",
+        "times": [1800, 1900, 2000, 2100, 2200, 2300]
+    }]
+}, {
+    "locationId": "ochsen",
+    "events": [{
+        "eventId": "ochsen",
+        "times": [1800, 1900, 2000, 2100, 2200, 2300]
+    }]
+}, {
+    "locationId": "gemeindehaus",
+    "events": [{
+        "eventId": "kulturkommission",
+        "times": [1900, 2100]
+    }]
+}, {
+    "locationId": "cgjung-haus",
+    "events": [{
+        "eventId": "jung",
+        "times": [2100, 2200]
+    }]
+}, {
+    "locationId": "kägi",
+    "events": [{
+        "eventId": "dramolett",
+        "times": [1900, 2100]
+    }]
+}, {
+    "locationId": "kanti",
+    "events": [{
+        "eventId": "kanti_ausstellung",
+        "times": [
+            1800, 1900, 2000, 2100, 2200, 2300
+        ]
+    }]
+}, {
+    "locationId": "mehrzweckraum",
+    "events": [{
+        "eventId": "bookxkey",
+        "times": [1800, 1900, 2000, 2100, 2200, 2300]
+    }]
+}, {
+    "locationId": "musikschule",
+    "events": [{
+        "eventId": "klavierkonzert",
+        "times": [1900]
+    }]
+}, {
+    "locationId": "ortsmuseum",
+    "events": [{
+        "eventId": "gruselkabinett",
+        "times": [1800, 1900, 2000, 2100, 2200, 2300]
+    }, {
+        "eventId": "unsinniges",
+        "times": [1800, 1900, 2100]
+    }, {
+        "eventId": "drüber",
+        "times": [2000, 2200, 2300]
+    }, {
+        "eventId": "grusel",
+        "times": []
+    }]
+}, {
+    "locationId": "kirche",
+    "events": [{
+        "eventId": "turmbläser",
+        "times": [1745, 1830]
+    }, {
+        "eventId": "kirchenchor",
+        "times": [1800]
+    }, {
+        "eventId": "linien",
+        "times": [1900]
+    }, {
+        "eventId": "waldgeister",
+        "times": [2000]
+    }, {
+        "eventId": "beyond",
+        "times": [2100]
+    }, {
+        "eventId": "improvisation",
+        "times": [2200]
+    }, {
+        "eventId": "aaron_wegmann",
+        "times": [2300]
+    }]
+}, {
+    "locationId": "kirchgemeindehaus",
+    "events": [{
+        "eventId": "harmonie",
+        "times": [1900, 2000]
+    }, {
+        "eventId": "fanfare",
+        "times": [2100, 2200, 2300]
+    }]
+}, {
+    "locationId": "falken",
+    "events": [{
+        "eventId": "esprits",
+        "times": [1800, 1900, 2000, 2100]
+    }]
+}, {
+    "locationId": "sonne",
+    "events": [{
+        "eventId": "sonne",
+        "times": [1900, 2000, 2100]
+    }]
+}, {
+    "locationId": "cgjung-see",
+    "events": [{
+        "eventId": "artischock",
+        "times": [1800, 1900, 2000, 2100],
+        "private_row": true
+    }, {
+        "eventId": "klassik",
+        "times": [1800, 1900, 2000],
+        "private_row": true
+    }, {
+        "eventId": "andreas_moser",
+        "times": [1900, 2000, 2100],
+        "private_row": true
+    }]
+}, {
+    "locationId": "wolf",
+    "events": [{
+        "eventId": "wolf",
+        "times": [1900, 2000, 2100]
+    }]
+}]
