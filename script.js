@@ -129,6 +129,12 @@ function loadProgram(file) {
 //     xmlhttp.send();
 // }
 
+function toggleParticipantInfo(id) {
+    console.log(id);
+    $("#" + id).toggleClass("modal-hidden");
+}
+
+
 function hideMenu() {
     $("#nav-trigger").prop("checked", false);
     $('nav li').removeClass('current');

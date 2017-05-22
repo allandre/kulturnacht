@@ -297,7 +297,7 @@ input[type=checkbox]:checked ~ #menu li a div {
 /* PLAN SECTION end */
 
 /* PROGRAM SECTION start */
-#program-section h1, #program-section h3 {
+#program-section h1 {
     max-width: unset;
 }
 
@@ -323,6 +323,11 @@ input[type=checkbox]:checked ~ #menu li a div {
     text-align: left;
 
     vertical-align: middle;
+    cursor: pointer;
+}
+
+#program-section td:hover {
+    background-color: lightgrey;
 }
 
 #program-section table td.locationCell {
@@ -330,6 +335,10 @@ input[type=checkbox]:checked ~ #menu li a div {
     font-weight: bold;
 
     border-bottom: 1px solid black;
+}
+
+#program-section table td.locationCell:hover {
+    background-color: unset;
 }
 
 #program-section .intermediateRow td {
@@ -342,6 +351,44 @@ input[type=checkbox]:checked ~ #menu li a div {
 
 #program-section .time-cell {
     text-align: center;
+}
+
+/* PARTICIPANT MODAL */
+.modal-hidden {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 200;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.8);
+
+    transform-style: preserve-3d;
+}
+
+.modal-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.modal-content {
+    width: 200px;
+    height: 200px;
+    color: grey;
+    background-color: white;
+}
+
+.closebtn {
+    cursor: pointer;
 }
 
 /* legend table start*/

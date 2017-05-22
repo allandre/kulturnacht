@@ -14,6 +14,7 @@ var timeColumns = [{
     times: [2300, 2330]
 }]
 
+var modalDivs = {};
 
 function createProgramTable(_programData) {
     parseProgramData(_programData);
@@ -186,9 +187,11 @@ function createEventCell_Table(row, event00, event30, times) {
             $cell2 = $('<td>');
             row.append($cell2);
             $cell2.html(timeToString(times[1]) + ": " + text30);
+            createEventModal_Table(event30, $cell2);
         }
     } else {
         $cell.html(text00);
+        createEventModal_Table(event00, $cell);
         if (text30.length === 0) {
             // 'regular case': full event
             $cell.prop('colspan', '2');
@@ -196,7 +199,29 @@ function createEventCell_Table(row, event00, event30, times) {
             $cell2 = $('<td>');
             row.append($cell2);
             $cell2.html(timeToString(times[1]) + ": " + text30);
+            createEventModal_Table(event30, $cell2);
         }
+    }
+}
+
+function createEventModal_Table(event, $cell) {
+
+    // persist call directly in html
+    $cell[0].setAttribute("onclick", "toggleParticipantInfo(\"" + event.eventId + "\");");
+    if (!modalDivs[event.eventId]) {
+        modalDivs[event.eventId] = true;
+        var $modalDiv = $("<div>", {class: "modal-hidden modal", id: event.eventId});
+        $("#program-table").append($modalDiv);
+
+        var $dialogDiv = $("<div>", { class: "modal-dialog"});
+        $modalDiv.append($dialogDiv);
+
+        var $contentDiv = $("<div>", {class:"modal-content"});
+        $dialogDiv.append($contentDiv);
+
+        var $closebtn = $("<span>×</span>", {class: "closebtn"});
+        $contentDiv.append($closebtn);
+        $closebtn[0].setAttribute("onclick", "toggleParticipantInfo(\"" + event.eventId + "\");");
     }
 }
 
