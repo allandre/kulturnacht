@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400');
-
 body {
     line-height: 1.5;
     font-family: "Helvetica", sans-serif;
@@ -8,7 +7,6 @@ body {
 #container {
     max-width: 1600px;
     margin: 0 auto;
-
     border-left: 1px solid lightgrey;
     border-right: 1px solid lightgrey;
 }
@@ -24,7 +22,8 @@ a.anchor {
     visibility: hidden;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
     color: #ed1255;
     color: grey;
 }
@@ -43,11 +42,13 @@ section:last-of-type {
     border-bottom: none;
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
     text-align: left;
     max-width: 800px;
     margin: auto;
-
 }
 
 h1 {
@@ -76,20 +77,19 @@ table {
 .in-section-list {
     width: 100%;
     max-width: 800px;
-
     margin: 0 auto;
 }
 
+
 /* NAV start */
+
 nav {
     position: fixed;
     z-index: 10;
-
     display: flex;
     width: 100%;
     max-width: inherit;
     height: 3em;
-
     color: white;
     background-color: #ed1255;
 }
@@ -98,9 +98,7 @@ nav ul {
     display: flex;
     justify-content: space-around;
     flex-grow: 1;
-
     padding-right: 1em;
-
     font-size: 1.1em;
 }
 
@@ -121,17 +119,15 @@ nav li a {
     display: inline-block;
     width: 100%;
     height: 100%;
-
     color: white;
-
     text-decoration: none;
     text-align: center;
 }
 
-nav li a:link, nav li a:visited {
+nav li a:link,
+nav li a:visited {
     color: white;
 }
-
 
 nav li a div {
     padding-top: .7em;
@@ -141,25 +137,26 @@ nav li a div {
     position: fixed;
     z-index: 20;
     height: 3em;
-
     display: none;
-
     position: absolute;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     border-left: 1px lightgrey solid;
     border-right: 1px lightgrey solid;
 }
 
+
 /* NAV->HAMBURGER start */
-input[type=checkbox]{
+
+input[type=checkbox] {
     display: none;
 }
 
-input[type=checkbox]:checked ~ #menu{
+input[type=checkbox]:checked ~ #menu {
     display: block;
     width: 100vw;
     position: fixed;
-    top: 2.7em; /*nav.height / ul.fontSize*/
+    top: 2.7em;
+    /*nav.height / ul.fontSize*/
     left: 0;
     padding-top: .5em;
     padding-bottom: .2em;
@@ -185,7 +182,6 @@ input[type=checkbox]:checked ~ #menu li a div {
     position: absolute;
     width: 2em;
     height: 100%;
-
     display: none;
     cursor: pointer;
 }
@@ -194,9 +190,8 @@ input[type=checkbox]:checked ~ #menu li a div {
     position: absolute;
     width: 1.25em;
     height: 0.8em;
-
     border-top: 0.2em solid white;
-    border-bottom: 0.2em solid white;    
+    border-bottom: 0.2em solid white;
 }
 
 .hamburger:before {
@@ -207,15 +202,19 @@ input[type=checkbox]:checked ~ #menu li a div {
     width: 100%;
     border-top: 0.2em solid white;
 }
+
+
 /* NAV->HAMBURGER end */
+
+
 /* NAV end */
 
 
 /* LOGO start */
+
 .logo {
     font-family: "Lato", sans-serif;
     font-weight: lighter;
-
     margin: 0 2%;
 }
 
@@ -223,16 +222,13 @@ input[type=checkbox]:checked ~ #menu li a div {
     flex-basis: 15em;
     display: flex;
     align-items: center;
-
     color: white;
-
     text-decoration: none;
 }
 
 #logo-K {
     display: inline-block;
     margin-left: 5%;
-
     font-size: 2.5em;
 }
 
@@ -240,24 +236,24 @@ input[type=checkbox]:checked ~ #menu li a div {
     height: 70%;
     width: 1px;
     min-width: 1px;
-
     background-color: white;
 }
 
 #logo-text {
     display: inline-block;
-
     line-height: 1.4;
     text-transform: uppercase;
-
     font-size: .8em;
 }
+
+
 /* LOGO end */
 
+
 /* TITLE SECTION start */
+
 #title-section {
     padding: 0;
-
     background-color: #ed1255;
 }
 
@@ -266,25 +262,25 @@ input[type=checkbox]:checked ~ #menu li a div {
     position: absolute;
     top: 30%;
     left: 28.5%;
-
     width: 50%;
     border-radius: 5px;
-
     color: rgba(255, 255, 255, 0.7);
-    background-color: rgba(0,0,0,0.8);
-
+    background-color: rgba(0, 0, 0, 0.8);
     font-size: 3.4vw;
     text-align: center;
-
     transform: translateX(-50%);
 }
 
 #title-section img {
     width: 100%;
 }
+
+
 /* TITLE SECTION end */
 
+
 /* PLAN SECTION start */
+
 #plan-section div {
     text-align: center;
 }
@@ -294,9 +290,13 @@ input[type=checkbox]:checked ~ #menu li a div {
     max-width: 60em;
     margin-top: 3em;
 }
+
+
 /* PLAN SECTION end */
 
+
 /* PROGRAM SECTION start */
+
 #program-section h1 {
     max-width: unset;
 }
@@ -310,35 +310,28 @@ input[type=checkbox]:checked ~ #menu li a div {
     font-weight: bold;
     font-size: 100%;
     text-align: center;
-
     color: #ed1255;
 }
 
 #program-section td {
     padding: 0.1em;
     border-bottom: 1px solid black;
-    border-right: 1px dotted #ed1255;;
-
+    border-right: 1px dotted #ed1255;
+    ;
     font-size: 75%;
     text-align: left;
-
     vertical-align: middle;
-    cursor: pointer;
 }
 
-#program-section td:hover {
+#program-section td.content:hover {
     background-color: lightgrey;
+    cursor: pointer;
 }
 
 #program-section table td.locationCell {
     color: black;
     font-weight: bold;
-
     border-bottom: 1px solid black;
-}
-
-#program-section table td.locationCell:hover {
-    background-color: unset;
 }
 
 #program-section .intermediateRow td {
@@ -353,7 +346,9 @@ input[type=checkbox]:checked ~ #menu li a div {
     text-align: center;
 }
 
+
 /* PARTICIPANT MODAL */
+
 .modal-hidden {
     display: none;
 }
@@ -363,12 +358,9 @@ input[type=checkbox]:checked ~ #menu li a div {
     left: 0;
     top: 0;
     z-index: 200;
-
     width: 100%;
     height: 100%;
-
-    background-color: rgba(0,0,0,0.8);
-
+    background-color: rgba(0, 0, 0, 0.8);
     transform-style: preserve-3d;
 }
 
@@ -376,45 +368,82 @@ input[type=checkbox]:checked ~ #menu li a div {
     position: absolute;
     top: 50%;
     left: 50%;
-    
     transform: translateX(-50%) translateY(-50%);
 }
 
 .modal-content {
-    width: 200px;
-    height: 200px;
-    color: grey;
+    position: relative;
+    color: black;
     background-color: white;
+
+    border-radius: 10px;
 }
 
+.modal-content h4 {
+    padding: 2em 1em;
+
+    text-align: center;
+}
+
+.modal-content p {
+    margin: 0;
+
+    padding: 1em;
+}
+
+.modal-content .img-div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.modal-content img {
+    display: block;
+}
+
+
 .closebtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    margin: 0 0.5em 0 0;
+    
+    font-size: 120%;
     cursor: pointer;
 }
 
+
 /* legend table start*/
+
 #program-section h6 {
     text-align: left;
     font-style: italic;
     font-size: 75%;
 }
+
 #program-section #legend {
     margin-left: 0;
     max-width: 800px;
-
     display: flex;
     flex-wrap: wrap;
     flex-direction: : row;
     justify-content: space-between;
 }
+
 #program-section #legend div {
     display: inline;
     font-size: 75%;
 }
 
+
 /* legend table end*/
+
+
 /* PROGRAM SECTION end */
 
+
 /* MITWIRKENDE SECTION start */
+
 #mitwirkende {
     display: flex;
     flex-direction: row;
@@ -427,22 +456,29 @@ input[type=checkbox]:checked ~ #menu li a div {
 #mitwirkende > div {
     width: 33%;
     min-width: 350px;
-
     border: 1px solid lightgrey;
 }
 
-#mitwirkende  img {
+#mitwirkende img {
     max-height: 200px;
 }
+
+
 /* MITWIRKENDE SECTION end */
 
+
 /* FOOD SECTION start */
+
 .food-section p {
     margin: 1em auto;
 }
+
+
 /* FOOD SECTION end */
 
+
 /* CONTACT SECTION start */
+
 .ad {
     color: #ed1255;
 }
@@ -459,17 +495,14 @@ input[type=checkbox]:checked ~ #menu li a div {
     text-align: justify;
 }
 
-.contact-section a {
-}
+.contact-section a {}
 
 #location {
     display: flex;
     justify-content: space-between;
-
     width: 100%;
     max-width: 800px;
     margin: auto;
-
     flex-wrap: wrap;
 }
 
@@ -487,14 +520,17 @@ input[type=checkbox]:checked ~ #menu li a div {
     flex-grow: 1;
     width: 20em;
     height: 20em;
-
     border: 1px solid grey;
     margin-top: 1em;
     margin-left: 5em;
 }
+
+
 /* CONTACT SECTION end */
 
+
 /* SPONSOREN SECTION start */
+
 #sponsoren-section {
     padding-left: 3%;
     padding-right: 3%;
@@ -530,7 +566,8 @@ input[type=checkbox]:checked ~ #menu li a div {
 .sponsoren-block img {
     width: unset;
     max-width: unset;
-    height: 60px;/*71px;*/
+    height: 60px;
+    /*71px;*/
     max-height: unset;
     padding: 1em .5em;
 }
@@ -548,16 +585,17 @@ input[type=checkbox]:checked ~ #menu li a div {
     color: black;
 }
 
+
 /* SPONSOREN SECTION end */
 
+
 /* FOOTER start */
+
 footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-
     padding: .7em;
-
     background-color: #ed1255;
     color: white;
 }
@@ -567,16 +605,18 @@ footer p {
     margin: 0;
     padding: 0 .5em;
     display: inline-block;
-
     font-size: 0.8em;
     text-align: center;
     letter-spacing: 2px;
 }
 
-footer a:link, footer a:visited {
+footer a:link,
+footer a:visited {
     color: white;
     text-decoration: none;
 }
+
+
 /* FOOTER end */
 
 @media screen and (max-width: 535px) {
@@ -586,36 +626,39 @@ footer a:link, footer a:visited {
     }
 }
 
+
 /* -> recenter program title */
+
 @media screen and (max-width: 747px) {
     #program-section h1 {
         text-align: center;
     }
 }
 
+
 /* -> make hamburger appear */
-@media screen and (max-width: 1045px ) {
+
+@media screen and (max-width: 1045px) {
     #hamburger-wrapper {
         display: block;
         left: 50%;
         transform: translateX(-50%);
     }
-
     .hamburger {
         top: 30%;
     }
-
     nav ul {
         display: none;
     }
 }
 
+
 /* -> behaviour of location -> gmap */
+
 @media screen and (max-width: 810px) {
     #location ul {
         max-width: 100%;
     }
-
     #map {
         width: 80%;
         margin: auto;
@@ -623,10 +666,14 @@ footer a:link, footer a:visited {
     }
 }
 
+
 /* -> prevent footer text from multi-row */
+
 @media screen and (max-width: 1077px) {
     footer p {
         width: unset;
     }
 }
+
+
 /* MEDIA QUERIES end */

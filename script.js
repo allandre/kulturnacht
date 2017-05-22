@@ -45,6 +45,13 @@ $(window).on('scroll', function() {
     updateNavigation();
 });
 
+$(document).on('keydown', function(evt) {
+    // close all modal pop-ups on esc
+    if (evt.keyCode === 27) {
+        $(".modal").addClass("modal-hidden");
+    }
+});
+
 $('body').on('mousedown', function(evt) {
     var clickInsideMap = $(evt.target).parents('#map').length > 0;
 
@@ -129,15 +136,18 @@ function loadProgram(file) {
 //     xmlhttp.send();
 // }
 
-function toggleParticipantInfo(id) {
-    console.log(id);
-    $("#" + id).toggleClass("modal-hidden");
+function toggleParticipantInfo(evt, id) {
+    // console.log(evt);
+    if (evt.target.nodeName === "TD" || evt.target.classList.contains("modal") || evt.target.classList.contains("closebtn")) {
+        $("#" + id).toggleClass("modal-hidden");
+    }
+    evt.stopPropagation();
 }
 
 
 function hideMenu() {
     $("#nav-trigger").prop("checked", false);
-    $('nav li').removeClass('current');
+    // $('nav li').removeClass('current');
 }
 
 
@@ -166,8 +176,7 @@ function updateNavigation() {
             var $section = $(this).next();
             var relPositionTop = $section.offset().top - windowOffset;
             var relPositionBottom = relPositionTop + $section.height();
-            if ((relPositionTop >= 0 && relPositionTop <= 0.5 * windowHeight)
-             || (!prio && relPositionBottom >= 0 && relPositionBottom < 0.5 * windowHeight)) {
+            if ((relPositionTop >= 0 && relPositionTop <= 0.5 * windowHeight) || (!prio && relPositionBottom >= 0 && relPositionBottom < 0.5 * windowHeight)) {
                 prio = true;
                 currentPosition = { $anchor: $(this), index: index };
             }

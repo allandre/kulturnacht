@@ -207,22 +207,62 @@ function createEventCell_Table(row, event00, event30, times) {
 function createEventModal_Table(event, $cell) {
 
     // persist call directly in html
-    $cell[0].setAttribute("onclick", "toggleParticipantInfo(\"" + event.eventId + "\");");
+    addToggleParticipantInfo($cell, event.eventId);
+    $cell.addClass("content");
+
     if (!modalDivs[event.eventId]) {
         modalDivs[event.eventId] = true;
-        var $modalDiv = $("<div>", {class: "modal-hidden modal", id: event.eventId});
-        $("#program-table").append($modalDiv);
+        var participant = getParticipantById(event.eventId);
 
-        var $dialogDiv = $("<div>", { class: "modal-dialog"});
+        if (/^@/.test(participant.description)) {
+            participant = getParticipantById(/^@(.*)$/.exec(participant.description)[1]);
+        }
+
+        var $modalDiv = $("<div>", { class: "modal-hidden modal", id: event.eventId });
+        $("#program-table").append($modalDiv);
+        addToggleParticipantInfo($modalDiv, event.eventId);
+
+        var $dialogDiv = $("<div>", { class: "modal-dialog" });
         $modalDiv.append($dialogDiv);
 
-        var $contentDiv = $("<div>", {class:"modal-content"});
+        var $contentDiv = $("<div>", { class: "modal-content" });
         $dialogDiv.append($contentDiv);
 
-        var $closebtn = $("<span>×</span>", {class: "closebtn"});
+        var $title = $("<h4>");
+        $contentDiv.append($title);
+        $title.html(participant.title);
+
+        var $closebtn = $("<span>×</span>");
         $contentDiv.append($closebtn);
-        $closebtn[0].setAttribute("onclick", "toggleParticipantInfo(\"" + event.eventId + "\");");
+        $closebtn.addClass("closebtn");
+        addToggleParticipantInfo($closebtn, event.eventId);
+
+        if (participant.images && participant.images.length > 0) {
+            var $imgDiv = $("<div>", { class: "img-div" });
+            $contentDiv.append($imgDiv);
+
+            for (var i in participant.images) {
+                var $img = $("<img>", { src: "resources/participants/" + participant.images[i] });
+                $imgDiv.append($img);
+            }
+        }
+
+        if (participant.description && participant.description.length > 0) {
+            var $description = $("<p>");
+            $contentDiv.append($description);
+            $description.html(participant.description);
+        }
+
+        if (participant.team && participant.team.length > 0) {
+            var $team = $("<p>");
+            $contentDiv.append($team);
+            $team.html(participant.team);
+        }
     }
+}
+
+function addToggleParticipantInfo($element, eventId) {
+    $element[0].setAttribute("onclick", "toggleParticipantInfo(event, \"" + eventId + "\");");
 }
 
 function drawProgramList()  {
