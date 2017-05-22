@@ -29,6 +29,12 @@ function createProgramList(_programData) {
     return $("#program-list")[0].innerHTML;
 }
 
+function createParticipantList(_programData) {
+    parseProgramData(_programData);
+    drawParticipanList();
+
+    return $("#participant-list")[0].innerHTML;
+}
 
 function drawProgramTable() {
     var $table = prepareDiv($("#program-table"));
@@ -197,7 +203,7 @@ function createEventCell_Table(row, event00, event30, times) {
 function drawProgramList()  {
     var $table = prepareDiv($("#program-list"));
 
-    var _timeColumns = [{times: [1745]}].concat(timeColumns);
+    var _timeColumns = [{ times: [1745] }].concat(timeColumns);
 
 
     for (var i in _timeColumns) {
@@ -300,6 +306,53 @@ function createContentRow_List(events, rows, timeColumn) {
     }
 }
 
+function drawParticipanList() {
+    var $superDiv = $("#participant-list");
+    $superDiv.html("");
+
+    var divMap = {};
+
+    for (var i in programData.participantData) {
+        var participant = programData.participantData[i];
+
+        if (/^@/.test(participant.description)) {
+            //     // append title to other entry
+            var div = divMap[/^@(.*)/.exec(participant.description)[1]];
+            var team = div.find(".team");
+            var text = team.text() + ", " + participant.team;
+            team.text(text);
+            //     var div = divMap[/^@/(.*)/.exec(participants.description)[1]];
+            //     var team = div.find(".team");
+            //     var text = team.text() + participant.team;
+            //     team.text(text);
+
+        } else {
+            // mitwirkender on its own
+            var $div = $("<div>");
+            $superDiv.append($div);
+            divMap[participant.id] = $div;
+
+            var $title = $("<h4>");
+            $div.append($title);
+            $title.text(participant.title);
+
+            if (participant.images && participant.images.length > 0) {
+                // only one image for now
+                var $img = $("<img>", { src: "resources/participants/" + participant.images[0] });
+                $div.append($img);
+            }
+
+            $description = $("<p>");
+            $div.append($description);
+            $description.text(participant.description);
+
+            $team = $("<p>", { class: "team" });
+            $div.append($team);
+            $team.text(participant.team);
+        }
+    }
+}
+
 function createLocationColumn(eventDatum, rows, include1745) {
     var location = getLocationById(eventDatum.locationId);
 
@@ -331,7 +384,6 @@ function get1745EventForEventDatum(eventDatum) {
 
     return null;
 }
-
 
 function findEventForTime(events, time) {
     var res = null;
@@ -381,7 +433,6 @@ function getIconForCategory(category) {
             return "";
     }
 }
-
 
 function getLocationById(locationId) {
     for (var i in programData.locationData) {

@@ -27,6 +27,7 @@ $(document).ready(function() {
     $positionIndication = $('#position-indication');
 
     updateProgramSection(true);
+    updateMitwirkende();
 });
 
 $(window).on('resize', function(event) {
@@ -104,6 +105,23 @@ function loadProgram(file) {
         if (this.readyState === 4 && this.status === 200) {
             var $programDiv = $("#program");
             $programDiv.html(this.responseText);
+        }
+    };
+
+    xmlhttp.open("GET", file, true);
+    xmlhttp.send();
+}
+
+function updateMitwirkende() {
+    loadParticipants("resources/program/participant-list.html");
+}
+
+function loadParticipants(file) {
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function   () {
+        if (this.readyState === 4 && this.status === 200) {
+            $("#mitwirkende").html(this.responseText);
         }
     };
 

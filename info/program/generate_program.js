@@ -34,18 +34,25 @@ page.open('skeleton.html', function(status) {
     }
 
     var programTable = page.evaluate(function(_programData) {
-        console.log('Started creating program table...')
+        console.log('Started creating program table...');
         return createProgramTable(_programData);
     }, programData);
     writeToFile(pathPrefix + 'program-table.html', programTable);
-    console.log('Finished creating program table')
+    console.log('Finished creating program table');
 
     var programList = page.evaluate(function(_programData) {
-        console.log('Started creating program list...')
+        console.log('Started creating program list...');
         return createProgramList(_programData);
     }, programData);
     writeToFile(pathPrefix + 'program-list.html', programList);
-    console.log('Finished creating program list')
+    console.log('Finished creating program list');
+
+    var participantList = page.evaluate(function(_programData) {
+        console.log("started creating participant list...");
+        return createParticipantList(_programData);
+    }, programData);
+    writeToFile(pathPrefix + 'participant-list.html', participantList);
+    console.log('Finished creating participant list');
 
     phantom.exit();
 });

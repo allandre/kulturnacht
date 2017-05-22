@@ -143,7 +143,7 @@
     "name": "Schülerband Küsnacht",
     "title": "Sound and Songs",
     "description": "Diverse musikalische Darbietungen aus Rock, Pop und Mundart.<br>Grill mit Würsten, Steak und Pommes Frites und Getränke.",
-    "team": "",
+    "team": "Schülerband Küsnacht",
     "categories": [
       "music"
     ],
@@ -159,7 +159,7 @@
     "name": "Magic Ride",
     "title": "Magic Ride",
     "description": "@schülerband",
-    "team": "",
+    "team": "Magic Ride",
     "categories": [
       "music"
     ]
@@ -169,7 +169,7 @@
     "name": "XotniX",
     "title": "XotniX",
     "description": "@schülerband",
-    "team": "",
+    "team": "XotniX",
     "categories": [
       "music"
     ]
@@ -179,7 +179,7 @@
     "name": "FUNTASTIC / XotniX",
     "title": "Funtastic",
     "description": "@schülerband",
-    "team": "",
+    "team": "Funtastic",
     "categories": [
       "music"
     ]
@@ -189,7 +189,7 @@
     "name": "Bregy & Friends",
     "title": "Bregy & Friends",
     "description": "@schülerband",
-    "team": "",
+    "team": "Bregy & Driends",
     "categories": [
       "music"
     ]
@@ -232,7 +232,7 @@
       "food"
     ],
     "images": [
-      "ochsen.png"
+      "ochsen.jpg"
     ]
   },
   {
@@ -545,8 +545,8 @@
   },
   {
     "id": "wolf",
-    "name": "Musiker &amp; Anekdoten",
-    "title": "Musiker &amp; Anekdoten - musikalisch umrahmt",
+    "name": "Musiker & Anekdoten",
+    "title": "Musiker & Anekdoten - musikalisch umrahmt",
     "description": "Hans Martin Ulbrich (ehem. Oboist des Tonhalle-Orchesters) gibt Anekdoten aus seinem Buch \"Dirigieren verdirbt den Charakter\" (Reclam 2017) zum Besten. Musikalische Umrahmung durch das \"Trio Poetico\".",
     "team": "Hans Martin Ulbrich, Autor mit \"Trio Poetico\": Hans Martin Ulbrich, Oboe, Heinz Hofer, Klarinette, Florenz Jenny, Fagott",
     "categories": [

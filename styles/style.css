@@ -367,6 +367,28 @@ input[type=checkbox]:checked ~ #menu li a div {
 /* legend table end*/
 /* PROGRAM SECTION end */
 
+/* MITWIRKENDE SECTION start */
+#mitwirkende {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: center;
+}
+
+#mitwirkende > div {
+    width: 33%;
+    min-width: 350px;
+
+    border: 1px solid lightgrey;
+}
+
+#mitwirkende  img {
+    max-height: 200px;
+}
+/* MITWIRKENDE SECTION end */
+
 /* FOOD SECTION start */
 .food-section p {
     margin: 1em auto;
