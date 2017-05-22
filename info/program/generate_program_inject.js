@@ -319,13 +319,8 @@ function drawParticipanList() {
             //     // append title to other entry
             var div = divMap[/^@(.*)/.exec(participant.description)[1]];
             var team = div.find(".team");
-            var text = team.text() + ", " + participant.team;
-            team.text(text);
-            //     var div = divMap[/^@/(.*)/.exec(participants.description)[1]];
-            //     var team = div.find(".team");
-            //     var text = team.text() + participant.team;
-            //     team.text(text);
-
+            var text = team.html() + ", " + participant.team;
+            team.html(text);
         } else {
             // mitwirkender on its own
             var $div = $("<div>");
@@ -334,7 +329,7 @@ function drawParticipanList() {
 
             var $title = $("<h4>");
             $div.append($title);
-            $title.text(participant.title);
+            $title.html(participant.title);
 
             if (participant.images && participant.images.length > 0) {
                 // only one image for now
@@ -344,11 +339,11 @@ function drawParticipanList() {
 
             $description = $("<p>");
             $div.append($description);
-            $description.text(participant.description);
+            $description.html(participant.description);
 
             $team = $("<p>", { class: "team" });
             $div.append($team);
-            $team.text(participant.team);
+            $team.html(participant.team);
         }
     }
 }
