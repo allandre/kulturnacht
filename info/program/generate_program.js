@@ -47,11 +47,11 @@ page.open('skeleton.html', function(status) {
     writeToFile(pathPrefix + 'program-list.html', programList);
     console.log('Finished creating program list');
 
-    var participantList = page.evaluate(function(_programData) {
+    var participantGallery = page.evaluate(function(_programData) {
         console.log("started creating participant list...");
-        return createParticipantList(_programData);
+        return createParticipantGallery(_programData);
     }, programData);
-    writeToFile(pathPrefix + 'participant-list.html', participantList);
+    writeToFile(pathPrefix + 'participant-gallery.html', participantGallery);
     console.log('Finished creating participant list');
 
     phantom.exit();

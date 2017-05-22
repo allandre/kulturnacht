@@ -304,6 +304,8 @@ input[type=checkbox]:checked ~ #menu li a div {
 #program-section table {
     margin: 0 auto;
     margin-top: 0.5em;
+
+    z-index: 100;
 }
 
 #program-section th {
@@ -375,19 +377,16 @@ input[type=checkbox]:checked ~ #menu li a div {
     position: relative;
     color: black;
     background-color: white;
-
     border-radius: 10px;
 }
 
 .modal-content h4 {
     padding: 2em 1em;
-
     text-align: center;
 }
 
 .modal-content p {
     margin: 0;
-
     padding: 1em;
 }
 
@@ -400,17 +399,63 @@ input[type=checkbox]:checked ~ #menu li a div {
     display: block;
 }
 
-
 .closebtn {
     position: absolute;
     top: 0;
     right: 0;
-
     margin: 0 0.5em 0 0;
-    
     font-size: 120%;
     cursor: pointer;
 }
+
+
+/* -> gallery */
+
+#gallery-container p{
+    max-width: unset;
+}
+
+#gallery {
+    position: relative;
+    z-index: 1;
+}
+
+.gallery-hidden {
+    display: none;
+}
+
+#participant-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    align-content: center;
+}
+
+#participant-gallery > div {
+    width: 24%;
+    min-width: 350px;
+    border: 1px solid lightgrey;
+
+    font-size: 80%;
+}
+
+#participant-gallery p {
+    margin: 1em 0.5em;
+}
+
+#participant-gallery h4 {
+    font-weight: bold;
+    margin: 1em 0.5em;
+}
+
+#participant-gallery img {
+    max-height: 200px;
+}
+
+
+/* gallery end */
 
 
 /* legend table start*/
@@ -440,31 +485,6 @@ input[type=checkbox]:checked ~ #menu li a div {
 
 
 /* PROGRAM SECTION end */
-
-
-/* MITWIRKENDE SECTION start */
-
-#mitwirkende {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    align-content: center;
-}
-
-#mitwirkende > div {
-    width: 33%;
-    min-width: 350px;
-    border: 1px solid lightgrey;
-}
-
-#mitwirkende img {
-    max-height: 200px;
-}
-
-
-/* MITWIRKENDE SECTION end */
 
 
 /* FOOD SECTION start */

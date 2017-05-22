@@ -5,6 +5,9 @@ var hamburgerMenuWidth = 1045;
 
 var currentPosition = null;
 
+var isGalleryShown = false;
+var isGalleryLoaded = false;
+
 
 var positionIndicationData;
 var showPositionVisible = {
@@ -27,7 +30,8 @@ $(document).ready(function() {
     $positionIndication = $('#position-indication');
 
     updateProgramSection(true);
-    // updateMitwirkende();
+
+    initGallery();
 });
 
 $(window).on('resize', function(event) {
@@ -119,22 +123,49 @@ function loadProgram(file) {
     xmlhttp.send();
 }
 
-// function updateMitwirkende() {
-//     loadParticipants("resources/program/participant-list.html");
-// }
+function initGallery() {
+    $(".gallery-toggler").on("click", toggleGallery);
+    $("#gallery").toggleClass("gallery-hidden");
+    $("#gallery").css("top", "-10%");
+}
 
-// function loadParticipants(file) {
-//     var xmlhttp = new XMLHttpRequest();
+function toggleGallery(evt) {
+    evt.preventDefault();
 
-//     xmlhttp.onreadystatechange = function   () {
-//         if (this.readyState === 4 && this.status === 200) {
-//             $("#mitwirkende").html(this.responseText);
-//         }
-//     };
+    // load gallery only once
+    if (!isGalleryLoaded) {
+        loadGallery();
+        isGalleryLoaded = true;
+    }
 
-//     xmlhttp.open("GET", file, true);
-//     xmlhttp.send();
-// }
+    // toggle visibilty
+    $("#show-gallery, #gallery").toggleClass("gallery-hidden");
+
+    var $gallery = $("#gallery");
+    if (!isGalleryShown) {
+        $gallery.animate({
+            "top": "0"
+        }, 1000);
+    } else {
+        $gallery.css("top", "-10%");
+    }
+
+    isGalleryShown = !isGalleryShown;
+}
+
+function loadGallery() {
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            console.log("A");
+            $("#participant-gallery").html(this.responseText);
+        }
+    };
+
+    xmlhttp.open("GET", "resources/program/participant-gallery.html", true);
+    xmlhttp.send();
+}
 
 function toggleParticipantInfo(evt, id) {
     // console.log(evt);
@@ -147,7 +178,6 @@ function toggleParticipantInfo(evt, id) {
 
 function hideMenu() {
     $("#nav-trigger").prop("checked", false);
-    // $('nav li').removeClass('current');
 }
 
 

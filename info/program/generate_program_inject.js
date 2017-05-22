@@ -30,9 +30,9 @@ function createProgramList(_programData) {
     return $("#program-list")[0].innerHTML;
 }
 
-function createParticipantList(_programData) {
+function createParticipantGallery(_programData) {
     parseProgramData(_programData);
-    drawParticipanList();
+    drawParticipantGallery();
 
     return $("#participant-list")[0].innerHTML;
 }
@@ -371,7 +371,7 @@ function createContentRow_List(events, rows, timeColumn) {
     }
 }
 
-function drawParticipanList() {
+function drawParticipantGallery() {
     var $superDiv = $("#participant-list");
     $superDiv.html("");
 
@@ -397,9 +397,10 @@ function drawParticipanList() {
             $title.html(participant.title);
 
             if (participant.images && participant.images.length > 0) {
-                // only one image for now
-                var $img = $("<img>", { src: "resources/participants/" + participant.images[0] });
-                $div.append($img);
+                for (var j in participant.images) {
+                    var $img = $("<img>", { src: "resources/participants/" + participant.images[j] });
+                    $div.append($img);
+                }
             }
 
             $description = $("<p>");
