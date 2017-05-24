@@ -388,13 +388,18 @@ function drawParticipantGallery() {
             team.html(text);
         } else {
             // mitwirkender on its own
-            var $div = $("<div>");
+            var $div = $("<div>", { class: "gallery-item" });
             $superDiv.append($div);
             divMap[participant.id] = $div;
 
             var $title = $("<h4>");
             $div.append($title);
-            $title.html(participant.title);
+            var titleText = "";
+            for (var i in participant.categories) {
+                titleText += getIconForCategory(participant.categories[i]);
+            }
+            titleText += " " + participant.title;
+            $title.html(titleText);
 
             if (participant.images && participant.images.length > 0) {
                 for (var j in participant.images) {
@@ -410,6 +415,22 @@ function drawParticipantGallery() {
             $team = $("<p>", { class: "team" });
             $div.append($team);
             $team.html(participant.team);
+
+            var $location = $("<p>");
+            $div.append($location);
+            var location = getLocationForParticipant(participant.id);
+            $location.html("Ort: " + location.name);
+
+            var $time = $("<p>");
+            $div.append($time);
+            var event = getEventForPartipant(participant.id).event;
+            // console.log(JSON.stringify(event, null, 2));
+            var timeText = "Zeit: ";
+            for (var i in event.times) {
+                timeText += timeToString(event.times[i]) + ", ";
+            }
+            timeText = timeText.slice(0, timeText.length - 2);
+            $time.html(timeText);
         }
     }
 }
@@ -467,7 +488,7 @@ function createTextForEvent(event) {
 
     var text = "";
     for (var l in particpant.categories) {
-        text += getIconForCategory(particpant.categories[l]);
+        text += getIconForCategory(particpant.categories[l]) + " ";
     }
     text += " " + particpant.name;
 
@@ -516,6 +537,30 @@ function getParticipantById(participantId) {
     }
 
     console.log('no participant found for id: ' + participantId);
+    return null;
+}
+
+function getEventForPartipant(participantId) {
+    for (var i in programData.eventData) {
+        var eventDatum = programData.eventData[i];
+        for (var j in eventDatum.events) {
+            if (eventDatum.events[j].eventId === participantId) {
+                return {eventDatum: eventDatum, event: eventDatum.events[j]};
+            }
+        }
+    }
+
+    console.log('no event found for participantId ' + participantId);
+    return null;
+}
+
+function getLocationForParticipant(participantId) {
+    var event = getEventForPartipant(participantId);
+    if (event) {
+        return getLocationById(event.eventDatum.locationId);
+    }
+
+    console.log('no event found for participantId ' + participantId);
     return null;
 }
 

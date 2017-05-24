@@ -7,6 +7,7 @@ var currentPosition = null;
 
 var isGalleryShown = false;
 var isGalleryLoaded = false;
+var galleryColumnCount = 1;
 
 
 var positionIndicationData;
@@ -41,6 +42,7 @@ $(window).on('resize', function(event) {
     }
 
     updateProgramSection(false);
+    adjustGallery();
 });
 
 $(window).on('scroll', function() {
@@ -126,7 +128,6 @@ function loadProgram(file) {
 function initGallery() {
     $(".gallery-toggler").on("click", toggleGallery);
     $("#gallery").toggleClass("gallery-hidden");
-    $("#gallery").css("top", "-10%");
 }
 
 function toggleGallery(evt) {
@@ -141,15 +142,6 @@ function toggleGallery(evt) {
     // toggle visibilty
     $("#show-gallery, #gallery").toggleClass("gallery-hidden");
 
-    var $gallery = $("#gallery");
-    if (!isGalleryShown) {
-        $gallery.animate({
-            "top": "0"
-        }, 1000);
-    } else {
-        $gallery.css("top", "-10%");
-    }
-
     isGalleryShown = !isGalleryShown;
 }
 
@@ -158,13 +150,41 @@ function loadGallery() {
 
     xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-            console.log("A");
             $("#participant-gallery").html(this.responseText);
+            adjustGallery();
         }
     };
 
     xmlhttp.open("GET", "resources/program/participant-gallery.html", true);
     xmlhttp.send();
+}
+
+function adjustGallery() {
+    if (isGalleryLoaded) {
+
+        var $participantGallery = $("#participant-gallery");
+
+        var galleryWidth = $participantGallery.width();
+        var galleryHeight = $participantGallery.height();
+        var newColumns = (1 + Math.round((galleryWidth - 750) / 250));
+
+        if (galleryColumnCount !== newColumns) {
+            galleryHeight *= galleryColumnCount;
+            galleryColumnCount = newColumns;
+
+            var newHeight = (galleryHeight / newColumns);
+            $participantGallery.height(newHeight);
+            var itemWidth = (galleryWidth / newColumns) * 0.9;
+            $(".gallery-item").width(itemWidth);
+
+            var $galleryItemFirst = $(".gallery-item:first");
+            var counter = 0;
+            while ($galleryItemFirst.offset().left < $participantGallery.offset().left && counter < 20) {
+                counter++;
+                $participantGallery.height($participantGallery.height() * 1.01);
+            }
+        }
+    }
 }
 
 function toggleParticipantInfo(evt, id) {

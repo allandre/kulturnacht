@@ -304,7 +304,6 @@ input[type=checkbox]:checked ~ #menu li a div {
 #program-section table {
     margin: 0 auto;
     margin-top: 0.5em;
-
     z-index: 100;
 }
 
@@ -411,7 +410,7 @@ input[type=checkbox]:checked ~ #menu li a div {
 
 /* -> gallery */
 
-#gallery-container p{
+#gallery-container p {
     max-width: unset;
 }
 
@@ -426,32 +425,36 @@ input[type=checkbox]:checked ~ #menu li a div {
 
 #participant-gallery {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: stretch;
-    align-content: center;
+    justify-content: flex-start;
+    align-content: space-around;
 }
 
-#participant-gallery > div {
-    width: 24%;
-    min-width: 350px;
-    border: 1px solid lightgrey;
-
+.gallery-item {
+    max-width: 350px;
+    border: 1px solid black;
     font-size: 80%;
+    margin-bottom: 1em;
+
+    background-color: #ededed;
 }
 
-#participant-gallery p {
-    margin: 1em 0.5em;
-}
-
-#participant-gallery h4 {
+.gallery-item h4 {
     font-weight: bold;
-    margin: 1em 0.5em;
+    font-size: 110%;
+    margin: 1em 1em;
 }
 
-#participant-gallery img {
-    max-height: 200px;
+.gallery-item img {
+    min-width: 50%;
+    max-width: 100%;
+    display: block;
+    margin: 0.5em auto;
+}
+
+.gallery-item p {
+    margin: 1em 1em;
 }
 
 
