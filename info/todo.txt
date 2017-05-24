@@ -1,17 +1,24 @@
 
-- mitwirkende section
+- layout gallerie
 
-- logo: font
+-- logo: font
 
-- Titelbild: zuschneiden
-- Übersichtsplan :: komplette Liste + link
 - Übersichtsplan :: bild -> map
 - webseite von Thomas Ernst im Footer verlinken
 
--- sponsoren: kleinere bilder
--- tabelle design
--- ersetzen emojis / fix // font awesome / bootstrap
+- link zu program als pdf (August)
+
+- mobile: program liste expandable
+- mobile: program button switch Time/place
+
+-- sponsoren silber/bronze: kleinere bilder und gold bisschen grösser
+- tabelle design
+-- schwarz weiss emojis
 
 -- essen & trinken: schönere liste
+
+
+
+--- Kontakt: KVK Logo anzeigen
 
 ---- hamburger menu animation expand
