@@ -184,6 +184,7 @@ function createEventCell_Table(row, event00, event30, times) {
         } else {
             // empty 00 cell followed by 30 cell
             $cell.html('&nbsp;');
+            $cell.addClass("halbstund");
             $cell2 = $('<td>');
             row.append($cell2);
             $cell2.html(timeToString(times[1]) + ": " + text30);
