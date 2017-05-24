@@ -11,8 +11,11 @@
 - mobile: program liste expandable
 - mobile: program button switch Time/place
 
+- mobile: hamburger broken
+- milan macht noch eine ausgiebige performance-analyse!
+- google analytics
+
 -- sponsoren silber/bronze: kleinere bilder und gold bisschen grösser
-- tabelle design
 -- schwarz weiss emojis
 
 -- essen & trinken: schönere liste

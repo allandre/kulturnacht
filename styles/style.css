@@ -308,17 +308,25 @@ input[type=checkbox]:checked ~ #menu li a div {
 }
 
 #program-section th {
+    padding: 0.4em 0;
     font-weight: bold;
-    font-size: 100%;
+    
     text-align: center;
     color: #ed1255;
+    border-bottom: 1px solid black;
+    border-right: 1px dotted #ed1255;
+}
+
+#program-section th:last-of-type {
+    border-right: unset;
 }
 
 #program-section td {
-    padding: 0.1em;
+    padding: 0.2em 0.6em;
+
     border-bottom: 1px solid black;
     border-right: 1px dotted #ed1255;
-    ;
+    
     font-size: 75%;
     text-align: left;
     vertical-align: middle;
@@ -329,8 +337,12 @@ input[type=checkbox]:checked ~ #menu li a div {
     cursor: pointer;
 }
 
+#program-section td.halbstund {
+    width: 5em;
+}
+
 #program-section table td.locationCell {
-    color: black;
+    padding-left: 0;
     font-weight: bold;
     border-bottom: 1px solid black;
 }
@@ -437,6 +449,7 @@ input[type=checkbox]:checked ~ #menu li a div {
     font-size: 80%;
     margin-bottom: 1em;
 
+
     background-color: #ededed;
 }
 
@@ -471,16 +484,15 @@ input[type=checkbox]:checked ~ #menu li a div {
 
 #program-section #legend {
     margin-left: 0;
-    max-width: 800px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: : row;
-    justify-content: space-between;
 }
 
 #program-section #legend div {
     display: inline;
     font-size: 75%;
+    margin: 0 1em;
 }
 
 
