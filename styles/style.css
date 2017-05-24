@@ -598,11 +598,14 @@ input[type=checkbox]:checked ~ #menu li a div {
     margin: auto;
 }
 
+.sponsoren-block:nth-of-type(2) img {
+    height: 50px;
+}
+
 .sponsoren-block img {
     width: unset;
     max-width: unset;
-    height: 60px;
-    /*71px;*/
+    height: 70px; /*71*/
     max-height: unset;
     padding: 1em .5em;
 }
