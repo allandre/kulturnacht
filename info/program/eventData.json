@@ -47,6 +47,8 @@
     }]
 }, {
     "locationId": "sunnemetzg",
+	
+	
     "events": [{
         "eventId": "schülerband",
         "times": [1800, 1900]
