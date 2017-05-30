@@ -1,110 +1,110 @@
 [{
     "locationId": "wangensbach",
     "events": [{
-        "eventId": "alfred_egli",
+        "participantId": "alfred_egli",
         "times": [1800, 2000, 2200],
         "private_row": true
     }, {
-        "eventId": "die_kulisse",
+        "participantId": "die_kulisse",
         "times": [1900, 2000, 2100],
         "private_row": true
     }]
 }, {
     "locationId": "bibliothek",
     "events": [{
-        "eventId": "bibliothek_film",
+        "participantId": "bibliothek_film",
         "times": [1900, 2300]
     }, {
-        "eventId": "simon_chen",
+        "participantId": "simon_chen",
         "times": [2000, 2100, 2200]
     }]
 }, {
     "locationId": "chrottegrotte",
     "events": [{
-        "eventId": "mkz",
+        "participantId": "mkz",
         "times": [1800]
     }, {
-        "eventId": "xotnix",
+        "participantId": "xotnix",
         "times": [1900]
     }, {
-        "eventId": "singbar",
+        "participantId": "singbar",
         "times": [2000]
     }, {
-        "eventId": "amaron",
+        "participantId": "amaron",
         "times": [2100]
     }, {
-        "eventId": "duo_coeur_rouge",
+        "participantId": "duo_coeur_rouge",
         "times": [2200]
     }, {
-        "eventId": "ueli_baer",
+        "participantId": "ueli_baer",
         "times": [2300]
     }]
 }, {
     "locationId": "freihof",
     "events": [{
-        "eventId": "wort_geschicht",
+        "participantId": "wort_geschicht",
         "times": [1800, 1900, 2000, 2100, 2200, 2300]
     }]
 }, {
     "locationId": "sunnemetzg",
-	
-	
+
+
     "events": [{
-        "eventId": "schülerband",
+        "participantId": "schülerband",
         "times": [1800, 1900]
     }, {
-        "eventId": "magic_ride",
+        "participantId": "magic_ride",
         "times": [2000]
     }, {
-        "eventId": "xotnix_sunnemetzg",
+        "participantId": "xotnix_sunnemetzg",
         "times": [2100]
     }, {
-        "eventId": "funtastic",
+        "participantId": "funtastic",
         "times": [2200]
     }, {
-        "eventId": "bregy",
+        "participantId": "bregy",
         "times": [2300]
     }]
 }, {
     "locationId": "fussgängerunterführung",
     "events": [{
-        "eventId": "b_live",
+        "participantId": "b_live",
         "times": [1930, 2030, 2130]
     }]
 }, {
     "locationId": "galerie",
     "events": [{
-        "eventId": "fred_bauer",
+        "participantId": "fred_bauer",
         "times": [1800, 1900, 2000, 2100, 2200, 2300]
     }]
 }, {
     "locationId": "ochsen",
     "events": [{
-        "eventId": "ochsen",
+        "participantId": "ochsen",
         "times": [1800, 1900, 2000, 2100, 2200, 2300]
     }]
 }, {
     "locationId": "gemeindehaus",
     "events": [{
-        "eventId": "kulturkommission",
+        "participantId": "kulturkommission",
         "times": [1900, 2100]
     }]
 }, {
     "locationId": "cgjung-haus",
     "events": [{
-        "eventId": "jung",
+        "participantId": "jung",
         "times": [2100, 2200]
     }]
 }, {
     "locationId": "kägi",
     "events": [{
-        "eventId": "dramolett",
+        "participantId": "dramolett",
         "times": [1900, 2100]
     }]
 }, {
     "locationId": "kanti",
     "events": [{
-        "eventId": "kanti_ausstellung",
+        "participantId": "kanti_ausstellung",
         "times": [
             1800, 1900, 2000, 2100, 2200, 2300
         ]
@@ -112,94 +112,94 @@
 }, {
     "locationId": "mehrzweckraum",
     "events": [{
-        "eventId": "bookxkey",
+        "participantId": "bookxkey",
         "times": [1800, 1900, 2000, 2100, 2200, 2300]
     }]
 }, {
     "locationId": "musikschule",
     "events": [{
-        "eventId": "klavierkonzert",
+        "participantId": "klavierkonzert",
         "times": [1900]
     }]
 }, {
     "locationId": "ortsmuseum",
     "events": [{
-        "eventId": "gruselkabinett",
+        "participantId": "gruselkabinett",
         "times": [1800, 1900, 2000, 2100, 2200, 2300]
     }, {
-        "eventId": "unsinniges",
+        "participantId": "unsinniges",
         "times": [1800, 1900, 2100]
     }, {
-        "eventId": "drüber",
+        "participantId": "drüber",
         "times": [2000, 2200, 2300]
     }, {
-        "eventId": "grusel",
+        "participantId": "grusel",
         "times": []
     }]
 }, {
     "locationId": "kirche",
     "events": [{
-        "eventId": "turmbläser",
+        "participantId": "turmbläser",
         "times": [1745, 1830]
     }, {
-        "eventId": "kirchenchor",
+        "participantId": "kirchenchor",
         "times": [1800]
     }, {
-        "eventId": "linien",
+        "participantId": "linien",
         "times": [1900]
     }, {
-        "eventId": "waldgeister",
+        "participantId": "waldgeister",
         "times": [2000]
     }, {
-        "eventId": "beyond",
+        "participantId": "beyond",
         "times": [2100]
     }, {
-        "eventId": "improvisation",
+        "participantId": "improvisation",
         "times": [2200]
     }, {
-        "eventId": "aaron_wegmann",
+        "participantId": "aaron_wegmann",
         "times": [2300]
     }]
 }, {
     "locationId": "kirchgemeindehaus",
     "events": [{
-        "eventId": "harmonie",
+        "participantId": "harmonie",
         "times": [1900, 2000]
     }, {
-        "eventId": "fanfare",
+        "participantId": "fanfare",
         "times": [2100, 2200, 2300]
     }]
 }, {
     "locationId": "falken",
     "events": [{
-        "eventId": "esprits",
+        "participantId": "esprits",
         "times": [1800, 1900, 2000, 2100]
     }]
 }, {
     "locationId": "sonne",
     "events": [{
-        "eventId": "sonne",
+        "participantId": "sonne",
         "times": [1900, 2000, 2100]
     }]
 }, {
     "locationId": "cgjung-see",
     "events": [{
-        "eventId": "artischock",
+        "participantId": "artischock",
         "times": [1800, 1900, 2000, 2100],
         "private_row": true
     }, {
-        "eventId": "klassik",
+        "participantId": "klassik",
         "times": [1800, 1900, 2000],
         "private_row": true
     }, {
-        "eventId": "andreas_moser",
+        "participantId": "andreas_moser",
         "times": [1900, 2000, 2100],
         "private_row": true
     }]
 }, {
     "locationId": "wolf",
     "events": [{
-        "eventId": "wolf",
+        "participantId": "wolf",
         "times": [1900, 2000, 2100]
     }]
 }]

@@ -23,5 +23,4 @@
 
 
 --- Kontakt: KVK Logo anzeigen
-
 ---- hamburger menu animation expand

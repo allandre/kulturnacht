@@ -1,20 +1,4 @@
-var programData;
 
-var timeColumns = [{
-    times: [1800, 1830]
-}, {
-    times: [1900, 1930]
-}, {
-    times: [2000, 2030]
-}, {
-    times: [2100, 2130]
-}, {
-    times: [2200, 2230]
-}, {
-    times: [2300, 2330]
-}]
-
-var modalDivs = {};
 
 function createProgramTable(_programData) {
     parseProgramData(_programData);
@@ -30,12 +14,6 @@ function createProgramList(_programData) {
     return $("#program-list")[0].innerHTML;
 }
 
-function createParticipantGallery(_programData) {
-    parseProgramData(_programData);
-    drawParticipantGallery();
-
-    return $("#participant-list")[0].innerHTML;
-}
 
 function drawProgramTable() {
     var $table = prepareDiv($("#program-table"));
@@ -468,115 +446,7 @@ function get1745EventForEventDatum(eventDatum) {
     return null;
 }
 
-function findEventForTime(events, time) {
-    var res = null;
-    for (var i in events) {
-        var event = events[i];
-        var index = event.times.indexOf(time);
-        if (index !== -1) {
-            res = event;
-            // only account once for each time per event
-            event.times[index] = -1;
-            break;
-        }
-    }
 
-    return res;
-}
-
-function createTextForEvent(event) {
-    var particpant = getParticipantById(event.eventId);
-
-    var text = "";
-    for (var l in particpant.categories) {
-        text += getIconForCategory(particpant.categories[l]) + " ";
-    }
-    text += " " + particpant.name;
-
-    return text;
-}
-
-function getIconForCategory(category) {
-    switch (category) {
-        case "guide":
-            return "&#x1F46E;";
-        case "music":
-            return "&#x1F3B5;";
-        case "language":
-            return "&#x1F4AC;";
-        case "exposition":
-            return "&#x1F5BC;";
-        case "movie":
-            return "&#x1F3A5;";
-        case "theater":
-            return "&#x1F3AD;";
-        case "food":
-            return "&#x1F374;";
-        default:
-            return "";
-    }
-}
-
-function getLocationById(locationId) {
-    for (var i in programData.locationData) {
-        var location = programData.locationData[i];
-        if (location.id === locationId) {
-            return location;
-        }
-    }
-
-    console.log('no location found for id: ' + locationId);
-    return null;
-}
-
-function getParticipantById(participantId) {
-    for (var i in programData.participantData) {
-        var participant = programData.participantData[i];
-        if (participant.id === participantId) {
-            return participant;
-        }
-    }
-
-    console.log('no participant found for id: ' + participantId);
-    return null;
-}
-
-function getEventForPartipant(participantId) {
-    for (var i in programData.eventData) {
-        var eventDatum = programData.eventData[i];
-        for (var j in eventDatum.events) {
-            if (eventDatum.events[j].eventId === participantId) {
-                return {eventDatum: eventDatum, event: eventDatum.events[j]};
-            }
-        }
-    }
-
-    console.log('no event found for participantId ' + participantId);
-    return null;
-}
-
-function getLocationForParticipant(participantId) {
-    var event = getEventForPartipant(participantId);
-    if (event) {
-        return getLocationById(event.eventDatum.locationId);
-    }
-
-    console.log('no event found for participantId ' + participantId);
-    return null;
-}
-
-function parseProgramData(_programData) {
-    programData = JSON.parse(_programData);
-    programData.eventData = JSON.parse(programData.eventData);
-    programData.locationData = JSON.parse(programData.locationData);
-    programData.participantData = JSON.parse(programData.participantData);
-}
-
-function timeToString(time) {
-    var minutes = "0" + time % 100;
-    var timeString = Math.floor(time / 100) + "." + minutes.substr(-2);
-    return timeString;
-}
 
 function prepareDiv($div) {
     $div.html("");
