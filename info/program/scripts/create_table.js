@@ -1,3 +1,5 @@
+var extraRows = {};
+
 function createItem() {
     drawProgramTable();
 
@@ -7,6 +9,11 @@ function createItem() {
 function drawProgramTable() {
     var $containerDiv = $("#program-table");
     $containerDiv.html("");
+
+    var $p = $("<p>");
+    $containerDiv.append($p);
+    $p.text("Um mehr Informationen zu einem Anlass zu erhalten, auf Eintrag klicken.");
+    $p.css("max-width", "unset");
 
     var $table = $("<table>", { class: "desktop" });
     $containerDiv.append($table);
@@ -57,10 +64,10 @@ function createContentRows(eventEntry, rows) {
             for (var j = 0; j < timeMatrix.length; j++) {
                 var times = timeMatrix[j];
 
-                var text00 = createTextForEvent(findEventForTime([event], times[0]));
-                var text30 = createTextForEvent(findEventForTime([event], times[1]));
+                var event00 = findEventForTime([event], times[0]);
+                var event30 = findEventForTime([event], times[1]);
 
-                createEventCell($row, text00, text30, times);
+                createEventCell($row, event00, event30, times, eventEntry.locationId);
             }
         } else {
             otherEvents.push(event);
@@ -69,46 +76,121 @@ function createContentRows(eventEntry, rows) {
 
     // handle over rest of events
     for (; currentRow < rows.length; currentRow++) {
-    	var $row = rows[currentRow];
-    	for (var j = 0; j < timeMatrix.length; j++) {
-    		var times = timeMatrix[j];
+        var $row = rows[currentRow];
+        for (var j = 0; j < timeMatrix.length; j++) {
+            var times = timeMatrix[j];
 
-    		var text00 = createTextForEvent(findEventForTime(otherEvents, times[0]));
-    		var text30 = createTextForEvent(findEventForTime(otherEvents, times[1]));
+            var event00 = findEventForTime(otherEvents, times[0]);
+            var event30 = findEventForTime(otherEvents, times[1]);
 
-    		createEventCell($row, text00, text30, times);
-    	}
+            createEventCell($row, event00, event30, times, eventEntry.locationId);
+        }
     }
 }
 
-function createEventCell($row, text00, text30, times) {
-	var $cell = $("<td>");
-	$row.append($cell);
-	var $cell2;
+function createEventCell($row, event00, event30, times, locationId) {
+    var text00 = createTextForEvent(event00);
+    var text30 = createTextForEvent(event30);
 
-	if (text00.length === 0) {
-		if (text30.length === 0) {
-			// empty 2 cell
-			$cell.prop("colspan", "2");
-		} else {
-			// empty 00 cell, 30 text
-			$cell.html("&nbsp;");
-			$cell.addClass("halbstund");
-			$cell2 = $("<td>");
-			$row.append($cell2);
-			$cell2.html(timeToString(times[1] + ": " + text30));
-		}
-	} else {
-		$cell.html(text00);
-		if (text30.length === 0) {
-			// 'regular case' : full event
-			$cell.prop("colspan", "2");
-		} else {
-			$cell2 = $("<td>");
-			$row.append($cell2);
-			$cell2.html(timeToString(times[1]) + ": " + text30);
-		}
-	}
+    var $cell = $("<td>");
+    $row.append($cell);
+    var $cell2;
+
+    if (text00.length === 0) {
+        if (text30.length === 0) {
+            // empty 2 cell
+            $cell.prop("colspan", "2");
+        } else {
+            // empty 00 cell, 30 text
+            $cell.html("&nbsp;");
+            $cell.addClass("halbstund");
+            $cell2 = $("<td>");
+            $row.append($cell2);
+            $cell2.html(timeToString(times[1]) + ": " + text30);
+            processAdditionalRow($row, $cell2, event30, locationId);
+        }
+    } else {
+        $cell.html(text00);
+        processAdditionalRow($row, $cell, event00, locationId);
+        if (text30.length === 0) {
+            // 'regular case' : full event
+            $cell.prop("colspan", "2");
+        } else {
+            $cell2 = $("<td>");
+            $row.append($cell2);
+            $cell2.html(timeToString(times[1]) + ": " + text30);
+            processAdditionalRow($row, $cell, event30, locationId);
+        }
+    }
+}
+
+function processAdditionalRow($row, $cell, event, locationId) {
+    $cell.addClass("content");
+
+    var participant = getParticipantById(event.participantId);
+
+    if (!extraRows[event.participantId]) {
+        var $extraRow;
+        if (/^@/.test(participant.description)) {
+            var id = /^@(.*)$/.exec(participant.description)[1];
+            $extraRow = extraRows[id];
+            if (!$extraRow) {
+                console.log('Das war genau der Fall, den du kanntest, aber zu faul warst, dich darum zu kümmern..');
+                return;
+            } else {
+                var text = $extraRow.find("p:last-of-type").text();
+                text += ", " + participant.team;
+                $extraRow.find("p:last-of-type").text(text);
+
+                addClickEvent($cell, $extraRow.attr("data-participant"), locationId);
+            }
+        } else {
+            addClickEvent($cell, event.participantId, locationId);
+
+            $extraRow = $("<tr>", { class: "extra-row" });
+            $row.after($extraRow);
+            $extraRow.attr("data-participant", event.participantId);
+
+            var $extraCell = $("<td>", { class: "extra-cell" });
+            $extraRow.append($extraCell);
+            $extraCell.prop("colspan", "12");
+
+            var $containerDiv = $("<div>", { class: "table-entry" });
+            $extraCell.append($containerDiv);
+
+            if (participant.images && participant.images.length > 0) {
+                var $imgDiv = $("<div>", { class: "img" });
+                $containerDiv.append($imgDiv);
+
+                var $img = $("<img>", { src: "resources/participants/" + participant.images[0] });
+                $imgDiv.append($img);
+            }
+
+            var $contentDiv = $("<div>", { class: "content" });
+            $containerDiv.append($contentDiv);
+
+            var $h4 = $("<h4>");
+            $contentDiv.append($h4);
+            $h4.html(participant.title);
+
+            var $description = $("<p>");
+            $contentDiv.append($description);
+            $description.html(participant.description);
+
+            var $team = $("<p>");
+            $contentDiv.append($team);
+            $team.html(participant.team);
+        }
+
+
+        extraRows[event.participantId] = $extraRow;
+    } else {
+        addClickEvent($cell, event.participantId, locationId);
+    }
+}
+
+function addClickEvent($cell, participantId, locationId) {
+    $cell[0].setAttribute("onclick", "toggleExtraRow(event, \"" + participantId + "\", \"" + locationId + "\");");
 }
 
 function calculateRowNumber(events) {

@@ -301,6 +301,10 @@ input[type=checkbox]:checked ~ #menu li a div {
     max-width: unset;
 }
 
+#program-section p {
+    max-width: unset;
+}
+
 #program-section table {
     margin: 0 auto;
     margin-top: 0.5em;
@@ -356,6 +360,53 @@ input[type=checkbox]:checked ~ #menu li a div {
     text-align: center;
 }
 
+#program-section tr td.extra-cell {
+    border: 2px solid black;
+    border-top: 0;
+
+    background-color: lightgrey;
+}
+
+#program-section .table-entry {
+    display: flex;
+}
+
+#program-section .extra-cell div.img {
+    display: inline-block;
+    margin: 10px;
+}
+
+#program-section .extra-cell .img img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#program-section .extra-cell .content {
+    display: inline-block;
+    padding: 10px;
+}
+
+#program-section .extra-cell .content h4 {
+    font-size: 110%;
+    font-weight: bold;
+}
+
+#program-section .extra-cell .content p:last-of-type {
+    margin-bottom: 0;
+}
+
+#program-section tr td.bottom-border {
+    border-bottom: 2px solid black;
+}
+
+#program-section tr td.selected {
+    border: 2px solid black;
+    border-bottom: 0;
+
+    background-color: lightgrey;
+}
 
 /* -> mobile */
 
@@ -379,7 +430,6 @@ input[type=checkbox]:checked ~ #menu li a div {
     
     text-align: center;
     line-height: 100%;
-    user-select: none;
 }
 
 

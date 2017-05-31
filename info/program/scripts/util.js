@@ -12,10 +12,12 @@ var timeMatrix = [
 
 /* ### create aux functions ### */
 function createLocationCell(eventEntry, rows, include1745) {
-    var location = getLocationById(eventEntry.locationId);
+    var $row = rows[0];
+    $row.prop("id", eventEntry.locationId);
 
+    var location = getLocationById(eventEntry.locationId);
     var $locationCell = $("<td>", { class: "locationCell" });
-    rows[0].append($locationCell);
+    $row.append($locationCell);
     $locationCell.prop("rowspan", "" + rows.length);
     var text = location.name + (location.address ? "\<br\>" + location.address : "");
     $locationCell.html(text);
@@ -127,7 +129,7 @@ function createTextForEvent(event) {
     if (!event) {
         return "";
     }
-    
+
     var participant = getParticipantById(event.participantId);
     return createTextForParticipant(participant);
 }

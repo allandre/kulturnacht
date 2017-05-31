@@ -8,6 +8,7 @@ var currentPosition = null;
 var isGalleryLoaded = false;
 var galleryColumnCount = 1;
 
+var currentExtraRow;
 
 var programStates = {
     undef: -1,
@@ -110,6 +111,7 @@ function loadProgram(file) {
         if (this.readyState === 4 && this.status === 200) {
             var $programDiv = $("#program");
             $programDiv.html(this.responseText);
+            $(".extra-row").hide();
         }
     };
 
@@ -132,6 +134,7 @@ function toggleGallery(evt) {
 
     // toggle visibilty
     $("#participant-gallery").toggle();
+    adjustGallery();
 
     $(".gallery-toggler").text(
         ($("#participant-gallery").is(":visible") ?
@@ -147,7 +150,9 @@ function loadGallery() {
         if (this.readyState === 4 && this.status === 200) {
             $("#participant-gallery").html(this.responseText);
             isGalleryLoaded = true;
-            adjustGallery();
+
+            // TODO: hanlde load of images (-> results in height being too small!)
+            setTimeout(adjustGallery, 1000);
         }
     };
 
@@ -161,9 +166,13 @@ function adjustGallery() {
 
         var galleryWidth = $participantGallery.width();
         var galleryHeight = $participantGallery.height();
-        var newColumns = (1 + Math.round((galleryWidth - 750) / 250));
+        var newColumns = 1 + Math.round((galleryWidth - 750) / 250);
 
-        if (galleryColumnCount !== newColumns) {
+        // console.log(galleryWidth);
+        // console.log(galleryHeight);
+        // console.log(newColumns);
+
+        if ($participantGallery.is(":visible") && galleryColumnCount !== newColumns) {
             console.log('A');
             galleryHeight *= galleryColumnCount;
             galleryColumnCount = newColumns;
@@ -176,8 +185,12 @@ function adjustGallery() {
             var $galleryItemFirst = $(".gallery-item:first");
             var counter = 0;
             while ($galleryItemFirst.offset().left < $participantGallery.offset().left && counter < 20) {
+                // console.log('Loop');
+                // console.log($galleryItemFirst.offset().left);
+                // console.log($participantGallery.offset().left);
+                // console.log($participantGallery.height());
                 counter++;
-                $participantGallery.height($participantGallery.height() * 1.01);
+                $participantGallery.height($participantGallery.height() * 1.1);
             }
         }
     }
@@ -242,4 +255,35 @@ function toggleListRow(time) {
     $("tr[data-time=" + time + "]").toggle();
     var $div = $("div[data-time=" + time + "]");
     $div.text($div.text() === "+" ? "-" : "+");
+}
+
+function toggleExtraRow(evt, participantId, locationId) {
+
+    function _switchClasses($target) {
+        $target.siblings().not(".locationCell").toggleClass("bottom-border");
+        $target.toggleClass("selected");
+    }
+
+    var target = evt.target;
+
+
+    // cleanup
+    if (currentExtraRow) {
+        $(".extra-row").hide();
+        currentExtraRow.$cell.prop("rowspan", currentExtraRow.rowSpan);
+        _switchClasses($(currentExtraRow.target));
+    }
+
+    if (!currentExtraRow || target !== currentExtraRow.target) {
+        var $locationCell = $("#" + locationId + " > .locationCell");
+        var rowSpan = $locationCell.prop("rowspan");
+        $locationCell.prop("rowspan", rowSpan + 1);
+        _switchClasses($(target));
+
+        currentExtraRow = { target: target, $cell: $locationCell, rowSpan: rowSpan };
+
+        $(".extra-row[data-participant=" + participantId + "]").show();
+    } else {
+        currentExtraRow = null;
+    }
 }
