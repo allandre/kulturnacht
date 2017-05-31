@@ -1,5 +1,5 @@
 
-- layout gallerie
+!- position galerie button
 
 -- logo: font
 
