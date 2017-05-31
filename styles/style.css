@@ -422,17 +422,21 @@ input[type=checkbox]:checked ~ #menu li a div {
 
 /* -> gallery */
 
-#gallery-container p {
-    max-width: unset;
+button.gallery-toggler {
+    padding: 1em;
+    margin: 2em 0;
+
+    border: none;
+    border-radius: 0.25em;
+
+    color: white;
+    background-color: #ed1255;
 }
 
-#gallery {
-    position: relative;
-    z-index: 1;
-}
+button.gallery-toggler:hover {
+    cursor: pointer;
 
-.gallery-hidden {
-    display: none;
+    background-color: #d70e3e;
 }
 
 #participant-gallery {

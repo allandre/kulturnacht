@@ -5,16 +5,9 @@ var hamburgerMenuWidth = 1045;
 
 var currentPosition = null;
 
-var isGalleryShown = false;
 var isGalleryLoaded = false;
 var galleryColumnCount = 1;
 
-
-var positionIndicationData;
-var showPositionVisible = {
-    visible: false,
-    hasSwitched: true
-}
 
 var programStates = {
     undef: -1,
@@ -127,7 +120,7 @@ function loadProgram(file) {
 
 function initGallery() {
     $(".gallery-toggler").on("click", toggleGallery);
-    $("#gallery").toggleClass("gallery-hidden");
+    $("#participant-gallery").toggle();
 }
 
 function toggleGallery(evt) {
@@ -140,9 +133,13 @@ function toggleGallery(evt) {
     }
 
     // toggle visibilty
-    $("#show-gallery, #gallery").toggleClass("gallery-hidden");
+    $("#participant-gallery").toggle();
 
-    isGalleryShown = !isGalleryShown;
+    $(".gallery-toggler").text(
+        ($("#participant-gallery").is(":visible") ?
+         "Galerie ausblenden" : 
+         "Galerie aller Mitwirkender anzeigen"));
+
 }
 
 function loadGallery() {
