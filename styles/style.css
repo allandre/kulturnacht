@@ -310,7 +310,6 @@ input[type=checkbox]:checked ~ #menu li a div {
 #program-section th {
     padding: 0.4em 0;
     font-weight: bold;
-    
     text-align: center;
     color: #ed1255;
     border-bottom: 1px solid black;
@@ -323,10 +322,8 @@ input[type=checkbox]:checked ~ #menu li a div {
 
 #program-section td {
     padding: 0.2em 0.6em;
-
     border-bottom: 1px solid black;
     border-right: 1px dotted #ed1255;
-    
     font-size: 75%;
     text-align: left;
     vertical-align: middle;
@@ -357,6 +354,32 @@ input[type=checkbox]:checked ~ #menu li a div {
 
 #program-section .time-cell {
     text-align: center;
+}
+
+
+/* -> mobile */
+
+#program-section .mobile {
+    width: 100%;
+}
+
+#program-section .mobile .time-cell {
+    cursor: pointer;
+}
+
+.expand {
+    display: inline-block;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    margin-right: 10%;
+
+    background-color: #ed1255;
+    color: white;
+    
+    text-align: center;
+    line-height: 100%;
+    user-select: none;
 }
 
 
@@ -425,17 +448,14 @@ input[type=checkbox]:checked ~ #menu li a div {
 button.gallery-toggler {
     padding: 1em;
     margin: 2em 0;
-
     border: none;
     border-radius: 0.25em;
-
     color: white;
     background-color: #ed1255;
 }
 
 button.gallery-toggler:hover {
     cursor: pointer;
-
     background-color: #d70e3e;
 }
 
@@ -452,8 +472,6 @@ button.gallery-toggler:hover {
     border: 1px solid black;
     font-size: 80%;
     margin-bottom: 1em;
-
-
     background-color: #ededed;
 }
 
@@ -609,7 +627,8 @@ button.gallery-toggler:hover {
 .sponsoren-block img {
     width: unset;
     max-width: unset;
-    height: 70px; /*71*/
+    height: 70px;
+    /*71*/
     max-height: unset;
     padding: 1em .5em;
 }

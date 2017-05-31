@@ -289,28 +289,7 @@ function drawProgramList()  {
     }
 }
 
-function calculateRowNumber_List(eventDatum, timeColumn) {
 
-    function _calculateIndex(time) {
-        return time % 100 === 0 ? 0 : 1;
-    }
-
-    var slots = [0, 0];
-
-    for (var i in timeColumn.times) {
-        var time = timeColumn.times[i];
-        for (var e in eventDatum.events) {
-            var event = eventDatum.events[e];
-            for (var t in event.times) {
-                if (event.times[t] === time) {
-                    slots[_calculateIndex(time)] += 1;
-                }
-            }
-        }
-    }
-
-    return slots[0] >= slots[1] ? slots[0] : slots[1];
-}
 
 function createContentRow_List(events, rows, timeColumn) {
 
@@ -350,101 +329,7 @@ function createContentRow_List(events, rows, timeColumn) {
     }
 }
 
-function drawParticipantGallery() {
-    var $superDiv = $("#participant-list");
-    $superDiv.html("");
 
-    var divMap = {};
-
-    for (var i in programData.participantData) {
-        var participant = programData.participantData[i];
-
-        if (/^@/.test(participant.description)) {
-            //     // append title to other entry
-            var div = divMap[/^@(.*)/.exec(participant.description)[1]];
-            var team = div.find(".team");
-            var text = team.html() + ", " + participant.team;
-            team.html(text);
-        } else {
-            // mitwirkender on its own
-            var $div = $("<div>", { class: "gallery-item" });
-            $superDiv.append($div);
-            divMap[participant.id] = $div;
-
-            var $title = $("<h4>");
-            $div.append($title);
-            var titleText = "";
-            for (var i in participant.categories) {
-                titleText += getIconForCategory(participant.categories[i]);
-            }
-            titleText += " " + participant.title;
-            $title.html(titleText);
-
-            if (participant.images && participant.images.length > 0) {
-                for (var j in participant.images) {
-                    var $img = $("<img>", { src: "resources/participants/" + participant.images[j] });
-                    $div.append($img);
-                }
-            }
-
-            $description = $("<p>");
-            $div.append($description);
-            $description.html(participant.description);
-
-            $team = $("<p>", { class: "team" });
-            $div.append($team);
-            $team.html(participant.team);
-
-            var $location = $("<p>");
-            $div.append($location);
-            var location = getLocationForParticipant(participant.id);
-            $location.html("Ort: " + location.name);
-
-            var $time = $("<p>");
-            $div.append($time);
-            var event = getEventForPartipant(participant.id).event;
-            // console.log(JSON.stringify(event, null, 2));
-            var timeText = "Zeit: ";
-            for (var i in event.times) {
-                timeText += timeToString(event.times[i]) + ", ";
-            }
-            timeText = timeText.slice(0, timeText.length - 2);
-            $time.html(timeText);
-        }
-    }
-}
-
-function createLocationColumn(eventDatum, rows, include1745) {
-    var location = getLocationById(eventDatum.locationId);
-
-    var $locationCell = $("<td>", { class: "locationCell" });
-    rows[0].append($locationCell);
-    $locationCell.prop("rowspan", "" + rows.length);
-    var text = location.name + (location.address ? "\<br\>" + location.address : "");
-    $locationCell.html(text);
-
-    var event1745;
-    if (include1745 && (event1745 = get1745EventForEventDatum(eventDatum))) {
-        $locationCell.prop("colspan", "2");
-        var $eventCell = $("<td>");
-        rows[0].append($eventCell);
-        $eventCell.html("17.45: " + createTextForEvent(event1745));
-    } else {
-        $locationCell.prop("colspan", "3");
-    }
-}
-
-function get1745EventForEventDatum(eventDatum) {
-    for (var i in eventDatum.events) {
-        for (var j in eventDatum.events[i].times) {
-            if (eventDatum.events[i].times[j] === 1745) {
-                return eventDatum.events[i];
-            }
-        }
-    }
-
-    return null;
-}
 
 
 

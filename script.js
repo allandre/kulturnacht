@@ -67,7 +67,7 @@ function setScrollingWithMouseWheel(isEnable) {
 }
 
 function loadMap() {
-
+/*
     if (typeof google == 'undefined') {
         // to continue executing the rest of this file
         return
@@ -89,7 +89,7 @@ function loadMap() {
     var marker = new google.maps.Marker({
         position: kuesnacht,
         map: map
-    });
+    });*/
 }
 
 
@@ -236,4 +236,11 @@ function updateNavigation() {
     } else {
         history.replaceState(undefined, undefined, '#');
     }
+}
+
+
+function toggleListRow(time) {
+    $("tr[data-time=" + time + "]").toggle();
+    var $div = $("div[data-time=" + time + "]");
+    $div.text($div.text() === "+" ? "-" : "+");
 }
