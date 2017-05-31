@@ -12,7 +12,8 @@ function Creator(injectFile, out) {
 
 var creators = [
     new Creator('create_gallery.js', 'participant-gallery.html'),
-    new Creator('create_list.js', 'program-list.html')
+    new Creator('create_list.js', 'program-list.html'),
+    new Creator('create_table.js', 'program-table.html')
 ];
 
 

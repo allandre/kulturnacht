@@ -67,29 +67,29 @@ function setScrollingWithMouseWheel(isEnable) {
 }
 
 function loadMap() {
-/*
-    if (typeof google == 'undefined') {
-        // to continue executing the rest of this file
-        return
-    }
+    /*
+        if (typeof google == 'undefined') {
+            // to continue executing the rest of this file
+            return
+        }
 
-    var kuesnacht = { lat: 47.316667, lng: 8.583333 };
-    var center = { lat: 47.35, lng: 8.54 };
-    map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 11,
-        center: center,
-        scrollwheel: false
-    });
+        var kuesnacht = { lat: 47.316667, lng: 8.583333 };
+        var center = { lat: 47.35, lng: 8.54 };
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 11,
+            center: center,
+            scrollwheel: false
+        });
 
-    google.maps.event.addListener(map, 'mousedown', function() {
-        setScrollingWithMouseWheel(true);
-    });
+        google.maps.event.addListener(map, 'mousedown', function() {
+            setScrollingWithMouseWheel(true);
+        });
 
 
-    var marker = new google.maps.Marker({
-        position: kuesnacht,
-        map: map
-    });*/
+        var marker = new google.maps.Marker({
+            position: kuesnacht,
+            map: map
+        });*/
 }
 
 
@@ -129,7 +129,6 @@ function toggleGallery(evt) {
     // load gallery only once
     if (!isGalleryLoaded) {
         loadGallery();
-        isGalleryLoaded = true;
     }
 
     // toggle visibilty
@@ -137,8 +136,8 @@ function toggleGallery(evt) {
 
     $(".gallery-toggler").text(
         ($("#participant-gallery").is(":visible") ?
-         "Galerie ausblenden" : 
-         "Galerie aller Mitwirkender anzeigen"));
+            "Galerie ausblenden" :
+            "Galerie aller Mitwirkenden anzeigen"));
 
 }
 
@@ -148,6 +147,7 @@ function loadGallery() {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
             $("#participant-gallery").html(this.responseText);
+            isGalleryLoaded = true;
             adjustGallery();
         }
     };
@@ -158,7 +158,6 @@ function loadGallery() {
 
 function adjustGallery() {
     if (isGalleryLoaded) {
-
         var $participantGallery = $("#participant-gallery");
 
         var galleryWidth = $participantGallery.width();
@@ -166,6 +165,7 @@ function adjustGallery() {
         var newColumns = (1 + Math.round((galleryWidth - 750) / 250));
 
         if (galleryColumnCount !== newColumns) {
+            console.log('A');
             galleryHeight *= galleryColumnCount;
             galleryColumnCount = newColumns;
 

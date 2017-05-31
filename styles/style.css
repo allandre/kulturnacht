@@ -450,12 +450,14 @@ button.gallery-toggler {
     margin: 2em 0;
     border: none;
     border-radius: 0.25em;
+
     color: white;
     background-color: #ed1255;
+
+    cursor: pointer;
 }
 
 button.gallery-toggler:hover {
-    cursor: pointer;
     background-color: #d70e3e;
 }
 
