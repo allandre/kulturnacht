@@ -1,7 +1,13 @@
 
 !- position galerie button
 
+- galerie resize broken
+
+- programm tabelle: übergänge (luxus, reduced padding, list)
+
 -- logo: font
+
+-- galerie: emojis ersetzen mit text
 
 - Übersichtsplan :: bild -> map
 - webseite von Thomas Ernst im Footer verlinken

@@ -10,10 +10,21 @@ function drawProgramTable() {
     var $containerDiv = $("#program-table");
     $containerDiv.html("");
 
-    var $p = $("<p>");
+    var $p = $("<p>", { class: "prgoram-table-hint" });
     $containerDiv.append($p);
-    $p.text("Um mehr Informationen zu einem Anlass zu erhalten, auf Eintrag klicken.");
+    $p.text("Um mehr Informationen zu einem Anlass zu erhalten, auf den Eintrag klicken.");
     $p.css("max-width", "unset");
+
+    $containerDiv.append('<div id="legend-program" class="legend">  \
+                    <h6>Legende: </h6> \
+                    <div>&#x1F46E; Führung</div> \
+                    <div>&#x1F3B5; Konzert, Gesang</div> \
+                    <div>&#x1F3A5; Film</div> \
+                    <div>&#x1F5BC; Ausstellung</div> \
+                    <div>&#x1F374; Verpflegung</div> \
+                    <div>&#x1F3AD; Theater</div> \
+                    <div>&#x1F4AC; Lesung, Literatur, Poetry Slam, Gedichte, Sprache</div> \
+                </div>');
 
     var $table = $("<table>", { class: "desktop" });
     $containerDiv.append($table);

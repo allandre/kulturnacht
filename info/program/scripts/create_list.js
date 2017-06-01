@@ -24,7 +24,7 @@ function drawProgramList() {
         var $timeCell = $("<th>", { class: "time-cell" });
         $timeRow.append($timeCell);
 
-        var $expDiv = $("<div>", { class: "expand", text: "+" });
+        var $expDiv = $("<div>", { class: "expand", text: "❯" });
         $timeCell.append($expDiv);
         $expDiv.attr("data-time", "" + times[0]);
 

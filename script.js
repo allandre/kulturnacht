@@ -10,6 +10,8 @@ var galleryColumnCount = 1;
 
 var currentExtraRow;
 
+var didScroll = false;
+
 var programStates = {
     undef: -1,
     table: 0,
@@ -41,7 +43,6 @@ $(window).on('resize', function(event) {
 
 $(window).on('scroll', function() {
     setScrollingWithMouseWheel(false);
-
     updateNavigation();
 });
 
@@ -121,7 +122,7 @@ function loadProgram(file) {
 
 function initGallery() {
     $(".gallery-toggler").on("click", toggleGallery);
-    $("#participant-gallery").toggle();
+    $("#gallery-container").toggle();
 }
 
 function toggleGallery(evt) {
@@ -133,11 +134,11 @@ function toggleGallery(evt) {
     }
 
     // toggle visibilty
-    $("#participant-gallery").toggle();
+    $("#gallery-container").toggle();
     adjustGallery();
 
     $(".gallery-toggler").text(
-        ($("#participant-gallery").is(":visible") ?
+        ($("#gallery-container").is(":visible") ?
             "Galerie ausblenden" :
             "Galerie aller Mitwirkenden anzeigen"));
 
@@ -252,9 +253,22 @@ function updateNavigation() {
 
 
 function toggleListRow(time) {
+    $("tr[data-time]").not("[data-time=" + time + "]").hide();
+    $("div[data-time]").not("[data-time=" + time + "]").removeClass("collapse");
+
     $("tr[data-time=" + time + "]").toggle();
     var $div = $("div[data-time=" + time + "]");
-    $div.text($div.text() === "+" ? "-" : "+");
+    $div.toggleClass("collapse");
+    scrollToElement($div);
+}
+
+function scrollToElement($element) {
+    var offset = $element.offset().top - $(window).scrollTop();
+
+    if (offset < 0) {
+        // Not in view so scroll to it
+        $('html,body').animate({ scrollTop: $(window).scrollTop() + offset - 1.2 * $("nav").height() }, 1000);
+    }
 }
 
 function toggleExtraRow(evt, participantId, locationId) {

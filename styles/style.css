@@ -408,6 +408,10 @@ input[type=checkbox]:checked ~ #menu li a div {
     background-color: lightgrey;
 }
 
+.program-table-hint p {
+    margin: 1em;
+}
+
 /* -> mobile */
 
 #program-section .mobile {
@@ -420,7 +424,8 @@ input[type=checkbox]:checked ~ #menu li a div {
 
 .expand {
     display: inline-block;
-    border-radius: 50%;
+    margin-right: 10%;
+    /*border-radius: 50%;
     width: 1em;
     height: 1em;
     margin-right: 10%;
@@ -429,7 +434,11 @@ input[type=checkbox]:checked ~ #menu li a div {
     color: white;
     
     text-align: center;
-    line-height: 100%;
+    line-height: 85%;*/
+}
+
+.collapse {
+    transform: rotate(90deg);
 }
 
 
@@ -556,14 +565,15 @@ button.gallery-toggler:hover {
     font-size: 75%;
 }
 
-#program-section #legend {
+#program-section .legend {
     margin-left: 0;
+    margin-bottom: 1em;
     display: flex;
     flex-wrap: wrap;
     flex-direction: : row;
 }
 
-#program-section #legend div {
+#program-section .legend div {
     display: inline;
     font-size: 75%;
     margin: 0 1em;
