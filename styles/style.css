@@ -529,7 +529,7 @@ button.gallery-toggler:hover {
 }
 
 .gallery-item {
-    max-width: 350px;
+    /*max-width: 350px;*/
     border: 1px solid black;
     font-size: 80%;
     margin-bottom: 1em;
@@ -570,7 +570,7 @@ button.gallery-toggler:hover {
     margin-bottom: 1em;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: : row;
+    flex-direction: row;
 }
 
 #program-section .legend div {

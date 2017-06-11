@@ -27,6 +27,10 @@
 -- essen & trinken: schönere liste
 
 
-
 --- Kontakt: KVK Logo anzeigen
 ---- hamburger menu animation expand
+
+Todo Vorschläge Milan:
+-- remove .modal from script.js and style.css
+-- // TODO: hanlde load of images (-> results in height being too small!) script.js
+-- mobile: Programm: Timetable hat keine Überschrift/Legende
