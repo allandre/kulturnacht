@@ -161,38 +161,56 @@ function loadGallery() {
     xmlhttp.send();
 }
 
+// needed for debugging adjustGallery()
+var maxCounter = 0;
+var maxEmptySpace = 0;
 function adjustGallery() {
     if (isGalleryLoaded) {
         var $participantGallery = $("#participant-gallery");
 
         var galleryWidth = $participantGallery.width();
         var galleryHeight = $participantGallery.height();
-        var newColumns = 1 + Math.round((galleryWidth - 750) / 250);
+        var oldGalleryHeight = galleryHeight;
+        var newColumns = 1 + Math.max(0, Math.round((galleryWidth - 750) / 250));
 
-        // console.log(galleryWidth);
-        // console.log(galleryHeight);
-        // console.log(newColumns);
+        if ($participantGallery.is(":visible")) {
+            // also calculate when columnCount does not change, to minimize white offset after gallery.
+            // console.log('galleryHeight: ' + galleryHeight);
+            // console.log('galleryWidth: ' + galleryWidth);
+            // console.log('oldColumns: ' + galleryColumnCount);
+            // console.log('newColumns: ' +  newColumns);
 
-        if ($participantGallery.is(":visible") && galleryColumnCount !== newColumns) {
-            console.log('A');
             galleryHeight *= galleryColumnCount;
             galleryColumnCount = newColumns;
 
-            var newHeight = (galleryHeight / newColumns);
+            // add 0.5 too ensure we are small enough for recalculation.
+            var newHeight = galleryHeight / (newColumns + 0.5);
+
             $participantGallery.height(newHeight);
             var itemWidth = (galleryWidth / newColumns) * 0.9;
             $(".gallery-item").width(itemWidth);
 
             var $galleryItemFirst = $(".gallery-item:first");
             var counter = 0;
-            while ($galleryItemFirst.offset().left < $participantGallery.offset().left && counter < 20) {
-                // console.log('Loop');
-                // console.log($galleryItemFirst.offset().left);
-                // console.log($participantGallery.offset().left);
-                // console.log($participantGallery.height());
+            while ($galleryItemFirst.offset().left < $participantGallery.offset().left && counter < 50) {
                 counter++;
-                $participantGallery.height($participantGallery.height() * 1.1);
+                $participantGallery.height($participantGallery.height() * 1.03);
             }
+            /* 
+            // debugging information / statitsics
+            console.log('counter: ' + counter);
+            console.log('adjusted height from ' + oldGalleryHeight + ' to ' + $participantGallery.height());
+            maxCounter = Math.max(maxCounter, counter);
+            var $galleryItemLast = $(".gallery-item:last");
+            var galleryItemLastBottom = $galleryItemLast.offset().top + $galleryItemLast.outerHeight();
+            var programTop = $("#program").offset().top;
+            var emptySpace = programTop - galleryItemLastBottom;
+            maxEmptySpace = Math.round(Math.max(maxEmptySpace, emptySpace));
+            console.log('maxCounter: ' + maxCounter + ' maxEmptySpace: ' + maxEmptySpace);
+            if (counter == 0) {
+                console.log("counter was 0! emptySpace: " + emptySpace);
+            }
+            */
         }
     }
 }
