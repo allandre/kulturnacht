@@ -20,14 +20,6 @@
         "die_kulisse.jpg"
     ]
 }, {
-    "id": "bibliothek_film",
-    "name": "Film",
-    "title": "Küsnachter Vergangenheit lebendig erleben",
-    "description": "Es werden Ausschnitte aus dem Film „Ziitsprüng: Ein Theaterspaziergang in Küsnachts Vergangenheit“ gezeigt. Der Film entstand aus einem Projekt der Kulisse und der Kantonsschule Küsnacht.",
-    "categories": [
-        "movie"
-    ]
-}, {
     "id": "simon_chen",
     "name": "Simon Chen",
     "title": "Simon Chen - Spoken Words in der Bibliothek!",
@@ -286,8 +278,8 @@
 }, {
     "id": "gruselkabinett",
     "name": "Kleines Gruselkabinett",
-    "title": "Kleines Gruselkabinett",
-    "description": "Präsentation von gruseligen und kuriosen Objekten aus der Sammlung",
+    "title": "Grusel, Glamour und Frivoles",
+    "description": "Präsentation von gruseligen und kuriosen Objekten aus der Sammlung<br />Zinnenlaufs Gaststube ergänzt den Abend kulinarisch.",
     "team": "",
     "categories": [
         "exposition"
@@ -317,15 +309,6 @@
         "elisabeth_abgottspon.jpg"
     ]
 }, {
-    "id": "grusel",
-    "name": "Grusel, Glamour und Frivoles",
-    "title": "Grusel, Glamour und Frivoles",
-    "description": "Zinnenlaufs Gaststube ergänzt den Abend kulinarisch.",
-    "team": "",
-    "categories": [
-        "food"
-    ]
-}, {
     "id": "turmbläser",
     "name": "Turmbläser",
     "title": "Turmblasen",
@@ -340,7 +323,7 @@
 }, {
     "id": "kirchenchor",
     "name": "Ref. Kirchenchor",
-    "title": "KONZERT \"The Ground\" und eine FÜHRUNG zum Kraftort in der Kirche",
+    "title": "Konzert \"The Ground\" und eine Führung zum Kraftort in der Kirche",
     "description": "Die berühmte lyrische Komposition \"The Ground\" vom norwegischen Komponisten Ola Gjeilo (1978) wird mehrmals aufgeführt.<br> Zudem findet eine spannende wissenschaftliche Führung von Alfred Gloor, Dipl. Bauingenieur HTL, zum Kraftort in der Kirche statt.",
     "team": "Evangelischer Kirchenchor, Jürg Tobler Leitung, Kantorei St. Georg, Joachim Schwander, Leitung, H. Váradi Klavier",
     "categories": [
@@ -353,8 +336,8 @@
 }, {
     "id": "linien",
     "name": "Linien",
-    "title": "Linien",
-    "description": "Das Künstlerduo arbeitet mit farbigen Bändern, die zu räumlichen Skulpturen aufgespannt werden – stets im Dialog zur Umgebung. So auch an der Kulturnacht, wo der Standort als „Kraftort“ inspiriert.",
+    "title": "LINIEN",
+    "description": "Das Künstlerduo arbeitet mit farbigen Bändern, die zu räumlichen Skulpturen aufgespannt werden – stets im Dialog zur Umgebung. So auch an der Kulturnacht, wo der Standort als &laquo;Kraftort&raquo; inspiriert.",
     "team": "Gian Tumasch Appenzeller und Chasper Linard Schmidlin",
     "categories": [
         "exposition"
@@ -415,7 +398,7 @@
     "id": "harmonie",
     "name": "Harmonie Eintracht",
     "title": "Konzert",
-    "description": "",
+    "description": "Unterhaltungsmusik für Jung und Alt. Die HEK zeigt vielseitige Facetten der Blasmusik, von Rock und Pop über Blues bis hin zu den klassischen Märschen.",
     "team": "Harmonie Eintracht Küsnacht",
     "categories": [
         "music"
@@ -463,9 +446,9 @@
     ]
 }, {
     "id": "artischock",
-    "name": "Kunstverein Artischock",
-    "title": "Kunstwerke in Postkartengrösse",
-    "description": "Wäscheleine mit individuell, künstlerisch gestalteten Kunstwerken in Postkartengrösse.",
+    "name": "A5-Format",
+    "title": "A5-Format",
+    "description": "Von Vereinsmitgliedern individuell, künstlerisch gestaltete Kunstwerke auf DIN A5 Format zum Erwerben.",
     "team": "Kunstverein Artischock",
     "categories": [
         "exposition"
@@ -477,7 +460,7 @@
     "id": "klassik",
     "name": "Feuerwerk der Klassik",
     "title": "Feuerwerk der Klassik",
-    "description": "",
+    "description": "Konzert.",
     "team": "Sonja Leutwyler, Mezzosopran, Astrid Leutwyler, Violine, Dominique Bertschinger, Klavier",
     "categories": [
         "music"

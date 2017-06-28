@@ -12,9 +12,6 @@
 }, {
     "locationId": "bibliothek",
     "events": [{
-        "participantId": "bibliothek_film",
-        "times": [1900, 2300]
-    }, {
         "participantId": "simon_chen",
         "times": [2000, 2100, 2200]
     }]
@@ -43,12 +40,10 @@
     "locationId": "freihof",
     "events": [{
         "participantId": "wort_geschicht",
-        "times": [1800, 1900, 2000, 2100, 2200, 2300]
+        "times": [1800, 1900, 2000, 2100, 2200]
     }]
 }, {
     "locationId": "sunnemetzg",
-
-
     "events": [{
         "participantId": "schülerband",
         "times": [1800, 1900]
@@ -106,7 +101,7 @@
     "events": [{
         "participantId": "kanti_ausstellung",
         "times": [
-            1800, 1900, 2000, 2100, 2200, 2300
+            1800, 1900, 2000, 2100, 2300
         ]
     }]
 }, {
@@ -132,9 +127,6 @@
     }, {
         "participantId": "drüber",
         "times": [2000, 2200, 2300]
-    }, {
-        "participantId": "grusel",
-        "times": []
     }]
 }, {
     "locationId": "kirche",
@@ -189,7 +181,7 @@
         "private_row": true
     }, {
         "participantId": "klassik",
-        "times": [1800, 1900, 2000],
+        "times": [1800, 1900, 2100],
         "private_row": true
     }, {
         "participantId": "andreas_moser",

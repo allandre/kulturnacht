@@ -1,30 +1,34 @@
-
-!- position galerie button
-
-- galerie resize broken
+- galerie resize broken / manuell platzieren?
 
 - programm tabelle: übergänge (luxus, reduced padding, list)
 
+- Übersichtsplan :: bild -> map
+
+- mobile: program button switch Time/place
+- mobile: click on events
+
+-- webseite von Thomas Ernst im Footer verlinken
+
 -- logo: font
 
--- galerie: emojis ersetzen mit text
-
-- Übersichtsplan :: bild -> map
-- webseite von Thomas Ernst im Footer verlinken
+--- galerie: emojis ersetzen mit text
 
 - link zu program als pdf (August)
 
-- mobile: program liste expandable
-- mobile: program button switch Time/place
 
 - mobile: hamburger broken
+
 - milan macht noch eine ausgiebige performance-analyse!
 
+<<<<<<< HEAD
 - mobile: Programm: Timetable hat keine Überschrift/Legende
 
+=======
+- google analytics
+>>>>>>> origin/master
 
--- sponsoren silber/bronze: kleinere bilder und gold bisschen grösser
 -- schwarz weiss emojis
+
 
 -- essen & trinken: schönere liste
 
@@ -35,6 +39,7 @@
 --- Kontakt: KVK Logo anzeigen
 ---- hamburger menu animation expand
 
+<<<<<<< HEAD
 --- Add email hook for commits
 
 TODO Milan:
@@ -45,3 +50,9 @@ TODO Milan:
 
 TODOs vo Milan:
 - wemmer uf esse&trinke klickt wird Kontakt ghighlighted
+=======
+Todo Vorschläge Milan:
+-- remove .modal from script.js and style.css
+-- // TODO: hanlde load of images (-> results in height being too small!) script.js
+-- mobile: Programm: Timetable hat keine Überschrift/Legende
+>>>>>>> origin/master
