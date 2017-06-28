@@ -46,13 +46,6 @@ $(window).on('scroll', function() {
     updateNavigation();
 });
 
-$(document).on('keydown', function(evt) {
-    // close all modal pop-ups on esc
-    if (evt.keyCode === 27) {
-        $(".modal").addClass("modal-hidden");
-    }
-});
-
 $('body').on('mousedown', function(evt) {
     var clickInsideMap = $(evt.target).parents('#map').length > 0;
 
