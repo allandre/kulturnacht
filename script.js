@@ -287,10 +287,10 @@ function toggleExtraRow(evt, participantId, locationId) {
     function _switchClasses($target) {
         $target.siblings().not(".locationCell").toggleClass("bottom-border");
         $target.toggleClass("selected");
+        $target.prev().not(".locationCell").toggleClass("before-selected");
     }
 
     var target = evt.target;
-
 
     // cleanup
     if (currentExtraRow) {

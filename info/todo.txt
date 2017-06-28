@@ -40,8 +40,9 @@
 TODO Milan:
 - Gallery umschreiben in divs
 - Program table click on event design detail
-- check if logo topleft good readable if internetz available
 - google analytics
 
 TODOs vo Milan:
 - wemmer uf esse&trinke klickt wird Kontakt ghighlighted
+- Turmbläser kammer nid ahklicke. Kei Content?
+- mobile program table should alse be clickable

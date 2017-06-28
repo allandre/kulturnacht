@@ -244,6 +244,7 @@ input[type=checkbox]:checked ~ #menu li a div {
     line-height: 1.4;
     text-transform: uppercase;
     font-size: .8em;
+    font-weight: normal;
 }
 
 
@@ -333,8 +334,15 @@ input[type=checkbox]:checked ~ #menu li a div {
     vertical-align: middle;
 }
 
+#program-section td.content:hover, #program-section tr td.extra-cell, #program-section tr td.selected {
+    background-color: #e8e8e8;
+}
+
+#program-section td.content:hover:not(.selected) {
+    outline: 1px solid black; /*here selection border*/
+}
+
 #program-section td.content:hover {
-    background-color: lightgrey;
     cursor: pointer;
 }
 
@@ -361,10 +369,10 @@ input[type=checkbox]:checked ~ #menu li a div {
 }
 
 #program-section tr td.extra-cell {
-    border: 2px solid black;
+    border: 1px solid black; /*here selection border*/
     border-top: 0;
-
-    background-color: lightgrey;
+    border-left: 0;
+    border-right: 1px dotted #ed1255;
 }
 
 #program-section .table-entry {
@@ -398,14 +406,23 @@ input[type=checkbox]:checked ~ #menu li a div {
 }
 
 #program-section tr td.bottom-border {
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black; /*here selection border*/
+}
+
+#program-section tr td.before-selected {
+    border-right: 1px solid black; /*here selection border*/
 }
 
 #program-section tr td.selected {
-    border: 2px solid black;
+    border: 1px solid black; /*here selection border*/
     border-bottom: 0;
+    border-left: 0;
+    outline: 0;
+}
 
-    background-color: lightgrey;
+/*avoid a black border for a cell which is on the right edge of the table*/
+#program-section tr td:last-of-type.selected {
+    border-right: 1px dotted #ed1255;
 }
 
 .program-table-hint p {
@@ -425,16 +442,6 @@ input[type=checkbox]:checked ~ #menu li a div {
 .expand {
     display: inline-block;
     margin-right: 10%;
-    /*border-radius: 50%;
-    width: 1em;
-    height: 1em;
-    margin-right: 10%;
-
-    background-color: #ed1255;
-    color: white;
-    
-    text-align: center;
-    line-height: 85%;*/
 }
 
 .collapse {
