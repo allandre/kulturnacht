@@ -39,8 +39,8 @@
 
 TODO Milan:
 - Gallery umschreiben in divs
-- Program table click on event design detail
-- google analytics
+- Program table click on event design detail :check
+- google analytics :check
 
 TODOs vo Milan:
 - wemmer uf esse&trinke klickt wird Kontakt ghighlighted
