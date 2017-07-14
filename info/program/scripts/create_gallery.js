@@ -6,7 +6,9 @@ function createItem() {
 var participantDivs = {};
 
 function drawParticipantGallery() {
-    var $containerDiv = $("#participant-gallery");
+    var $participantGallery = $("#participant-gallery");
+    var $containerDiv = $("<div>", { class: "gallery-column" });
+    $participantGallery.empty().append($containerDiv);
     $containerDiv.html("");
 
     for (var i in programData.participantData) {

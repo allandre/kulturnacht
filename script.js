@@ -144,9 +144,7 @@ function loadGallery() {
         if (this.readyState === 4 && this.status === 200) {
             $("#participant-gallery").html(this.responseText);
             isGalleryLoaded = true;
-
-            // TODO: hanlde load of images (-> results in height being too small!)
-            setTimeout(adjustGallery, 1000);
+            adjustGallery();
         }
     };
 
@@ -154,56 +152,83 @@ function loadGallery() {
     xmlhttp.send();
 }
 
-// needed for debugging adjustGallery()
-var maxCounter = 0;
-var maxEmptySpace = 0;
 function adjustGallery() {
     if (isGalleryLoaded) {
-        var $participantGallery = $("#participant-gallery");
+        var $participantGallery = $("#participant-gallery"); 
+        var oldNumberOfColumns = $participantGallery.children().filter(".gallery-column").length;
+        var newNumberOfColumns = 1;
 
-        var galleryWidth = $participantGallery.width();
-        var galleryHeight = $participantGallery.height();
-        var oldGalleryHeight = galleryHeight;
-        var newColumns = 1 + Math.max(0, Math.round((galleryWidth - 750) / 250));
+        var width = $participantGallery.width();
+        if (width > 1200) {
+            newNumberOfColumns = 4;
+        } else if (width > 900) {
+            newNumberOfColumns = 3;
+        }  else if (width > 500) {
+            newNumberOfColumns = 2;
+        }
 
-        if ($participantGallery.is(":visible")) {
-            // also calculate when columnCount does not change, to minimize white offset after gallery.
-            // console.log('galleryHeight: ' + galleryHeight);
-            // console.log('galleryWidth: ' + galleryWidth);
-            // console.log('oldColumns: ' + galleryColumnCount);
-            // console.log('newColumns: ' +  newColumns);
+        if (oldNumberOfColumns != newNumberOfColumns) {
+            var $allGalleryItems = $participantGallery.find(".gallery-item");
+            // sort items, as they may have been reshuffled by the previous reordering/balancing procedure.
+            // items are more or less sorted by event name through the following stuff.
+            $allGalleryItems.sort(function(a, b){
+                var stringA = $(a).text().replace(/[^a-zA-Z]/g, "");
+                var stringB = $(b).text().replace(/[^a-zA-Z]/g, "");
+                if (stringA > stringB) {
+                    return 1;
+                } else if (stringA < stringB) {
+                    return -1;
+                }
+                return 0;
+            });
 
-            galleryHeight *= galleryColumnCount;
-            galleryColumnCount = newColumns;
-
-            // add 0.5 too ensure we are small enough for recalculation.
-            var newHeight = galleryHeight / (newColumns + 0.5);
-
-            $participantGallery.height(newHeight);
-            var itemWidth = (galleryWidth / newColumns) * 0.9;
-            $(".gallery-item").width(itemWidth);
-
-            var $galleryItemFirst = $(".gallery-item:first");
-            var counter = 0;
-            while ($galleryItemFirst.offset().left < $participantGallery.offset().left && counter < 50) {
-                counter++;
-                $participantGallery.height($participantGallery.height() * 1.03);
+            $participantGallery.empty();
+            for (var i = 0; i < newNumberOfColumns; i++) {
+                $participantGallery.append($("<div>", { class: "gallery-column" }));
             }
-            /* 
-            // debugging information / statitsics
-            console.log('counter: ' + counter);
-            console.log('adjusted height from ' + oldGalleryHeight + ' to ' + $participantGallery.height());
-            maxCounter = Math.max(maxCounter, counter);
-            var $galleryItemLast = $(".gallery-item:last");
-            var galleryItemLastBottom = $galleryItemLast.offset().top + $galleryItemLast.outerHeight();
-            var programTop = $("#program").offset().top;
-            var emptySpace = programTop - galleryItemLastBottom;
-            maxEmptySpace = Math.round(Math.max(maxEmptySpace, emptySpace));
-            console.log('maxCounter: ' + maxCounter + ' maxEmptySpace: ' + maxEmptySpace);
-            if (counter == 0) {
-                console.log("counter was 0! emptySpace: " + emptySpace);
+
+            var $galleryColumns = $participantGallery.children(".gallery-column");
+            
+            for (var i = 0; i < $allGalleryItems.length; i++) {
+                var $currentColumn = $galleryColumns[i % $galleryColumns.length];
+                $currentColumn.append($allGalleryItems[i]);
             }
-            */
+
+            for (var i = 0; i < 2; i++) {
+                // two rounds seems to reach the best fit for all cases (1, 2, 3, 4 columns)
+                // move item from largest to smallest to get a little bit better balance of column heights
+
+                // find highest endpoint
+                var maxIndex = 0;
+                for (var j = 0; j < $galleryColumns.length; j++) {
+                    var $currentLast = $galleryColumns.eq(j).children().last();
+                    var currentBottom = $currentLast.position().top + $currentLast.height();
+                    var $maxLast = $galleryColumns.eq(maxIndex).children().last();
+                    var maxBottom = $maxLast.position().top + $maxLast.height();
+                    if (currentBottom > maxBottom) {
+                        maxIndex = j;
+                    }
+                }
+
+                // remove highest element
+                var maxGalleryItem = $galleryColumns.eq(maxIndex).children().last();
+                maxGalleryItem.detach();
+
+                // find lowest endpoint
+                var minIndex = 0;
+                for (var j = 0; j < $galleryColumns.length; j++) {
+                    var $currentLast = $galleryColumns.eq(j).children().last();
+                    var currentBottom = $currentLast.position().top + $currentLast.height();
+                    var $minLast = $galleryColumns.eq(minIndex).children().last();
+                    var minBottom = $minLast.position().top + $minLast.height();
+                    if (currentBottom < minBottom) {
+                        minIndex = j;
+                    }
+                }
+
+                // move maxGalleryItem to lowest column
+                $galleryColumns.eq(minIndex).append(maxGalleryItem);
+            }
         }
     }
 }

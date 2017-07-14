@@ -468,10 +468,11 @@ button.gallery-toggler:hover {
 
 #participant-gallery {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: space-around;
+    flex-direction: row;
+}
+
+.gallery-column {
+    margin: 2%;
 }
 
 .gallery-item {
