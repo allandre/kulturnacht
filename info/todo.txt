@@ -1,4 +1,4 @@
-- galerie resize broken / manuell platzieren?
+- galerie resize broken / manuell platzieren? :check
 
 - programm tabelle: übergänge (luxus, reduced padding, list)
 
@@ -15,19 +15,19 @@
 
 - link zu program als pdf (August)
 
-- mobile: hamburger broken
+- mobile: hamburger broken :check
 
 - milan macht noch eine ausgiebige performance-analyse!
 
 - mobile: Programm: Timetable hat keine Überschrift/Legende
 
-- google analytics
+- google analytics :check
 
 -- schwarz weiss emojis
 
 -- essen & trinken: schönere liste
 
--- mobile: counter grösser
+-- mobile: counter grösser :check
 
 -- Bei Kontakt eine Telefonnummer und eine Adresse angeben
 
@@ -35,10 +35,10 @@
 
 ---- hamburger menu animation expand
 
---- Add email hook for commits
+--- Add email hook for commits:check
 
 TODO Milan:
-- Gallery umschreiben in divs
+- Gallery umschreiben in divs :check
 - Program table click on event design detail :check
 - google analytics :check
 

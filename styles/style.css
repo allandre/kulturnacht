@@ -688,23 +688,18 @@ footer a:visited {
 
 
 /* FOOTER end */
+/* MEDIA QUERIES start */
+/* sort them descending as lower definitions will overwrite higher ones as wanted 
+* smaller max-width has higher priority.
+*/
 
-@media screen and (max-width: 535px) {
-    #hamburger-wrapper {
-        position: static;
-        margin-left: 2em;
+/* -> prevent footer text from multi-row */
+
+@media screen and (max-width: 1077px) {
+    footer p {
+        width: unset;
     }
 }
-
-
-/* -> recenter program title */
-
-@media screen and (max-width: 747px) {
-    #program-section h1 {
-        text-align: center;
-    }
-}
-
 
 /* -> make hamburger appear */
 
@@ -722,7 +717,6 @@ footer a:visited {
     }
 }
 
-
 /* -> behaviour of location -> gmap */
 
 @media screen and (max-width: 810px) {
@@ -736,12 +730,25 @@ footer a:visited {
     }
 }
 
+/* -> recenter program title */
 
-/* -> prevent footer text from multi-row */
+@media screen and (max-width: 747px) {
+    #program-section h1 {
+        text-align: center;
+    }
+}
 
-@media screen and (max-width: 1077px) {
-    footer p {
-        width: unset;
+/* -> avoid hamburger menu drawing over KVK Logo */
+
+@media screen and (max-width: 535px) {
+    #hamburger-wrapper {
+        margin-left: 2em;
+        left: unset;
+    }
+    #countdown {
+        width: 90%;
+        left: 50%;
+        font-size: 5vw;
     }
 }
 

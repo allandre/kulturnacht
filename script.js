@@ -271,20 +271,17 @@ function updateNavigation() {
 
     var windowOffset = $(document).scrollTop();
     var windowHeight = $(window).height();
+    var navHeight = $('nav').height();
 
-    if (windowOffset < 0.8 * windowHeight) {
-        currentPosition = null;
-    } else {
-        var prio = false;
-        $('a.anchor').each(function(index) {
-            var $section = $(this).next();
-            var relPositionTop = $section.offset().top - windowOffset;
-            var relPositionBottom = relPositionTop + $section.height();
-            if ((relPositionTop >= 0 && relPositionTop <= 0.5 * windowHeight) || (!prio && relPositionBottom >= 0 && relPositionBottom < 0.5 * windowHeight)) {
-                prio = true;
-                currentPosition = { $anchor: $(this), index: index };
-            }
-        });
+    currentPosition = null;
+    var $anchors = $('a.anchor');
+    for (var i = 0; i < $anchors.length; i++) {
+        var anchorTop = $anchors.eq(i).offset().top;
+        if (anchorTop - windowOffset < (windowHeight - navHeight) / 3) {
+            currentPosition = { $anchor: $anchors.eq(i), index: i };
+        } else {
+            break;
+        }
     }
 
     if (currentPosition !== null) {
