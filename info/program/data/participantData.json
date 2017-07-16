@@ -122,7 +122,7 @@
     "id": "schülerband",
     "name": "Schülerband Küsnacht",
     "title": "Sound and Songs",
-    "description": "Diverse musikalische Darbietungen aus Rock, Pop und Mundart.<br>Grill mit Würsten, Steak und Pommes Frites und Getränke.",
+    "description": "Diverse musikalische Darbietungen aus Rock, Pop und Mundart.<br>Grill mit Würsten, Steak und Pommes Frites und Barbetrieb.",
     "team": "Schülerband Küsnacht",
     "categories": [
         "music"
@@ -165,7 +165,7 @@
     "name": "Bregy & Friends",
     "title": "Bregy & Friends",
     "description": "@schülerband",
-    "team": "Bregy & Driends",
+    "team": "Bregy & Friends",
     "categories": [
         "music"
     ]

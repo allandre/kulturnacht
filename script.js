@@ -54,6 +54,14 @@ $('body').on('mousedown', function(evt) {
     }
 });
 
+$(document).on('keydown', function(evt) {
+    // hide extra
+    if (evt.keyCode === 27 && currentExtraRow) {
+        hideExtraRow();
+        currentExtraRow = null;
+    }
+});
+
 
 function setScrollingWithMouseWheel(isEnable) {
     if (map) {
@@ -154,7 +162,7 @@ function loadGallery() {
 
 function adjustGallery() {
     if (isGalleryLoaded) {
-        var $participantGallery = $("#participant-gallery"); 
+        var $participantGallery = $("#participant-gallery");
         var oldNumberOfColumns = $participantGallery.children().filter(".gallery-column").length;
         var newNumberOfColumns = 1;
 
@@ -163,7 +171,7 @@ function adjustGallery() {
             newNumberOfColumns = 4;
         } else if (width > 900) {
             newNumberOfColumns = 3;
-        }  else if (width > 500) {
+        } else if (width > 500) {
             newNumberOfColumns = 2;
         }
 
@@ -171,7 +179,7 @@ function adjustGallery() {
             var $allGalleryItems = $participantGallery.find(".gallery-item");
             // sort items, as they may have been reshuffled by the previous reordering/balancing procedure.
             // items are more or less sorted by event name through the following stuff.
-            $allGalleryItems.sort(function(a, b){
+            $allGalleryItems.sort(function(a, b) {
                 var stringA = $(a).text().replace(/[^a-zA-Z]/g, "");
                 var stringB = $(b).text().replace(/[^a-zA-Z]/g, "");
                 if (stringA > stringB) {
@@ -188,7 +196,7 @@ function adjustGallery() {
             }
 
             var $galleryColumns = $participantGallery.children(".gallery-column");
-            
+
             for (var i = 0; i < $allGalleryItems.length; i++) {
                 var $currentColumn = $galleryColumns[i % $galleryColumns.length];
                 $currentColumn.append($allGalleryItems[i]);
@@ -308,27 +316,18 @@ function scrollToElement($element) {
 }
 
 function toggleExtraRow(evt, participantId, locationId) {
-
-    function _switchClasses($target) {
-        $target.siblings().not(".locationCell").toggleClass("bottom-border");
-        $target.toggleClass("selected");
-        $target.prev().not(".locationCell").toggleClass("before-selected");
-    }
-
     var target = evt.target;
 
     // cleanup
     if (currentExtraRow) {
-        $(".extra-row").hide();
-        currentExtraRow.$cell.prop("rowspan", currentExtraRow.rowSpan);
-        _switchClasses($(currentExtraRow.target));
+        hideExtraRow();
     }
 
     if (!currentExtraRow || target !== currentExtraRow.target) {
         var $locationCell = $("#" + locationId + " > .locationCell");
         var rowSpan = $locationCell.prop("rowspan");
         $locationCell.prop("rowspan", rowSpan + 1);
-        _switchClasses($(target));
+        switchClassesExtraRow($(target));
 
         currentExtraRow = { target: target, $cell: $locationCell, rowSpan: rowSpan };
 
@@ -336,4 +335,16 @@ function toggleExtraRow(evt, participantId, locationId) {
     } else {
         currentExtraRow = null;
     }
+}
+
+function hideExtraRow() {
+    $(".extra-row").hide();
+    currentExtraRow.$cell.prop("rowspan", currentExtraRow.rowSpan);
+    switchClassesExtraRow($(currentExtraRow.target));
+}
+
+function switchClassesExtraRow($target) {
+    $target.siblings().not(".locationCell").toggleClass("bottom-border");
+    $target.toggleClass("selected");
+    $target.prev().not(".locationCell").toggleClass("before-selected");
 }
