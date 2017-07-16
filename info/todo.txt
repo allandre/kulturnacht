@@ -46,3 +46,4 @@ TODOs vo Milan:
 - wemmer uf esse&trinke klickt wird Kontakt ghighlighted
 - Turmbläser kammer nid ahklicke. Kei Content?
 - mobile program table should alse be clickable
+- nicer highlight (dezenter) for nav sections.
