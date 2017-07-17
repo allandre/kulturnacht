@@ -277,8 +277,12 @@ function updateNavigation() {
     var $anchors = $('a.anchor');
     for (var i = 0; i < $anchors.length; i++) {
         var anchorTop = $anchors.eq(i).offset().top;
-        if (anchorTop - windowOffset < (windowHeight - navHeight) / 3) {
+        if (anchorTop - windowOffset < (windowHeight - navHeight) / 2) {
             currentPosition = { $anchor: $anchors.eq(i), index: i };
+            if (anchorTop > windowOffset) {
+                // I am completely contained in the top half. Take me!
+                break;
+            }
         } else {
             break;
         }

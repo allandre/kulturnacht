@@ -1,5 +1,3 @@
-- galerie resize broken / manuell platzieren? :check
-
 - programm tabelle: übergänge (luxus, reduced padding, list)
 
 - Übersichtsplan :: bild -> map
@@ -21,13 +19,9 @@
 
 - mobile: Programm: Timetable hat keine Überschrift/Legende
 
-- google analytics :check
-
 -- schwarz weiss emojis
 
 -- essen & trinken: schönere liste
-
--- mobile: counter grösser :check
 
 -- Bei Kontakt eine Telefonnummer und eine Adresse angeben
 
@@ -35,15 +29,11 @@
 
 ---- hamburger menu animation expand
 
---- Add email hook for commits:check
+-- Gallery ausblenden knopf anheften
 
-TODO Milan:
-- Gallery umschreiben in divs :check
-- Program table click on event design detail :check
-- google analytics :check
-
-TODOs vo Milan:
-- wemmer uf esse&trinke klickt wird Kontakt ghighlighted
 - Turmbläser kammer nid ahklicke. Kei Content?
-- mobile program table should alse be clickable
-- nicer highlight (dezenter) for nav sections.
+
+-- mobile program table should alse be clickable
+
+--- nicer highlight (dezenter) for nav sections.
+
