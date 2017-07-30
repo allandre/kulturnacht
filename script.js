@@ -1,4 +1,4 @@
-var eventDate = new Date(2017, 9, 29, 18, 0, 0, 0);
+var eventDate = new Date(2017, 8, 29, 18);
 var map;
 
 var hamburgerMenuWidth = 1045;
@@ -258,7 +258,7 @@ function hideMenu() {
 // calculate days until eventDate, and display on title image
 function showCountdown() {
     // get remaining days until event
-    var days = Math.floor(new Date(eventDate - new Date()).getTime() / (1000 * 3600 * 24));
+    var days = Math.floor((eventDate.getTime() - Date.now()) / (1000 * 3600 * 24));    
 
     var $countdown = $("#countdown");
     $countdown.html("Noch " + days + " Tage bis zur");
