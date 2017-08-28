@@ -385,10 +385,10 @@ input[type=checkbox]:checked ~ #menu li a div {
 }
 
 #program-section .extra-cell .img img {
-    position: relative;
+     /*position: relative;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%); */
 }
 
 #program-section .extra-cell .content {
