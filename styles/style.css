@@ -429,6 +429,10 @@ input[type=checkbox]:checked ~ #menu li a div {
     margin: 1em;
 }
 
+#program-section table.desktop img {
+    max-width: 10vw;
+}
+
 /* -> mobile */
 
 #program-section .mobile {
@@ -490,8 +494,9 @@ button.gallery-toggler:hover {
 }
 
 .gallery-item img {
-    min-width: 50%;
+    /*min-width: 50%;*/
     max-width: 100%;
+    max-height: 10vw;
     display: block;
     margin: 0.5em auto;
 }
