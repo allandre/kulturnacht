@@ -259,7 +259,7 @@ input[type=checkbox]:checked ~ #menu li a div {
 }
 
 #countdown {
-    display: none;
+    /*display: none;* -> IE GODDAMIT... */
     position: absolute;
     top: 30%;
     left: 28.5%;

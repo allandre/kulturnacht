@@ -21,7 +21,9 @@ var programSectionState = programStates.undef;
 
 
 $(document).ready(function() {
+    console.log("Test");
     showCountdown();
+    console.log("Test2");
     loadMap();
 
     $positionIndication = $('#position-indication');
@@ -262,7 +264,7 @@ function showCountdown() {
 
     var $countdown = $("#countdown");
     $countdown.html("Noch " + days + " Tage bis zur");
-    $countdown.css("display", "unset");
+    /*$countdown.css("display", "unset");  -> IE CANNOT HANDLE THAT */
 }
 
 function updateNavigation() {
