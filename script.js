@@ -20,10 +20,8 @@ var programStates = {
 var programSectionState = programStates.undef;
 
 
-$(document).ready(function() {
-    console.log("Test");
-    showCountdown();
-    console.log("Test2");
+$(document).ready(function() {    
+    showCountdown();    
     loadMap();
 
     $positionIndication = $('#position-indication');
