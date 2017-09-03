@@ -465,6 +465,9 @@ button.gallery-toggler {
     background-color: #ed1255;
 
     cursor: pointer;
+
+    position: unset; /* will be set to 'fixed' by script.js*/
+    top: 74px;
 }
 
 button.gallery-toggler:hover {

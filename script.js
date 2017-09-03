@@ -44,6 +44,7 @@ $(window).on('resize', function(event) {
 $(window).on('scroll', function() {
     setScrollingWithMouseWheel(false);
     updateNavigation();
+    fixCloseGalleryButton();
 });
 
 $('body').on('mousedown', function(evt) {
@@ -143,6 +144,11 @@ function toggleGallery(evt) {
             "Galerie ausblenden" :
             "Galerie aller Mitwirkenden anzeigen"));
 
+    if (!$("#gallery-container").is(":visible")) {
+        $('html').animate({
+            scrollTop: $("#program-section").offset().top - 50
+        });
+    }
 }
 
 function loadGallery() {
@@ -348,4 +354,19 @@ function switchClassesExtraRow($target) {
     $target.siblings().not(".locationCell").toggleClass("bottom-border");
     $target.toggleClass("selected");
     $target.prev().not(".locationCell").toggleClass("before-selected");
+}
+
+function fixCloseGalleryButton() {
+    if ($("#gallery-container").is(":visible")) {
+        var distanceToTop = $("#gallery-container").offset().top - $(window).scrollTop();
+        var bottomToTop = $("#gallery-container").offset().top + $("#gallery-container").height() - $(window).scrollTop();
+        console.log(bottomToTop);
+        if (distanceToTop < 130 && bottomToTop > 300) {
+            $(".gallery-toggler").first().css({position: "fixed"});
+        } else if (distanceToTop > 130 || bottomToTop < 200) {
+            $(".gallery-toggler").first().css({position: "unset"});
+        }
+    } else {
+        $(".gallery-toggler").first().css({position: "unset"});
+    }
 }
