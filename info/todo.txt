@@ -5,11 +5,9 @@
 - mobile: program button switch Time/place
 - mobile: click on events
 
--- webseite von Thomas Ernst im Footer verlinken
+- Bei kleiner width gibt es besonders im Edge relativ schnell einen scroll balken für horizontales scrollen
 
--- logo: font
-
---- galerie: emojis ersetzen mit text
+- Turmbläser kammer nid ahklicke. Kei Content?
 
 - link zu program als pdf (August)
 
@@ -19,21 +17,37 @@
 
 - mobile: Programm: Timetable hat keine Überschrift/Legende
 
+- fix: 'Gallery ausblenden' hover on mobile 
+
+-- webseite von Thomas Ernst im Footer verlinken
+
+-- logo: font
+
 -- schwarz weiss emojis
 
 -- essen & trinken: schönere liste
 
 -- Bei Kontakt eine Telefonnummer und eine Adresse angeben
 
+-- Gallery ausblenden knopf anheften
+
+-- mobile program table should alse be clickable
+
+--- galerie: emojis ersetzen mit text
+
+--- nicer highlight (dezenter) for nav sections.
+
+--- Übergang vo unset to fixed smoother mache für de gallery ausblenden button
+
 --- Kontakt: KVK Logo anzeigen
 
 ---- hamburger menu animation expand
 
--- Gallery ausblenden knopf anheften
 
-- Turmbläser kammer nid ahklicke. Kei Content?
 
--- mobile program table should alse be clickable
 
---- nicer highlight (dezenter) for nav sections.
+
+
+
+
 
