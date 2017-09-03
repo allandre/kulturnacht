@@ -204,8 +204,8 @@ function adjustGallery() {
             var $galleryColumns = $participantGallery.children(".gallery-column");
 
             for (var i = 0; i < $allGalleryItems.length; i++) {
-                var $currentColumn = $galleryColumns[i % $galleryColumns.length];
-                $currentColumn.append($allGalleryItems[i]);
+                var $currentColumn = $galleryColumns.eq(i % $galleryColumns.length);
+                $currentColumn.append($allGalleryItems.eq(i));
             }
 
             for (var i = 0; i < 2; i++) {
