@@ -481,6 +481,9 @@ button.gallery-toggler:hover {
 
 .gallery-column {
     margin: 2%;
+
+    flex-grow: 1;
+    flex-basis: 0px;
 }
 
 .gallery-item {
@@ -490,6 +493,8 @@ button.gallery-toggler:hover {
     margin-bottom: 1em;
     background-color: #ededed;
 }
+
+
 
 .gallery-item h4 {
     font-weight: bold;
