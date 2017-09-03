@@ -385,6 +385,7 @@ input[type=checkbox]:checked ~ #menu li a div {
 }
 
 #program-section .extra-cell .img img {
+    /* removed because of IE */
      /*position: relative;
     top: 50%;
     left: 50%;
@@ -430,7 +431,7 @@ input[type=checkbox]:checked ~ #menu li a div {
 }
 
 #program-section table.desktop img {
-    max-width: 10vw;
+    width: 10vw;
 }
 
 /* -> mobile */
@@ -494,9 +495,7 @@ button.gallery-toggler:hover {
 }
 
 .gallery-item img {
-    /*min-width: 50%;*/
-    max-width: 100%;
-    max-height: 10vw;
+    width: 80%;
     display: block;
     margin: 0.5em auto;
 }
