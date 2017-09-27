@@ -264,10 +264,31 @@ function hideMenu() {
 // calculate days until eventDate, and display on title image
 function showCountdown() {
     // get remaining days until event
-    var days = Math.floor((eventDate.getTime() - Date.now()) / (1000 * 3600 * 24));    
+    // var days = Math.floor((eventDate.getTime() - Date.now()) / (1000 * 3600 * 24));    
+
+    var day = new Date().getDay();
+    var text = "";
+
+    switch (day) {
+        case 3:
+            text = "Übermorgen ist die";
+            break;
+        // wednesday
+        case 4:
+            text = "Morgen ist die";
+            break;
+        // thursday
+        case 5:
+            text = "Heute ist die";
+            break;
+        // friday
+        default:
+            text = "Bald ist die";
+            break;
+    }
 
     var $countdown = $("#countdown");
-    $countdown.html("Noch " + days + " Tage bis zur");
+    $countdown.html(text);
     /*$countdown.css("display", "unset");  -> IE CANNOT HANDLE THAT */
 }
 
