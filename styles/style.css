@@ -301,6 +301,15 @@ input[type=checkbox]:checked ~ #menu li a div {
     transform: translateY(-50%);
 }
 
+#impression-section #credit {
+    float: right;
+    margin: 0;
+    margin-top: -2em;
+    font-size: 70%;
+    color: grey;
+
+}
+
 #impression-section #image-cache {
     display: none;
 }
