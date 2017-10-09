@@ -16,12 +16,19 @@
     <script src="script.js"></script>
     <!--Google Analytics-->
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-101807863-1', 'auto');
-      ga('send', 'pageview');
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-101807863-1', 'auto');
+    ga('send', 'pageview');
     </script>
 </head>
 
@@ -46,6 +53,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="#impressions-anchor">
+                        <div>Impressionen</div>
+                    </a>
+                </li>
+                <li>
                     <a href="#plan-anchor">
                         <div>Übersichtsplan</div>
                     </a>
@@ -66,11 +78,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#anfahrt-anchor">
-                        <div>Anfahrt</div>
-                    </a>
-                </li>
-                <li>
                     <a href="#sponsoren-anchor">
                         <div>Sponsoren</div>
                     </a>
@@ -86,13 +93,31 @@
             </section>
             <a id="info-anchor" class="anchor"></a>
             <section>
-                <h1>Willkommen an der Kulturnacht Küsnacht</h1>
-                <p>Reservieren Sie sich den <b>Abend am Freitag, 29. September 2017!</b> Von <b>18 bis 24 Uhr</b> steht das Küsnachter Dorfzentrum im Zeichen der Kultur. Mit mehr als 100 Künstlerinnen und Künstlern finden an rund 20 Orten über 40 Veranstaltungen statt.</p>
-                <p>Die Kulturnacht bietet historische und kunsthistorische Führungen, Konzerte, Ausstellungen, Lesungen, Gesangskünste, Literatur, Poetry Slam, Gedichte, Sprache, Theater und Film an. Stellen Sie sich aus diesem reichhaltigen Angebot Ihr eigenes Programm zusammen. Die Veranstaltungen beginnen jeweils zur vollen Stunde und dauern maximal 30 Minuten.</p>
-                <p><b>Um 23.45 gibt es eine funkelnde Überraschung auf dem Gemeindehausplatz. In der Freizeitanlage Sunnemetzg kann man den Abend anschliessend bis 2 Uhr ausklingen lassen.</b></p>
-                <p>Der <b>Eintritt</b> zu allen Veranstaltungen ist <b>frei</b> dank des unentgeltlichen Engagements vieler Beteiligter sowie der finanziellen Unterstützung von Sponsoren und Gönnern.</p>
+                <h1>Die erste Küsnachter Kulturnacht</h1>
+                <p>Die erste Küsnachter Kulturnacht hat einen bleibenden Eindruck hinterlassen. Alles hat zusammengespielt: die hervorragenden Künstlerinnen und Künstler, die gutgelaunten Besucherinnen und Besucher und nicht zuletzt das Wetter. Ein lauer schöner Herbstabend hat zum Flanieren von Attraktion zu Attraktion eingeladen.</p>
+                <p>Das OK Kulturnacht dankt allen sehr, die zu dieser gelungen Veranstaltung beigetragen haben.</p>
+                <p>Im Abschnitt Impressionen finden Sie eine Fotogalerie zur Kulturnacht.</p>
                 <p><a href="resources/broschuere_KNK.pdf" target="_blank">Das Programm als PDF finden Sie hier</a></p>
             </section>
+
+
+            <a id="impressions-anchor" class="anchor"></a>
+            <section id="impression-section">
+            <h1>Impressionen der Kulturnacht 2017</h1>
+                <div id="impression-div" onclick="loadNextImage()">
+                    <img id="impression-image">
+                </div>
+
+                <img id="image-cache">
+
+                <div id="controls">
+                    <button type="button" onclick="loadPrevImage()">&lt;</button>
+                    <button type="button" onclick="loadNextImage()">&gt;</button>                    
+                </div>
+
+
+            </section>
+
             <a id="plan-anchor" class="anchor"></a>
             <section id="plan-section">
                 <h1>Die Veranstaltungsorte im Dorfzentrum</h1>
@@ -124,7 +149,6 @@
                     <label><input type="radio" name="segmented" />Ort</label>
                 </div>
                 -->
-
                 <div id="program"></div>
             </section>
             <a id="food-anchor" class="anchor"></a>
@@ -153,19 +177,6 @@
                     <li>Elisabeth Abgottspon, Ortsmuseum Küsnacht</li>
                     <li>Hans-Peter Fehr, Theaterverein Die Kulisse Küsnacht</li>
                 </ul>
-            </section>
-            <a id="anfahrt-anchor" class="anchor"></a>
-            <section class="anfahrt-section">
-                <h1>Anfahrt mit Bahn, Bus oder Auto</h1>
-                <div id="location">
-                    <ul>
-                        <!-- https://www.sbb.ch/de/kaufen/pages/fahrplan/fahrplan.xhtml?suche=true&ab=true&language=de&vias=%5B%22%22%5D&webshopPreviewMode=inactive&nach=K%C3%BCsnacht+ZH&viaField1=&datum=Fr%2C+29.09.2017&zeit=18%3A00&an=true would be link with prefilled destination and time for sbb-->
-                        <li><b>Bahn:</b> S6 oder S16 in Richtung &laquo;Uetikon&raquo; bzw. &laquo;Meilen&raquo; bis &laquo;Küsnacht ZH&raquo;. <a href="http://www.sbb.ch" target="_blank">Fahrplan</a></li>
-                        <li><b>Bus:</b> Ab &laquo;Zürich, Bellevue&raquo; Linie 916 bis Haltestelle &laquo;Oberwacht&raquo; oder &laquo;obere Heslibachstrasse&raquo; oder Linie 912 bis Haltestelle &laquo;Schiedhaldenstrasse&raquo;. <a href="http://www.sbb.ch" target="_blank">Fahrplan</a></li>
-                        <li><b>Auto:</b> Seestrasse, Abzweigen bei der Ampel in Küsnacht auf Oberwachtstrasse, durch die Unterführung bis zum Parkplatz Zürichstrasse. <a href="https://www.google.ch/maps/dir//K%C3%BCsnacht/@47.3189174,8.5494512,13z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x479aa68104cc861f:0xd07bdddc85fcb02e!2m2!1d8.5844705!2d47.3189227!3e0?hl=de" target="_blank">Routenplaner</a></li>
-                    </ul>
-                    <div id="map"></div>
-                </div>
             </section>
             <a id="sponsoren-anchor" class="anchor"></a>
             <section id="sponsoren-section">

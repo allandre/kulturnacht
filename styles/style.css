@@ -279,6 +279,45 @@ input[type=checkbox]:checked ~ #menu li a div {
 
 /* TITLE SECTION end */
 
+/* IMPRESSION SECTION start */
+
+#impression-section #impression-div {
+    margin: 2em auto;
+    height: 80vh;
+
+    background-color: #d1d1d1;
+    border: 1px solid black;
+}
+
+#impression-section #impression-image {
+    display: block;
+    position: relative;
+
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#impression-section #image-cache {
+    display: none;
+}
+
+#impression-section #controls {
+    display: flex;
+
+    justify-content: center;
+}
+
+
+#impression-section #controls button {
+    font-size: 200%;    
+}
+
+/* IMPRESSION SECTION end */
+
 
 /* PLAN SECTION start */
 
