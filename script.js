@@ -19,21 +19,21 @@
 // }
 // var programSectionState = programStates.undef;
 
-// var impressions = ["Artischock Seehof 2.jpg","Artischock Seehof.jpg","fanfare terrible.JPG","fanfare terrible2.JPG","fanfare terrible5.JPG","Haus CG Jung 1.jpg","Haus CG Jung 2.jpg","IMG_1416.JPG","IMG_1420.JPG","IMG_1422.JPG","IMG_1424.JPG","IMG_1426.JPG","IMG_1428.JPG","IMG_1429.JPG","IMG_1433.JPG","IMG_1434.JPG","IMG_1435.JPG","IMG_1436.JPG","IMG_1437.JPG","IMG_1439.JPG","IMG_1440.JPG","IMG_1442.JPG","IMG_1453.JPG","IMG_1454.JPG","IMG_1455.JPG","IMG_1456.JPG","IMG_1457.JPG","IMG_1458.JPG","IMG_1460.JPG","IMG_1463.JPG","IMG_1465.JPG","IMG_1469.JPG","IMG_1473.JPG","IMG_1477.JPG","IMG_1482.JPG","IMG_1485.JPG","IMG_1487.JPG","IMG_1489.JPG","IMG_1490.JPG","IMG_1496.JPG","IMG_1499.JPG","IMG_1500.JPG","IMG_1501.JPG","IMG_1506.JPG","IMG_1507.JPG","IMG_1508.JPG","IMG_1526.JPG","IMG_6802.jpg","IMG_8558.JPG","IMG_8566.JPG","IMG_8577.JPG","IMG_8592.JPG","IMG_8599.JPG","IMG_8602.JPG","Lesung1.jpg"];
-// var index = 0;
+var impressions = ["Artischock Seehof 2.jpg","Artischock Seehof.jpg","fanfare terrible.JPG","fanfare terrible2.JPG","fanfare terrible5.JPG","Haus CG Jung 1.jpg","Haus CG Jung 2.jpg","IMG_1416.JPG","IMG_1420.JPG","IMG_1422.JPG","IMG_1424.JPG","IMG_1426.JPG","IMG_1428.JPG","IMG_1429.JPG","IMG_1433.JPG","IMG_1434.JPG","IMG_1435.JPG","IMG_1436.JPG","IMG_1437.JPG","IMG_1439.JPG","IMG_1440.JPG","IMG_1442.JPG","IMG_1453.JPG","IMG_1454.JPG","IMG_1455.JPG","IMG_1456.JPG","IMG_1457.JPG","IMG_1458.JPG","IMG_1460.JPG","IMG_1463.JPG","IMG_1465.JPG","IMG_1469.JPG","IMG_1473.JPG","IMG_1477.JPG","IMG_1482.JPG","IMG_1485.JPG","IMG_1487.JPG","IMG_1489.JPG","IMG_1490.JPG","IMG_1496.JPG","IMG_1499.JPG","IMG_1500.JPG","IMG_1501.JPG","IMG_1506.JPG","IMG_1507.JPG","IMG_1508.JPG","IMG_1526.JPG","IMG_6802.jpg","IMG_8558.JPG","IMG_8566.JPG","IMG_8577.JPG","IMG_8592.JPG","IMG_8599.JPG","IMG_8602.JPG","Lesung1.jpg"];
+var index = 0;
 
 
-// $(document).ready(function() {    
+ $(document).ready(function() {    
 //     // showCountdown();    
 //     // loadMap();
-//     // loadImpressionGallery(index);
+	loadImpressionGallery(index);
 
 //     // $positionIndication = $('#position-indication');
 
 //     // updateProgramSection(true);
 
 //     // initGallery();
-// });
+ });
 
 // $(window).on('resize', function(event) {
 //     var containerWidth = $("#container").width();
@@ -377,23 +377,23 @@
 //     }
 // }
 
-// function loadImpressionGallery(index) {
-//     console.log(index);
-//     var $cache = $("#image-cache");
-//     var $impression = $("#impression-image");
+function loadImpressionGallery(index) {
+    console.log(index);
+    var $cache = $("#image-cache");
+    var $impression = $("#impression-image");
 
-//     $impression.attr("src", "resources/impressions/" + impressions[index]);
-//     $cache.attr("src", "resources/impressions/" + impressions[++index & impressions.length]);
-// }
+    $impression.attr("src", "resources/impressions/" + impressions[index]);
+    $cache.attr("src", "resources/impressions/" + impressions[++index & impressions.length]);
+}
 
-// function loadPrevImage() {    
-//     index -= 1;
-//     if (index < 0) {
-//         index = impressions.length - 1;
-//     }
-//     loadImpressionGallery(index);
-// }
+function loadPrevImage() {    
+    index -= 1;
+    if (index < 0) {
+        index = impressions.length - 1;
+    }
+    loadImpressionGallery(index);
+}
 
-// function loadNextImage() {
-//     loadImpressionGallery(++index % impressions.length);
-// }
+function loadNextImage() {
+    loadImpressionGallery(++index % impressions.length);
+}
