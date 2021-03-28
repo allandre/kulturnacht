@@ -276,6 +276,10 @@ input[type=checkbox]:checked ~ #menu li a div {
     width: 100%;
 }
 
+.title-h1 {
+    color: #ed1255;
+}
+
 
 /* TITLE SECTION end */
 
