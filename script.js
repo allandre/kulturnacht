@@ -1,4 +1,3 @@
-// var eventDate = new Date(2020, 8, 11, 18);
 // var map;
 
 // var hamburgerMenuWidth = 1045;
@@ -24,7 +23,7 @@ var index = 0;
 
 
  $(document).ready(function() {    
-//     // showCountdown();    
+    showCountdown();    
 //     // loadMap();
 	loadImpressionGallery(index);
 
@@ -266,17 +265,25 @@ var index = 0;
 
 
 // // calculate days until eventDate, and display on title image
-// function showCountdown() {
-//     // get remaining days until event
-//     var days = Math.floor((eventDate.getTime() - Date.now()) / (1000 * 3600 * 24));    
+function showCountdown() {
+    // get remaining days until event
+    var now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var eventDate = new Date(2021, 8, 3);
+    var days = Math.floor((eventDate.getTime() - today.getTime()) / (1000 * 3600 * 24)).toFixed(0);
 
-//     var text = "Noch " + days + " Tage bis zur";
+    var text = "";
+    if (days == 0) {
+        text = "Heute ist die ";
+    }
+    else {
+        text = "Noch " + days + " Tage bis zur";
+    }
 
-
-//     var $countdown = $("#countdown");
-//     $countdown.html(text);
-//     /*$countdown.css("display", "unset");  -> IE CANNOT HANDLE THAT */
-// }
+    var $countdown = $("#countdown");
+    $countdown.html(text);
+    /*$countdown.css("display", "unset");  -> IE CANNOT HANDLE THAT */
+}
 
 // function updateNavigation() {
 //     // reset state
