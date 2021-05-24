@@ -34,33 +34,95 @@
 
 <body>
     <div id="container">
+         <nav>
+            <a id="logo-ref" href="">
+                <span id="logo-K" class="logo">K</span>
+                <div id="logo-border" class="logo"></div>
+                <span id="logo-text" class="logo">Kulturelle Vereinigung Küsnacht</span>
+            </a>
+            <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+            <label for="nav-trigger">
+                <span id="hamburger-wrapper">
+                <span class="hamburger"></span>
+                </span>
+            </label>
+            <ul id="menu" onclick="hideMenu()">
+                <li>
+                    <a href="#info-anchor">
+                        <div>Info</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact-anchor">
+                        <div>Kontakt</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#impressions-anchor">
+                        <div>Impressionen 2017</div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
         <div id="main">
             <section id="title-section">
                 <div id="countdown">
                     Freitag, 3. September 2021
                 </div>
-                <img src="resources/title-image-1600.png">
+                <img src="resources/title-image-1600.png" alt="Küsnacht am Abend vom See her.">
             </section>
 
+            <a id="info-anchor" class="anchor"></a>
             <section>
                 <h1 class="title-h1">Die Kulturnacht Küsnacht 2021 am Freitag, 3. September findet definitiv statt!</h1>
                 <p>Dafür bauen wir eine digitale Sicherheit ein. Die einzelnen Darbietungen werden im Verlauf des Sommers auf Video aufgenommen. Gelten im September strenge Schutzmassnahmen, können die einzelnen Beiträge sicher zuhause gestreamt werden.</p>
-                <p>Sind im September jedoch Veranstaltungen ab 50 Personen wieder möglich, organisiert das OK Kulturnacht ein Public Viewing mit Grossleinwand im Dorfzentrum.</p>
-                <p>Die Kulturnacht ist ein Projekt der Kulturellen Vereinigung Küsnacht (KVK). Kontakt: <a href="mailto:vorstand@kulturelle-vereinigung-kuesnacht.ch">vorstand@kulturelle-vereinigung-kuesnacht.ch</a></p>
+                <p>Sind im September jedoch Veranstaltungen ab 50 Personen wieder möglich, organisiert das OK Kulturnacht ein Public Viewing mit Grossleinwand im Dorfzentrum.</p>                
             </section>
             <section id="media-section" class="media-section">
                 <h1>Presse</h1>
                 <img src="resources/article-kuesnachter.jpg" class="media-img" alt="Artikel des Küsnachters zur Kulturnacht" height="1200px">
+            </section>
+
+            <a id="contact-anchor" class="anchor"></a>
+            <section class="contact-section">
+                <h1>Kontakt</h1>
+                <div class="images-container">
+                    <div>
+                        <img src="resources/ok_kvk/ok-kulturnacht.jpg" alt="Teil des OK-Teams steht in einem Kreis und strecken motiviert eine Hand in die Mitte.">
+                        <p>Ein Ziel: Kulturnacht Küsnacht 2021<sup>on air</sup></p>
+                        <p>Fotos: Petra Helm</p>
+                    </div>
+                    <div>
+                        <img src="resources/ok_kvk/ok-kulturnacht-2.jpg" alt="Teil des OK-Teams stemmen vier Säulen.">
+                        <p>Die Kulturnacht wird auch unter neuen Umständen gestemmt</p>
+                    </div>
+                </div>
+
+                <p>Die Kulturnacht Küsnacht ist ein Projekt der Kulturellen Vereinigung Küsnacht <a href="https://www.kulturelle-vereinigung-kuesnacht.ch">(KVK)</a> und wird von einem Nonprofit-Team organisiert:</p>
+                <div>                    
+                    <ul>
+                        <li>Elisabeth Abgottspon, Ortsmuseum Küsnacht</li>
+                        <li>Ilka Allenspach, Kulturelle Vereinigung Küsnacht</li>
+                        <li>Hans-Peter Fehr, Theaterverein „Die Kulisse“, Küsnacht</li>
+                        <li>Christian Marty, Konservator/Restaurator, Küsnacht</li>
+                        <li>Martine Peyer, Kulturelle Vereinigung Küsnacht</li>
+                        <li>Hortensia Ernst, Vertretung Vorstand Kulturelle Vereinigung Küsnacht</li>
+                        <li>Esther Haltiner, Vertretung Vorstand Kulturelle Vereinigung Küsnacht</li>                    
+                    </ul>
+                </div>
+
+                <p>Durch eine Mitgliedschaft unterstützen Sie die Aktivitäten der KVK. E-Mail an: <a href="mailto:vorstand@kulturelle-vereinigung-kuesnacht.ch">vorstand@kulturelle-vereinigung-kuesnacht.ch</a></p>
             </section>
 			
 			<a id="impressions-anchor" class="anchor"></a>
             <section id="impression-section">
             <h1>Impressionen der Kulturnacht 2017</h1>            
                 <div id="impression-div" onclick="loadNextImage()">
-                    <img id="impression-image">
+                    <img id="impression-image" alt="Das Bild zeigt einen abwechselnden Eindruck der Kulturnacht.">
                 </div>
 
-                <img id="image-cache">
+                <img id="image-cache" alt="unsichtbares bild">
 
                 <div id="controls">
                     <button type="button" onclick="loadPrevImage()">&lt;</button>

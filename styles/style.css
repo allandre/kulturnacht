@@ -609,50 +609,20 @@ button.gallery-toggler:hover {
 
 /* CONTACT SECTION start */
 
-.ad {
-    color: #ed1255;
+.contact-section .images-container {
+    display: flex; 
+    justify-content: space-evenly; 
+    align-items: baseline;
+    margin-top: 1em;
 }
 
-.contact-section h3 {
-    margin-top: 2em;
+.images-container img {
+    height: 400px;
 }
 
-.contact-section p {
-    margin-top: 0;
-}
-
-.contact-section li {
-    text-align: justify;
-}
-
-.contact-section a {}
-
-#location {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+.contact-section ul {
     max-width: 800px;
-    margin: auto;
-    flex-wrap: wrap;
-}
-
-#location ul {
-    max-width: 20em;
-    width: 100%;
-}
-
-#location li {
-    margin-top: 1em;
-}
-
-#map {
-    flex-shrink: 0;
-    flex-grow: 1;
-    width: 20em;
-    height: 20em;
-    border: 1px solid grey;
-    margin-top: 1em;
-    margin-left: 5em;
+    margin: 2em auto;
 }
 
 
