@@ -633,64 +633,42 @@ button.gallery-toggler:hover {
 
 /* SPONSOREN SECTION start */
 
-#sponsoren-section {
-    padding-left: 3%;
-    padding-right: 3%;
+.section-sponsors {
+    background-image: url("../resources/sponsor-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-#sponsoren-section h2 {
-    margin-top: 3em;
-    margin-bottom: 2em;
-    border-bottom: 1px solid grey;
+.sponsor-group {
+    margin-top: 1em;
+    margin-bottom: 4vw;
+    border-left: 2px solid #ed1255;
+    padding-left: 2vw;
 }
 
-#sponsoren-section h2:first-of-type {
-    margin-top: 2em;
-}
-
-#sponsoren-section ul {
-    max-width: 800px;
-    margin: auto;
-}
-
-#sponsoren-section li {
+.sponsor-group h2 {
     margin-bottom: 1em;
+    margin-left: 0;
+    color: #ed1255;
 }
 
-.sponsoren-block {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: auto;
+.sponsor-group img {
+    margin-bottom: 3vw !important;
 }
 
-.sponsoren-block:nth-of-type(2) img {
-    height: 50px;
+.sponsors img {
+    width: 25%;
+    margin: 0 3.4%;
 }
 
-.sponsoren-block img {
-    width: unset;
-    max-width: unset;
-    height: 70px;
-    /*71*/
-    max-height: unset;
-    padding: 1em .5em;
+.sponsors > div {
+    width: 30%;
+    margin: 0 1%;
+    display: inline-block;
+    font-size: 110%;
+    font-weight: 300;
 }
-
-#schererHeizungen {
-    max-height: 12vw;
-}
-
-#STFS {
-    max-height: 12vw;
-}
-
-#sponsoren-section a {
-    text-decoration: none;
-    color: black;
-}
-
 
 /* SPONSOREN SECTION end */
 
@@ -722,10 +700,17 @@ footer a:visited {
     text-decoration: none;
 }
 
+.media-section {
+    background-color: #80808047;
+}
+
 .media-img {
     display: block;
     margin-left: auto;
     margin-right:auto;
+    width: 100%;
+    max-width: 1030px;
+    height: auto;
 }
 
 
@@ -794,11 +779,12 @@ footer a:visited {
     }
 }
 
-@media (max-width: 700px) {
-    .media-section {
-        display: none;
+/* -> sponsors without a logo need smaller (and adaptive) font to not overlap */
+
+@media (max-width: 600px) {
+    .sponsors > div {
+        font-size: 3vw;
     }
 }
-
 
 /* MEDIA QUERIES end */
