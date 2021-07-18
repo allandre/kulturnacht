@@ -619,6 +619,7 @@ button.gallery-toggler:hover {
 .images-container img {
     max-height: 400px;
     width: 100%;
+    object-fit: contain;
 }
 
 .contact-section ul {
