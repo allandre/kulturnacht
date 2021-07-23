@@ -349,249 +349,81 @@ input[type=checkbox]:checked ~ #menu li a div {
 
 /* PROGRAM SECTION start */
 
-#program-section h1 {
-    max-width: unset;
+.poetry {
+    background: linear-gradient(#b7d7c7, #78b9a1);
 }
 
-#program-section p {
-    max-width: unset;
+.exhibition {
+    background: linear-gradient(#b0adc8, #7b77a6);
 }
 
-#program-section table {
-    margin: 0 auto;
-    margin-top: 0.5em;
-    z-index: 100;
+.concert {
+    background: linear-gradient(#ebc595, #dd9e5c);
 }
 
-#program-section th {
-    padding: 0.4em 0;
-    font-weight: bold;
-    text-align: center;
-    color: #ed1255;
-    border-bottom: 1px solid black;
-    border-right: 1px dotted #ed1255;
+.theater {
+    background: linear-gradient(#e5aa9a, #d3695e);
 }
 
-#program-section th:last-of-type {
-    border-right: unset;
-}
-
-#program-section td {
-    padding: 0.2em 0.6em;
-    border-bottom: 1px solid black;
-    border-right: 1px dotted #ed1255;
-    font-size: 75%;
-    text-align: left;
-    vertical-align: middle;
-}
-
-#program-section td.content:hover, #program-section tr td.extra-cell, #program-section tr td.selected {
-    background-color: #e8e8e8;
-}
-
-#program-section td.content:hover:not(.selected) {
-    outline: 1px solid black; /*here selection border*/
-}
-
-#program-section td.content:hover {
-    cursor: pointer;
-}
-
-#program-section td.halbstund {
-    width: 5em;
-}
-
-#program-section table td.locationCell {
-    padding-left: 0;
-    font-weight: bold;
-    border-bottom: 1px solid black;
-}
-
-#program-section .intermediateRow td {
-    border-bottom: 1px solid lightgrey;
-}
-
-#program-section tr td:last-of-type {
-    border-right: unset;
-}
-
-#program-section .time-cell {
-    text-align: center;
-}
-
-#program-section tr td.extra-cell {
-    border: 1px solid black; /*here selection border*/
-    border-top: 0;
-    border-left: 0;
-    border-right: 1px dotted #ed1255;
-}
-
-#program-section .table-entry {
+.program-container {
     display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 1.5rem;
+    max-width: 900px;
 }
 
-#program-section .extra-cell div.img {
-    display: inline-block;
-    margin: 10px;
+.event {
+    width: 10rem;
+    height: 10rem;
+    margin: 0.5rem;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top-right-radius: 20%;
 }
 
-#program-section .extra-cell .img img {
-    /* removed because of IE */
-     /*position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%); */
-}
-
-#program-section .extra-cell .content {
-    display: inline-block;
-    padding: 10px;
-}
-
-#program-section .extra-cell .content h4 {
-    font-size: 110%;
-    font-weight: bold;
-}
-
-#program-section .extra-cell .content p:last-of-type {
+.filler {
+    height: 0;
+    margin-top: 0;
     margin-bottom: 0;
+    padding: 0;
 }
 
-#program-section tr td.bottom-border {
-    border-bottom: 1px solid black; /*here selection border*/
-}
-
-#program-section tr td.before-selected {
-    border-right: 1px solid black; /*here selection border*/
-}
-
-#program-section tr td.selected {
-    border: 1px solid black; /*here selection border*/
-    border-bottom: 0;
-    border-left: 0;
-    outline: 0;
-}
-
-/*avoid a black border for a cell which is on the right edge of the table*/
-#program-section tr td:last-of-type.selected {
-    border-right: 1px dotted #ed1255;
-}
-
-.program-table-hint p {
-    margin: 1em;
-}
-
-#program-section table.desktop img {
-    width: 10vw;
-}
-
-/* -> mobile */
-
-#program-section .mobile {
-    width: 100%;
-}
-
-#program-section .mobile .time-cell {
-    cursor: pointer;
-}
-
-.expand {
-    display: inline-block;
-    margin-right: 10%;
-}
-
-.collapse {
-    transform: rotate(90deg);
-}
-
-/* -> gallery */
-
-button.gallery-toggler {
-    padding: 1em;
-    margin: 2em 0;
-    border: none;
-    border-radius: 0.25em;
-
-    color: white;
-    background-color: #ed1255;
-
-    cursor: pointer;
-
-    position: unset; /* will be set to 'fixed' by script.js*/
-    top: 74px;
-}
-
-button.gallery-toggler:hover {
-    background-color: #d70e3e;
-}
-
-#participant-gallery {
-    display: flex;
-    flex-direction: row;
-}
-
-.gallery-column {
-    margin: 2%;
-
-    flex-grow: 1;
-    flex-basis: 0px;
-}
-
-.gallery-item {
-    /*max-width: 350px;*/
-    border: 1px solid black;
-    font-size: 80%;
-    margin-bottom: 1em;
-    background-color: #ededed;
-}
-
-
-
-.gallery-item h4 {
+.event-title {
     font-weight: bold;
-    font-size: 110%;
-    margin: 1em 1em;
+    color: #5a403b;
 }
 
-.gallery-item img {
-    width: 80%;
-    display: block;
-    margin: 0.5em auto;
+.event-subtitle {
+    font-weight: bold;
+    color: #fffffe;
+    font-size: .8rem;
 }
 
-.gallery-item p {
-    margin: 1em 1em;
-}
-
-
-/* gallery end */
-
-
-/* legend table start*/
-
-#program-section h6 {
-    text-align: left;
-    font-style: italic;
-    font-size: 75%;
-}
-
-#program-section .legend {
-    margin-left: 0;
-    margin-bottom: 1em;
+.program-legend {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    margin: .5rem auto;
+    margin-top: 1rem;
+    max-width: 900px;
+    justify-content: center;
 }
 
-#program-section .legend div {
-    display: inline;
-    font-size: 75%;
-    margin: 0 1em;
+.legend-entry {
+    display: flex;
+    margin-right: 1rem;
+    margin-bottom: .5rem;
 }
 
-
-/* legend table end*/
-
+.program-legend .box {
+    width: 1rem;
+    height: 1rem;
+    border-top-right-radius: 20%;
+    margin-right: 0.5rem;
+}
 
 /* PROGRAM SECTION end */
 

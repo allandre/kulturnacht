@@ -32,6 +32,7 @@ var index = 0;
 //     // updateProgramSection(true);
 
 //     // initGallery();
+    loadProgram();
  });
 
 $(window).on('resize', function(event) {
@@ -404,3 +405,32 @@ function loadPrevImage() {
 function loadNextImage() {
     loadImpressionGallery(++index % impressions.length);
 }
+
+/*
+function loadProgram() {
+    var events = [
+        {
+            "title": "Gypsi Swing Dance",
+            "subtitle": "Swingingpool Zürich, Hellzapoppin' Disaster"
+        },
+        {
+            "title": "Donnergroll und Bienensumm",
+            "subtitle": "A la Q'Art"
+        }
+    ];
+
+    var $eventContainer = $(".program-container").first();
+
+    for (var i = 0; i < events.length; i++) {
+        var $eventDiv = $("<div>", { class: "event" });
+        var $eventTitleDiv = $("<div>", { class: "event-title" });
+        var $eventSubtitleDiv = $("<div>", { class: "event-subtitle" });
+
+        $eventDiv.append($eventTitleDiv);
+        $eventDiv.append($eventSubtitleDiv);
+
+        //$participantGallery.append($("<div>", { class: "gallery-column" }));
+        $eventContainer.append($eventDiv);
+    }
+}
+*/
