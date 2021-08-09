@@ -32,7 +32,7 @@ var index = 0;
 //     // updateProgramSection(true);
 
 //     // initGallery();
-    loadProgram();
+    // loadProgram();
  });
 
 $(window).on('resize', function(event) {

@@ -504,6 +504,37 @@ input[type=checkbox]:checked ~ #menu li a div {
 
 /* SPONSOREN SECTION end */
 
+/* PRESSE SECTION start */
+
+.media-section > div {
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+
+.telez {
+    margin: auto;
+    max-width: 800px;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+
+.telez a {
+    display: block;
+}
+
+.telez iframe {
+    display: block;
+    width: 80vw;
+    max-width: 800px;
+    height: 45vw;
+    max-height: 450px;
+}
+
+.kuesnachter h2 {
+    margin-bottom: 1rem;
+}
+
+/* PRESSE SECTION end */
 
 /* FOOTER start */
 
