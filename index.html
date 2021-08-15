@@ -2,9 +2,9 @@
 <html lang="de">
 
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="initial-scale=1.0 width=device-width"/>
-    <meta name="description" content="Dies ist die Webseite der Kulturnacht Küsnacht 2021."/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0 width=device-width">
+    <meta name="description" content="Dies ist die Webseite der Kulturnacht Küsnacht 2021.">
     <title>Kulturnacht Küsnacht</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -13,8 +13,8 @@
             integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
             crossorigin="anonymous"></script>
 
-    <link href="styles/reset.css" rel="stylesheet"/>
-    <link href="styles/style.css" rel="stylesheet"/>
+    <link href="styles/reset.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
 
     <!-- include jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -28,7 +28,7 @@
         function gtag() {
             dataLayer.push(arguments);
         }
-
+        var test = "ssd"
         gtag('js', new Date());
 
         gtag('config', 'UA-101807863-1');
@@ -43,7 +43,7 @@
             <div id="logo-border" class="logo"></div>
             <span id="logo-text" class="logo">Kulturelle Vereinigung Küsnacht</span>
         </a>
-        <input type="checkbox" id="nav-trigger" class="nav-trigger"/>
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
         <label for="nav-trigger">
                 <span id="hamburger-wrapper">
                 <span class="hamburger"></span>
@@ -96,31 +96,31 @@
             <img src="resources/kulturnachtbild-2021.jpg" alt="Küsnacht am Abend vom See her.">
         </section>
 
-        <a id="info-anchor" class="anchor"></a>
+        <a id="info-anchor" class="anchor" aria-label="Anchor for info section"></a>
         <section>
             <h1 class="title-h1">Info</h1>
             <p>Die Kulturnacht Küsnacht können Sie am Freitag, 3. September 2021 auf zwei Arten geniessen:</p>
             <p></p>
-            <p><b>Öffentliche Filmvorführung im reformierten Kirchgemeindehaus Küsnacht</b><br/>
+            <p><b>Öffentliche Filmvorführung im reformierten Kirchgemeindehaus Küsnacht</b><br>
                 Einige der Filme, die in diesem Sommer eigens für die Kulturnacht produziert worden sind, werden
                 öffentlich gezeigt. Es gibt drei einstündige Vorführungen mit jeweils unterschiedlichen Beiträgen. Der
                 Zürcher Slam Poet Simon Chen wird den Anlass moderieren. Für das kulinarische Wohl sorgt ein kleiner
                 Bistrobetrieb.
                 Ticketreservation unter <a href="#ticket-anchor">Tickets</a></p>
-            <p><b>Filme online</b><br/>
+            <p><b>Filme online</b><br>
                 Am Freitag, 3. September ab 18 Uhr können die einzelnen Darbietungen unter <a href="#program-anchor">Filme</a>
                 online angeschaut werden.</p>
         </section>
 
-        <a id="ticket-anchor" class="anchor"></a>
+        <a id="ticket-anchor" class="anchor" aria-label="Anchor for tickets section"></a>
         <section>
             <h1 class="title-h1">Tickets</h1>
             <p>Für die öffentlichen Filmvorführungen bitte Tickets bei Eventfrog über folgenden Link buchen:</p>
-            <div style="display: flex; justify-content: center;">
+            <div class="eventforg-container">
                 <div>
                     <script src="https://embed.eventfrog.ch/api/scripts/embed/buybutton.js"></script>
                     <iframe src="https://embed.eventfrog.ch/de/embed/button-buy.html?eventId=6810490054398906019"
-                            frameborder="0" scrolling="no" width="260" height="47"></iframe>
+                            title="Eventfrog page" width="100%" height="47"></iframe>
                 </div>
             </div>
             <p>Der Eintritt ist frei.</p>
@@ -132,7 +132,7 @@
             <p>Die zum Zeitpunkt des Anlasses geltenden Covid-19 Vorgaben werden eingehalten.</p>
         </section>
 
-        <a id="program-anchor" class="anchor"></a>
+        <a id="program-anchor" class="anchor" aria-label="Anchor for program section"></a>
         <section>
             <h1 class="title-h1">Filme</h1>
             <div>
@@ -329,7 +329,7 @@
             </div>
 
             <div>
-                <p>Herzlichen Dank für die Produktion der Filme an effekte.ch und an unsere Veranstaltungspartner:<br/>
+                <p>Herzlichen Dank für die Produktion der Filme an effekte.ch und an unsere Veranstaltungspartner:<br>
                     Artischock | Bibliothek Küsnacht | C.G. Jung-Institut Bildarchiv | Familienzentrum Küsnacht |
                     Frauenverein Küsnacht | Galerie im Höchhuus | Katholische Kirchgemeinde Küsnacht-Erlenbach |
                     KulturBar Küsnacht | Kulturelle Vereinigung Küsnacht | Museum Haus C.G. Jung, Stiftung C.G. Jung
@@ -339,7 +339,7 @@
             </div>
         </section>
 
-        <a id="contact-anchor" class="anchor"></a>
+        <a id="contact-anchor" class="anchor" aria-label="Anchor for contact section"></a>
         <section class="contact-section">
             <h1 class="title-h1">Kontakt</h1>
             <div class="images-container">
@@ -354,8 +354,7 @@
                 </div>
             </div>
 
-            <p style="margin-top: -1em; margin-left: max((100% - 910px)/3, 0px); margin-bottom: 3em;">Fotos: Petra
-                Helm</p>
+            <p class="caption">Fotos: Petra Helm</p>
 
             <p>Die Kulturnacht Küsnacht ist ein Projekt der Kulturellen Vereinigung Küsnacht <a
                     href="https://www.kulturelle-vereinigung-kuesnacht.ch">(KVK)</a> und wird von einem Nonprofit-Team
@@ -377,7 +376,7 @@
             </p>
         </section>
 
-        <a id="protection-concept-anchor" class="anchor"></a>
+        <a id="protection-concept-anchor" class="anchor" aria-label="Anchor for protection concept section"></a>
         <section class="protection-concept-section">
             <h1 class="title-h1">Schutzkonzept</h1>
             <p>Um sich selbst und andere zu schützen, bitten wir Sie, folgende Hinweise zu beachten und danken Ihnen für
@@ -416,54 +415,54 @@
                 nicht besuchen. </p>
         </section>
 
-        <a id="sponsor-anchor" class="anchor"></a>
+        <a id="sponsor-anchor" class="anchor" aria-label="Anchor for sponsor section"></a>
         <section class="section-sponsors">
             <h1 class="title-h1">Sponsoren</h1>
             <div class="sponsor-group">
                 <h2>Goldsponsoren</h2>
                 <div class="sponsors">
-                    <img src="resources/sponsoren/Ernst rot.png"/>
-                    <img src="resources/sponsoren/MS Druck_Logo.png"/>
-                    <img src="resources/sponsoren/ZKB_Logo_100mm_CMYK.png"/>
+                    <img src="resources/sponsoren/Ernst rot.png" alt="Logo Ernst">
+                    <img src="resources/sponsoren/MS Druck_Logo.png" alt="Logo MS Medium">
+                    <img src="resources/sponsoren/ZKB_Logo_100mm_CMYK.png" alt="Logo ZKB">
                 </div>
             </div>
             <div class="sponsor-group">
                 <h2>Silbersponsoren</h2>
                 <div class="sponsors">
-                    <img src="resources/sponsoren/Apotheke Hotz Logo_cmyk.png"/>
-                    <img src="resources/sponsoren/evergreen.png"/>
-                    <img src="resources/sponsoren/medica.png"/>
-                    <img src="resources/sponsoren/Logo Schindler Partner GmbH, Kulturnacht Küsnacht 2020-0.png"/>
-                    <img src="resources/sponsoren/Logo_quer_2019.png"/>
+                    <img src="resources/sponsoren/Apotheke Hotz Logo_cmyk.png" alt="Apotheke Hotz">
+                    <img src="resources/sponsoren/evergreen.png" alt="Logo Evergreen">
+                    <img src="resources/sponsoren/medica.png" alt="Logo Medica">
+                    <img src="resources/sponsoren/Logo Schindler Partner GmbH, Kulturnacht Küsnacht 2020-0.png" alt="Logo Schindler Partner">
+                    <img src="resources/sponsoren/Logo_quer_2019.png" alt="Logo Weingut Diederik">
                 </div>
             </div>
             <div class="sponsor-group">
                 <h2>Bronzesponsoren</h2>
                 <div class="sponsors">
-                    <div>LEC Leutenegger Energie Control<br/>Küsnacht</div>
-                    <div>schmutz&wiebach coaching<br/>Küsnacht</div>
-                    <div>Werke am Zürichsee AG<br/>Küsnacht</div>
+                    <div>LEC Leutenegger Energie Control<br>Küsnacht</div>
+                    <div>schmutz&amp;wiebach coaching<br>Küsnacht</div>
+                    <div>Werke am Zürichsee AG<br>Küsnacht</div>
                 </div>
             </div>
             <div class="sponsor-group">
                 <h2>Gönner</h2>
                 <div class="sponsors">
-                    <img src="resources/sponsoren/kuesnacht_logo_cmyk.png"/>
+                    <img src="resources/sponsoren/kuesnacht_logo_cmyk.png" alt="Logo Küsnacht">
                     <div>Max und Martha Dangel Stiftung</div>
                     <div>SK Stiftung, Küsnacht</div>
-                    <img src="resources/sponsoren/whs namenszug_cmyk_neu 2018.png"/>
+                    <img src="resources/sponsoren/whs namenszug_cmyk_neu 2018.png" alt="Logo Walter Haefner Stiftung">
                 </div>
                 <div>Grosser Dank gilt auch all den Gönnern, welche hier nicht erwähnt werden möchten.</div>
             </div>
             <div class="sponsor-group">
                 <h2>Medienpartner</h2>
                 <div class="sponsors">
-                    <img src="resources/sponsoren/Küsnachter.png"/>
+                    <img src="resources/sponsoren/Küsnachter.png" alt="Logo Küsnachter">
                 </div>
             </div>
         </section>
 
-        <a id="media-anchor" class="anchor"></a>
+        <a id="media-anchor" class="anchor" aria-label="Anchor for the media section"></a>
         <section id="media-section" class="media-section">
             <h1 class="title-h1">Presse</h1>
             <div class="telez">
@@ -471,18 +470,18 @@
                 <a href="https://www.telez.ch/tele-z-aktuell-beitrag-05-07-2021-b3_26009/">Küsnacht: Kulturnacht ein
                     wenig anders </a>
                 <iframe src="https://player.vimeo.com/video/571259602?color=000fff&title=0&byline=0&portrait=0"
-                        width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+                        width="640" height="360" title="Video from TeleZ on Vimeo" allow="autoplay; fullscreen; picture-in-picture"
                         allowfullscreen></iframe>
             </div>
             <div class="kuesnachter">
                 <h2>Küsnachter (24.06.2021)</h2>
                 <img src="resources/article-kuesnachter-2.jpg" class="media-img"
-                     alt="Artikel des Küsnachters zur Kulturnacht">
+                     alt="Artikel im Juni des Küsnachters zur Kulturnacht">
             </div>
             <div class="kuesnachter">
                 <h2>Küsnachter (15.04.2021)</h2>
                 <img src="resources/article-kuesnachter.jpg" class="media-img"
-                     alt="Artikel des Küsnachters zur Kulturnacht"
+                     alt="Artikel im April des Küsnachters zur Kulturnacht"
                      height="1200px">
             </div>
         </section>
