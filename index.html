@@ -25,10 +25,10 @@
     <script>
         window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
+        function gtag(...args) {
+            window.dataLayer.push(args);
         }
-        var test = "ssd"
+
         gtag('js', new Date());
 
         gtag('config', 'UA-101807863-1');

@@ -7,9 +7,6 @@
     "html-validate": "^5.2.1"
   },
   "scripts": {
-    "lint": "eslint --ext .js,.jsx,.html . && html-validate '**/*.html'"
-  },
-  "plugins": [
-    "html"
-  ]
+    "lint": "eslint . && html-validate '**/*.html'"
+  }
 }
