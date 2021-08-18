@@ -330,6 +330,14 @@ input[type=checkbox]:checked ~ #menu li a div {
 
 /* IMPRESSION SECTION end */
 
+/* TICKETS SECTION start */
+
+.eventforg-container {
+    display: flex; 
+    justify-content: center;
+}
+
+/* TICKETS SECTION start */
 
 /* PLAN SECTION start */
 
@@ -457,6 +465,12 @@ input[type=checkbox]:checked ~ #menu li a div {
 .contact-section ul {
     max-width: 800px;
     margin: 2em auto;
+}
+
+.caption {
+    margin-top: -1em; 
+    margin-left: max((100% - 910px)/3, 0px); 
+    margin-bottom: 3em;
 }
 
 
