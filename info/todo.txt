@@ -1,3 +1,16 @@
+2021:
+
+- youtube iframe: <iframe width="560" height="315" src="https://www.youtube.com/embed/qC7G4k7HN0o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- add event filler back in
+
+- check for mobile speed
+
+- stop video on close button
+
+
+2017:
+
 - programm tabelle: übergänge (luxus, reduced padding, list)
 
 - Übersichtsplan :: bild -> map
