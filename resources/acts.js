@@ -27,7 +27,7 @@ window.acts = [
     type: 'concert',
     name: 'Orgelinspirationen',
     details: 'Christer Løvold',
-    youtubeID: 'WdPA92ulgD8',
+    youtubeID: 'EBinIWchpm8',
   },
   {
     type: 'exhibition',

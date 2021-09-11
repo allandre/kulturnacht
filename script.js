@@ -45,8 +45,11 @@ function showCountdown() {
 
   let text = '';
   if (days === 0) {
-    text = 'Heute ist die ';
+    text = 'Heute ist die';
+  } else if (days < 0) {
+    text = 'Bis zum nächsten Mal bei der';
   } else {
+    // days > 0
     text = `Noch ${days} Tage bis zur`;
   }
 
