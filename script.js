@@ -35,29 +35,6 @@ function hideMenu() {
   $('#nav-trigger').prop('checked', false);
 }
 
-// calculate days until eventDate, and display on title image
-function showCountdown() {
-  // get remaining days until event
-  const now = new Date();
-  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  const eventDate = new Date(2021, 8, 3);
-  const days = Math.floor((eventDate.getTime() - today.getTime()) / (1000 * 3600 * 24)).toFixed(0);
-
-  let text = '';
-  if (days === 0) {
-    text = 'Heute ist die';
-  } else if (days < 0) {
-    text = 'Bis zum nächsten Mal bei der';
-  } else {
-    // days > 0
-    text = `Noch ${days} Tage bis zur`;
-  }
-
-  const $countdown = $('#countdown');
-  $countdown.html(text);
-  /* $countdown.css("display", "unset");  -> IE CANNOT HANDLE THAT */
-}
-
 function insertProgram() {
   const programContainer = document.querySelector('.program-container');
 
@@ -145,7 +122,6 @@ function insertProgram() {
 }
 
 $(document).ready(() => {
-  showCountdown();
   insertProgram();
 });
 
