@@ -93,7 +93,7 @@ window.acts = [
     type: 'poetry',
     name: 'Die Sprachgranate aus Zürich',
     details: 'Rebekka Lindauer',
-    youtubeID: 'OrLMUBn6FTU',
+    youtubeID: 'XclKvDxpyh0',
   },
   {
     type: 'exhibition',
