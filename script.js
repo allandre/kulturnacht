@@ -1,4 +1,4 @@
-var eventDate = new Date(2017, 8, 29, 18);
+var eventDate = new Date(2025, 8, 5, 18);
 var map;
 
 var hamburgerMenuWidth = 1045;
@@ -22,13 +22,13 @@ var programSectionState = programStates.undef;
 
 $(document).ready(function() {    
     showCountdown();    
-    loadMap();
+    // loadMap();
 
     $positionIndication = $('#position-indication');
 
-    updateProgramSection(true);
-
-    initGallery();
+    // updateProgramSection(true);
+    //
+    // initGallery();
 });
 
 $(window).on('resize', function(event) {
@@ -70,62 +70,62 @@ function setScrollingWithMouseWheel(isEnable) {
     }
 }
 
-function loadMap() {
-    if (typeof google == 'undefined') {
-        // to continue executing the rest of this file
-        return
-    }
+// function loadMap() {
+//     if (typeof google == 'undefined') {
+//         // to continue executing the rest of this file
+//         return
+//     }
+//
+//     var kuesnacht = { lat: 47.316667, lng: 8.583333 };
+//     var center = { lat: 47.35, lng: 8.54 };
+//     map = new google.maps.Map(document.getElementById('map'), {
+//         zoom: 11,
+//         center: center,
+//         scrollwheel: false
+//     });
+//
+//     google.maps.event.addListener(map, 'mousedown', function() {
+//         setScrollingWithMouseWheel(true);
+//     });
+//
+//
+//     var marker = new google.maps.Marker({
+//         position: kuesnacht,
+//         map: map
+//     });
+// }
 
-    var kuesnacht = { lat: 47.316667, lng: 8.583333 };
-    var center = { lat: 47.35, lng: 8.54 };
-    map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 11,
-        center: center,
-        scrollwheel: false
-    });
 
-    google.maps.event.addListener(map, 'mousedown', function() {
-        setScrollingWithMouseWheel(true);
-    });
+// function updateProgramSection(force) {
+//     var containerWidth = $("#container").width();
+//     if (containerWidth > 747 && (force || programSectionState === programStates.undef || programSectionState === programStates.list)) {
+//         loadProgram("resources/program/program-table.html");
+//         programSectionState = programStates.table;
+//     } else if (containerWidth <= 747 && (force || programSectionState === programStates.undef || programSectionState === programStates.table)) {
+//         loadProgram("resources/program/program-list.html");
+//         programSectionState = programStates.list;
+//     }
+// }
+//
+// function loadProgram(file) {
+//     var xmlhttp = new XMLHttpRequest();
+//
+//     xmlhttp.onreadystatechange = function() {
+//         if (this.readyState === 4 && this.status === 200) {
+//             var $programDiv = $("#program");
+//             $programDiv.html(this.responseText);
+//             $(".extra-row").hide();
+//         }
+//     };
+//
+//     xmlhttp.open("GET", file, true);
+//     xmlhttp.send();
+// }
 
-
-    var marker = new google.maps.Marker({
-        position: kuesnacht,
-        map: map
-    });
-}
-
-
-function updateProgramSection(force) {
-    var containerWidth = $("#container").width();
-    if (containerWidth > 747 && (force || programSectionState === programStates.undef || programSectionState === programStates.list)) {
-        loadProgram("resources/program/program-table.html");
-        programSectionState = programStates.table;
-    } else if (containerWidth <= 747 && (force || programSectionState === programStates.undef || programSectionState === programStates.table)) {
-        loadProgram("resources/program/program-list.html");
-        programSectionState = programStates.list;
-    }
-}
-
-function loadProgram(file) {
-    var xmlhttp = new XMLHttpRequest();
-
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-            var $programDiv = $("#program");
-            $programDiv.html(this.responseText);
-            $(".extra-row").hide();
-        }
-    };
-
-    xmlhttp.open("GET", file, true);
-    xmlhttp.send();
-}
-
-function initGallery() {
-    $(".gallery-toggler").on("click", toggleGallery);
-    $("#gallery-container").toggle();
-}
+// function initGallery() {
+//     $(".gallery-toggler").on("click", toggleGallery);
+//     $("#gallery-container").toggle();
+// }
 
 function toggleGallery(evt) {
     evt.preventDefault();
@@ -264,30 +264,35 @@ function hideMenu() {
 // calculate days until eventDate, and display on title image
 function showCountdown() {
     // get remaining days until event
-    // var days = Math.floor((eventDate.getTime() - Date.now()) / (1000 * 3600 * 24));    
+    // var days = Math.floor((eventDate.getTime() - Date.now()) / (1000 * 3600 * 24));
+    const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+    const today = Date.now();
+    const diffDays = Math.round(Math.abs((eventDate - today) / oneDay));
 
-    var day = new Date().getDay();
-    var text = "";
+    // var day = new Date().getDay();
+    // var text = "";
+    //
+    // switch (day) {
+    //     case 3:
+    //         text = "Übermorgen ist die";
+    //         break;
+    //     // wednesday
+    //     case 4:
+    //         text = "Morgen ist die";
+    //         break;
+    //     // thursday
+    //     case 5:
+    //         text = "Heute ist die";
+    //         break;
+    //     // friday
+    //     default:
+    //         text = "Bald ist die";
+    //         break;
+    // }
 
-    switch (day) {
-        case 3:
-            text = "Übermorgen ist die";
-            break;
-        // wednesday
-        case 4:
-            text = "Morgen ist die";
-            break;
-        // thursday
-        case 5:
-            text = "Heute ist die";
-            break;
-        // friday
-        default:
-            text = "Bald ist die";
-            break;
-    }
 
     var $countdown = $("#countdown");
+    const text = "Noch " + diffDays + " Tage bis zur"
     $countdown.html(text);
     /*$countdown.css("display", "unset");  -> IE CANNOT HANDLE THAT */
 }
