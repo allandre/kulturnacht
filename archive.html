@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="initial-scale=1.0 width=device-width"/>
+    <meta name="description" content="Dies ist die Webseite der Kulturnacht Küsnacht 2017."/>
+    <title>Archiv der Kulturnacht Küsnacht</title>
+    <link href="styles/reset.css" rel="stylesheet"/>
+    <link href="styles/style.css" rel="stylesheet"/>
+    <!-- include jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+<div id="container">
+    <nav>
+        <a id="logo-ref" href="">
+            <span id="logo-K" class="logo">K</span>
+            <div id="logo-border" class="logo"></div>
+            <span id="logo-text" class="logo">Kulturelle Vereinigung Küsnacht</span>
+        </a>
+        <input type="checkbox" id="nav-trigger" class="nav-trigger"/>
+        <label for="nav-trigger">
+                <span id="hamburger-wrapper">
+                <span class="hamburger"></span>
+                </span>
+        </label>
+        <ul id="menu" onclick="hideMenu()">
+            <li>
+                <a href="2021-anchor">
+                    <div>2021</div>
+                </a>
+            </li>
+            <li>
+                <a href="2017-anchor">
+                    <div>2017</div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="main">
+        <a id="2021-anchor" class="anchor"></a>
+        <section id="2021">
+            <p>2021</p>
+        </section>
+        <a id="2017-anchor" class="anchor"></a>
+        <section id="2017">
+            <p>2017</p>
+        </section>
+
+    </div>
+</div>
+</body>
+</html>
