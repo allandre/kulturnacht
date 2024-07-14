@@ -384,14 +384,6 @@ input[type=checkbox]:checked ~ #menu li a div {
     margin: 10px;
 }
 
-#program-section .extra-cell .img img {
-    /* removed because of IE */
-     /*position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%); */
-}
-
 #program-section .extra-cell .content {
     display: inline-block;
     padding: 10px;
@@ -581,8 +573,6 @@ button.gallery-toggler:hover {
     margin-left: auto;
     margin-right: auto;
 }
-
-.contact-section a {}
 
 #location {
     display: flex;
