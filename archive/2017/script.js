@@ -80,8 +80,6 @@ var impressions = [
 var index = 0;
 
 $(document).ready(function () {
-  showCountdown();
-  // loadMap();
   loadImpressionGallery(index);
 
   $positionIndication = $("#position-indication");
@@ -102,17 +100,7 @@ $(window).on("resize", function (event) {
 });
 
 $(window).on("scroll", function () {
-  setScrollingWithMouseWheel(false);
-  updateNavigation();
   fixCloseGalleryButton();
-});
-
-$("body").on("mousedown", function (evt) {
-  var clickInsideMap = $(evt.target).parents("#map").length > 0;
-
-  if (!clickInsideMap) {
-    setScrollingWithMouseWheel(false);
-  }
 });
 
 $(document).on("keydown", function (evt) {
@@ -122,36 +110,6 @@ $(document).on("keydown", function (evt) {
     currentExtraRow = null;
   }
 });
-
-function setScrollingWithMouseWheel(isEnable) {
-  if (map) {
-    map.setOptions({ scrollwheel: isEnable });
-  }
-}
-
-function loadMap() {
-  if (typeof google == "undefined") {
-    // to continue executing the rest of this file
-    return;
-  }
-
-  var kuesnacht = { lat: 47.316667, lng: 8.583333 };
-  var center = { lat: 47.35, lng: 8.54 };
-  map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 11,
-    center: center,
-    scrollwheel: false,
-  });
-
-  google.maps.event.addListener(map, "mousedown", function () {
-    setScrollingWithMouseWheel(true);
-  });
-
-  var marker = new google.maps.Marker({
-    position: kuesnacht,
-    map: map,
-  });
-}
 
 function updateProgramSection(force) {
   var containerWidth = $("#container").width();
@@ -337,55 +295,6 @@ function toggleParticipantInfo(evt, id) {
 
 function hideMenu() {
   $("#nav-trigger").prop("checked", false);
-}
-
-// calculate days until eventDate, and display on title image
-function showCountdown() {
-  // get remaining days until event
-  var days = Math.floor(
-    (eventDate.getTime() - Date.now()) / (1000 * 3600 * 24),
-  );
-
-  var text = "Noch " + days + " Tage bis zur";
-
-  var $countdown = $("#countdown");
-  $countdown.html(text);
-  /*$countdown.css("display", "unset");  -> IE CANNOT HANDLE THAT */
-}
-
-function updateNavigation() {
-  // reset state
-  $("nav li").removeClass("current");
-
-  var windowOffset = $(document).scrollTop();
-  var windowHeight = $(window).height();
-  var navHeight = $("nav").height();
-
-  currentPosition = null;
-  var $anchors = $("a.anchor");
-  for (var i = 0; i < $anchors.length; i++) {
-    var anchorTop = $anchors.eq(i).offset().top;
-    if (anchorTop - windowOffset < (windowHeight - navHeight) / 2) {
-      currentPosition = { $anchor: $anchors.eq(i), index: i };
-      if (anchorTop > windowOffset) {
-        // I am completely contained in the top half. Take me!
-        break;
-      }
-    } else {
-      break;
-    }
-  }
-
-  if (currentPosition !== null) {
-    $("nav li").eq(currentPosition.index).addClass("current");
-    history.replaceState(
-      undefined,
-      undefined,
-      "#" + currentPosition.$anchor.prop("id"),
-    );
-  } else {
-    history.replaceState(undefined, undefined, "#");
-  }
 }
 
 function toggleListRow(time) {
