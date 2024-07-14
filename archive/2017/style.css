@@ -22,20 +22,8 @@ a.anchor {
   visibility: hidden;
 }
 
-a:link,
-a:visited {
-  color: #ed1255;
-  color: grey;
-}
-
 b {
   font-weight: bold;
-}
-
-section {
-  position: relative;
-  border-bottom: 0.5em solid #ed1255;
-  padding: 5%;
 }
 
 section:last-of-type {
@@ -82,17 +70,6 @@ table {
 
 /* NAV start */
 
-nav {
-  position: fixed;
-  z-index: 10;
-  display: flex;
-  width: 100%;
-  max-width: inherit;
-  height: 3em;
-  color: white;
-  background-color: #ed1255;
-}
-
 nav ul {
   display: flex;
   justify-content: space-around;
@@ -104,14 +81,6 @@ nav ul {
 nav li {
   flex-grow: 1;
   height: 100%;
-}
-
-nav li.current {
-  background-color: rgba(134, 29, 61, 0.5) !important;
-}
-
-nav li:hover {
-  background-color: #d70e3e;
 }
 
 nav li a {
@@ -147,29 +116,6 @@ nav li a div {
 
 input[type="checkbox"] {
   display: none;
-}
-
-input[type="checkbox"]:checked ~ #menu {
-  display: block;
-  width: 100vw;
-  position: fixed;
-  top: 2.7em;
-  /*nav.height / ul.fontSize*/
-  left: 0;
-  padding-top: 0.5em;
-  padding-bottom: 0.2em;
-  background-color: #ed1255;
-}
-
-input[type="checkbox"]:checked ~ #menu li {
-  width: 80%;
-  margin: auto;
-  background-color: #ed1255;
-  border-top: 1px solid #861d3d;
-}
-
-input[type="checkbox"]:checked ~ #menu li:hover {
-  background-color: #d70e3e;
 }
 
 input[type="checkbox"]:checked ~ #menu li a div {
@@ -245,12 +191,6 @@ input[type="checkbox"]:checked ~ #menu li a div {
 /* LOGO end */
 
 /* TITLE SECTION start */
-
-#title-section {
-  padding: 0;
-  background-color: #ed1255;
-}
-
 #countdown {
   /*display: none;* -> IE GODDAMIT... */
   position: absolute;
@@ -275,10 +215,7 @@ input[type="checkbox"]:checked ~ #menu li a div {
 
 #impression-section #impression-div {
   margin: 2em auto;
-  height: 80vh;
-
-  background-color: #d1d1d1;
-  border: 1px solid black;
+  height: max(300px, 75vh);
 }
 
 #impression-section #impression-image {
@@ -286,11 +223,13 @@ input[type="checkbox"]:checked ~ #menu li a div {
   position: relative;
 
   margin: 0 auto;
-  max-width: 100%;
-  max-height: 100%;
 
   top: 50%;
   transform: translateY(-50%);
+
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 #impression-section #credit {
@@ -312,6 +251,9 @@ input[type="checkbox"]:checked ~ #menu li a div {
 }
 
 #impression-section #controls button {
+  margin: 0 2rem;
+  padding: 0px 30px;
+  padding-bottom: 5px;
   font-size: 200%;
 }
 
@@ -347,26 +289,8 @@ input[type="checkbox"]:checked ~ #menu li a div {
   z-index: 100;
 }
 
-#program-section th {
-  padding: 0.4em 0;
-  font-weight: bold;
-  text-align: center;
-  color: #ed1255;
-  border-bottom: 1px solid black;
-  border-right: 1px dotted #ed1255;
-}
-
 #program-section th:last-of-type {
   border-right: unset;
-}
-
-#program-section td {
-  padding: 0.2em 0.6em;
-  border-bottom: 1px solid black;
-  border-right: 1px dotted #ed1255;
-  font-size: 75%;
-  text-align: left;
-  vertical-align: middle;
 }
 
 #program-section td.content:hover,
@@ -405,13 +329,6 @@ input[type="checkbox"]:checked ~ #menu li a div {
   text-align: center;
 }
 
-#program-section tr td.extra-cell {
-  border: 1px solid black; /*here selection border*/
-  border-top: 0;
-  border-left: 0;
-  border-right: 1px dotted #ed1255;
-}
-
 #program-section .table-entry {
   display: flex;
 }
@@ -419,14 +336,6 @@ input[type="checkbox"]:checked ~ #menu li a div {
 #program-section .extra-cell div.img {
   display: inline-block;
   margin: 10px;
-}
-
-#program-section .extra-cell .img img {
-  /* removed because of IE */
-  /*position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%); */
 }
 
 #program-section .extra-cell .content {
@@ -458,11 +367,6 @@ input[type="checkbox"]:checked ~ #menu li a div {
   outline: 0;
 }
 
-/*avoid a black border for a cell which is on the right edge of the table*/
-#program-section tr td:last-of-type.selected {
-  border-right: 1px dotted #ed1255;
-}
-
 .program-table-hint p {
   margin: 1em;
 }
@@ -491,25 +395,6 @@ input[type="checkbox"]:checked ~ #menu li a div {
 }
 
 /* -> gallery */
-
-button.gallery-toggler {
-  padding: 1em;
-  margin: 2em 0;
-  border: none;
-  border-radius: 0.25em;
-
-  color: white;
-  background-color: #ed1255;
-
-  cursor: pointer;
-
-  position: unset; /* will be set to 'fixed' by script.js*/
-  top: 74px;
-}
-
-button.gallery-toggler:hover {
-  background-color: #d70e3e;
-}
 
 #participant-gallery {
   display: flex;
@@ -585,10 +470,6 @@ button.gallery-toggler:hover {
 
 /* CONTACT SECTION start */
 
-.ad {
-  color: #ed1255;
-}
-
 .contact-section h3 {
   margin-top: 2em;
 }
@@ -599,9 +480,6 @@ button.gallery-toggler:hover {
 
 .contact-section li {
   text-align: justify;
-}
-
-.contact-section a {
 }
 
 #location {
@@ -697,15 +575,6 @@ button.gallery-toggler:hover {
 /* SPONSOREN SECTION end */
 
 /* FOOTER start */
-
-footer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0.7em;
-  background-color: #ed1255;
-  color: white;
-}
 
 footer p {
   width: 33%;

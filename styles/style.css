@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400");
+
+:root {
+  --kvk-main-color: #ed1255;
+  --site-main-color: var(--kvk-main-color);
+  --site-hover-color: #d70e3e;
+  --site-active-color: rgba(134, 29, 61, 0.5);
+}
+
 body {
   line-height: 1.5;
   font-family: "Helvetica", sans-serif;
@@ -24,7 +32,7 @@ a.anchor {
 
 a:link,
 a:visited {
-  color: #ed1255;
+  color: var(--site-main-color);
   color: grey;
 }
 
@@ -34,7 +42,7 @@ b {
 
 section {
   position: relative;
-  border-bottom: 0.5em solid #ed1255;
+  border-bottom: 0.5em solid var(--site-main-color);
   padding: 5%;
 }
 
@@ -90,7 +98,7 @@ nav {
   max-width: inherit;
   height: 3em;
   color: white;
-  background-color: #ed1255;
+  background-color: var(--site-main-color);
 }
 
 nav ul {
@@ -107,11 +115,11 @@ nav li {
 }
 
 nav li.current {
-  background-color: rgba(134, 29, 61, 0.5) !important;
+  background-color: var(--site-active-color) !important;
 }
 
 nav li:hover {
-  background-color: #d70e3e;
+  background-color: var(--site-hover-color);
 }
 
 nav li a {
@@ -158,18 +166,18 @@ input[type="checkbox"]:checked ~ #menu {
   left: 0;
   padding-top: 0.5em;
   padding-bottom: 0.2em;
-  background-color: #ed1255;
+  background-color: var(--site-main-color);
 }
 
 input[type="checkbox"]:checked ~ #menu li {
   width: 80%;
   margin: auto;
-  background-color: #ed1255;
+  background-color: var(--site-main-color);
   border-top: 1px solid #861d3d;
 }
 
 input[type="checkbox"]:checked ~ #menu li:hover {
-  background-color: #d70e3e;
+  background-color: var(--site-hover-color);
 }
 
 input[type="checkbox"]:checked ~ #menu li a div {
@@ -219,6 +227,8 @@ input[type="checkbox"]:checked ~ #menu li a div {
   align-items: center;
   color: white;
   text-decoration: none;
+  background-color: var(--kvk-main-color);
+  padding-right: 10px;
 }
 
 #logo-K {
@@ -248,7 +258,7 @@ input[type="checkbox"]:checked ~ #menu li a div {
 
 #title-section {
   padding: 0;
-  background-color: #ed1255;
+  background-color: var(--site-main-color);
 }
 
 #countdown {
@@ -305,9 +315,9 @@ input[type="checkbox"]:checked ~ #menu li a div {
   padding: 0.4em 0;
   font-weight: bold;
   text-align: center;
-  color: #ed1255;
+  color: var(--site-main-color);
   border-bottom: 1px solid black;
-  border-right: 1px dotted #ed1255;
+  border-right: 1px dotted var(--site-main-color);
 }
 
 #program-section th:last-of-type {
@@ -317,7 +327,7 @@ input[type="checkbox"]:checked ~ #menu li a div {
 #program-section td {
   padding: 0.2em 0.6em;
   border-bottom: 1px solid black;
-  border-right: 1px dotted #ed1255;
+  border-right: 1px dotted var(--site-main-color);
   font-size: 75%;
   text-align: left;
   vertical-align: middle;
@@ -363,7 +373,7 @@ input[type="checkbox"]:checked ~ #menu li a div {
   border: 1px solid black; /*here selection border*/
   border-top: 0;
   border-left: 0;
-  border-right: 1px dotted #ed1255;
+  border-right: 1px dotted var(--site-main-color);
 }
 
 #program-section .table-entry {
@@ -406,7 +416,7 @@ input[type="checkbox"]:checked ~ #menu li a div {
 
 /*avoid a black border for a cell which is on the right edge of the table*/
 #program-section tr td:last-of-type.selected {
-  border-right: 1px dotted #ed1255;
+  border-right: 1px dotted var(--site-main-color);
 }
 
 .program-table-hint p {
@@ -445,7 +455,7 @@ button.gallery-toggler {
   border-radius: 0.25em;
 
   color: white;
-  background-color: #ed1255;
+  background-color: var(--site-main-color);
 
   cursor: pointer;
 
@@ -454,7 +464,7 @@ button.gallery-toggler {
 }
 
 button.gallery-toggler:hover {
-  background-color: #d70e3e;
+  background-color: var(--site-hover-color);
 }
 
 #participant-gallery {
@@ -532,7 +542,7 @@ button.gallery-toggler:hover {
 /* CONTACT SECTION start */
 
 .ad {
-  color: #ed1255;
+  color: var(--site-main-color);
 }
 
 .contact-section h3 {
@@ -655,7 +665,7 @@ footer {
   justify-content: space-around;
   align-items: center;
   padding: 0.7em;
-  background-color: #ed1255;
+  background-color: var(--site-main-color);
   color: white;
   margin-top: 100px;
 }
