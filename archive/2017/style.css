@@ -267,7 +267,7 @@ input[type=checkbox]:checked ~ #menu li a div {
     border-radius: 5px;
     color: rgba(255, 255, 255, 0.7);
     background-color: rgba(0, 0, 0, 0.8);
-    font-size: min(3.4vw, 85px);
+    font-size: 3.4vw;
     text-align: center;
     transform: translateX(-50%);
 }
@@ -278,6 +278,54 @@ input[type=checkbox]:checked ~ #menu li a div {
 
 
 /* TITLE SECTION end */
+
+/* IMPRESSION SECTION start */
+
+#impression-section #impression-div {
+    margin: 2em auto;
+    height: 80vh;
+
+    background-color: #d1d1d1;
+    border: 1px solid black;
+}
+
+#impression-section #impression-image {
+    display: block;
+    position: relative;
+
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#impression-section #credit {
+    float: right;
+    margin: 0;
+    margin-top: -2em;
+    font-size: 70%;
+    color: grey;
+
+}
+
+#impression-section #image-cache {
+    display: none;
+}
+
+#impression-section #controls {
+    display: flex;
+
+    justify-content: center;
+}
+
+
+#impression-section #controls button {
+    font-size: 200%;    
+}
+
+/* IMPRESSION SECTION end */
 
 
 /* PLAN SECTION start */
@@ -573,15 +621,6 @@ button.gallery-toggler:hover {
     text-align: justify;
 }
 
-.contact-section img {
-    display: block;
-    max-width: 100%;
-    width: 50%;
-    margin-top: 1em;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .contact-section a {}
 
 #location {
@@ -689,7 +728,6 @@ footer {
     padding: .7em;
     background-color: #ed1255;
     color: white;
-    margin-top: 100px
 }
 
 footer p {

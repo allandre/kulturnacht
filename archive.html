@@ -7,9 +7,11 @@
     <title>Archiv der Kulturnacht Küsnacht</title>
     <link href="styles/reset.css" rel="stylesheet"/>
     <link href="styles/style.css" rel="stylesheet"/>
+    <link href="archive/2017/style.css" rel="stylesheet"/>
     <!-- include jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js"></script>
+    <script src="archive/2017/script.js"></script>
 </head>
 <body>
 <div id="container">
@@ -41,15 +43,33 @@
 
     <div id="main">
         <a id="2021-anchor" class="anchor"></a>
+
         <section id="2021">
             <p>2021</p>
         </section>
-        <a id="2017-anchor" class="anchor"></a>
-        <section id="2017">
-            <p>2017</p>
-        </section>
 
+        <a id="2017-anchor" class="anchor"></a>
+<div id="impression-section">
+        <h1>Impressionen der Kulturnacht 2017</h1>            
+        <div id="impression-div" onclick="loadNextImage()">
+            <img id="impression-image">
+        </div>
+
+        <img id="image-cache">
+
+        <div id="controls">
+            <button type="button" onclick="loadPrevImage()">&lt;</button>
+            <button type="button" onclick="loadNextImage()">&gt;</button>                    
+        </div>
     </div>
+    </div>
+
+    <footer>
+        <p><a href="http://www.kulturelle-vereinigung-kuesnacht.ch/" target="_blank">&copy; 2024 KVK</a></p>
+        <p><a href="/resources/KVK_Datenschutzerklaerung.pdf" target="_blank">Datenschutzerklärung</a></p>
+        <p>Titelfoto: Thomas Ernst</p>
+        <p>Webseite: <a href="http://www.milanbombsch.ch" target="_blank">M. Bombsch</a>, A. Allenspach</p>
+    </footer>
 </div>
 </body>
 </html>
