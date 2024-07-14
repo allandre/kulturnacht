@@ -1,75 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="initial-scale=1.0 width=device-width"/>
-    <meta name="description" content="Dies ist die Webseite der Kulturnacht Küsnacht 2017."/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0 width=device-width" />
+    <meta
+      name="description"
+      content="Dies ist die Webseite der Kulturnacht Küsnacht 2017."
+    />
     <title>Archiv der Kulturnacht Küsnacht</title>
-    <link href="styles/reset.css" rel="stylesheet"/>
-    <link href="styles/style.css" rel="stylesheet"/>
-    <link href="archive/2017/style.css" rel="stylesheet"/>
+    <link href="styles/reset.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+    <link href="archive/2017/style.css" rel="stylesheet" />
     <!-- include jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js"></script>
     <script src="archive/2017/script.js"></script>
-</head>
-<body>
-<div id="container">
-    <nav>
+  </head>
+  <body>
+    <div id="container">
+      <nav>
         <a id="logo-ref" href="">
-            <span id="logo-K" class="logo">K</span>
-            <div id="logo-border" class="logo"></div>
-            <span id="logo-text" class="logo">Kulturelle Vereinigung Küsnacht</span>
+          <span id="logo-K" class="logo">K</span>
+          <div id="logo-border" class="logo"></div>
+          <span id="logo-text" class="logo"
+            >Kulturelle Vereinigung Küsnacht</span
+          >
         </a>
-        <input type="checkbox" id="nav-trigger" class="nav-trigger"/>
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
-                <span id="hamburger-wrapper">
-                <span class="hamburger"></span>
-                </span>
+          <span id="hamburger-wrapper">
+            <span class="hamburger"></span>
+          </span>
         </label>
         <ul id="menu" onclick="hideMenu()">
-            <li>
-                <a href="2021-anchor">
-                    <div>2021</div>
-                </a>
-            </li>
-            <li>
-                <a href="2017-anchor">
-                    <div>2017</div>
-                </a>
-            </li>
+          <li>
+            <a href="2021-anchor">
+              <div>2021</div>
+            </a>
+          </li>
+          <li>
+            <a href="2017-anchor">
+              <div>2017</div>
+            </a>
+          </li>
         </ul>
-    </nav>
+      </nav>
 
-    <div id="main">
+      <div id="main">
         <a id="2021-anchor" class="anchor"></a>
 
         <section id="2021">
-            <p>2021</p>
+          <p>2021</p>
         </section>
 
         <a id="2017-anchor" class="anchor"></a>
-<div id="impression-section">
-        <h1>Impressionen der Kulturnacht 2017</h1>            
-        <div id="impression-div" onclick="loadNextImage()">
-            <img id="impression-image">
-        </div>
+        <div id="impression-section">
+          <h1>Impressionen der Kulturnacht 2017</h1>
+          <div id="impression-div" onclick="loadNextImage()">
+            <img id="impression-image" />
+          </div>
 
-        <img id="image-cache">
+          <img id="image-cache" />
 
-        <div id="controls">
+          <div id="controls">
             <button type="button" onclick="loadPrevImage()">&lt;</button>
-            <button type="button" onclick="loadNextImage()">&gt;</button>                    
+            <button type="button" onclick="loadNextImage()">&gt;</button>
+          </div>
         </div>
-    </div>
-    </div>
+      </div>
 
-    <footer>
-        <p><a href="http://www.kulturelle-vereinigung-kuesnacht.ch/" target="_blank">&copy; 2024 KVK</a></p>
-        <p><a href="/resources/KVK_Datenschutzerklaerung.pdf" target="_blank">Datenschutzerklärung</a></p>
+      <footer>
+        <p>
+          <a
+            href="http://www.kulturelle-vereinigung-kuesnacht.ch/"
+            target="_blank"
+            >&copy; 2024 KVK</a
+          >
+        </p>
+        <p>
+          <a href="/resources/KVK_Datenschutzerklaerung.pdf" target="_blank"
+            >Datenschutzerklärung</a
+          >
+        </p>
         <p>Titelfoto: Thomas Ernst</p>
-        <p>Webseite: <a href="http://www.milanbombsch.ch" target="_blank">M. Bombsch</a>, A. Allenspach</p>
-    </footer>
-</div>
-</body>
+        <p>
+          Webseite:
+          <a href="http://www.milanbombsch.ch" target="_blank">M. Bombsch</a>,
+          A. Allenspach
+        </p>
+      </footer>
+    </div>
+  </body>
 </html>

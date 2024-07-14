@@ -1,508 +1,380 @@
-[{
+[
+  {
     "id": "alfred_egli",
     "name": "Ein Streifzug durch 4 Jahrhunderte",
     "title": "Wangensbach - ein Streifzug durch 4 Jahrhunderte",
     "description": "Jede Küsnachterin und jeder Küsnachter sollte das anmutige Wangensbach-Areal und sein aus dem 17. Jahrhundert stammendes ehrwürdiges Landhaus mit seiner wechselvollen Geschichte kennenlernen!",
     "team": "Alfred Egli, VOG",
-    "categories": [
-        "guide"
-    ],
-    "images": [
-        "alfred_egli.jpg"
-    ]
-}, {
+    "categories": ["guide"],
+    "images": ["alfred_egli.jpg"]
+  },
+  {
     "id": "die_kulisse",
     "name": "Blind Date - Theaterszenen",
     "title": "Blind Date - Theaterszenen von Lea Gottheil",
     "description": "Die App &laquo;Blind Date&raquo; von Aline und Kathie begeistert! Nur mittels Stimme werden damit Partner vermittelt. Das Fernsehmagazin &laquo;Glamour und Glück&raquo; lädt die beiden Freundinnen auf ihr Sofa ein. Bestehen sie wohl den Girlfriendtest?",
     "team": "Theaterverein &laquo;Die Kulisse&raquo;<br>Miriam Buchmann, Spiel, Larissa Münch, Spiel, Krishan Krone, Regie, Lea Gottheil, Text",
-    "categories": [
-        "theater"
-    ],
-    "images": [
-        "kulisse.jpg"
-    ]
-}, {
+    "categories": ["theater"],
+    "images": ["kulisse.jpg"]
+  },
+  {
     "id": "simon_chen",
     "name": "Simon Chen - Spoken Words",
     "title": "Simon Chen - Spoken Words in der Bibliothek!",
     "description": "Wenn’s im Zuschauerraum mehr Bücher als Zuschauer hat, dann ist Simon Chen in seinem Element. Performte Literatur – eine wortwitzige Hommage an das Buch und an die Sprache!",
     "team": "Simon Chen",
-    "categories": [
-        "language"
-    ],
-    "images": [
-        "simon_chen.jpg"
-    ]
-}, {
+    "categories": ["language"],
+    "images": ["simon_chen.jpg"]
+  },
+  {
     "id": "mkz",
     "name": "Schülerinnen der Musikschule & MKZ",
     "title": "Musikalischer Reigen",
     "description": "Kammermusikalische Carte blanche – lassen Sie sich verzaubern!",
     "team": "Schülerinnen der Musikschule Küsnacht & MKZ: Alina Durisch, Violine, Julia Durisch, Violoncello & friends",
-    "categories": [
-        "music"
-    ],
-    "images": [
-        "durisch_alina.jpg",
-        "durisch_julia.jpg"
-    ]
-}, {
+    "categories": ["music"],
+    "images": ["durisch_alina.jpg", "durisch_julia.jpg"]
+  },
+  {
     "id": "xotnix",
     "name": "XotniX",
     "title": "XotniX - unplugged",
     "description": "Mundartrock vom Feinsten",
     "team": "XotniX: Thomas Kauflin, Gesang, Dominik Dozza, Gitarre, Daniel Franzen, Piano, Daniel Bucher, Bass, Marc Haltiner, Perkussion",
-    "categories": [
-        "music"
-    ],
-    "images": [
-        "xotnix.jpg"
-    ]
-}, {
+    "categories": ["music"],
+    "images": ["xotnix.jpg"]
+  },
+  {
     "id": "singbar",
     "name": "SingBar - eifach singe!",
     "title": "SingBar - eifach singe!",
     "description": "SingBar – eifach singe! Eintauchen in Klänge, die von Ost nach West, von Nord nach Süd führen, folkig, jazzig, groovig, zäuerlig, einstimmig, mehrstimmig, Kanons. Veranstaltung zum Mitmachen.",
     "team": "Anita Lehmann-Gabrieli und Rosa Hess Felder",
-    "categories": [
-        "music"
-    ],
-    "images": [
-        "singbar.jpg"
-    ]
-}, {
+    "categories": ["music"],
+    "images": ["singbar.jpg"]
+  },
+  {
     "id": "amaron",
     "name": "AmarÔn meets bügelfrei",
     "title": "AmarÔn meets bügelfrei",
     "description": "Herzerfrischende Musik von Ost bis Südwest: mal fröhlich, feurig, bewegt – mal innig, sehnsüchtig, melancholisch. Dazu betörende Lieder, dargeboten von drei Stimmen und einem Bass.",
     "team": "AmarÔn: Elsbeth Schweizer, acc., Rosa Hess, clar., Gerold Lotmar, git., Tony Majdalani, perc.<br>bügelfrei: Christine Sommer, voc., Diana Fischer, voc., Dana Wassner, voc., Martin Gut, Bass.",
-    "categories": [
-        "music"
-    ],
-    "images": [
-        "amaron.jpg",
-        "bügelfrei.jpg"
-    ]
-}, {
+    "categories": ["music"],
+    "images": ["amaron.jpg", "bügelfrei.jpg"]
+  },
+  {
     "id": "duo_coeur_rouge",
     "name": "Alles Liebe oder was?",
     "title": "Alles Liebe oder was?",
     "description": "Heitere, witzige und melancholische Chansons von 1930 bis 1980. Es geht um Sehnsucht, Pariser Leben, Frust und um Versöhnung mit sich selbst. Musik und Texte von M. Dietrich, H. Knef, R. Stolz, G. Kreisel u.a.",
     "team": "Duo Cœur rouge: Maria Eidam, Gesang und Martin Günthardt, Piano",
-    "categories": [
-        "music"
-    ],
-    "images": [
-        "coeur_rouge.jpg"
-    ]
-}, {
+    "categories": ["music"],
+    "images": ["coeur_rouge.jpg"]
+  },
+  {
     "id": "ueli_baer",
     "name": "Ueli Bär, Sax & Tony Majdalani, Perc.",
     "title": "Musik zum Ausklang",
     "description": "Entspannte Musik, um den Abend ausklingen zu lassen.",
     "team": "Ueli Bär, Saxofon und Tony Majdalani, Rahmentrommel, Cajon, Hand Pan, div. Perkussion und GastmusikerIn",
-    "categories": [
-        "music"
-    ],
-    "images": [
-        "ueli_baer.jpg",
-        "tony_majdalani.jpg"
-    ]
-}, {
+    "categories": ["music"],
+    "images": ["ueli_baer.jpg", "tony_majdalani.jpg"]
+  },
+  {
     "id": "wort_geschicht",
     "name": "Wort und Geschichten",
     "title": "Wort und Geschichten",
     "description": "Verrückte Geschichten aus dem ganz normalen Alltag werden mitgebracht, gelesen und erzählt von Ursula Hohler, Germanistin und Psychologin, und Mitarbeitenden der Sozialtherapie Freihof Küsnacht.",
     "team": "",
-    "categories": [
-        "language"
-    ],
-    "images": [
-        "freihof.jpg"
-    ]
-}, {
+    "categories": ["language"],
+    "images": ["freihof.jpg"]
+  },
+  {
     "id": "schülerband",
     "name": "Schülerband Küsnacht",
     "title": "Sound and Songs",
     "description": "Diverse musikalische Darbietungen aus Rock, Pop und Mundart.<br>Grill mit Würsten, Steak und Pommes Frites und Barbetrieb.",
     "team": "Schülerband Küsnacht",
-    "categories": [
-        "music"
-    ],
-    "images": [
-        "magic_ride.jpg",
-        "funtastic.jpg",
-        "bregy_friends.jpg"
-    ],
+    "categories": ["music"],
+    "images": ["magic_ride.jpg", "funtastic.jpg", "bregy_friends.jpg"],
     "gallery_use": "false"
-}, {
+  },
+  {
     "id": "magic_ride",
     "name": "Magic Ride",
     "title": "Magic Ride",
     "description": "@schülerband",
     "team": "Magic Ride",
-    "categories": [
-        "music"
-    ]
-        
-}, {
+    "categories": ["music"]
+  },
+  {
     "id": "xotnix_sunnemetzg",
     "name": "XotniX",
     "title": "XotniX",
     "description": "@schülerband",
     "team": "XotniX",
-    "categories": [
-        "music"
-    ]
-}, {
+    "categories": ["music"]
+  },
+  {
     "id": "funtastic",
     "name": "FUNTASTIC / XotniX",
     "title": "Funtastic",
     "description": "@schülerband",
     "team": "Funtastic",
-    "categories": [
-        "music"
-    ]
-}, {
+    "categories": ["music"]
+  },
+  {
     "id": "bregy",
     "name": "Bregy & Friends",
     "title": "Bregy & Friends",
     "description": "@schülerband",
     "team": "Bregy & Friends",
-    "categories": [
-        "music"
-    ]
-}, {
+    "categories": ["music"]
+  },
+  {
     "id": "b_live",
     "name": "b-live chor acappella",
     "title": "b-live chor acappella",
     "description": "25 Sängerinnen und Sänger, die ohne Instrumente mit ihren Stimmen Repertoire aus Pop, Rock, Schlager, Swing und Folk singen. Mit Witz, Charme, Originalität und Humor.",
     "team": "Sängerinnen und Sänger des b-live chors acappella. Michael Heiniger, Leitung",
-    "categories": [
-        "music"
-    ],
-    "images": [
-        "b_live.jpg"
-    ]
-}, {
+    "categories": ["music"],
+    "images": ["b_live.jpg"]
+  },
+  {
     "id": "fred_bauer",
     "name": "Fred Bauer und Manuel Bauer",
     "title": "Fred Bauer, Malerei –<br>Manuel Bauer, Fotografie",
     "description": "Die Ausstellung in der Galerie im Höchhuus zeigt neue Arbeiten des Küsnachter Künstlers Fred Bauer (1928) und dessen Sohn, dem Fotografen Manuel Bauer (1966). Der Kurzfilm von Manuel Bauer Mustang Tor zu Tibet wird gezeigt. Fred Bauer führt durch die Ausstellung.",
     "team": "",
-    "categories": [
-        "exposition",
-        "guide"
-    ],
-    "images": [
-        "fred_bauer_1.jpg",
-        "fred_bauer_2.jpg"
-    ]
-}, {
+    "categories": ["exposition", "guide"],
+    "images": ["fred_bauer_1.jpg", "fred_bauer_2.jpg"]
+  },
+  {
     "id": "ochsen",
     "name": "Familie Wildhaber",
     "title": "Sie kochen – wir begleiten",
     "description": "Kochen Sie bei uns selbst in Begleitung der Wildhabers, Vater und Sohn.",
     "team": "",
-    "categories": [
-        "food"
-    ],
-    "images": [
-        "ochsen.jpg"
-    ]
-}, {
+    "categories": ["food"],
+    "images": ["ochsen.jpg"]
+  },
+  {
     "id": "kulturkommission",
     "name": "Alois Carigiet und Küsnachter Künstler",
     "title": "Alois Carigiet und Küsnachter Künstler",
     "description": "Wandmalereien von Alois Carigiet sowie Werke zahlreicher Küsnachter Kunstschaffender schmücken unser Gemeindehaus. Eine Kunstführung erklärt das Wichtigste.<br> Treffpunkt für die Führungen ist vor dem Haupteingang des Gemeindehauses.",
     "team": "Kulturkommission Küsnacht. Rebecca Gericke-Budliger.",
-    "categories": [
-        "guide"
-    ],
-    "images": [
-        "gemeindehaus.jpg"
-    ]
-}, {
+    "categories": ["guide"],
+    "images": ["gemeindehaus.jpg"]
+  },
+  {
     "id": "jung",
     "name": "&laquo;Face to Face&raquo mit C.G. Jung",
     "title": "Zu Besuch bei C.G. Jung - Filmnacht am See",
     "description": "Das Wohnhaus des bekannten Küsnachter Gelehrten C.G. Jung öffnet demnächst seine Pforten als Museum. Zu romantischem Wellengeplätscher zeigen wir in dessen Garten den Film „Face to Face“ mit C.G. Jung.<br>(Shuttle - Bus ab Gemeindeplatz um 20: 40 und 21: 40 und zurück)",
     "team": "",
-    "categories": [
-        "movie"
-    ],
-    "images": [
-        "jung.jpg"
-    ]
-}, {
+    "categories": ["movie"],
+    "images": ["jung.jpg"]
+  },
+  {
     "id": "dramolett",
     "name": "Wiener Fetzen, Dramolett",
     "title": "Wiener Fetzen",
     "description": "Lesung von Kurzgeschichten aus den Büchern von Hannelore Fischer-Knuth mit Wiener Kaffeehaus-Musik.",
     "team": "Hannelore Fischer-Knuth, Autorin und Schauspielerin, Nicole Knuth, Schauspielerin,<br>Martin Lehmann, Violine, Anita Lehmann-Gabrieli, Klavier, Annina Maurer, Violoncello.",
-    "categories": [
-        "language",
-        "music"
-    ],
-    "images": [
-        "dramolett.jpg"]
-}, {
+    "categories": ["language", "music"],
+    "images": ["dramolett.jpg"]
+  },
+  {
     "id": "kanti_ausstellung",
     "name": "Flüchtlingsportraits | Wiener Kaffee",
     "title": "Ausstellung \"Flüchtlingsportraits\" / Musik im Wiener Kaffee",
     "description": "Ausstellung im Singsaal. Flüchtlingsportraits: Sie haben alle unfreiwillig in der Schweiz Zuflucht gesucht, weil sie verfolgt wurden. Ob sie 1945 aus Ostpreussen oder 2016 aus Syrien fliehen mussten – all ihre Geschichten erzählen von Heimat und Fremde.",
     "team": "Schülerinnen und Schüler der Kantonsschule Küsnacht ",
-    "categories": [
-        "exposition",
-        "music"
-    ],
-    "images": [
-        "kanti.jpg"
-    ]
-}, {
+    "categories": ["exposition", "music"],
+    "images": ["kanti.jpg"]
+  },
+  {
     "id": "bookxkey",
     "name": "Chaplin-Emil-Wir",
     "title": "Stumm-Sprache-Schrift. Chaplin-Emil-Wir.",
     "description": "Herzhaftes Lachen mit dem stummen Charlie Chaplin, humorvolle Sprache mit dem Komiker Emil und-wer will-mit selbst gemachten Limericks. Zur Stärkung servieren wir Buchstabensuppe!",
     "team": "booXkey-Team: Susanna Vollenweider & Marie-Helen Lüchinger",
-    "categories": [
-        "language"
-    ],
-    "images": [
-        "emil.jpg"
-    ]
-}, {
+    "categories": ["language"],
+    "images": ["emil.jpg"]
+  },
+  {
     "id": "klavierkonzert",
     "name": "Klassisches Klavierkonzert",
     "title": "Klassisches Klavierkonzert",
     "description": "Tatjana Ruckstuhl-Nikić spielt mit Gast-MusikerInnen ein Klassisches Klavierkonzert mit Werken von J. S. Bach, W. A. Mozart, F. Chopin und eigenen Kompositionen & Naturelementen.",
     "team": "Tatjana Ruckstuhl-Nikić",
-    "categories": [
-        "music"
-    ],
-    "images": [
-        "klavierkonzert.jpg"
-    ]
-}, {
+    "categories": ["music"],
+    "images": ["klavierkonzert.jpg"]
+  },
+  {
     "id": "gruselkabinett",
     "name": "Kleines Gruselkabinett",
     "title": "Grusel, Glamour und Frivoles",
     "description": "Präsentation von gruseligen und kuriosen Objekten aus der Sammlung<br />Zinnenlaufs Gaststube ergänzt den Abend kulinarisch.",
     "team": "",
-    "categories": [
-        "exposition"
-    ]
-}, {
+    "categories": ["exposition"]
+  },
+  {
     "id": "unsinniges",
     "name": "Sinnliches und Unsinniges",
     "title": "Sinnliches und Unsinniges",
     "description": "Lesung mit geistvollen Blödeleien und Frivolitäten aus verschiedenen Epochen",
     "team": "Franziskus Abgottspon, Sprecher",
-    "categories": [
-        "language"
-    ],
-    "images": [
-        "franziskus_abgottspon.jpg"
-    ]
-}, {
+    "categories": ["language"],
+    "images": ["franziskus_abgottspon.jpg"]
+  },
+  {
     "id": "drüber",
     "name": "drüber und drunter",
     "title": "drüber und drunter",
     "description": "Führung durch die Modeausstellung",
     "team": "Elisabeth Abgottspon, Kuratorin",
-    "categories": [
-        "exposition"
-    ],
-    "images": [
-        "elisabeth_abgottspon.jpg"
-    ]
-}, {
+    "categories": ["exposition"],
+    "images": ["elisabeth_abgottspon.jpg"]
+  },
+  {
     "id": "turmbläser",
     "name": "Turmbläser",
     "title": "Turmblasen",
     "description": "Barockmusik mit Trompeten und Posaunen vom Kirchturm.",
     "team": "Fanfare Terrible: Christian Meier, Trompete, Roland Hofer, Trompete, Christoph Collet, Posaune, Reto Kappeler, Posaune.",
-    "categories": [
-        "music"
-    ],
-    "images": [
-        "turmblaeser.jpg"
-    ]
-}, {
+    "categories": ["music"],
+    "images": ["turmblaeser.jpg"]
+  },
+  {
     "id": "kirchenchor",
     "name": "&laquo;The Ground&raquo; Kirchenchöre",
     "title": "Konzert \"The Ground\" und eine Führung zum Kraftort in der Kirche",
     "description": "Die berühmte lyrische Komposition \"The Ground\" vom norwegischen Komponisten Ola Gjeilo (1978) wird mehrmals aufgeführt.<br> Zudem findet eine spannende wissenschaftliche Führung von Alfred Gloor, Dipl. Bauingenieur HTL, zum Kraftort in der Kirche statt.",
     "team": "Evangelischer Kirchenchor, Jürg Tobler Leitung, Kantorei St. Georg, Joachim Schwander, Leitung, H. Váradi Klavier",
-    "categories": [
-        "music",
-        "guide"
-    ],
-    "images": [
-        "kirchenchor_1.jpg",
-        "kirchenchor_2.jpg"
-    ]
-}, {
+    "categories": ["music", "guide"],
+    "images": ["kirchenchor_1.jpg", "kirchenchor_2.jpg"]
+  },
+  {
     "id": "linien",
     "name": "Linien - Kunstperformance",
     "title": "LINIEN",
     "description": "Das Künstlerduo arbeitet mit farbigen Bändern, die zu räumlichen Skulpturen aufgespannt werden – stets im Dialog zur Umgebung. So auch an der Kulturnacht, wo der Standort als &laquo;Kraftort&raquo; inspiriert.",
     "team": "Gian Tumasch Appenzeller und Chasper Linard Schmidlin",
-    "categories": [
-        "exposition"
-    ],
-    "images": [
-        "linien.jpg"
-    ]
-}, {
+    "categories": ["exposition"],
+    "images": ["linien.jpg"]
+  },
+  {
     "id": "waldgeister",
     "name": "Waldgeister und Wiesengeister",
     "title": "Waldgeister und Wiesengeister ",
     "description": "Diese Musik schweift nicht in die Ferne, sondern ist von der unmittelbaren Küsnachter Umgebung inspiriert: Eine Blumenwiese bei der Blüemlisalp offenbart ihre innersten Geheimnisse, und auch im Küsnachter Wald tritt erstaunliches zu Tage, wenn man still verweilt und den Bäumen zuhört…",
     "team": "Martin Wettstein, Komponist, Antipe da Stella, Querflöte und Vierteltonflöte, Hanspeter Oggier, Panflöte, Streichensemble Les flûtes enchantées, Tracy Bu, Violine, Lorgia Loor, Violine, Andrii Tsyangkov, Viola, Aleksander Mykhailov, Violoncello",
-    "categories": [
-        "music"
-    ],
-    "images": [
-        "waldgeister.jpg"
-    ]
-}, {
+    "categories": ["music"],
+    "images": ["waldgeister.jpg"]
+  },
+  {
     "id": "beyond",
     "name": "BEYOND - Ein Klang der Hoffnung",
     "title": "BEYOND - Ein Klang der Hoffnung",
     "description": "Regula Curti stellt mit Wort und Klang das Musikprojekt AWAKENING BEYOND vor. Sie hat mit Frauen aus verschiedenen religiösen Traditionen (Buddhismus, Christentum, Hinduismus, Judentum, Islam), zum Thema Erwachen eine neue CD aufgenommen.",
     "team": "Regula Curti, Gründerin der BEYOND Foundation",
-    "categories": [
-        "music"
-    ],
-    "images": [
-        "beyond.png"
-    ]
-}, {
+    "categories": ["music"],
+    "images": ["beyond.png"]
+  },
+  {
     "id": "improvisation",
     "name": "Improvisation - Klangreise",
     "title": "Improvisation",
     "description": "Getragen von der Atmosphäre des Raumes begeben wir uns auf eine Klangreise, meditativ und bewegt. Dabei entsteht ein Geflecht von spontaner Interaktion und dem Ausdruck unserer musikalischen Hintergründe.",
     "team": "Ueli Bär, Saxofon und Tony Majdalani, Rahmentrommel, Cajon, Hand Pan, div. Perkussion",
-    "categories": [
-        "music"
-    ],
-    "images": [
-        "ueli_baer.jpg",
-        "tony_majdalani.jpg"
-    ]
-}, {
+    "categories": ["music"],
+    "images": ["ueli_baer.jpg", "tony_majdalani.jpg"]
+  },
+  {
     "id": "aaron_wegmann",
     "name": "Aaron Wegmann",
     "title": "Soloauftritt",
     "description": "Indierock, Popballade und immer viel Blues. Aaron Wegmann macht Musik auf die er Lust hat, die ihn fasziniert und die plötzlich wie von selbst Formen und Strukturen annimmt.",
     "team": "Aaron Wegmann, Zürcher Singer/Songwriter und Gitarrist",
-    "categories": [
-        "music"
-    ],
-    "images": [
-        "aaron_wegmann.jpg"
-    ]
-}, {
+    "categories": ["music"],
+    "images": ["aaron_wegmann.jpg"]
+  },
+  {
     "id": "harmonie",
     "name": "Blasmusik HEK",
     "title": "Blasmusik HEK",
     "description": "Unterhaltungsmusik für Jung und Alt. Die HEK zeigt vielseitige Facetten der Blasmusik, von Rock und Pop über Blues bis hin zu den klassischen Märschen.",
     "team": "Harmonie Eintracht Küsnacht",
-    "categories": [
-        "music"
-    ],
-    "images": [
-        "harmonie_eintracht.jpg"
-    ]
-}, {
+    "categories": ["music"],
+    "images": ["harmonie_eintracht.jpg"]
+  },
+  {
     "id": "fanfare",
     "name": "Fanfare Terrible & Comedian Harmonists",
     "title": "Fanfare Terrible meets Comedian Harmonists",
     "description": "\"Veronika der Lenz ist da\", \"Mein kleiner grüner Kaktus\" u.v.m. Hits aus den 1930er-Jahren gespielt vom Blechbläserquartett Fanfare Terrible.",
     "team": "Fanfare Terrible: Christian Meier, Trompete, Roland Hofer, Trompete, Christoph Collet, Posaune, Reto Kappeler, Posaune",
-    "categories": [
-        "music"
-    ],
-    "images": [
-        "fanfare_terrible.jpg"
-    ]
-}, {
+    "categories": ["music"],
+    "images": ["fanfare_terrible.jpg"]
+  },
+  {
     "id": "esprits",
     "name": "Schweizer Volkstänze",
     "title": "Schweizer Volkstänze",
     "description": "Volkstänze aus der Schweiz für zwei Melodieinstrumente.",
     "team": "Les ésprits: Brigitta Barandun, Violine, und Helene Schulthess, Querflöte",
-    "categories": [
-        "music",
-        "food"
-    ],
-    "images": [
-        "esprits.jpg"
-    ]
-}, {
+    "categories": ["music", "food"],
+    "images": ["esprits.jpg"]
+  },
+  {
     "id": "sonne",
     "name": "Geschichtlicher Hotelrundgang",
     "title": "Lebendige Geschichte seit 1641",
     "description": "Rundgang durch die freien Räume des Romantik Seehotel Sonne mit viel Geschichte und einigen Anekdoten.",
     "team": "Romantik Seehotel Sonne ",
-    "categories": [
-        "food",
-        "guide"
-    ],
-    "images": [
-        "sonne.jpg"
-    ]
-}, {
+    "categories": ["food", "guide"],
+    "images": ["sonne.jpg"]
+  },
+  {
     "id": "artischock",
     "name": "Kunstverein Artischock",
     "title": "Afünf Format",
     "description": "Von Vereinsmitgliedern individuell, künstlerisch gestaltete Kunstwerke auf DIN A5 Format zum Erwerben.",
     "team": "Kunstverein Artischock",
-    "categories": [
-        "exposition"
-    ],
-    "images": [
-        "artischock.jpg"
-    ]
-}, {
+    "categories": ["exposition"],
+    "images": ["artischock.jpg"]
+  },
+  {
     "id": "klassik",
     "name": "Feuerwerk der Klassik",
     "title": "Feuerwerk der Klassik",
     "description": "Konzert.",
     "team": "Sonja Leutwyler, Mezzosopran, Astrid Leutwyler, Violine, Dominique Bertschinger, Klavier",
-    "categories": [
-        "music"
-    ],
+    "categories": ["music"],
     "images": [
-        "klassik_sonja_leutwyler.jpg",
-        "klassik_dominique_bertschinger.jpg",
-        "klassik_astrid_leutwyler.jpg"
+      "klassik_sonja_leutwyler.jpg",
+      "klassik_dominique_bertschinger.jpg",
+      "klassik_astrid_leutwyler.jpg"
     ]
-}, {
+  },
+  {
     "id": "andreas_moser",
     "name": "Odysseus besucht Küsnacht",
     "title": "Odysseus besucht Küsnacht",
     "description": "Lesung: zwei veröffentlichte Gedichte, ein unveröffentlichtes Gedicht und eine Kurzgeschichte",
     "team": "Andreas Moser",
-    "categories": [
-        "language"
-    ],
-    "images": [
-        "andreas_moser.jpg"
-    ]
-}, {
+    "categories": ["language"],
+    "images": ["andreas_moser.jpg"]
+  },
+  {
     "id": "wolf",
     "name": "Musiker & Anekdoten",
     "title": "Musiker & Anekdoten - musikalisch umrahmt",
     "description": "Hans Martin Ulbrich (ehem. Oboist des Tonhalle-Orchesters) gibt Anekdoten aus seinem Buch \"Dirigieren verdirbt den Charakter\" (Reclam 2017) zum Besten. Musikalische Umrahmung durch das \"Trio Poetico\".",
     "team": "Hans Martin Ulbrich, Autor mit \"Trio Poetico\": Hans Martin Ulbrich, Oboe, Heinz Hofer, Klarinette, Florenz Jenny, Fagott",
-    "categories": [
-        "language",
-        "music"
-    ],
-    "images": [
-        "wolf.jpg"
-    ]
-}]
+    "categories": ["language", "music"],
+    "images": ["wolf.jpg"]
+  }
+]
