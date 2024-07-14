@@ -1,0 +1,5 @@
+- add deploy script
+- fix npm run lint errors
+- add github pipeline for linting
+- add github action for deploying
+- add possibility for feature envs on github
