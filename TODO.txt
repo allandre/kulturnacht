@@ -1,4 +1,3 @@
-- add deploy script
 - fix npm run lint errors
 - add github pipeline for linting
 - add github action for deploying
@@ -7,3 +6,4 @@
 - two columns of videos in archive on iphone 13 mini
 - opening animation for menu and video expansions.
 - set top archive year active on first load. 
+- switch to sftp in deploy script
