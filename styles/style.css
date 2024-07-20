@@ -95,7 +95,6 @@ nav {
   z-index: 10;
   display: flex;
   width: 100%;
-  max-width: inherit;
   height: 3em;
   color: white;
   background-color: var(--site-main-color);
@@ -668,12 +667,15 @@ footer {
   background-color: var(--site-main-color);
   color: white;
   margin-top: 100px;
+  overflow: hidden;
+  hyphens: auto;
+  word-break: break-word; /* needed for Safari */
 }
 
-footer p {
+footer > * {
   width: 33%;
   margin: 0;
-  padding: 0 0.5em;
+  padding: 0 0.6cqw;
   display: inline-block;
   font-size: 0.8em;
   text-align: center;

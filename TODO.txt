@@ -3,3 +3,7 @@
 - add github pipeline for linting
 - add github action for deploying
 - add possibility for feature envs on github
+- put hamburger menu more to the right on mobile (refactor the whole thing^^)
+- two columns of videos in archive on iphone 13 mini
+- opening animation for menu and video expansions.
+- set top archive year active on first load. 
