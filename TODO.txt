@@ -9,3 +9,4 @@
 - switch to sftp in deploy script
 - fix broken colors in dark mode (especially archive)
 - get rid of jquery
+- add commit hash to deploy script and in html
