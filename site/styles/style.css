@@ -467,11 +467,6 @@ button.gallery-toggler:hover {
   background-color: var(--site-hover-color);
 }
 
-#participant-gallery {
-  display: flex;
-  flex-direction: row;
-}
-
 .gallery-column {
   margin: 2%;
 
