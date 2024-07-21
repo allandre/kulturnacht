@@ -7,3 +7,5 @@
 - opening animation for menu and video expansions.
 - set top archive year active on first load. 
 - switch to sftp in deploy script
+- fix broken colors in dark mode (especially archive)
+- get rid of jquery
