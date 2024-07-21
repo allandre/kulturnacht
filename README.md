@@ -25,4 +25,5 @@ npm run prettier # or prettier:fix
 ```
 ./scripts/deploy.sh
 ```
+
 `index.html` and everything in the `site` folder will be uploaded. Nothing else.
