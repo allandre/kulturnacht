@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "prettier": "prettier .",
+    "prettier": "prettier . --check",
     "prettier:fix": "prettier . --write",
     "eslint": "eslint .",
     "eslint:fix": "eslint . --fix",
