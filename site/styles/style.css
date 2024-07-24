@@ -52,7 +52,8 @@ h1,
 h2,
 h3,
 p {
-  text-align: left;
+  text-align: justify;
+  text-justify: inter-word;
   max-width: 800px;
   margin: auto;
 }
