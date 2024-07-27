@@ -1,16 +1,15 @@
 {
   "scripts": {
-    "prettier": "prettier . --check",
-    "prettier:fix": "prettier . --write",
+    "editorconfig": "editorconfig-checker",
     "eslint": "eslint .",
     "eslint:fix": "eslint . --fix",
-    "lint": "npm run prettier && npm run  eslint",
-    "lint:fix": "failed=0; npm run prettier:fix || failed=1; npm run  eslint:fix || failed=1; exit $failed;"
+    "lint": "npm run editorconfig && npm run  eslint",
+    "lint:fix": "failed=0; npm run editorconfig:fix || failed=1; npm run  eslint:fix || failed=1; exit $failed;"
   },
   "devDependencies": {
     "@eslint/js": "^9.7.0",
+    "editorconfig-checker": "^5.1.8",
     "eslint": "^9.7.0",
-    "globals": "^15.8.0",
-    "prettier": "3.3.3"
+    "globals": "^15.8.0"
   }
 }
