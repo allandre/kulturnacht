@@ -15,8 +15,6 @@ body {
 #container {
   max-width: 1600px;
   margin: 0 auto;
-  border-left: 1px solid lightgrey;
-  border-right: 1px solid lightgrey;
 }
 
 #main {
@@ -94,6 +92,7 @@ nav {
   position: fixed;
   z-index: 10;
   display: flex;
+  justify-content: space-between;
   width: 100%;
   max-width: 1600px;
   height: 3em;
@@ -140,6 +139,11 @@ nav li a div {
   padding-top: 0.7em;
 }
 
+nav label {
+  /* do not show a highlight on iPhone when the hamburger is clicked */ 
+  -webkit-tap-highlight-color: transparent;
+}
+
 #position-indication {
   position: fixed;
   z-index: 20;
@@ -162,7 +166,6 @@ input[type="checkbox"]:checked ~ #menu {
   width: 100vw;
   position: fixed;
   top: 2.7em;
-  /*nav.height / ul.fontSize*/
   left: 0;
   padding-top: 0.5em;
   padding-bottom: 0.2em;
@@ -185,11 +188,11 @@ input[type="checkbox"]:checked ~ #menu li a div {
 }
 
 #hamburger-wrapper {
-  position: absolute;
   width: 2em;
   height: 100%;
   display: none;
   cursor: pointer;
+  margin-right: 2cqw;
 }
 
 .hamburger {
@@ -198,6 +201,7 @@ input[type="checkbox"]:checked ~ #menu li a div {
   height: 0.8em;
   border-top: 0.2em solid white;
   border-bottom: 0.2em solid white;
+  top: 30%;
 }
 
 .hamburger:before {
@@ -686,6 +690,14 @@ footer a:visited {
 * smaller max-width has higher priority.
 */
 
+/* add a border to the container */
+@media screen and (min-width: 1600px) {
+  #container {
+    border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+  }
+}
+
 /* -> prevent footer text from multi-row */
 
 @media screen and (max-width: 1077px) {
@@ -699,11 +711,6 @@ footer a:visited {
 @media screen and (max-width: 1045px) {
   #hamburger-wrapper {
     display: block;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .hamburger {
-    top: 30%;
   }
   nav ul {
     display: none;
