@@ -1,4 +1,4 @@
-(function() {
+(function () {
   function insertProgram() {
     const programContainer = document.querySelector(".program-container");
 
@@ -94,4 +94,4 @@
   $(document).ready(() => {
     insertProgram();
   });
-})()
+})();

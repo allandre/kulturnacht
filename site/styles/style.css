@@ -419,10 +419,6 @@ input[type="checkbox"]:checked ~ #menu li a div {
   border-right: 1px dotted var(--site-main-color);
 }
 
-.program-table-hint p {
-  margin: 1em;
-}
-
 #program-section table.desktop img {
   width: 10vw;
 }

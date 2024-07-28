@@ -13,6 +13,7 @@
 - add commit hash to deploy script and in html
 - load nav and footer via js to have the same on Home and Archiv
   - maybe use alpine.js but probably overkill
+  - maybe better: write (bash) script to check that head and footer (maybe nav) are the same on all pages.
 - fix 2017 gallery
   - esp on iphone
   - also better styling for everyone.
