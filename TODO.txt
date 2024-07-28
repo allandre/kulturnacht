@@ -5,8 +5,14 @@
 - put hamburger menu more to the right on mobile (refactor the whole thing^^)
 - two columns of videos in archive on iphone 13 mini
 - opening animation for menu and video expansions.
-- set top archive year active on first load. 
 - switch to sftp in deploy script
-- fix broken colors in dark mode (especially archive)
+- fix broken colors in dark mode
+  - especially Archiv
+  - esp Huawei Android; iPhone and Desktop look fine
 - get rid of jquery
 - add commit hash to deploy script and in html
+- load nav and footer via js to have the same on Home and Archiv
+  - maybe use alpine.js but probably overkill
+- fix 2017 gallery
+  - esp on iphone
+  - also better styling for everyone.

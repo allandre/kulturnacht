@@ -282,7 +282,6 @@ function adjustGallery() {
 }
 
 function toggleParticipantInfo(evt, id) {
-  // console.log(evt);
   if (
     evt.target.nodeName === "TD" ||
     evt.target.classList.contains("modal") ||
@@ -380,7 +379,6 @@ function fixCloseGalleryButton() {
 }
 
 function loadImpressionGallery(index) {
-  console.log(index);
   var $cache = $("#image-cache");
   var $impression = $("#impression-image");
 
