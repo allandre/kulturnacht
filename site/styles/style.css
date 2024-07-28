@@ -140,7 +140,7 @@ nav li a div {
 }
 
 nav label {
-  /* do not show a highlight on iPhone when the hamburger is clicked */ 
+  /* do not show a highlight on iPhone when the hamburger is clicked */
   -webkit-tap-highlight-color: transparent;
 }
 
