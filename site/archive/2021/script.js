@@ -1,21 +1,21 @@
-(function () {
+(function() {
   function insertProgram() {
-    const programContainer = document.querySelector(".program-container");
+    const programContainer = document.querySelector('.program-container');
 
-    $.getScript("archive/2021/resources/acts.js", () => {
+    $.getScript('archive/2021/resources/acts.js', () => {
       window.acts.forEach((act) => {
-        const actDiv = document.createElement("div");
-        actDiv.classList.add("event", act.type);
+        const actDiv = document.createElement('div');
+        actDiv.classList.add('event', act.type);
 
-        const titleDiv = document.createElement("div");
-        titleDiv.classList.add("event-title");
+        const titleDiv = document.createElement('div');
+        titleDiv.classList.add('event-title');
         titleDiv.innerHTML = act.name;
         actDiv.appendChild(titleDiv);
 
-        const youtubeButton = document.createElement("div");
+        const youtubeButton = document.createElement('div');
         if (act.youtubeID) {
-          youtubeButton.classList.add("youtube-button");
-          const youtubeIcon = document.createElement("svg");
+          youtubeButton.classList.add('youtube-button');
+          const youtubeIcon = document.createElement('svg');
           youtubeButton.appendChild(youtubeIcon);
 
           // copied from https://icons.getbootstrap.com/icons/youtube/
@@ -25,40 +25,40 @@
           actDiv.appendChild(youtubeButton);
         }
 
-        const subtitleDiv = document.createElement("div");
-        subtitleDiv.classList.add("event-subtitle");
+        const subtitleDiv = document.createElement('div');
+        subtitleDiv.classList.add('event-subtitle');
         subtitleDiv.innerHTML = act.details;
         actDiv.appendChild(subtitleDiv);
 
         // exmaple of a youtube iframe:
         // <iframe width="560" height="315" src="https://www.youtube.com/embed/qC7G4k7HN0o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        const iframe = document.createElement("iframe");
+        const iframe = document.createElement('iframe');
         if (act.youtubeID) {
           actDiv.appendChild(iframe);
         }
 
-        const closeButton = document.createElement("div");
-        closeButton.classList.add("close-button");
-        const closeIcon = document.createElement("i");
-        closeIcon.classList.add("bi", "bi-x-circle");
+        const closeButton = document.createElement('div');
+        closeButton.classList.add('close-button');
+        const closeIcon = document.createElement('i');
+        closeIcon.classList.add('bi', 'bi-x-circle');
         closeButton.appendChild(closeIcon);
         actDiv.appendChild(closeButton);
 
         programContainer.appendChild(actDiv);
 
         actDiv.onclick = () => {
-          if (actDiv.classList.contains("open")) {
+          if (actDiv.classList.contains('open')) {
             closeButton.onclick();
           } else {
             closeButton.onclick();
 
-            actDiv.classList.add("open");
+            actDiv.classList.add('open');
             if (!iframe.src) {
               iframe.src = `https://www.youtube.com/embed/${act.youtubeID}?enablejsapi=1`;
-              iframe.title = "YouTube video player";
+              iframe.title = 'YouTube video player';
               iframe.frameborder = 0;
               iframe.allow =
-                "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
               iframe.allowFullscreen = true;
             }
             iframe.height = actDiv.clientWidth * 0.5625;
@@ -70,22 +70,22 @@
         }).observe(actDiv);
 
         closeButton.onclick = () => {
-          document.querySelectorAll("iframe").forEach((element) => {
+          document.querySelectorAll('iframe').forEach((element) => {
             element.contentWindow.postMessage(
               '{"event":"command","func":"pauseVideo","args":""}',
-              "*",
+              '*'
             ); // stop the youtube video (https://stackoverflow.com/questions/15164942/stop-embedded-youtube-iframe)
           });
 
-          document.querySelectorAll(".open").forEach((element) => {
-            element.classList.remove("open");
+          document.querySelectorAll('.open').forEach((element) => {
+            element.classList.remove('open');
           });
         };
       });
 
       for (let index = 0; index < 5; index += 1) {
-        const filler = document.createElement("div");
-        filler.classList.add("event", "filler");
+        const filler = document.createElement('div');
+        filler.classList.add('event', 'filler');
         programContainer.appendChild(filler);
       }
     });
