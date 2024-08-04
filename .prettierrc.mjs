@@ -1,6 +1,7 @@
 const config = {
   singleQuote: true,
-  trailingComma: 'none'
-};
+  trailingComma: 'none',
+  semi: false
+}
 
-export default config;
+export default config

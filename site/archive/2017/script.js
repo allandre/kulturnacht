@@ -1,5 +1,5 @@
-(function () {
-  const impressionsFolder = 'archive/2017/ressources/impressions';
+;(function () {
+  const impressionsFolder = 'archive/2017/ressources/impressions'
   var impressions = [
     'Artischock Seehof 2.jpg',
     'Artischock Seehof.jpg',
@@ -56,38 +56,38 @@
     'IMG_8599.jpg',
     'IMG_8602.jpg',
     'Lesung1.jpg'
-  ];
-  var index = 0;
+  ]
+  var index = 0
 
   function loadImpressionGallery(index) {
-    var $cache = $('#image-cache');
-    var $impression = $('#impression-image');
+    var $cache = $('#image-cache')
+    var $impression = $('#impression-image')
 
-    $impression.attr('src', impressionsFolder + '/' + impressions[index]);
+    $impression.attr('src', impressionsFolder + '/' + impressions[index])
     $cache.attr(
       'src',
       impressionsFolder + '/' + impressions[++index & impressions.length]
-    );
+    )
   }
 
   function loadPrevImage() {
-    index -= 1;
+    index -= 1
     if (index < 0) {
-      index = impressions.length - 1;
+      index = impressions.length - 1
     }
-    loadImpressionGallery(index);
+    loadImpressionGallery(index)
   }
 
   function loadNextImage() {
-    loadImpressionGallery(++index % impressions.length);
+    loadImpressionGallery(++index % impressions.length)
   }
 
   // global stuff
   $(document).ready(function () {
-    loadImpressionGallery(index);
-  });
+    loadImpressionGallery(index)
+  })
 
   // exports
-  window.loadPrevImage = loadPrevImage;
-  window.loadNextImage = loadNextImage;
-})();
+  window.loadPrevImage = loadPrevImage
+  window.loadNextImage = loadNextImage
+})()

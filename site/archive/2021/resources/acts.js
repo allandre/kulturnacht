@@ -120,4 +120,4 @@ window.acts = [
     details: 'Martin Wettstein',
     youtubeID: 'NIlcU6LqyDE'
   }
-];
+]

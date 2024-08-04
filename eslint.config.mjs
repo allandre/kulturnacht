@@ -1,6 +1,7 @@
-import globals from 'globals';
-import js from '@eslint/js';
-import stylisticJs from '@stylistic/eslint-plugin-js';
+import globals from 'globals'
+import js from '@eslint/js'
+import stylisticJs from '@stylistic/eslint-plugin-js'
+import eslintConfigPrettier from 'eslint-config-prettier'
 
 export default [
   js.configs.recommended,
@@ -13,7 +14,7 @@ export default [
       }
     },
     plugins: {
-      '@stylistic/js': stylisticJs
+      stylisticJs
     },
     rules: {
       '@stylistic/js/indent': ['warn', 2],
@@ -52,7 +53,10 @@ export default [
           avoidEscape: true
         }
       ],
-      '@stylistic/js/multiline-comment-style': 'off'
+      '@stylistic/js/multiline-comment-style': 'off',
+      '@stylistic/js/semi': 'off', // done by prettier
+      '@stylistic/js/no-extra-semi': 'off' // we need them at the beginnig of .js files.
     }
-  }
-];
+  },
+  eslintConfigPrettier
+]
