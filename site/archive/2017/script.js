@@ -1,4 +1,4 @@
-(function() {
+(function () {
   const impressionsFolder = 'archive/2017/ressources/impressions';
   var impressions = [
     'Artischock Seehof 2.jpg',
@@ -83,7 +83,7 @@
   }
 
   // global stuff
-  $(document).ready(function() {
+  $(document).ready(function () {
     loadImpressionGallery(index);
   });
 

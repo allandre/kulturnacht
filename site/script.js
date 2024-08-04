@@ -1,5 +1,5 @@
 // dont pollute global namespace. Also this way we can better check what is used inside and what outside of this script.
-(function() {
+(function () {
   var eventDate = new Date(2025, 8, 5, 18);
 
   var hamburgerMenuWidth = 1045;

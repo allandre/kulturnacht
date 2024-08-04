@@ -19,17 +19,26 @@ export default [
       '@stylistic/js/indent': ['warn', 2],
       '@stylistic/js/max-len': 'off',
       '@stylistic/js/array-element-newline': [
-        'error', {
+        'error',
+        {
           ArrayExpression: 'consistent',
           ArrayPattern: { minItems: 3 }
         }
       ],
       '@stylistic/js/function-call-argument-newline': ['warn', 'consistent'],
       '@stylistic/js/padded-blocks': ['warn', 'never'],
-      '@stylistic/js/space-before-function-paren': ['warn', 'never'],
+      '@stylistic/js/space-before-function-paren': [
+        'warn',
+        {
+          anonymous: 'always',
+          named: 'never',
+          asyncArrow: 'never'
+        }
+      ],
       '@stylistic/js/quote-props': ['warn', 'as-needed'],
       '@stylistic/js/object-property-newline': [
-        'warn', {
+        'warn',
+        {
           allowAllPropertiesOnSameLine: true
         }
       ],
@@ -37,8 +46,9 @@ export default [
       '@stylistic/js/wrap-iife': ['warn', 'inside'],
       '@stylistic/js/newline-per-chained-call': 'off',
       '@stylistic/js/quotes': [
-        'warn', 'single', {
-
+        'warn',
+        'single',
+        {
           avoidEscape: true
         }
       ],

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400");
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
 
 :root {
   --kvk-main-color: #ed1255;
@@ -9,7 +9,7 @@
 
 body {
   line-height: 1.5;
-  font-family: "Helvetica", sans-serif;
+  font-family: 'Helvetica', sans-serif;
 }
 
 #container {
@@ -157,11 +157,11 @@ nav label {
 
 /* NAV->HAMBURGER start */
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   display: none;
 }
 
-input[type="checkbox"]:checked ~ #menu {
+input[type='checkbox']:checked ~ #menu {
   display: block;
   width: 100vw;
   position: fixed;
@@ -172,18 +172,18 @@ input[type="checkbox"]:checked ~ #menu {
   background-color: var(--site-main-color);
 }
 
-input[type="checkbox"]:checked ~ #menu li {
+input[type='checkbox']:checked ~ #menu li {
   width: 80%;
   margin: auto;
   background-color: var(--site-main-color);
   border-top: 1px solid #861d3d;
 }
 
-input[type="checkbox"]:checked ~ #menu li:hover {
+input[type='checkbox']:checked ~ #menu li:hover {
   background-color: var(--site-hover-color);
 }
 
-input[type="checkbox"]:checked ~ #menu li a div {
+input[type='checkbox']:checked ~ #menu li a div {
   padding: 0.3em;
 }
 
@@ -205,7 +205,7 @@ input[type="checkbox"]:checked ~ #menu li a div {
 }
 
 .hamburger:before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0.3em;
   left: 0;
@@ -220,7 +220,7 @@ input[type="checkbox"]:checked ~ #menu li a div {
 /* LOGO start */
 
 .logo {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: lighter;
   margin: 0 2%;
 }
