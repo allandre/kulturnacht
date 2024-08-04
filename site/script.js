@@ -6,7 +6,8 @@
 
   var currentPosition = null
   function hideMenu() {
-    $('#nav-trigger').prop('checked', false)
+    const navTrigger = document.getElementById('nav-trigger')
+    navTrigger.checked = false
   }
 
   // calculate days until eventDate, and display on title image
@@ -17,24 +18,34 @@
     const diffDays = Math.round(Math.abs((eventDate - today) / oneDay))
 
     var countdownElement = document.getElementById('countdown')
-    const text = 'Noch ' + diffDays + ' Tage bis zur'
-    countdownElement.innerHTML = text
+    if (countdownElement) {
+      const text = 'Noch ' + diffDays + ' Tage bis zur'
+      countdownElement.innerHTML = text
+    }
   }
 
   function updateNavigation() {
+    const nav = document.getElementsByTagName('nav')[0]
     // reset state
-    $('nav li').removeClass('current')
+    const navListItems = nav.getElementsByTagName('li')
+    for (const navListItem of navListItems) {
+      navListItem.classList.remove('current')
+    }
 
-    var windowOffset = $(document).scrollTop()
-    var windowHeight = $(window).height()
-    var navHeight = $('nav').height()
+    const html = document.querySelector('html')
+    var windowOffset = html.scrollTop
+    var windowHeight = window.innerHeight
+    var navHeight = nav.clientHeight
 
     currentPosition = null
-    var $anchors = $('a.anchor')
-    for (var i = 0; i < $anchors.length; i++) {
-      var anchorTop = $anchors.eq(i).offset().top
+    var anchors = Array.from(document.querySelectorAll('a.anchor'))
+
+    for (var i = 0; i < anchors.length; i++) {
+      const anchor = anchors[i]
+      var anchorTop = anchor.getBoundingClientRect().top
+
       if (anchorTop - windowOffset < (windowHeight - navHeight) / 2) {
-        currentPosition = { $anchor: $anchors.eq(i), index: i }
+        currentPosition = { anchor: anchor, index: i }
         if (anchorTop > windowOffset) {
           // I am completely contained in the top half. Take me!
           break
@@ -45,11 +56,12 @@
     }
 
     if (currentPosition !== null) {
-      $('nav li').eq(currentPosition.index).addClass('current')
+      navListItems[currentPosition.index].classList.add('current')
+
       history.replaceState(
         undefined,
         undefined,
-        '#' + currentPosition.$anchor.prop('id')
+        '#' + currentPosition.anchor.id
       )
     } else {
       history.replaceState(undefined, undefined, '#')
@@ -62,7 +74,8 @@
   })
 
   window.addEventListener('resize', () => {
-    var containerWidth = $('#container').width()
+    const container = document.getElementById('container')
+    var containerWidth = container.clientWidth
     if (containerWidth > hamburgerMenuWidth) {
       hideMenu()
     }

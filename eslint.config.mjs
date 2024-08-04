@@ -55,7 +55,8 @@ export default [
       ],
       '@stylistic/js/multiline-comment-style': 'off',
       '@stylistic/js/semi': 'off', // done by prettier
-      '@stylistic/js/no-extra-semi': 'off' // we need them at the beginnig of .js files.
+      '@stylistic/js/no-extra-semi': 'off', // we need them at the beginnig of .js files.
+      '@stylistic/js/arrow-parens': 'as-needed' // avoid parentheses for (a) => b.
     }
   },
   eslintConfigPrettier
