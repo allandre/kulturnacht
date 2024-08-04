@@ -3,7 +3,7 @@
     const programContainer = document.querySelector('.program-container')
 
     $.getScript('archive/2021/resources/acts.js', () => {
-      window.acts.forEach((act) => {
+      window.acts.forEach(act => {
         const actDiv = document.createElement('div')
         actDiv.classList.add('event', act.type)
 
@@ -70,14 +70,14 @@
         }).observe(actDiv)
 
         closeButton.onclick = () => {
-          document.querySelectorAll('iframe').forEach((element) => {
+          document.querySelectorAll('iframe').forEach(element => {
             element.contentWindow.postMessage(
               '{"event":"command","func":"pauseVideo","args":""}',
               '*'
             ) // stop the youtube video (https://stackoverflow.com/questions/15164942/stop-embedded-youtube-iframe)
           })
 
-          document.querySelectorAll('.open').forEach((element) => {
+          document.querySelectorAll('.open').forEach(element => {
             element.classList.remove('open')
           })
         }

@@ -17,6 +17,8 @@ export default [
       stylisticJs
     },
     rules: {
+      'no-var': 'warn',
+      'prefer-const': 'warn',
       '@stylistic/js/indent': ['warn', 2],
       '@stylistic/js/max-len': 'off',
       '@stylistic/js/array-element-newline': [
@@ -56,7 +58,7 @@ export default [
       '@stylistic/js/multiline-comment-style': 'off',
       '@stylistic/js/semi': 'off', // done by prettier
       '@stylistic/js/no-extra-semi': 'off', // we need them at the beginnig of .js files.
-      '@stylistic/js/arrow-parens': 'as-needed' // avoid parentheses for (a) => b.
+      '@stylistic/js/arrow-parens': ['warn', 'as-needed'] // avoid parentheses for (a) => b.
     }
   },
   eslintConfigPrettier

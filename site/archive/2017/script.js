@@ -1,6 +1,6 @@
 ;(function () {
   const impressionsFolder = 'archive/2017/ressources/impressions'
-  var impressions = [
+  const impressions = [
     'Artischock Seehof 2.jpg',
     'Artischock Seehof.jpg',
     'fanfare terrible.jpg',
@@ -57,11 +57,11 @@
     'IMG_8602.jpg',
     'Lesung1.jpg'
   ]
-  var index = 0
+  let index = 0
 
   function loadImpressionGallery(index) {
-    var $cache = $('#image-cache')
-    var $impression = $('#impression-image')
+    const $cache = $('#image-cache')
+    const $impression = $('#impression-image')
 
     $impression.attr('src', impressionsFolder + '/' + impressions[index])
     $cache.attr(
