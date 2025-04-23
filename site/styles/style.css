@@ -267,17 +267,16 @@ input[type='checkbox']:checked ~ #menu li a div {
 }
 
 #countdown {
-  /*display: none;* -> IE GODDAMIT... */
   position: absolute;
   top: 30%;
-  left: 28.5%;
-  width: 50%;
   border-radius: 5px;
   color: rgba(255, 255, 255, 0.7);
   background-color: rgba(0, 0, 0, 0.8);
-  font-size: min(3.4vw, 85px);
+  font-size: max(14px, min(3.4vw, 85px));
   text-align: center;
-  transform: translateX(-50%);
+  left: 3%;
+  padding: 0 .8em;
+  max-width: 94%;
 }
 
 #title-section img {
@@ -745,11 +744,6 @@ footer a:visited {
   #hamburger-wrapper {
     margin-left: 2em;
     left: unset;
-  }
-  #countdown {
-    width: 90%;
-    left: 50%;
-    font-size: 5vw;
   }
 }
 

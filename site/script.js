@@ -1,7 +1,5 @@
 // dont pollute global namespace. Also this way we can better check what is used inside and what outside of this script.
 ;(function () {
-  const eventDate = new Date(2025, 8, 5, 18)
-
   const hamburgerMenuWidth = 1045
 
   let currentPosition = null
@@ -12,14 +10,33 @@
 
   // calculate days until eventDate, and display on title image
   function showCountdown() {
+    const eventDate = new Date(2025, 8, 5) // 5.9.25 // month is 0 indexed.
+
     // get remaining days until event
     const oneDay = 24 * 60 * 60 * 1000 // hours * minutes * seconds * milliseconds
     const today = Date.now()
-    const diffDays = Math.round(Math.abs((eventDate - today) / oneDay))
+    const diffDays = Math.round((eventDate - today + oneDay) / oneDay)
 
     const countdownElement = document.getElementById('countdown')
     if (countdownElement) {
-      const text = 'Noch ' + diffDays + ' Tage bis zur'
+      let text = 'Noch ' + diffDays + ' Tage bis zur'
+
+      switch (diffDays) {
+      case 2:
+        text = 'Übermorgen ist die';
+        break;
+      case 1:
+        text = 'Morgen ist die';
+        break;
+      case 0:
+        text = 'Heute ist die';
+        break;
+      }
+
+      if (diffDays < 0) {
+        text = "Das war's! Bis zum nächsten Mal bei der"
+      }
+
       countdownElement.innerHTML = text
     }
   }
