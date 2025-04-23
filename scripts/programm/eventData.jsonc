@@ -5,7 +5,7 @@
   //   "description": "",
   //   "team": "",
   //   "categories": [ // can also be a single string instead of an array
-  //     "exposition", "food", "food-brezel", "food-cake", "fook-coffee", "food-vine", "guide", "language", "movie", "music", "theater" // all available
+  //     "exposition", "finale", "food", "food-brezel", "food-cake", "fook-coffee", "food-ice", "food-vine", "guide", "language", "movie", "music", "theater" // all available
   //   ],
   //   "images": [ // can also be a single string instead of an array
   //     "Foto 1a" // will match Foto 1a_MSK_Kinderchor
@@ -162,8 +162,228 @@
     "categories": "music",
     "images": "Foto 8b",
     "image_credits": "Adrian Marko",
-    "times": ["19", "20"],
+    "times": [19, 20],
     "location": "reformierte_kirche",
     "host": "Reformierte Kirche"
+  },
+  {
+    "title": "Klang und Gesang",
+    "description": "Florian Fox, ehemaliger Küsnachter Konfirmand, gründete mit 15 Jahren die Country-Rockabilly-Band „The Black Barons“, gilt als «Schweizer Johnny Cash» und ist Texas Sounds Int. Country Music Award Winner.",
+    "team": "Florian Fox, Vocalist, Performer und Songwriter.",
+    "categories": "music",
+    "images": "Foto 8c",
+    "times": [21, 22],
+    "location": "reformierte_kirche",
+    "host": "Reformierte Kirche"
+  },
+  {
+    "title": "Turmbläser – Auftakt zur Kulturnacht",
+    "description": "Das Kulturnacht-OK eröffnet die Kulturnacht Küsnacht 2025 mit Barockmusik, gespielt von der Fanfare Terrible auf dem Kirchturm.",
+    "team": "Fanfare Terrible: Christian Meier, Trompete, Roland Hofer, Trompete, Christoph Collet, Posaune, Reto Kappeler, Posaune.",
+    "categories": "music",
+    "images": "Foto 8d",
+    "times": 1630,
+    "location": "reformierte_kirche_kirchturm",
+    "host": "Kulturelle Vereinigung Küsnacht"
+  },
+  {
+    "title": "Amerika gibt es nicht! – feiner Humor",
+    "description": "In der Erzählung von Peter Bichsel leugnet ein Mann die Existenz Amerikas; er hat es nie gesehen. Erleben Sie die preisgekrönte darstellende Künstlerin Nicole Knuth in einer fesselnden Performance.",
+    "team": "Nicole Knuth, darstellende Künstlerin",
+    "categories": "language",
+    "images": "Foto 9",
+    "image_credits": "Sabine Rock",
+    "times": [19, 20, 21],
+    "location": "bibliothek",
+    "host": "Bibliothek Küsnacht"
+  },
+  {
+    "title": "Saxophon pur mit dem «Saxtett»",
+    "description": "«Denn schon wenige Saxophone klingen so schön wie ein ganzes Orchester». Das Zitat könnte von Georges Bizet sein, einem der ersten glühenden Verehrer des Saxophonklangs. Ein abwechslungsreiches und klangvolles Programm der Musikschule Küsnacht unter der Leitung von Christian Hertel.",
+    "team": "Saxtett, Saxophon-Ensemble der Musikschule Küsnacht. Christian Hertel, Leitung.",
+    "categories": "music",
+    "images": "Foto 10",
+    "times": [20, 21, 22],
+    "location": "salzsilo_garage",
+    "host": "Musikschule Küsnacht"
+  },
+  {
+    "title": "A-cappella-Lieder quer durch alle Genres",
+    "description": "Wir sind ein gemischter A-cappella-Chor mit vielseitigem und dynamischem Repertoire. Wir musizieren ausschliesslich mit unseren Stimmen.",
+    "team": "b-live Chor Küsnacht",
+    "categories": "music",
+    "images": "Foto 11",
+    "times": [20, 21],
+    "location": "fussgängerunterführung",
+    "host": "b-live Chor Küsnacht"
+  },
+  {
+    "title": "Die Ukraine zu Gast an der Kantonsschule Küsnacht",
+    "description": "Die Kantonsschule öffnet die Türen dem Sonnenhof. In der Villa wird bei festlicher Salonmusik ein köstlicher, ukrainischer Apero Riche angeboten. Dazu lokale Weine vom Weingut Diederik Küsnacht und auch alkoholfreie Getränke.",
+    "team": "Kammerorchester der Kantonsschule, Leitung Sabine Furrer, und Mütter vom Wohnheim Sonnenhof.",
+    "categories": ["music", "food", "food-vine", "food-coffee"],
+    "images": ["Foto 12-1", "Foto 12-2"],
+    "times": "17-23",
+    "location": "kantonsschule_küsnacht",
+    "host": "Kantonsschule Küsnacht und Wohnheim Sonnenhof"
+  },
+  {
+    "title": "Ukrainische Gesänge",
+    "description": "Der ukrainische Chor PERESPIV verzaubert seine Zuhörer mit ukrainischen Gesängen. Er wurde 2022 gegründet. PERESPIV bietet fast ausschliesslich ukrainische Musikliteratur aus verschiedenen Epochen und Stilrichtungen dar.",
+    "team": "Chor PERESPIV, Leitung  Zoryana Masko",
+    "categories": "music",
+    "images": "Foto 13a",
+    "times": [17, 22],
+    "location": "kantonsschule_küsnacht_semihalle",
+    "host": "Wohnheim Sonnenhof"
+  },
+  {
+    "title": "Die Teufelsbrücke",
+    "description": "Die alte Sage der Teufelsbrücke am Gotthard hat uns zu diesem Spiel inspiriert. Die Brücke ist das Ziel. Sehnsucht, Mut, Zukunft, sich mit dem Teufel auseinanderzusetzen und ihn zu überlisten sind die Themen des Stückes die uns bewegen.",
+    "team": "Theatergruppe Sonnenhof. Regie: Sabine Kipfer, Hanelore Fischer-Knuth, Marie-Helen Lüchinger. Schauspieler: Kinder und Erwachsene aus dem Sonnenhof, Küsnacht",
+    "categories": "theater",
+    "images": "Foto 13b",
+    "times": [18, 20],
+    "location": "kantonsschule_küsnacht_semihalle",
+    "host": "Wohnheim Sonnenhof"
+  },
+  {
+    "title": "Ukrainische Volkstanzgruppe GOLUBKA",
+    "description": "Der Tanz ist die emotionale Sprache der Seele des Volkstanzensembles „GOLUBKA“. Er ist Quelle der Inspiration in Zeiten tragischer Ereignisse und gibt uns die Möglichkeit, unsere Identität zu bewahren und sie mit der Welt zu teilen.",
+    "team": "Volkstanzgruppe GOLUBKA. Leitung Elena Heydemann.",
+    "categories": "music",
+    "images": "Foto 13c",
+    "times": [19, 21],
+    "location": "kantonsschule_küsnacht_semihalle",
+    "host": "Wohnheim Sonnenhof"
+  },
+  {
+    "title": "XotniX live",
+    "description": "Mundart-Rock aus Küsnacht.",
+    "team": "XotniX: Daniel Franzen, Keyboards; Thomas Kauflin, Gesang; Marc Haltiner, Drums; Daniel Bucher, Bass; Dominik Dozza, Gitarre",
+    "categories": "music",
+    "images": "Foto 14a",
+    "times": [17, 21],
+    "location": "katholisches_pfarreizentrum",
+    "host": "Röm.-Katholische Kirche"
+  },
+  {
+    "title": "Kantorei St. Georg einmal anders",
+    "description": "Stimmungsvolle Chorsätze bekannter Volkslieder und Perlen der Sakralmusik.",
+    "team": "Kantorei St. Georg; Nathan Schneider, Klavier; Joachim Schwander, Leitung",
+    "categories": "music",
+    "images": "Foto 14b",
+    "times": [18, 19],
+    "location": "katholisches_pfarreizentrum",
+    "host": "Röm.-Katholische Kirche"
+  },
+  {
+    "title": "Funtastic live",
+    "description": "Songs aus den Konzertprogrammen 2025 und 2026.",
+    "team": "Funtastic: The Fun Band; Joachim Schwander, Leitung",
+    "categories": "music",
+    "images": "Foto 14c",
+    "times": [20, 22],
+    "location": "katholisches_pfarreizentrum",
+    "host": "Röm.-Katholische Kirche"
+  },
+  {
+    "title": "C.G. Jungs Gartenreich",
+    "description": "Hören Sie auf einem abendlichen Rundgang durch den stimmungsvollen Garten des Hauses C.G. Jung verschiedene Geschichten zum Leben und Arbeiten an diesem historischen Ort am See. Im Anschluss wird ein Apéro offeriert.\n\n🚌 Shuttlebus zum «Museum Haus C.G. Jung»: Hinfahrt ab «Allmendstrasse» um 17.50 h, 18.50 h und 19.50 h. Rückfahrt ca. 18.40 h, 19.40 h und 20.40 h.",
+    "team": "Museum Haus C.G. Jung.",
+    "categories": ["guide", "food-vine"],
+    "images": ["Foto 15-1", "Foto 15-2", "Foto 15-3"],
+    "times": [18, 19, 20],
+    "location": "museum_haus_c_g_jung",
+    "host": "Museum Haus C.G. Jung"
+  },
+  {
+    "title": "Nostalgia",
+    "description": "Spannende und entspannende, liebliche und fröhliche Melodien – gekonnt und mit Charme präsentiert vom Streichquartett A la Q’ART. Die vier Musikerinnen laden ihr Publikum mit dem abwechslungsreichen Kurz-Programm zum Träumen und Mitswingen ein.",
+    "team": "Streichquartett «A la Q’ART»: Jemma Abrahamyan, Violine; Brigitta Barandun, Violine; Astrid Leuthold, Viola; Sandi Toka Nova, Violoncello.",
+    "categories": "music",
+    "images": "Foto 16a",
+    "times": [18, 19],
+    "location": "seehof",
+    "host": "Kulturelle Vereinigung Küsnacht"
+  },
+  {
+    "title": "Reise durch die Epochen des Jodelns",
+    "description": "Die Sänger des jungen Jodlerklubs Bergbrünneli Küsnacht, gegründet 2018, nehmen Sie mit auf eine musikalische Reise durch verschiedene Epochen des traditionellen Jodelgesangs.",
+    "team": "Jodlerklub Bergbrünneli Küsnacht",
+    "categories": "music",
+    "images": "Foto 16b",
+    "times": [20, 21],
+    "location": "seehof",
+    "host": "Kulturelle Vereinigung Küsnacht"
+  },
+  {
+    "title": "Der Traum als Schicksal",
+    "description": "Träume tragen entscheidend zur Balance in unserem Leben bei. Sie beeinflussen uns, auch wenn wir sie nicht wahrnehmen. Doch an Wendepunkten des Lebens fordern sie unsere bewusste Beachtung heraus.",
+    "team": "Dr. Robert Strubel",
+    "categories": "language",
+    "images": "Foto 16c",
+    "times": [17, 18],
+    "location": "seehof_ug",
+    "host": "C.G. Jung-Institut"
+  },
+  {
+    "title": "Buchpräsentation «Der Reisläufer und das Blutgericht von Zürich»",
+    "description": "Der Zürcher Historiker präsentiert bei WOLF seinen historischen Roman über einen Küsnachter Bauernsohn, der auf den Schlachtfeldern Norditaliens Zeuge von Bestechungen wurde, die zur Niederlage bei Marignano führen.",
+    "team": "Peter Neumann, Autor",
+    "categories": "language",
+    "images": "Foto 17",
+    "times": [19, 20, 21],
+    "location": "wolf_buchhandlung",
+    "host": "Wolf Buchhandlung"
+  },
+  {
+    "title": "«Königinnen von Frankreich» von Thornton Wilder",
+    "description": "Was geschah nach der französischen Revolution mit dem Königsgeschlecht? In Thornton Wilders Einakter „Königinnen von Frankreich“ sucht ein Anwalt aus New Orleans eine legitime Nachfolgerin – der Nachweis gestaltet sich schwierig.",
+    "team": "Die Schauspielgruppe DIE KULISSE, Küsnacht. Spiel: Felix Helmrich, Eva Polgar, Tina Kym, Stephanie Aerni, Monica Gütermann. Regie: Nora von Bergen. Ausstattung: Flurin Helmrich, Monica Gütermann.",
+    "categories": "theater",
+    "images": "Foto 18a",
+    "times": [17, 19, 21],
+    "location": "wangensbach",
+    "host": "Gesundheitsnetz Küsnacht AG"
+  },
+  {
+    "title": "Männerstimmen verführen in den Klanghimmel",
+    "description": "Zwischen zarten Schattierungen und leuchtenden Klangfarben bewegt sich Voicemale aus Winterthur. Fünf Männer verleihen Popsongs aus fünf Jahrzehnten ihre eigene Färbung. Gesang in reinster Form – ohne Instrumente und Elektronik.",
+    "team": "Voicemale. Stimmen: Rainer Baer, Ivan Colaci, Chris Huber, Christoph Rottmeier, Christoph von Ah.",
+    "categories": "music",
+    "images": "Foto 18b",
+    "times": [18, 20, 22],
+    "location": "wangensbach",
+    "host": "Gesundheitsnetz Küsnacht AG"
+  },
+  {
+    "title": "Küsnachter Künstler:innen und Alois Carigiet",
+    "description": "Werke zahlreicher Küsnachter Kunstschaffender sowie Wandmalereien von Alois Carigiet schmücken unser Gemeindehaus. Eine Kunstführung erklärt das Wichtigste.\n\nTreffpunkt für die Führungen ist vor dem Haupteingang des Gemeindehauses.",
+    "team": "Rebecca Gericke, Kulturkommission",
+    "categories": "guide",
+    "images": "Foto 19",
+    "times": [19, 20],
+    "location": "gemeindehaus",
+    "host": "Kulturkommission Küsnacht"
+  },
+  {
+    "title": "Verpflegungs-Oase auf dem Dorfplatz",
+    "description": "Für den grossen und kleinen Hunger bieten verschiedene Foodtrucks eine breite Palette an salzigen und süssen Speisen und diversen Getränken.",
+    "team": "Kulturnacht-OK & Plattform Foodtrucks Schweiz",
+    "categories": ["food", "food-ice", "food-coffee", "food-vine"],
+    "images": "Foto 20",
+    "times": "17-23",
+    "location": "dorfplatz",
+    "host": "Kulturnacht-OK"
+  },
+  {
+    "title": "Magische Licht- und Musik-Show",
+    "description": "Das Finale der Kulturnacht Küsnacht 2025 mit dem Fanfare Terrible, Roland Schatt und Effekte.ch, präsentiert vom Kulturnacht-OK und der Gemeinde Küsnacht.",
+    "team": "Effekte.ch sowie die Fanfare Terrible und Roland Schatt, Schlagzeug",
+    "categories": "finale",
+    "times": 23,
+    "location": "finale",
+    "host": "Kulturelle Vereinigung Küsnacht & Gemeinde Küsnacht"
   }
 ]

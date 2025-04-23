@@ -17,3 +17,7 @@
 - fix 2017 gallery
   - esp on iphone
   - also better styling for everyone.
+
+
+Programm 2025:
+- how to display shuttlebus info

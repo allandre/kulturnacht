@@ -43,5 +43,65 @@
   {
     "id": "reformierte_kirche",
     "adress": "Reformierte Kirche, Untere Heslibachstrasse 2"
+  },
+  {
+    "id": "reformierte_kirche_kirchturm",
+    "adress": "Reformierte Kirche, Untere Heslibachstrasse 2, Kirchturm"
+  },
+  {
+    "id": "bibliothek",
+    "adress": "Bibliothek Küsnacht, Untere Heslibachstrasse 33"
+  },
+  {
+    "id": "salzsilo_garage",
+    "adress": "Salzsilo-Garage, Untere Heslibachstrasse 30"
+  },
+  {
+    "id": "fussgängerunterführung",
+    "adress": "Fussgängerunterführung, Dorfstrasse"
+  },
+  {
+    "id": "kantonsschule_küsnacht",
+    "adress": "Kantonsschule Küsnacht, Dorfstrasse 30, Italienische Villa"
+  },
+  {
+    "id": "kantonsschule_küsnacht_semihalle",
+    "adress": "Kantonsschule Küsnacht, Dorfstrasse 30, Semihalle"
+  },
+  {
+    "id": "katholisches_pfarreizentrum",
+    "adress": "Katholisches Pfarreizentrum, Kirchstrasse 2"
+  },
+  {
+    "id": "museum_haus_c_g_jung",
+    "adress": "Museum Haus C.G. Jung, Seestrasse 228"
+  },
+  {
+    "id": "seehof",
+    "adress": "Seehof, Hornweg 28, OG"
+  },
+  {
+    "id": "seehof_ug",
+    "adress": "Seehof, Hornweg 28, UG"
+  },
+  {
+    "id": "wolf_buchhandlung",
+    "adress": "Wolf Buchhandlung, Zürichstrasse 149 (neben Migros)"
+  },
+  {
+    "id": "wangensbach",
+    "adress": "Wangensbach, Gewölbekeller, Alte Landstrasse 136"
+  },
+  {
+    "id": "gemeindehaus",
+    "adress": "Gemeindehaus, Obere Dorfstrasse 32"
+  },
+  {
+    "id": "dorfplatz",
+    "adress": "Kulinarischer Treffpunkt, Dorfplatz"
+  },
+  {
+    "id": "finale",
+    "adress": "Kulturnacht-Finale, Küsnachter Horn"
   }
 ]
