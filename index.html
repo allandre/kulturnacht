@@ -1,174 +1,206 @@
 <!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="initial-scale=1.0 width=device-width"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0 width=device-width" />
     <meta
-            name="description"
-            content="Dies ist die Webseite der Kulturnacht Küsnacht 2017."
+      name="description"
+      content="Dies ist die Webseite der Kulturnacht Küsnacht 2017."
     />
     <!-- Für Apple-Geräte -->
     <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="site/favicon/apple-touch-icon-180x180.png"
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="site/favicon/apple-touch-icon-180x180.png"
     />
     <!-- Für Browser -->
     <link
-            rel="shortcut icon"
-            type="image/x-icon"
-            href="site/favicon/favicon-32x32.ico"
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="site/favicon/favicon-32x32.ico"
     />
     <link
-            rel="icon"
-            type="image/png"
-            sizes="96x96"
-            href="site/favicon/favicon-96x96.png"
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="site/favicon/favicon-96x96.png"
     />
     <!-- Für Windows Metro -->
     <meta
-            name="msapplication-square310x310logo"
-            content="site/favicon/mstile-310x310.png"
+      name="msapplication-square310x310logo"
+      content="site/favicon/mstile-310x310.png"
     />
-    <meta name="msapplication-TileColor" content="#ed1255"/>
+    <meta name="msapplication-TileColor" content="#ed1255" />
     <title>Kulturnacht Küsnacht</title>
-    <link href="site/styles/reset.css" rel="stylesheet"/>
-    <link href="site/styles/style.css" rel="stylesheet"/>
+    <link href="site/styles/reset.css" rel="stylesheet" />
+    <link href="site/styles/style.css" rel="stylesheet" />
     <script src="site/script.js"></script>
-</head>
+  </head>
 
-<body>
-<div id="container">
-    <nav>
+  <body>
+    <div id="container">
+      <nav>
         <a id="logo-ref" href="">
-            <span id="logo-K" class="logo">K</span>
-            <div id="logo-border" class="logo"></div>
-            <span id="logo-text" class="logo"
+          <span id="logo-K" class="logo">K</span>
+          <div id="logo-border" class="logo"></div>
+          <span id="logo-text" class="logo"
             >Kulturelle Vereinigung Küsnacht</span
-            >
+          >
         </a>
-        <input type="checkbox" id="nav-trigger" class="nav-trigger"/>
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
           <span id="hamburger-wrapper">
             <span class="hamburger"></span>
           </span>
         </label>
         <ul id="menu" onclick="hideMenu()">
-            <li>
-                <a href="#info-anchor">
-                    <div>Info</div>
-                </a>
-            </li>
-            <li>
-                <a href="#contact-anchor">
-                    <div>Kontakt</div>
-                </a>
-            </li>
-            <li>
-                <a href="site/archive.html">
-                    <div>Archiv ></div>
-                </a>
-            </li>
+          <li>
+            <a href="#info-anchor">
+              <div>Info</div>
+            </a>
+          </li>
+          <li>
+            <a href="#programm-anchor">
+              <div>Programm</div>
+            </a>
+          </li>
+          <li>
+            <a href="#contact-anchor">
+              <div>Kontakt</div>
+            </a>
+          </li>
+          <li>
+            <a href="site/archive.html">
+              <div>Archiv ></div>
+            </a>
+          </li>
         </ul>
-    </nav>
-    <div id="main">
+      </nav>
+      <div id="main">
         <section id="title-section">
-            <div id="countdown">Noch ... Tage</div>
-            <img src="site/resources/title-image-1600.png"/>
+          <div id="countdown">Noch ... Tage</div>
+          <img src="site/resources/title-image-1600.png" />
         </section>
         <a id="info-anchor" class="anchor"></a>
         <section>
-            <h1>Willkommen an der Kulturnacht Küsnacht</h1>
-            <p>
-                Reservieren Sie sich den <b>Abend am Freitag, 5. September 2025!</b>
-            </p>
-            <p>
-                Von <b>17 bis 24 Uhr</b> steht das Küsnachter Dorfzentrum im Zeichen
-                der Kultur.
-            </p>
+          <h1>Willkommen an der Kulturnacht Küsnacht</h1>
+          <p>
+            Reservieren Sie sich den <b>Abend am Freitag, 5. September 2025!</b>
+          </p>
+          <p>
+            Von <b>17 bis 24 Uhr</b> steht das Küsnachter Dorfzentrum im Zeichen
+            der Kultur.
+          </p>
+        </section>
+
+        <a id="programm-anchor" class="anchor"></a>
+        <section class="programm-section">
+          <h1>Programm</h1>
+          <button class="gallery-toggler">
+            Galerie aller Mitwirkenden anzeigen
+          </button>
+          <div id="gallery-container">
+            <div id="legend-gallery" class="legend">
+              <h6>Legende:</h6>
+              <div>&#x1F46E; Führung</div>
+              <div>&#x1F3B5; Konzert, Gesang</div>
+              <div>&#x1F3A5; Film</div>
+              <div>&#x1F5BC; Ausstellung</div>
+              <div>&#x1F374; Verpflegung</div>
+              <div>&#x1F3AD; Theater</div>
+              <div>
+                &#x1F4AC; Lesung, Literatur, Poetry Slam, Gedichte, Sprache
+              </div>
+            </div>
+            <div id="participant-gallery"></div>
+          </div>
+
+          <div id="program"></div>
         </section>
 
         <a id="contact-anchor" class="anchor"></a>
         <section class="contact-section">
-            <h1>Kontakt</h1>
-            <p>
-                Um mit uns in Kontakt zu treten, schicken Sie bitte eine E-mail an <a
-                    href="mailto:vorstand@kulturelle-vereinigung-kuesnacht.ch">vorstand@kulturelle-vereinigung-kuesnacht.ch</a>
-            </p>
-            <h3>
-                Die Kulturnacht Küsnacht ist ein Projekt der Kulturellen Vereinigung
-                Küsnacht (KVK).
-            </h3>
-            <div>
-                <img src="site/resources/OKKulturnJan24_03.jpg"/>
-            </div>
-            <h3>
-                Die Kulturnacht Küsnacht 2025 wird von einem Nonprofit-Team
-                organisiert:
-            </h3>
-            <ul id="organisator-list" class="in-section-list">
-                <li>
+          <h1>Kontakt</h1>
+          <p>
+            Um mit uns in Kontakt zu treten, schicken Sie bitte eine E-mail an
+            <a href="mailto:vorstand@kulturelle-vereinigung-kuesnacht.ch"
+              >vorstand@kulturelle-vereinigung-kuesnacht.ch</a
+            >
+          </p>
+          <h3>
+            Die Kulturnacht Küsnacht ist ein Projekt der Kulturellen Vereinigung
+            Küsnacht (KVK).
+          </h3>
+          <div>
+            <img src="site/resources/OKKulturnJan24_03.jpg" />
+          </div>
+          <h3>
+            Die Kulturnacht Küsnacht 2025 wird von einem Nonprofit-Team
+            organisiert:
+          </h3>
+          <ul id="organisator-list" class="in-section-list">
+            <li>
               <span style="display: inline-block; width: 15em"
-              >Koordination Veranstalter:</span
+                >Koordination Veranstalter:</span
               >Martine Peyer
-                </li>
-                <li>
+            </li>
+            <li>
               <span style="display: inline-block; width: 15em"
-              >PR / Medien:</span
+                >PR / Medien:</span
               >Elisabeth Abgottspon
-                </li>
-                <li>
+            </li>
+            <li>
               <span style="display: inline-block; width: 15em"
-              >Gastronomie:</span
+                >Gastronomie:</span
               >Kim Wyder
-                </li>
-                <li>
+            </li>
+            <li>
               <span style="display: inline-block; width: 15em"
-              >Infrastruktur / Bewilligungen:</span
+                >Infrastruktur / Bewilligungen:</span
               >Hans-Peter Fehr
-                </li>
-                <li>
+            </li>
+            <li>
               <span style="display: inline-block; width: 15em">Sponsoring:</span
               >Felix Günthardt
-                </li>
-                <li>
+            </li>
+            <li>
               <span style="display: inline-block; width: 15em">Finanzen:</span
               >Ilka Allenspach
-                </li>
-            </ul>
-            <p></p>
-            <p>
-                Die Kulturelle Vereinigung Küsnacht gewährleistet zusammen mit der
-                Gemeinde die Sammlung und den Betrieb des Ortsmuseums Küsnacht,
-                betreut die Galerie im Höchhuus und veranstaltet Vorträge und
-                Ausflüge mit kulturgeschichtlichem Hintergrund und gibt
-                Publikationen zu ortsgeschichtlichen Themen heraus.
-            </p>
+            </li>
+          </ul>
+          <p></p>
+          <p>
+            Die Kulturelle Vereinigung Küsnacht gewährleistet zusammen mit der
+            Gemeinde die Sammlung und den Betrieb des Ortsmuseums Küsnacht,
+            betreut die Galerie im Höchhuus und veranstaltet Vorträge und
+            Ausflüge mit kulturgeschichtlichem Hintergrund und gibt
+            Publikationen zu ortsgeschichtlichen Themen heraus.
+          </p>
         </section>
-    </div>
-    <footer>
+      </div>
+      <footer>
         <p style="flex-shrink: 2">
-            <a
-                    href="http://www.kulturelle-vereinigung-kuesnacht.ch/"
-                    target="_blank"
+          <a
+            href="http://www.kulturelle-vereinigung-kuesnacht.ch/"
+            target="_blank"
             >&copy; 2024 KVK</a
-            >
+          >
         </p>
         <p style="flex-shrink: 2">
-            <a
-                    href="site/resources/KVK_Datenschutzerklaerung.pdf"
-                    target="_blank"
-            >
-                Datenschutzerklärung
-            </a>
+          <a
+            href="site/resources/KVK_Datenschutzerklaerung.pdf"
+            target="_blank"
+          >
+            Datenschutzerklärung
+          </a>
         </p>
         <p style="flex-shrink: 2">Titelfoto: Thomas Ernst</p>
         <div>
-            <div>Webseite:</div>
-            <a href="http://www.milanbombsch.ch" target="_blank">M. Bombsch</a>,
-            <span>A. Allenspach</span>
+          <div>Webseite:</div>
+          <a href="http://www.milanbombsch.ch" target="_blank">M. Bombsch</a>,
+          <span>A. Allenspach</span>
         </div>
-    </footer>
-</div>
-</body>
+      </footer>
+    </div>
+  </body>
 </html>

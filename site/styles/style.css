@@ -275,7 +275,7 @@ input[type='checkbox']:checked ~ #menu li a div {
   font-size: max(14px, min(3.4vw, 85px));
   text-align: center;
   left: 3%;
-  padding: 0 .8em;
+  padding: 0 0.8em;
   max-width: 94%;
 }
 

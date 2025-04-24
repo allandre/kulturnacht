@@ -22,15 +22,15 @@
       let text = 'Noch ' + diffDays + ' Tage bis zur'
 
       switch (diffDays) {
-      case 2:
-        text = 'Übermorgen ist die';
-        break;
-      case 1:
-        text = 'Morgen ist die';
-        break;
-      case 0:
-        text = 'Heute ist die';
-        break;
+        case 2:
+          text = 'Übermorgen ist die'
+          break
+        case 1:
+          text = 'Morgen ist die'
+          break
+        case 0:
+          text = 'Heute ist die'
+          break
       }
 
       if (diffDays < 0) {
