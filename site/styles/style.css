@@ -336,6 +336,9 @@ input[type='checkbox']:checked ~ #menu li a div {
   color: var(--site-main-color);
   border-bottom: 1px solid black;
   border-right: 1px dotted var(--site-main-color);
+  position: sticky;
+  top: 48px; /* navbar height */
+  background: white;
 }
 
 #program-section th:first-of-type {
@@ -373,7 +376,7 @@ input[type='checkbox']:checked ~ #menu li a div {
   width: 5em;
 }
 
-#program-section table td.locationCell {
+#program-section table td:first-child {
   padding-left: 0;
   font-weight: bold;
   border-bottom: 1px solid black;

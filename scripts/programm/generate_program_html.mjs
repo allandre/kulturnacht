@@ -8,6 +8,31 @@ import JSONC from 'jsonc-parser'
 import { JSDOM } from 'jsdom'
 import { prettify } from 'htmlfy'
 
+function getIconForCategory(category) {
+  const iconForCategory = {
+    guide: '&#x1F46E;',
+    music: '&#x1F3B5;',
+    language: '&#x1F4AC;',
+    exposition: '&#x1F5BC;',
+    theater: '&#x1F3AD;',
+    food: '&#x1F374;',
+    'food-brezel': '&#x1F968;',
+    'food-ice': '&#x1F374;',
+    'food-vine': '&#x1F377;',
+    'food-cake': '&#x1F370;',
+    'food-coffee': '&#x2615;',
+    finale: '&#x1F386;'
+  }
+
+  const icon = iconForCategory[category]
+
+  if (!icon) {
+    throw new Error(`Missing icon for category ${category}`)
+  }
+
+  return icon
+}
+
 const { document } = new JSDOM().window
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -41,6 +66,10 @@ eventData.forEach(event => {
     throw new Error(`Malformatted event: ${JSON.stringify(event)}`)
   }
 
+  if (typeof event.categories === 'string') {
+    event.categories = [event.categories]
+  }
+
   const location = locationData.find(location => location.id === event.location)
   if (!location) {
     throw new Error(`Unknown location in event: ${JSON.stringify(event)}`)
@@ -59,13 +88,14 @@ programTable.appendChild(tableBody)
 const headerRow = document.createElement('tr')
 tableBody.appendChild(headerRow)
 
-const addHeaderRowElement = content => {
+const addHeaderRowElement = (content, colspan = 1) => {
   const th = document.createElement('th')
   th.innerHTML = content
+  th.colSpan = colspan
   headerRow.appendChild(th)
 }
 
-addHeaderRowElement('Ort')
+addHeaderRowElement('Ort', 2)
 addHeaderRowElement('17:00')
 addHeaderRowElement('18:00')
 addHeaderRowElement('19:00')
@@ -78,15 +108,34 @@ locationData.forEach(location => {
   const row = document.createElement('tr')
   tableBody.appendChild(row)
 
-  const addRowElement = content => {
+  const addRowElement = (content, colspan = 1) => {
     const td = document.createElement('td')
     td.innerHTML = content
+    td.colSpan = colspan
     row.appendChild(td)
   }
 
-  addRowElement(location.address)
+  const introEventIndex = location.events.findIndex(
+    event => event.times === 1630
+  )
 
-  const times = [
+  if (introEventIndex >= 0) {
+    addRowElement(location.address)
+
+    const introEvent = location.events[introEventIndex] 
+    let title = '16.30: '
+    introEvent.categories.forEach(category => {
+      title += getIconForCategory(category)
+    })
+    title += ' ' + introEvent.title
+
+    addRowElement(title)
+    location.events.splice(introEventIndex, 1)
+  } else {
+    addRowElement(location.address, 2)
+  }
+
+  let times = [
     '', // 17
     '', // 18
     '', // 19
@@ -102,9 +151,8 @@ locationData.forEach(location => {
       if (typeof eventTimes === 'string') {
         eventTimes = [parseInt(eventTimes)]
       } else if (typeof eventTimes === 'number') {
-        if (eventTimes === 1630) {
-          console.warn(`Event ${event.title} is skipped, because of time ${eventTimes}`) // eslint-disable-line prettier/prettier
-          return // skip this case for now
+        if (eventTimes > 23) {
+          throw new Error(`We currently cannot handle times like ${eventTimes}`)
         }
 
         eventTimes = [eventTimes]
@@ -115,12 +163,47 @@ locationData.forEach(location => {
         if (times[timesIndex] !== '') {
           throw new Error(`Time ${time} already set for location ${JSON.stringify(location)}`) // eslint-disable-line prettier/prettier
         } else {
-          times[timesIndex] = event.title
+          event.categories.forEach(category => {
+            times[timesIndex] += getIconForCategory(category)
+          })
+          times[timesIndex] += ' ' + event.title
         }
       })
     } else {
-      console.warn(`Time handling not yet implemeted for ${event.times}`)
       // case "18-19"
+      if (times.some(time => time !== '')) {
+        // eslint-disable-next-line prettier/prettier
+        throw new Error(`Two events are overlapping for locatio ${JSON.stringify(location)}`)
+      }
+
+      const time = event.times
+      const start = time.substring(0, 2)
+      const end = time.substring(3, 5)
+
+      if (`${start}-${end}` !== time) {
+        throw new Error(`Something went wrong when parsing ${time}`)
+      }
+
+      const startIndex = start - 17
+      const endIndex = end - 17
+      const length = end - start
+
+      for (let i = 0; i < startIndex; i++) {
+        addRowElement('')
+      }
+
+      let title = ''
+      event.categories.forEach(category => {
+        title += getIconForCategory(category)
+      })
+      title += ' ' + event.title
+      addRowElement(title, length)
+
+      for (let i = endIndex; i < times.length; i++) {
+        addRowElement('')
+      }
+
+      times = [] // clean times so that rows are not filled again
     }
   })
 
