@@ -85,9 +85,15 @@
     }
   }
 
+  async function loadProgramTable() {
+    const response = await fetch('/site/generated/program-table.html')
+    document.querySelector('#program-table').innerHTML = await response.text()
+  }
+
   // global and exported stuff
   window.addEventListener('load', () => {
     showCountdown()
+    loadProgramTable()
   })
 
   window.addEventListener('resize', () => {

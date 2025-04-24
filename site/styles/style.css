@@ -326,6 +326,7 @@ input[type='checkbox']:checked ~ #menu li a div {
   margin: 0 auto;
   margin-top: 0.5em;
   z-index: 100;
+  width: 100%;
 }
 
 #program-section th {
@@ -335,6 +336,10 @@ input[type='checkbox']:checked ~ #menu li a div {
   color: var(--site-main-color);
   border-bottom: 1px solid black;
   border-right: 1px dotted var(--site-main-color);
+}
+
+#program-section th:first-of-type {
+  width: 20%;
 }
 
 #program-section th:last-of-type {

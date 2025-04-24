@@ -372,7 +372,7 @@
     "description": "Für den grossen und kleinen Hunger bieten verschiedene Foodtrucks eine breite Palette an salzigen und süssen Speisen und diversen Getränken.",
     "team": "Kulturnacht-OK & Plattform Foodtrucks Schweiz",
     "categories": ["food", "food-ice", "food-coffee", "food-vine"],
-    "images": "Foto 20",
+    "images": ["Foto 20_Dorfplart", "Foto 20_streetwise 1", "Foto 20_streetwise 2"],
     "times": "17-23",
     "location": "dorfplatz",
     "host": "Kulturnacht-OK"
