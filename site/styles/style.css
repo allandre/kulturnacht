@@ -341,7 +341,7 @@ input[type='checkbox']:checked ~ #menu li a div {
   background: white;
 }
 
-#program-section th:first-of-type {
+#program-section .desktop th:first-of-type {
   width: 20%;
 }
 
@@ -452,10 +452,25 @@ input[type='checkbox']:checked ~ #menu li a div {
 
 #program-section .mobile {
   width: 100%;
+  display: none;
+}
+
+#program-section .mobile th {
+  width: 100%;
 }
 
 #program-section .mobile .time-cell {
   cursor: pointer;
+}
+
+@media screen and (max-width: 600px){
+  #program-section .desktop {
+    display: none;
+  }
+
+  #program-section table.mobile {
+    display: table;
+  }
 }
 
 .expand {

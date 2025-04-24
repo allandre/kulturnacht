@@ -59,7 +59,8 @@ export default [
       '@stylistic/js/semi': 'off', // done by prettier
       '@stylistic/js/no-extra-semi': 'off', // we need them at the beginnig of .js files.
       '@stylistic/js/arrow-parens': ['warn', 'as-needed'], // avoid parentheses for (a) => b.
-      '@stylistic/js/function-paren-newline': ['warn', 'consistent']
+      '@stylistic/js/function-paren-newline': ['warn', 'consistent'],
+      '@stylistic/js/dot-location': ['warn', 'property']
     }
   },
   eslintPluginPrettierRecommended

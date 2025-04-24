@@ -7,31 +7,8 @@ import { fileURLToPath } from 'url'
 import JSONC from 'jsonc-parser'
 import { JSDOM } from 'jsdom'
 import { prettify } from 'htmlfy'
-
-function getIconForCategory(category) {
-  const iconForCategory = {
-    guide: '&#x1F46E;',
-    music: '&#x1F3B5;',
-    language: '&#x1F4AC;',
-    exposition: '&#x1F5BC;',
-    theater: '&#x1F3AD;',
-    food: '&#x1F374;',
-    'food-brezel': '&#x1F968;',
-    'food-ice': '&#x1F374;',
-    'food-vine': '&#x1F377;',
-    'food-cake': '&#x1F370;',
-    'food-coffee': '&#x2615;',
-    finale: '&#x1F386;'
-  }
-
-  const icon = iconForCategory[category]
-
-  if (!icon) {
-    throw new Error(`Missing icon for category ${category}`)
-  }
-
-  return icon
-}
+import fillMobileDataTable from './fillMobileDataTable.mjs'
+import { tableTitleForEvent } from './utils.mjs'
 
 const { document } = new JSDOM().window
 
@@ -79,40 +56,55 @@ eventData.forEach(event => {
   location.events.push(event)
 })
 
-const programTable = document.createElement('table')
-document.body.appendChild(programTable)
+const programTableMobile = document.createElement('table')
+programTableMobile.classList.add('mobile')
+document.body.appendChild(programTableMobile)
 
-const tableBody = document.createElement('tbody')
-programTable.appendChild(tableBody)
+const programTableDesktop = document.createElement('table')
+programTableDesktop.classList.add('desktop')
+document.body.appendChild(programTableDesktop)
 
-const headerRow = document.createElement('tr')
-tableBody.appendChild(headerRow)
+const tableBodyDesktop = document.createElement('tbody')
+programTableDesktop.appendChild(tableBodyDesktop)
 
-const addHeaderRowElement = (content, colspan = 1) => {
+const headerRowDesktop = document.createElement('tr')
+tableBodyDesktop.appendChild(headerRowDesktop)
+
+const addHeaderRowElementDesktop = (content, colspan = 1) => {
   const th = document.createElement('th')
   th.innerHTML = content
   th.colSpan = colspan
-  headerRow.appendChild(th)
+  headerRowDesktop.appendChild(th)
 }
 
-addHeaderRowElement('Ort', 2)
-addHeaderRowElement('17:00')
-addHeaderRowElement('18:00')
-addHeaderRowElement('19:00')
-addHeaderRowElement('20:00')
-addHeaderRowElement('21:00')
-addHeaderRowElement('22:00')
-addHeaderRowElement('23:00')
+addHeaderRowElementDesktop('Ort', 2)
+addHeaderRowElementDesktop('17.00')
+addHeaderRowElementDesktop('18.00')
+addHeaderRowElementDesktop('19.00')
+addHeaderRowElementDesktop('20.00')
+addHeaderRowElementDesktop('21.00')
+addHeaderRowElementDesktop('22.00')
+addHeaderRowElementDesktop('23.00')
 
+let mobileData = {
+  '16.30': [],
+  '17.00': [],
+  '18.00': [],
+  '19.00': [],
+  '20.00': [],
+  '21.00': [],
+  '22.00': [],
+  '23.00': []
+}
 locationData.forEach(location => {
-  const row = document.createElement('tr')
-  tableBody.appendChild(row)
+  const rowDesktop = document.createElement('tr')
+  tableBodyDesktop.appendChild(rowDesktop)
 
-  const addRowElement = (content, colspan = 1) => {
+  const addRowElementDesktop = (content, colspan = 1) => {
     const td = document.createElement('td')
     td.innerHTML = content
     td.colSpan = colspan
-    row.appendChild(td)
+    rowDesktop.appendChild(td)
   }
 
   const introEventIndex = location.events.findIndex(
@@ -120,19 +112,18 @@ locationData.forEach(location => {
   )
 
   if (introEventIndex >= 0) {
-    addRowElement(location.address)
+    addRowElementDesktop(location.address)
 
-    const introEvent = location.events[introEventIndex] 
-    let title = '16.30: '
-    introEvent.categories.forEach(category => {
-      title += getIconForCategory(category)
-    })
-    title += ' ' + introEvent.title
-
-    addRowElement(title)
+    const introEvent = location.events[introEventIndex]
+    addRowElementDesktop('16.30: ' + tableTitleForEvent(introEvent))
     location.events.splice(introEventIndex, 1)
+
+    mobileData['16.30'].push({
+      event: introEvent,
+      location: location
+    })
   } else {
-    addRowElement(location.address, 2)
+    addRowElementDesktop(location.address, 2)
   }
 
   let times = [
@@ -161,19 +152,24 @@ locationData.forEach(location => {
       eventTimes.forEach(time => {
         const timesIndex = time - 17
         if (times[timesIndex] !== '') {
-          throw new Error(`Time ${time} already set for location ${JSON.stringify(location)}`) // eslint-disable-line prettier/prettier
-        } else {
-          event.categories.forEach(category => {
-            times[timesIndex] += getIconForCategory(category)
-          })
-          times[timesIndex] += ' ' + event.title
+          throw new Error(
+            `Time ${time} already set for location ${JSON.stringify(location)}`
+          )
         }
+
+        times[timesIndex] = tableTitleForEvent(event)
+
+        mobileData[`${time}.00`].push({
+          event: event,
+          location: location
+        })
       })
     } else {
       // case "18-19"
       if (times.some(time => time !== '')) {
-        // eslint-disable-next-line prettier/prettier
-        throw new Error(`Two events are overlapping for locatio ${JSON.stringify(location)}`)
+        throw new Error(
+          `Two events are overlapping for location ${JSON.stringify(location)}`
+        )
       }
 
       const time = event.times
@@ -189,28 +185,33 @@ locationData.forEach(location => {
       const length = end - start
 
       for (let i = 0; i < startIndex; i++) {
-        addRowElement('')
+        addRowElementDesktop('')
       }
 
-      let title = ''
-      event.categories.forEach(category => {
-        title += getIconForCategory(category)
-      })
-      title += ' ' + event.title
-      addRowElement(title, length)
+      addRowElementDesktop(tableTitleForEvent(event), length)
 
       for (let i = endIndex; i < times.length; i++) {
-        addRowElement('')
+        addRowElementDesktop('')
       }
 
       times = [] // clean times so that rows are not filled again
+
+      // fill mobileData
+      for (let i = start; i <= end; i++) {
+        mobileData[`${i}.00`].push({
+          event: event,
+          location: location
+        })
+      }
     }
   })
 
   times.forEach(time => {
-    addRowElement(time)
+    addRowElementDesktop(time)
   })
 })
+
+fillMobileDataTable(programTableMobile, mobileData)
 
 await fs.writeFile(
   path.join(__dirname, '../../site/generated/program-table.html'),
