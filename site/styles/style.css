@@ -309,6 +309,19 @@ input[type='checkbox']:checked ~ #menu li a div {
   max-width: unset;
 }
 
+#program-section .loader {
+  display: inline-block;
+  margin: 0;
+  height: 1em;
+  border-width: 0.2em;
+  position: relative;
+  top: 0.3em;
+}
+
+#program-section span:has(+ .loader) {
+  margin-right: 0.2em;
+}
+
 #program-section table {
   margin: 0 auto;
   margin-top: 0.5em;
@@ -748,3 +761,26 @@ footer a:visited {
 }
 
 /* MEDIA QUERIES end */
+
+/* MISC start */
+
+.loader {
+  border: 0.3em solid #f3f3f3;
+  border-top-color: var(--kvk-main-color);
+  border-radius: 50%;
+  height: 2em;
+  aspect-ratio: 1;
+  animation: spin 2s linear infinite;
+  margin: 4em auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* MISC end */

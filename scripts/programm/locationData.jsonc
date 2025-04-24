@@ -2,106 +2,106 @@
   // Blueprint:
   // {
   //   "id": "", // avoid whitespaces, special characters and capital letters
-  //   "adress": "",
+  //   "address": "",
   // },
   {
     "id": "ortsmuseum_küsnacht",
-    "adress": "Ortsmuseum Küsnacht, Tobelweg 1, UG"
+    "address": "Ortsmuseum Küsnacht, Tobelweg 1, UG"
   },
   {
     "id": "musikschule",
-    "adress": "Musikschule, Tobelweg 1, Dachsaal"
+    "address": "Musikschule, Tobelweg 1, Dachsaal"
   },
   {
     "id": "mehrzweckraum",
-    "adress": "Mehrzweckraum, Tobelweg 4, 4. OG"
+    "address": "Mehrzweckraum, Tobelweg 4, 4. OG"
   },
   {
     "id": "vorplatz",
-    "adress": "Vorplatz Garage, Tobelweg 4"
+    "address": "Vorplatz Garage, Tobelweg 4"
   },
   {
     "id": "kulturbistro",
-    "adress": "Kulturbistro Tobelweg, Tobelweg 1-4, Vorplatz"
+    "address": "Kulturbistro Tobelweg, Tobelweg 1-4, Vorplatz"
   },
   {
     "id": "chrottegrotte",
-    "adress": "Chrottegrotte, Obere Dorfstrasse 27a"
+    "address": "Chrottegrotte, Obere Dorfstrasse 27a"
   },
   {
     "id": "jürgehuus",
-    "adress": "Jürgehuus, Untere Heslibachstrasse 2, JuKa"
+    "address": "Jürgehuus, Untere Heslibachstrasse 2, JuKa"
   },
   {
     "id": "reformiertes_kirchgemeindehaus",
-    "adress": "Reformiertes Kirchgemeindehaus, Untere Heslibachstrasse 5, OG"
+    "address": "Reformiertes Kirchgemeindehaus, Untere Heslibachstrasse 5, OG"
   },
   {
     "id": "reformiertes_kirchgemeindehaus_eg",
-    "adress": "Reformiertes Kirchgemeindehaus, Untere Heslibachstrasse 5, EG"
+    "address": "Reformiertes Kirchgemeindehaus, Untere Heslibachstrasse 5, EG"
   },
   {
     "id": "reformierte_kirche",
-    "adress": "Reformierte Kirche, Untere Heslibachstrasse 2"
+    "address": "Reformierte Kirche, Untere Heslibachstrasse 2"
   },
   {
     "id": "reformierte_kirche_kirchturm",
-    "adress": "Reformierte Kirche, Untere Heslibachstrasse 2, Kirchturm"
+    "address": "Reformierte Kirche, Untere Heslibachstrasse 2, Kirchturm"
   },
   {
     "id": "bibliothek",
-    "adress": "Bibliothek Küsnacht, Untere Heslibachstrasse 33"
+    "address": "Bibliothek Küsnacht, Untere Heslibachstrasse 33"
   },
   {
     "id": "salzsilo_garage",
-    "adress": "Salzsilo-Garage, Untere Heslibachstrasse 30"
+    "address": "Salzsilo-Garage, Untere Heslibachstrasse 30"
   },
   {
     "id": "fussgängerunterführung",
-    "adress": "Fussgängerunterführung, Dorfstrasse"
+    "address": "Fussgängerunterführung, Dorfstrasse"
   },
   {
     "id": "kantonsschule_küsnacht",
-    "adress": "Kantonsschule Küsnacht, Dorfstrasse 30, Italienische Villa"
+    "address": "Kantonsschule Küsnacht, Dorfstrasse 30, Italienische Villa"
   },
   {
     "id": "kantonsschule_küsnacht_semihalle",
-    "adress": "Kantonsschule Küsnacht, Dorfstrasse 30, Semihalle"
+    "address": "Kantonsschule Küsnacht, Dorfstrasse 30, Semihalle"
   },
   {
     "id": "katholisches_pfarreizentrum",
-    "adress": "Katholisches Pfarreizentrum, Kirchstrasse 2"
+    "address": "Katholisches Pfarreizentrum, Kirchstrasse 2"
   },
   {
     "id": "museum_haus_c_g_jung",
-    "adress": "Museum Haus C.G. Jung, Seestrasse 228"
+    "address": "Museum Haus C.G. Jung, Seestrasse 228"
   },
   {
     "id": "seehof",
-    "adress": "Seehof, Hornweg 28, OG"
+    "address": "Seehof, Hornweg 28, OG"
   },
   {
     "id": "seehof_ug",
-    "adress": "Seehof, Hornweg 28, UG"
+    "address": "Seehof, Hornweg 28, UG"
   },
   {
     "id": "wolf_buchhandlung",
-    "adress": "Wolf Buchhandlung, Zürichstrasse 149 (neben Migros)"
+    "address": "Wolf Buchhandlung, Zürichstrasse 149 (neben Migros)"
   },
   {
     "id": "wangensbach",
-    "adress": "Wangensbach, Gewölbekeller, Alte Landstrasse 136"
+    "address": "Wangensbach, Gewölbekeller, Alte Landstrasse 136"
   },
   {
     "id": "gemeindehaus",
-    "adress": "Gemeindehaus, Obere Dorfstrasse 32"
+    "address": "Gemeindehaus, Obere Dorfstrasse 32"
   },
   {
     "id": "dorfplatz",
-    "adress": "Kulinarischer Treffpunkt, Dorfplatz"
+    "address": "Kulinarischer Treffpunkt, Dorfplatz"
   },
   {
     "id": "finale",
-    "adress": "Kulturnacht-Finale, Küsnachter Horn"
+    "address": "Kulturnacht-Finale, Küsnachter Horn"
   }
 ]

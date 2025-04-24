@@ -1,7 +1,7 @@
 import globals from 'globals'
 import js from '@eslint/js'
 import stylisticJs from '@stylistic/eslint-plugin-js'
-import eslintConfigPrettier from 'eslint-config-prettier'
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 
 export default [
   js.configs.recommended,
@@ -19,7 +19,7 @@ export default [
     rules: {
       'no-var': 'warn',
       'prefer-const': 'warn',
-      '@stylistic/js/indent': ['warn', 2],
+      '@stylistic/js/indent': ['warn', 2, { SwitchCase: 1 }],
       '@stylistic/js/max-len': 'off',
       '@stylistic/js/array-element-newline': [
         'error',
@@ -61,5 +61,5 @@ export default [
       '@stylistic/js/arrow-parens': ['warn', 'as-needed'] // avoid parentheses for (a) => b.
     }
   },
-  eslintConfigPrettier
+  eslintPluginPrettierRecommended
 ]
