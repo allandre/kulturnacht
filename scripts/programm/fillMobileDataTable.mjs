@@ -1,7 +1,7 @@
 import { JSDOM } from 'jsdom'
-import { tableTitleForEvent } from './utils.mjs'
+import { addEventRow, tableTitleForEvent } from './utils.mjs'
 
-const fillMobileDataTable = (tableElement, data) => {
+async function fillMobileDataTable(tableElement, data) {
   const { document } = new JSDOM().window
 
   const tableBody = document.createElement('tbody')
@@ -41,7 +41,13 @@ const fillMobileDataTable = (tableElement, data) => {
 
       const eventTd = document.createElement('td')
       eventTd.innerHTML = tableTitleForEvent(singleData.event)
+      eventTd.setAttribute('data-event', singleData.event.id)
+      eventTd.setAttribute('data-time', time)
+      eventTd.setAttribute('onclick', 'toggleEventRow(this)')
       singleRow.appendChild(eventTd)
+
+      const eventRow = await addEventRow(tableBody, singleData.event, true)
+      eventRow.setAttribute('data-time', time)
     }
   }
 }

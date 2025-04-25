@@ -45,6 +45,8 @@ async function addEventRow(tableBody, event, mobile = false) {
   const { document } = new JSDOM().window
 
   const eventRow = document.createElement('tr')
+  eventRow.style.display = 'none'
+  eventRow.setAttribute('data-event', event.id)
   tableBody.appendChild(eventRow)
 
   if (!mobile) {
@@ -58,9 +60,14 @@ async function addEventRow(tableBody, event, mobile = false) {
   eventTd.classList.add('event-row')
   eventRow.appendChild(eventTd)
 
+  const container = document.createElement('div')
+  container.classList.add('event-row-container')
+  eventTd.appendChild(container)
+
   if (event.images) {
     const imageDiv = document.createElement('div')
-    eventTd.appendChild(imageDiv)
+    imageDiv.classList.add('image-container')
+    container.appendChild(imageDiv)
 
     const imagesFolder = path.join(
       __dirname,
@@ -77,15 +84,17 @@ async function addEventRow(tableBody, event, mobile = false) {
       const imageFileName = path.basename(files[0])
 
       const img = document.createElement('img')
-      img.src = imageFileName
+      img.src = '/site/resources/program-images/small/' + imageFileName
       imageDiv.appendChild(img)
     }
   }
 
   const contentDiv = document.createElement('div')
-  eventTd.appendChild(contentDiv)
+  contentDiv.classList.add('content-container')
+  container.appendChild(contentDiv)
 
   const titleDiv = document.createElement('div')
+  titleDiv.classList.add('title-div')
   titleDiv.innerHTML = event.title
   contentDiv.appendChild(titleDiv)
 
@@ -96,6 +105,8 @@ async function addEventRow(tableBody, event, mobile = false) {
   const teamDiv = document.createElement('div')
   teamDiv.innerHTML = event.team
   contentDiv.appendChild(teamDiv)
+
+  return eventRow
 }
 
 export { tableTitleForEvent, addEventRow }

@@ -21,7 +21,7 @@ const eventDataString = await fs.readFile(
   { encoding: 'utf8' }
 )
 const eventData = JSONC.parse(eventDataString)
-for (const event of eventData) {
+for (const [index, event] of eventData.entries()) {
   if (
     !event.title ||
     !event.description ||
@@ -33,6 +33,8 @@ for (const event of eventData) {
   ) {
     throw new Error(`Malformatted event: ${JSON.stringify(event)}`)
   }
+
+  event.id = `event_${index}`
 
   if (typeof event.categories === 'string') {
     event.categories = [event.categories]

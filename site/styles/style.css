@@ -12,6 +12,10 @@ body {
   font-family: 'Helvetica', sans-serif;
 }
 
+[onclick] {
+  cursor: pointer;
+}
+
 #container {
   max-width: 1600px;
   margin: 0 auto;
@@ -350,12 +354,18 @@ input[type='checkbox']:checked ~ #menu li a div {
 }
 
 #program-section td {
-  padding: 0.2em 0.6em;
+  padding: 0.4em 0.6em;
   border-bottom: 1px solid black;
   border-right: 1px dotted var(--site-main-color);
   font-size: 75%;
   text-align: left;
   vertical-align: middle;
+
+  &.current {
+    border: 1px solid black;
+    border-bottom: none;
+    background-color: #e8e8e8;
+  }
 }
 
 #program-section td.content:hover,
@@ -364,22 +374,16 @@ input[type='checkbox']:checked ~ #menu li a div {
   background-color: #e8e8e8;
 }
 
-#program-section td.content:hover:not(.selected) {
-  outline: 1px solid black; /*here selection border*/
-}
-
-#program-section td.content:hover {
-  cursor: pointer;
-}
-
-#program-section td.halbstund {
-  width: 5em;
-}
+[data-event][onclick]:hover {
+  background: #eee;
+} 
 
 #program-section table td:first-child {
   padding-left: 0;
+}
+
+#program-section .locationCell {
   font-weight: bold;
-  border-bottom: 1px solid black;
 }
 
 #program-section .intermediateRow td {
@@ -444,12 +448,44 @@ input[type='checkbox']:checked ~ #menu li a div {
   border-right: 1px dotted var(--site-main-color);
 }
 
-#program-section table.desktop img {
+#program-section table img {
   width: 10vw;
+  min-width: 10em;
 }
 
-#program-section .event-row {
+#program-section td.event-row {
   background-color: #e8e8e8;
+  
+  .event-row-container {
+    display: flex;
+    gap: 2em;
+    padding: 1em 1.5em;
+
+    .image-container {
+      display: flex;
+      gap: 1em;
+
+      img {
+        object-fit: contain;
+      }
+    }
+
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1em;
+
+      .title-div {
+        font-weight: bold;
+        font-size: 1.1em;
+      }
+
+      div:last-child {
+        margin-bottom: 1em;
+      }
+    }
+  }
 }
 
 /* -> mobile */

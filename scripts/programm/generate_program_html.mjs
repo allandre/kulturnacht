@@ -52,7 +52,7 @@ const mobileData = {
   '23.00': []
 }
 
- for (const location of locationData) {
+for (const location of locationData) {
   const rowDesktop = document.createElement('tr')
   tableBodyDesktop.appendChild(rowDesktop)
 
@@ -61,6 +61,8 @@ const mobileData = {
     td.innerHTML = content
     td.colSpan = colspan
     rowDesktop.appendChild(td)
+
+    return td
   }
 
   const introEventIndex = location.events.findIndex(
@@ -68,10 +70,18 @@ const mobileData = {
   )
 
   if (introEventIndex >= 0) {
-    addRowElementDesktop(location.address)
+    const locationCell = addRowElementDesktop(location.address)
+    locationCell.classList.add('locationCell')
 
     const introEvent = location.events[introEventIndex]
-    addRowElementDesktop('16.30: ' + tableTitleForEvent(introEvent))
+    const rowElement = addRowElementDesktop(
+      '16.30: ' + tableTitleForEvent(introEvent)
+    )
+    rowElement.setAttribute('data-event', introEvent.id)
+    rowElement.setAttribute('onclick', 'toggleEventRow(this)')
+
+    await addEventRow(tableBodyDesktop, introEvent, true)
+
     location.events.splice(introEventIndex, 1)
 
     mobileData['16.30'].push({
@@ -79,17 +89,18 @@ const mobileData = {
       location: location
     })
   } else {
-    addRowElementDesktop(location.address, 2)
+    const locationCell = addRowElementDesktop(location.address, 2)
+    locationCell.classList.add('locationCell')
   }
 
   let times = [
-    '', // 17
-    '', // 18
-    '', // 19
-    '', // 20
-    '', // 21
-    '', // 22
-    '' // 23
+    undefined, // 17
+    undefined, // 18
+    undefined, // 19
+    undefined, // 20
+    undefined, // 21
+    undefined, // 22
+    undefined // 23
   ]
 
   for (const event of location.events) {
@@ -107,13 +118,13 @@ const mobileData = {
 
       for (const time of eventTimes) {
         const timesIndex = time - 17
-        if (times[timesIndex] !== '') {
+        if (times[timesIndex]) {
           throw new Error(
             `Time ${time} already set for location ${JSON.stringify(location)}`
           )
         }
 
-        times[timesIndex] = tableTitleForEvent(event)
+        times[timesIndex] = event
 
         mobileData[`${time}.00`].push({
           event: event,
@@ -122,7 +133,7 @@ const mobileData = {
       }
     } else {
       // case "18-19"
-      if (times.some(time => time !== '')) {
+      if (times.some(time => time !== undefined)) {
         throw new Error(
           `Two events are overlapping for location ${JSON.stringify(location)}`
         )
@@ -144,7 +155,12 @@ const mobileData = {
         addRowElementDesktop('')
       }
 
-      addRowElementDesktop(tableTitleForEvent(event), length)
+      const eventElement = addRowElementDesktop(
+        tableTitleForEvent(event),
+        length
+      )
+      eventElement.setAttribute('data-event', event.id)
+      eventElement.setAttribute('onclick', 'toggleEventRow(this)')
 
       for (let i = endIndex; i < times.length; i++) {
         addRowElementDesktop('')
@@ -165,12 +181,18 @@ const mobileData = {
     await addEventRow(tableBodyDesktop, event)
   }
 
-  for (const time of times) {
-    addRowElementDesktop(time)
+  for (const event of times) {
+    if (event) {
+      const eventElement = addRowElementDesktop(tableTitleForEvent(event))
+      eventElement.setAttribute('data-event', event.id)
+      eventElement.setAttribute('onclick', 'toggleEventRow(this)')
+    } else {
+      addRowElementDesktop('')
+    }
   }
 }
 
-fillMobileDataTable(programTableMobile, mobileData)
+await fillMobileDataTable(programTableMobile, mobileData)
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
