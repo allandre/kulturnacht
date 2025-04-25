@@ -448,6 +448,10 @@ input[type='checkbox']:checked ~ #menu li a div {
   width: 10vw;
 }
 
+#program-section .event-row {
+  background-color: #e8e8e8;
+}
+
 /* -> mobile */
 
 #program-section .mobile {

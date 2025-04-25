@@ -1,60 +1,15 @@
 // call like "node generate_program_html.mjs"
 
 import fs from 'node:fs/promises'
-
 import path from 'path'
-import { fileURLToPath } from 'url'
-import JSONC from 'jsonc-parser'
 import { JSDOM } from 'jsdom'
 import { prettify } from 'htmlfy'
 import fillMobileDataTable from './fillMobileDataTable.mjs'
-import { tableTitleForEvent } from './utils.mjs'
+import { addEventRow, tableTitleForEvent } from './utils.mjs'
+import { fileURLToPath } from 'node:url'
+import { locationData } from './readData.mjs'
 
 const { document } = new JSDOM().window
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
-
-const locationDataString = await fs.readFile(
-  path.join(__dirname, 'locationData.jsonc'),
-  { encoding: 'utf8' }
-)
-const locationData = JSONC.parse(locationDataString)
-locationData.forEach(location => {
-  if (!location?.id || !location?.address) {
-    throw new Error(`Malformatted location: ${JSON.stringify(location)}`)
-  }
-})
-
-const eventDataString = await fs.readFile(
-  path.join(__dirname, 'eventData.jsonc'),
-  { encoding: 'utf8' }
-)
-const eventData = JSONC.parse(eventDataString)
-eventData.forEach(event => {
-  if (
-    !event.title ||
-    !event.description ||
-    !event.team ||
-    !event.categories ||
-    !event.times ||
-    !event.location ||
-    !event.host
-  ) {
-    throw new Error(`Malformatted event: ${JSON.stringify(event)}`)
-  }
-
-  if (typeof event.categories === 'string') {
-    event.categories = [event.categories]
-  }
-
-  const location = locationData.find(location => location.id === event.location)
-  if (!location) {
-    throw new Error(`Unknown location in event: ${JSON.stringify(event)}`)
-  }
-
-  location.events ??= []
-  location.events.push(event)
-})
 
 const programTableMobile = document.createElement('table')
 programTableMobile.classList.add('mobile')
@@ -86,7 +41,7 @@ addHeaderRowElementDesktop('21.00')
 addHeaderRowElementDesktop('22.00')
 addHeaderRowElementDesktop('23.00')
 
-let mobileData = {
+const mobileData = {
   '16.30': [],
   '17.00': [],
   '18.00': [],
@@ -96,6 +51,7 @@ let mobileData = {
   '22.00': [],
   '23.00': []
 }
+
 locationData.forEach(location => {
   const rowDesktop = document.createElement('tr')
   tableBodyDesktop.appendChild(rowDesktop)
@@ -204,6 +160,9 @@ locationData.forEach(location => {
         })
       }
     }
+
+    // add event row which is shown when clicking on an event
+    addEventRow(tableBodyDesktop, event)
   })
 
   times.forEach(time => {
@@ -212,6 +171,8 @@ locationData.forEach(location => {
 })
 
 fillMobileDataTable(programTableMobile, mobileData)
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 await fs.writeFile(
   path.join(__dirname, '../../site/generated/program-table.html'),

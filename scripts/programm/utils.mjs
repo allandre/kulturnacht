@@ -1,3 +1,7 @@
+import { JSDOM } from 'jsdom'
+
+const { document } = new JSDOM().window
+
 function getIconForCategory(category) {
   const iconForCategory = {
     guide: '&#x1F46E;',
@@ -34,4 +38,42 @@ function tableTitleForEvent(event) {
   return title
 }
 
-export { tableTitleForEvent }
+function addEventRow(tableBody, event, mobile = false) {
+  const eventRow = document.createElement('tr')
+  tableBody.appendChild(eventRow)
+
+  if (!mobile) {
+    const locationTd = document.createElement('td')
+    locationTd.colSpan = 2
+    eventRow.appendChild(locationTd)
+  }
+
+  const eventTd = document.createElement('td')
+  eventTd.colSpan = 100
+  eventTd.classList.add('event-row')
+  eventRow.appendChild(eventTd)
+
+  const imageDiv = document.createElement('div')
+  eventTd.appendChild(imageDiv)
+
+  event.images.forEach(image => {
+    
+  })
+
+  const contentDiv = document.createElement('div')
+  eventTd.appendChild(contentDiv)
+
+  const titleDiv = document.createElement('div')
+  titleDiv.innerHTML = event.title
+  contentDiv.appendChild(titleDiv)
+
+  const descriptionDiv = document.createElement('div')
+  descriptionDiv.innerHTML = event.description
+  contentDiv.appendChild(descriptionDiv)
+
+  const teamDiv = document.createElement('div')
+  teamDiv.innerHTML = event.team
+  contentDiv.appendChild(teamDiv)
+}
+
+export { tableTitleForEvent, addEventRow }
