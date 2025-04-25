@@ -376,7 +376,7 @@ input[type='checkbox']:checked ~ #menu li a div {
 
 [data-event][onclick]:hover {
   background: #eee;
-} 
+}
 
 #program-section table td:first-child {
   padding-left: 0;
@@ -455,7 +455,7 @@ input[type='checkbox']:checked ~ #menu li a div {
 
 #program-section td.event-row {
   background-color: #e8e8e8;
-  
+
   .event-row-container {
     display: flex;
     gap: 2em;
@@ -507,7 +507,7 @@ input[type='checkbox']:checked ~ #menu li a div {
   cursor: pointer;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
   #program-section .desktop {
     display: none;
   }
