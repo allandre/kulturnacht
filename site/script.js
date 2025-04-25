@@ -44,7 +44,7 @@
   function updateNavigation() {
     const nav = document.getElementsByTagName('nav')[0]
     // reset state
-    const navListItems = nav.getElementsByTagName('li')
+    const navListItems = nav.querySelectorAll('li:not(:has(.no-navigation))')
     for (const navListItem of navListItems) {
       navListItem.classList.remove('current')
     }
@@ -86,8 +86,14 @@
   }
 
   async function loadProgramTable() {
+    const programTable = document.querySelector('#program-table')
+
+    if (!programTable) {
+      return
+    }
+
     const response = await fetch('/site/generated/program-table.html')
-    document.querySelector('#program-table').innerHTML = await response.text()
+    programTable.innerHTML = await response.text()
   }
 
   // global and exported stuff

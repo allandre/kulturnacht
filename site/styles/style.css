@@ -459,6 +459,10 @@ input[type='checkbox']:checked ~ #menu li a div {
   width: 100%;
 }
 
+#program-section .mobile td {
+  width: 50%;
+}
+
 #program-section .mobile .time-cell {
   cursor: pointer;
 }

@@ -197,7 +197,7 @@ locationData.forEach(location => {
       times = [] // clean times so that rows are not filled again
 
       // fill mobileData
-      for (let i = start; i <= end; i++) {
+      for (let i = start; i < end; i++) {
         mobileData[`${i}.00`].push({
           event: event,
           location: location
