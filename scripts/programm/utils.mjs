@@ -83,9 +83,18 @@ async function addEventRow(tableBody, event, mobile = false) {
 
       const imageFileName = path.basename(files[0])
 
+      const imageWrapper = document.createElement('div')
+      imageDiv.appendChild(imageWrapper)
+
       const img = document.createElement('img')
       img.src = '/site/resources/program-images/small/' + imageFileName
-      imageDiv.appendChild(img)
+      imageWrapper.appendChild(img)
+
+      if (event.image_credits) {
+        const imageCredits = document.createElement('div')
+        imageCredits.innerHTML = '© ' + event.image_credits
+        imageWrapper.appendChild(imageCredits)
+      }
     }
   }
 

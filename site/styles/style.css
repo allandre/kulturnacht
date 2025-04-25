@@ -465,8 +465,14 @@ input[type='checkbox']:checked ~ #menu li a div {
       display: flex;
       gap: 1em;
 
-      img {
-        object-fit: contain;
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        img {
+          object-fit: contain;
+        }
       }
     }
 
