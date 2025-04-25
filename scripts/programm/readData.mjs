@@ -10,18 +10,18 @@ const locationDataString = await fs.readFile(
   { encoding: 'utf8' }
 )
 const locationData = JSONC.parse(locationDataString)
-locationData.forEach(location => {
+for (const location of locationData) {
   if (!location?.id || !location?.address) {
     throw new Error(`Malformatted location: ${JSON.stringify(location)}`)
   }
-})
+}
 
 const eventDataString = await fs.readFile(
   path.join(__dirname, 'data/eventData.jsonc'),
   { encoding: 'utf8' }
 )
 const eventData = JSONC.parse(eventDataString)
-eventData.forEach(event => {
+for (const event of eventData) {
   if (
     !event.title ||
     !event.description ||
@@ -38,6 +38,10 @@ eventData.forEach(event => {
     event.categories = [event.categories]
   }
 
+  if (typeof event.images === 'string') {
+    event.images = [event.images]
+  }
+
   const location = locationData.find(location => location.id === event.location)
   if (!location) {
     throw new Error(`Unknown location in event: ${JSON.stringify(event)}`)
@@ -45,6 +49,6 @@ eventData.forEach(event => {
 
   location.events ??= []
   location.events.push(event)
-})
+}
 
 export { locationData }

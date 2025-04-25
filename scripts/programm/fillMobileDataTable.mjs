@@ -7,7 +7,7 @@ const fillMobileDataTable = (tableElement, data) => {
   const tableBody = document.createElement('tbody')
   tableElement.appendChild(tableBody)
 
-  Object.keys(data).forEach(time => {
+  for (const time of Object.keys(data)) {
     const row = document.createElement('tr')
     tableBody.appendChild(row)
 
@@ -27,7 +27,7 @@ const fillMobileDataTable = (tableElement, data) => {
     timeSpan.innerHTML = time
     th.appendChild(timeSpan)
 
-    data[time].forEach(singleData => {
+    for (const singleData of data[time]) {
       const singleRow = document.createElement('tr')
       singleRow.style.display = 'none'
       singleRow.classList.add('event-row')
@@ -42,8 +42,8 @@ const fillMobileDataTable = (tableElement, data) => {
       const eventTd = document.createElement('td')
       eventTd.innerHTML = tableTitleForEvent(singleData.event)
       singleRow.appendChild(eventTd)
-    })
-  })
+    }
+  }
 }
 
 export default fillMobileDataTable

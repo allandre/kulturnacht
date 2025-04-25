@@ -6,22 +6,22 @@
 
     const currentlyCollapsed = !arrowDiv.classList.contains('collapse')
 
-    document.querySelectorAll('.expand').forEach(e => {
+    for (const e of document.querySelectorAll('.expand')) {
       e.classList.remove('collapse')
-    })
+    }
 
-    document.querySelectorAll('.event-row').forEach(e => {
+    for (const e of document.querySelectorAll('.event-row')) {
       e.style.display = 'none'
-    })
+    }
 
     if (currentlyCollapsed) {
       arrowDiv.classList.add('collapse')
 
-      document
-        .querySelectorAll(`.event-row[data-time="${time}"]`)
-        .forEach(element => {
-          element.style.removeProperty('display')
-        })
+      for (const element of document.querySelectorAll(
+        `.event-row[data-time="${time}"]`
+      )) {
+        element.style.removeProperty('display')
+      }
     }
   }
 

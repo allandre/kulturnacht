@@ -52,7 +52,7 @@ const mobileData = {
   '23.00': []
 }
 
-locationData.forEach(location => {
+ for (const location of locationData) {
   const rowDesktop = document.createElement('tr')
   tableBodyDesktop.appendChild(rowDesktop)
 
@@ -92,7 +92,7 @@ locationData.forEach(location => {
     '' // 23
   ]
 
-  location.events.forEach(event => {
+  for (const event of location.events) {
     if (typeof event.times !== 'string' || !event.times.includes('-')) {
       let eventTimes = event.times
       if (typeof eventTimes === 'string') {
@@ -105,7 +105,7 @@ locationData.forEach(location => {
         eventTimes = [eventTimes]
       }
 
-      eventTimes.forEach(time => {
+      for (const time of eventTimes) {
         const timesIndex = time - 17
         if (times[timesIndex] !== '') {
           throw new Error(
@@ -119,7 +119,7 @@ locationData.forEach(location => {
           event: event,
           location: location
         })
-      })
+      }
     } else {
       // case "18-19"
       if (times.some(time => time !== '')) {
@@ -162,13 +162,13 @@ locationData.forEach(location => {
     }
 
     // add event row which is shown when clicking on an event
-    addEventRow(tableBodyDesktop, event)
-  })
+    await addEventRow(tableBodyDesktop, event)
+  }
 
-  times.forEach(time => {
+  for (const time of times) {
     addRowElementDesktop(time)
-  })
-})
+  }
+}
 
 fillMobileDataTable(programTableMobile, mobileData)
 

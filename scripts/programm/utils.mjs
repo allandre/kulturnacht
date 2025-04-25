@@ -1,6 +1,9 @@
 import { JSDOM } from 'jsdom'
+import fs from 'node:fs/promises'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-const { document } = new JSDOM().window
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 function getIconForCategory(category) {
   const iconForCategory = {
@@ -30,15 +33,17 @@ function getIconForCategory(category) {
 function tableTitleForEvent(event) {
   let title = ''
 
-  event.categories.forEach(category => {
+  for (const category of event.categories) {
     title += getIconForCategory(category)
-  })
+  }
   title += ' ' + event.title
 
   return title
 }
 
-function addEventRow(tableBody, event, mobile = false) {
+async function addEventRow(tableBody, event, mobile = false) {
+  const { document } = new JSDOM().window
+
   const eventRow = document.createElement('tr')
   tableBody.appendChild(eventRow)
 
@@ -53,12 +58,29 @@ function addEventRow(tableBody, event, mobile = false) {
   eventTd.classList.add('event-row')
   eventRow.appendChild(eventTd)
 
-  const imageDiv = document.createElement('div')
-  eventTd.appendChild(imageDiv)
+  if (event.images) {
+    const imageDiv = document.createElement('div')
+    eventTd.appendChild(imageDiv)
 
-  event.images.forEach(image => {
-    
-  })
+    const imagesFolder = path.join(
+      __dirname,
+      '../../site/resources/program-images/small'
+    )
+    const allImages = await fs.readdir(imagesFolder)
+    for (const image of event.images) {
+      const files = allImages.filter(elm => elm.match(new RegExp(image)))
+
+      if (files.length !== 1) {
+        throw new Error(`Error: Could not find image ${image}`)
+      }
+
+      const imageFileName = path.basename(files[0])
+
+      const img = document.createElement('img')
+      img.src = imageFileName
+      imageDiv.appendChild(img)
+    }
+  }
 
   const contentDiv = document.createElement('div')
   eventTd.appendChild(contentDiv)
