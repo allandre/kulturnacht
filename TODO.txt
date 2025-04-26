@@ -27,3 +27,12 @@ Programm 2025:
 - add geländeplan and add numbers to program (or show them next to the gelände plan)
   - maybe click on number in gelände plan to open events there
 - show foto credit in program table
+- 2 Gabeln: Verpflegungsoase
+- Bilder:
+	https://kulturnacht.info/site/resources/program-images/small/Foto 16b_JK Bergbrünneli.jpeg
+	https://kulturnacht.info/site/resources/program-images/small/Foto%205_C%CC%A7ic%CC%A7ek_Taksi_Marie_Chemin.jpg
+	https://kulturnacht.info/site/resources/program-images/small/Foto%201c_Dres_Hubacher%20l%20Ku%CC%88nstler%20Matto_Ka%CC%88mpf.jpg
+- Safari: Programm lädt nicht
+- Kontakt: spacing mobile
+- copyright 2025
+
