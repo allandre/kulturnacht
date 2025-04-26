@@ -12,6 +12,10 @@ body {
   font-family: 'Helvetica', sans-serif;
 }
 
+[onclick] {
+  cursor: pointer;
+}
+
 #container {
   max-width: 1600px;
   margin: 0 auto;
@@ -267,17 +271,16 @@ input[type='checkbox']:checked ~ #menu li a div {
 }
 
 #countdown {
-  /*display: none;* -> IE GODDAMIT... */
   position: absolute;
   top: 30%;
-  left: 28.5%;
-  width: 50%;
   border-radius: 5px;
   color: rgba(255, 255, 255, 0.7);
   background-color: rgba(0, 0, 0, 0.8);
-  font-size: min(3.4vw, 85px);
+  font-size: max(14px, min(3.4vw, 85px));
   text-align: center;
-  transform: translateX(-50%);
+  left: 3%;
+  padding: 0 0.8em;
+  max-width: 94%;
 }
 
 #title-section img {
@@ -310,10 +313,24 @@ input[type='checkbox']:checked ~ #menu li a div {
   max-width: unset;
 }
 
+#program-section .loader {
+  display: inline-block;
+  margin: 0;
+  height: 1em;
+  border-width: 0.2em;
+  position: relative;
+  top: 0.3em;
+}
+
+#program-section span:has(+ .loader) {
+  margin-right: 0.2em;
+}
+
 #program-section table {
   margin: 0 auto;
   margin-top: 0.5em;
   z-index: 100;
+  width: 100%;
 }
 
 #program-section th {
@@ -323,6 +340,13 @@ input[type='checkbox']:checked ~ #menu li a div {
   color: var(--site-main-color);
   border-bottom: 1px solid black;
   border-right: 1px dotted var(--site-main-color);
+  position: sticky;
+  top: 48px; /* navbar height */
+  background: white;
+}
+
+#program-section .desktop th:first-of-type {
+  width: 20%;
 }
 
 #program-section th:last-of-type {
@@ -330,12 +354,18 @@ input[type='checkbox']:checked ~ #menu li a div {
 }
 
 #program-section td {
-  padding: 0.2em 0.6em;
+  padding: 0.4em 0.6em;
   border-bottom: 1px solid black;
   border-right: 1px dotted var(--site-main-color);
   font-size: 75%;
   text-align: left;
   vertical-align: middle;
+
+  &.current {
+    border: 1px solid black;
+    border-bottom: none;
+    background-color: #e8e8e8;
+  }
 }
 
 #program-section td.content:hover,
@@ -344,22 +374,16 @@ input[type='checkbox']:checked ~ #menu li a div {
   background-color: #e8e8e8;
 }
 
-#program-section td.content:hover:not(.selected) {
-  outline: 1px solid black; /*here selection border*/
+[data-event][onclick]:hover {
+  background: #eee;
 }
 
-#program-section td.content:hover {
-  cursor: pointer;
-}
-
-#program-section td.halbstund {
-  width: 5em;
-}
-
-#program-section table td.locationCell {
+#program-section table td:first-child {
   padding-left: 0;
+}
+
+#program-section .locationCell {
   font-weight: bold;
-  border-bottom: 1px solid black;
 }
 
 #program-section .intermediateRow td {
@@ -424,18 +448,79 @@ input[type='checkbox']:checked ~ #menu li a div {
   border-right: 1px dotted var(--site-main-color);
 }
 
-#program-section table.desktop img {
+#program-section table img {
   width: 10vw;
+  min-width: 10em;
+}
+
+#program-section td.event-row {
+  background-color: #e8e8e8;
+
+  .event-row-container {
+    display: flex;
+    gap: 2em;
+    padding: 1em 1.5em;
+
+    .image-container {
+      display: flex;
+      gap: 1em;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        img {
+          object-fit: contain;
+        }
+      }
+    }
+
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1em;
+
+      .title-div {
+        font-weight: bold;
+        font-size: 1.1em;
+      }
+
+      div:last-child {
+        margin-bottom: 1em;
+      }
+    }
+  }
 }
 
 /* -> mobile */
 
 #program-section .mobile {
   width: 100%;
+  display: none;
+}
+
+#program-section .mobile th {
+  width: 100%;
+}
+
+#program-section .mobile td {
+  width: 50%;
 }
 
 #program-section .mobile .time-cell {
   cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  #program-section .desktop {
+    display: none;
+  }
+
+  #program-section table.mobile {
+    display: table;
+  }
 }
 
 .expand {
@@ -746,11 +831,29 @@ footer a:visited {
     margin-left: 2em;
     left: unset;
   }
-  #countdown {
-    width: 90%;
-    left: 50%;
-    font-size: 5vw;
-  }
 }
 
 /* MEDIA QUERIES end */
+
+/* MISC start */
+
+.loader {
+  border: 0.3em solid #f3f3f3;
+  border-top-color: var(--kvk-main-color);
+  border-radius: 50%;
+  height: 2em;
+  aspect-ratio: 1;
+  animation: spin 2s linear infinite;
+  margin: 4em auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* MISC end */
