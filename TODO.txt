@@ -36,5 +36,7 @@ Programm 2025:
 - Kontakt: spacing mobile
 - copyright 2025
 - Startevent, Abschlussevent: separat, nicht teil der Tabelle
-- Shuttlebus: eigenet Zeile in Tabelle
+- Shuttlebus: eigene Zeile in Tabelle
+- Sponsoren
+
 
