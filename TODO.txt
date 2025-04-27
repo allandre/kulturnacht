@@ -32,7 +32,6 @@ Programm 2025:
 	https://kulturnacht.info/site/resources/program-images/small/Foto%201c_Dres_Hubacher%20l%20Ku%CC%88nstler%20Matto_Ka%CC%88mpf.jpg
 - Safari: Programm lädt nicht
 - Kontakt: spacing mobile
-- copyright 2025
 - Startevent, Abschlussevent: separat, nicht teil der Tabelle
 - Shuttlebus: eigene Zeile in Tabelle
 - Sponsoren
