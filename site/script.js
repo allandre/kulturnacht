@@ -85,15 +85,69 @@
     }
   }
 
+  async function insertProgramLegend(element) {
+    const response = await fetch('/site/categories.json')
+    const categories = await response.json()
+
+    const header = document.createElement('h6')
+    header.innerHTML = 'Legende:'
+    element.appendChild(header)
+
+    for (const category of [
+      'exposition',
+      'guide',
+      'music',
+      'theater',
+      'language',
+      'food',
+      'finale'
+    ]) {
+      let categoryText = ''
+
+      if (category === 'food') {
+        for (const subcategory of [
+          'food-brezel',
+          'food',
+          'food-ice',
+          'food-cake',
+          'food-coffee',
+          'food-vine'
+        ]) {
+          categoryText += categories[subcategory].icon
+        }
+
+        categoryText += ' '
+      } else {
+        categoryText += categories[category].icon + ' '
+      }
+
+      categoryText += categories[category].name
+
+      const categoryDiv = document.createElement('div')
+      categoryDiv.innerHTML = categoryText
+      element.appendChild(categoryDiv)
+    }
+  }
+
   async function loadProgramTable() {
+    const programLegend = document.querySelector('#program-legend')
     const programTable = document.querySelector('#program-table')
 
-    if (!programTable) {
-      return
-    }
+    try {
+      try {
+        await insertProgramLegend(programLegend)
+      } catch (e) {
+        programLegend.innerHTML = ''
+        throw e
+      }
 
-    const response = await fetch('/site/generated/program-table.html')
-    programTable.innerHTML = await response.text()
+      const response = await fetch('/site/generated/program-table.html')
+      programTable.innerHTML = await response.text()
+    } catch (e) {
+      programTable.innerHTML =
+        '&#x26A0;&#xFE0F; Leider ist ein Fehler beim Laden des Programms aufgetreten.'
+      throw e
+    }
   }
 
   // global and exported stuff

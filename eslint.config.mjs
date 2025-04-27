@@ -5,7 +5,7 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 
 export default [
   js.configs.recommended,
-  stylisticJs.configs['all-flat'],
+  stylisticJs.configs['all'],
   {
     languageOptions: {
       globals: {
