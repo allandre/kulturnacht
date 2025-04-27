@@ -17,7 +17,7 @@
 - fix 2017 gallery
   - esp on iphone
   - also better styling for everyone.
-- fix "Zu viele Aufrufe von Location- oder History-APIs innerhalb eines kurzen Zeitraums." error on scroll
+
 
 Programm 2025:
 - how to display shuttlebus info
@@ -26,14 +26,10 @@ Programm 2025:
 - fix table to be in sync with word docuemt (mainly locations)
 - add geländeplan and add numbers to program (or show them next to the gelände plan)
   - maybe click on number in gelände plan to open events there
-- Bilder:
-	https://kulturnacht.info/site/resources/program-images/small/Foto 16b_JK Bergbrünneli.jpeg
-	https://kulturnacht.info/site/resources/program-images/small/Foto%205_C%CC%A7ic%CC%A7ek_Taksi_Marie_Chemin.jpg
-	https://kulturnacht.info/site/resources/program-images/small/Foto%201c_Dres_Hubacher%20l%20Ku%CC%88nstler%20Matto_Ka%CC%88mpf.jpg
 - Kontakt: spacing mobile
 - Startevent, Abschlussevent: separat, nicht teil der Tabelle
 - Shuttlebus: eigene Zeile in Tabelle
 - Sponsoren
 - multi image in event leads to leaft/right scrolling in event row on iphone mini
-- add screenshot of main page 2017
+
 

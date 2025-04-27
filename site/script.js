@@ -72,16 +72,15 @@
       }
     }
 
+    let newHash = '#'
     if (currentPosition !== null) {
       navListItems[currentPosition.index].classList.add('current')
 
-      history.replaceState(
-        undefined,
-        undefined,
-        '#' + currentPosition.anchor.id
-      )
-    } else {
-      history.replaceState(undefined, undefined, '#')
+      newHash = '#' + currentPosition.anchor.id
+    }
+
+    if (newHash != window.location.hash) {
+      history.replaceState(undefined, undefined, newHash)
     }
   }
 
@@ -164,9 +163,17 @@
     }
   })
 
-  window.addEventListener('scroll', () => {
-    updateNavigation()
-  })
+  const debounce = (callback, wait) => {
+    let timeoutId = null
+    return (...args) => {
+      window.clearTimeout(timeoutId)
+      timeoutId = window.setTimeout(() => {
+        callback(...args)
+      }, wait)
+    }
+  }
+
+  window.addEventListener('scroll', debounce(updateNavigation, 100))
 
   window.hideMenu = hideMenu
 })()
