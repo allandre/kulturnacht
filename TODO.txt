@@ -30,10 +30,9 @@ Programm 2025:
 	https://kulturnacht.info/site/resources/program-images/small/Foto 16b_JK Bergbrünneli.jpeg
 	https://kulturnacht.info/site/resources/program-images/small/Foto%205_C%CC%A7ic%CC%A7ek_Taksi_Marie_Chemin.jpg
 	https://kulturnacht.info/site/resources/program-images/small/Foto%201c_Dres_Hubacher%20l%20Ku%CC%88nstler%20Matto_Ka%CC%88mpf.jpg
-- Safari: Programm lädt nicht
 - Kontakt: spacing mobile
 - Startevent, Abschlussevent: separat, nicht teil der Tabelle
 - Shuttlebus: eigene Zeile in Tabelle
 - Sponsoren
-
+- multi image in event leads to leaft/right scrolling in event row on iphone mini
 

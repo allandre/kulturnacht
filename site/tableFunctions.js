@@ -41,7 +41,7 @@
       .querySelector(`tr[data-event="${eventId}"]`)
 
     const time = element.getAttribute('data-time')
-    console.log('time', time)
+
     if (time) {
       eventRow = document.querySelector(
         `tr[data-event="${eventId}"][data-time="${time}"]`

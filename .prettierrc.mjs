@@ -1,8 +1,8 @@
 const config = {
-  singleQuote: true,
-  trailingComma: 'none',
+  arrowParens: 'avoid',
   semi: false,
-  arrowParens: 'avoid'
+  singleQuote: true,
+  trailingComma: 'none'
 }
 
 export default config

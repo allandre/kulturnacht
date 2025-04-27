@@ -16,6 +16,7 @@
     "eslint": "^9.25.1",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-sort-keys-custom-order": "^2.2.1",
     "globals": "^16.0.0",
     "htmlfy": "^0.7.2",
     "jsdom": "^26.1.0",
