@@ -28,8 +28,9 @@ Programm 2025:
   - maybe click on number in gelände plan to open events there
 - Kontakt: spacing mobile
 - Startevent, Abschlussevent: separat, nicht teil der Tabelle
-- Shuttlebus: eigene Zeile in Tabelle
 - Sponsoren
 - multi image in event leads to leaft/right scrolling in event row on iphone mini
+- make all time columns same width on desktop
+- replace 10vw with 10cqw in images in event-row
 
 

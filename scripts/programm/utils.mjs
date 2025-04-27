@@ -98,4 +98,21 @@ async function addEventRow(tableBody, event, mobile = false) {
   return eventRow
 }
 
-export { tableTitleForEvent, addEventRow }
+function addShuttlebusRow(tableBody) {
+  const { document } = new JSDOM().window
+
+  const shuttleRow = document.createElement('tr')
+  shuttleRow.classList.add('shuttlebus')
+  tableBody.appendChild(shuttleRow)
+
+  const shuttleTd = document.createElement('td')
+  shuttleTd.innerHTML =
+    '🚌 <strong>Shuttlebus</strong> zum «Museum Haus C.G. Jung»: <strong>Hinfahrt</strong> ab «Allmendstrasse» um 17.50 h, 18.50 h und 19.50 h. <strong>Rückfahrt</strong> ca. 18.40 h, 19.40 h und 20.40 h.'
+  shuttleTd.colSpan = 100
+  shuttleTd.classList.add('text-center')
+  shuttleRow.appendChild(shuttleTd)
+
+  return shuttleRow
+}
+
+export { tableTitleForEvent, addEventRow, addShuttlebusRow }

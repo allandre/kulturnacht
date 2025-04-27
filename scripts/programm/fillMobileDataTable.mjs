@@ -1,5 +1,5 @@
 import { JSDOM } from 'jsdom'
-import { addEventRow, tableTitleForEvent } from './utils.mjs'
+import { addEventRow, addShuttlebusRow, tableTitleForEvent } from './utils.mjs'
 
 async function fillMobileDataTable(tableElement, data) {
   const { document } = new JSDOM().window
@@ -28,6 +28,8 @@ async function fillMobileDataTable(tableElement, data) {
     th.appendChild(timeSpan)
 
     for (const singleData of data[time]) {
+      const event = singleData.event
+
       const singleRow = document.createElement('tr')
       singleRow.style.display = 'none'
       singleRow.classList.add('event-row')
@@ -40,13 +42,20 @@ async function fillMobileDataTable(tableElement, data) {
       singleRow.appendChild(locationTd)
 
       const eventTd = document.createElement('td')
-      eventTd.innerHTML = tableTitleForEvent(singleData.event)
-      eventTd.setAttribute('data-event', singleData.event.id)
+      eventTd.innerHTML = tableTitleForEvent(event)
+      eventTd.setAttribute('data-event', event.id)
       eventTd.setAttribute('data-time', time)
       eventTd.setAttribute('onclick', 'toggleEventRow(this)')
       singleRow.appendChild(eventTd)
 
-      const eventRow = await addEventRow(tableBody, singleData.event, true)
+      if (event.location === 'museum_haus_c_g_jung') {
+        const shuttleRow = addShuttlebusRow(tableBody)
+        shuttleRow.style.display = 'none'
+        shuttleRow.setAttribute('data-time', time)
+        shuttleRow.classList.add('event-row')
+      }
+
+      const eventRow = await addEventRow(tableBody, event, true)
       eventRow.setAttribute('data-time', time)
     }
   }
