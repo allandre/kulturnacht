@@ -63,7 +63,11 @@ async function addEventRow(tableBody, event, mobile = false) {
       imageDiv.appendChild(imageWrapper)
 
       const img = document.createElement('img')
-      img.src = '/site/resources/program-images/small/' + imageFileName
+      // custom lazy loading hack since normal loading="lazy" did not work.
+      img.setAttribute(
+        'data-src',
+        '/site/resources/program-images/small/' + imageFileName
+      )
       imageWrapper.appendChild(img)
 
       if (event.image_credits) {

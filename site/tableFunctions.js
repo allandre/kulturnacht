@@ -53,6 +53,14 @@
     })
 
     if (currentlyHidden) {
+      eventRow.querySelectorAll('img').forEach(img => {
+        const dataSrc = img.getAttribute('data-src')
+        if (dataSrc) {
+          img.src = dataSrc
+          img.removeAttribute('data-src')
+        }
+      })
+
       element.classList.add('current')
       eventRow.style.removeProperty('display')
     }

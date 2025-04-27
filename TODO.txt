@@ -17,7 +17,7 @@
 - fix 2017 gallery
   - esp on iphone
   - also better styling for everyone.
-
+- fix "Zu viele Aufrufe von Location- oder History-APIs innerhalb eines kurzen Zeitraums." error on scroll
 
 Programm 2025:
 - how to display shuttlebus info
@@ -35,4 +35,5 @@ Programm 2025:
 - Shuttlebus: eigene Zeile in Tabelle
 - Sponsoren
 - multi image in event leads to leaft/right scrolling in event row on iphone mini
+- add screenshot of main page 2017
 
