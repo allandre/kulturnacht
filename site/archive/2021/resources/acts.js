@@ -1,3 +1,4 @@
+/* eslint sort-keys-custom-order/object-keys: ["warn", { "orderedKeys": ["type", "name", "details", "youtubeID"] }] */
 window.acts = [
   {
     type: 'theater',

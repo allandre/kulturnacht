@@ -85,6 +85,14 @@ table {
   border-collapse: separate;
 }
 
+strong {
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .in-section-list {
   width: 100%;
   max-width: 800px;
@@ -354,7 +362,8 @@ input[type='checkbox']:checked ~ #menu li a div {
 }
 
 #program-section td {
-  padding: 0.4em 0.6em;
+  padding: 0.5em 0.6em;
+  border: 1px solid transparent; /* to avoid different text wrapping when we add the class 'current' */
   border-bottom: 1px solid black;
   border-right: 1px dotted var(--site-main-color);
   font-size: 75%;
@@ -365,6 +374,10 @@ input[type='checkbox']:checked ~ #menu li a div {
     border: 1px solid black;
     border-bottom: none;
     background-color: #e8e8e8;
+  }
+
+  &.text-center {
+    text-align: center;
   }
 }
 
@@ -451,6 +464,10 @@ input[type='checkbox']:checked ~ #menu li a div {
 #program-section table img {
   width: 10vw;
   min-width: 10em;
+}
+
+#program-section tr.shuttlebus {
+  background-color: #ffffd9b0;
 }
 
 #program-section td.event-row {

@@ -2,39 +2,15 @@ import { JSDOM } from 'jsdom'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import categories from '../../site/categories.json' with { type: 'json' }
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-
-function getIconForCategory(category) {
-  const iconForCategory = {
-    guide: '&#x1F46E;',
-    music: '&#x1F3B5;',
-    language: '&#x1F4AC;',
-    exposition: '&#x1F5BC;',
-    theater: '&#x1F3AD;',
-    food: '&#x1F374;',
-    'food-brezel': '&#x1F968;',
-    'food-ice': '&#x1F374;',
-    'food-vine': '&#x1F377;',
-    'food-cake': '&#x1F370;',
-    'food-coffee': '&#x2615;',
-    finale: '&#x1F386;'
-  }
-
-  const icon = iconForCategory[category]
-
-  if (!icon) {
-    throw new Error(`Missing icon for category ${category}`)
-  }
-
-  return icon
-}
 
 function tableTitleForEvent(event) {
   let title = ''
 
   for (const category of event.categories) {
-    title += getIconForCategory(category)
+    title += categories[category].icon
   }
   title += ' ' + event.title
 
@@ -87,7 +63,11 @@ async function addEventRow(tableBody, event, mobile = false) {
       imageDiv.appendChild(imageWrapper)
 
       const img = document.createElement('img')
-      img.src = '/site/resources/program-images/small/' + imageFileName
+      // custom lazy loading hack since normal loading="lazy" did not work.
+      img.setAttribute(
+        'data-src',
+        '/site/resources/program-images/small/' + imageFileName
+      )
       imageWrapper.appendChild(img)
 
       if (event.image_credits) {
@@ -118,4 +98,21 @@ async function addEventRow(tableBody, event, mobile = false) {
   return eventRow
 }
 
-export { tableTitleForEvent, addEventRow }
+function addShuttlebusRow(tableBody) {
+  const { document } = new JSDOM().window
+
+  const shuttleRow = document.createElement('tr')
+  shuttleRow.classList.add('shuttlebus')
+  tableBody.appendChild(shuttleRow)
+
+  const shuttleTd = document.createElement('td')
+  shuttleTd.innerHTML =
+    '🚌 <strong>Shuttlebus</strong> zum «Museum Haus C.G. Jung»: <strong>Hinfahrt</strong> ab «Allmendstrasse» um 17.50 h, 18.50 h und 19.50 h. <strong>Rückfahrt</strong> ca. 18.40 h, 19.40 h und 20.40 h.'
+  shuttleTd.colSpan = 100
+  shuttleTd.classList.add('text-center')
+  shuttleRow.appendChild(shuttleTd)
+
+  return shuttleRow
+}
+
+export { tableTitleForEvent, addEventRow, addShuttlebusRow }

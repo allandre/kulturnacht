@@ -5,7 +5,7 @@ import path from 'path'
 import { JSDOM } from 'jsdom'
 import { prettify } from 'htmlfy'
 import fillMobileDataTable from './fillMobileDataTable.mjs'
-import { addEventRow, tableTitleForEvent } from './utils.mjs'
+import { addEventRow, addShuttlebusRow, tableTitleForEvent } from './utils.mjs'
 import { fileURLToPath } from 'node:url'
 import { locationData } from './readData.mjs'
 
@@ -161,6 +161,7 @@ for (const location of locationData) {
       )
       eventElement.setAttribute('data-event', event.id)
       eventElement.setAttribute('onclick', 'toggleEventRow(this)')
+      eventElement.classList.add('text-center')
 
       for (let i = endIndex; i < times.length; i++) {
         addRowElementDesktop('')
@@ -179,6 +180,10 @@ for (const location of locationData) {
 
     // add event row which is shown when clicking on an event
     await addEventRow(tableBodyDesktop, event)
+
+    if (location.id === 'museum_haus_c_g_jung') {
+      addShuttlebusRow(tableBodyDesktop)
+    }
   }
 
   for (const event of times) {

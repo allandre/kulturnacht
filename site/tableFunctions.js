@@ -41,7 +41,7 @@
       .querySelector(`tr[data-event="${eventId}"]`)
 
     const time = element.getAttribute('data-time')
-    console.log('time', time)
+
     if (time) {
       eventRow = document.querySelector(
         `tr[data-event="${eventId}"][data-time="${time}"]`
@@ -53,6 +53,14 @@
     })
 
     if (currentlyHidden) {
+      eventRow.querySelectorAll('img').forEach(img => {
+        const dataSrc = img.getAttribute('data-src')
+        if (dataSrc) {
+          img.src = dataSrc
+          img.removeAttribute('data-src')
+        }
+      })
+
       element.classList.add('current')
       eventRow.style.removeProperty('display')
     }

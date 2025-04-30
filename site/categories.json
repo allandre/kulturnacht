@@ -1,0 +1,45 @@
+{
+  "guide": {
+    "icon": "&#x1F46E;",
+    "name": "Führung, Rundgang"
+  },
+  "music": {
+    "icon": "&#x1F3B5;",
+    "name": "Konzert, Gesang"
+  },
+  "language": {
+    "icon": "&#x1F4AC;",
+    "name": "Lesung, Literatur, Spoken Word"
+  },
+  "exposition": {
+    "icon": "&#x1F5BC;",
+    "name": "Ausstellung"
+  },
+  "theater": {
+    "icon": "&#x1F3AD;",
+    "name": "Theater"
+  },
+  "food": {
+    "icon": "&#x1F374;",
+    "name": "Verpflegung"
+  },
+  "food-brezel": {
+    "icon": "&#x1F968;"
+  },
+  "food-ice": {
+    "icon": "&#x1F366;"
+  },
+  "food-vine": {
+    "icon": "&#x1F377;"
+  },
+  "food-cake": {
+    "icon": "&#x1F370;"
+  },
+  "food-coffee": {
+    "icon": "&#x2615;"
+  },
+  "finale": {
+    "icon": "&#x1F386;",
+    "name": "Kulturnacht-Finale"
+  }
+}
