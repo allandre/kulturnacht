@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+
+:root {
+  --kvk-main-color: #ed1255;
+  --site-main-color: var(--kvk-main-color);
+  --site-hover-color: #d70e3e;
+  --site-active-color: rgba(134, 29, 61, 0.5);
+}
+
+body {
+  line-height: 1.5;
+  font-family: 'Helvetica', sans-serif;
+}
+
+[onclick] {
+  cursor: pointer;
+}
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -3em;
+  visibility: hidden;
+}
+
+a:link,
+a:visited {
+  color: var(--site-main-color);
+  color: grey;
+}
+
+b {
+  font-weight: bold;
+}
+
+section {
+  position: relative;
+  border-bottom: 0.5em solid var(--site-main-color);
+  padding: 5%;
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+h1,
+h2,
+h3,
+p {
+  text-align: justify;
+  text-justify: inter-word;
+  max-width: 800px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+p {
+  margin: 2em auto;
+}
+
+table {
+  border-collapse: separate;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.in-section-list {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}

@@ -1,21 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
-
-:root {
-  --kvk-main-color: #ed1255;
-  --site-main-color: var(--kvk-main-color);
-  --site-hover-color: #d70e3e;
-  --site-active-color: rgba(134, 29, 61, 0.5);
-}
-
-body {
-  line-height: 1.5;
-  font-family: 'Helvetica', sans-serif;
-}
-
-[onclick] {
-  cursor: pointer;
-}
-
 #container {
   max-width: 1600px;
   margin: 0 auto;
@@ -23,80 +5,6 @@ body {
 
 #main {
   padding-top: 3em;
-}
-
-a.anchor {
-  display: block;
-  position: relative;
-  top: -3em;
-  visibility: hidden;
-}
-
-a:link,
-a:visited {
-  color: var(--site-main-color);
-  color: grey;
-}
-
-b {
-  font-weight: bold;
-}
-
-section {
-  position: relative;
-  border-bottom: 0.5em solid var(--site-main-color);
-  padding: 5%;
-}
-
-section:last-of-type {
-  border-bottom: none;
-}
-
-h1,
-h2,
-h3,
-p {
-  text-align: justify;
-  text-justify: inter-word;
-  max-width: 800px;
-  margin: auto;
-}
-
-h1 {
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-h2 {
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
-h3 {
-  font-size: 1em;
-  font-weight: bold;
-}
-
-p {
-  margin: 2em auto;
-}
-
-table {
-  border-collapse: separate;
-}
-
-strong {
-  font-weight: bold;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.in-section-list {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 /* NAV start */
@@ -643,6 +551,11 @@ button.gallery-toggler:hover {
   color: var(--site-main-color);
 }
 
+.contact-section {
+  max-width: 800px;
+  margin: auto;
+}
+
 .contact-section h3 {
   margin-top: 2em;
 }
@@ -657,8 +570,7 @@ button.gallery-toggler:hover {
 
 .contact-section img {
   display: block;
-  max-width: 100%;
-  width: 50%;
+  width: min(80%, 400px);
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
@@ -690,6 +602,15 @@ button.gallery-toggler:hover {
   border: 1px solid grey;
   margin-top: 1em;
   margin-left: 5em;
+}
+
+#organisator-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  max-width: 600px;
 }
 
 /* CONTACT SECTION end */
