@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 // call like "node generate_program_html.mjs"
 
 import fs from 'node:fs/promises'
