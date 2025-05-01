@@ -65,6 +65,11 @@ for (const location of locationData) {
     return td
   }
 
+  if (location.events === undefined) {
+    console.log(`Warning: location ${location.id} does not have any events`)
+    continue
+  }
+
   const introEventIndex = location.events.findIndex(
     event => event.times === 1630
   )

@@ -281,7 +281,7 @@ input[type='checkbox']:checked ~ #menu li a div {
   &.current {
     border: 1px solid black;
     border-bottom: none;
-    background-color: #e8e8e8;
+    background-color: var(--highlight-grey);
   }
 
   &.text-center {
@@ -292,11 +292,11 @@ input[type='checkbox']:checked ~ #menu li a div {
 #program-section td.content:hover,
 #program-section tr td.extra-cell,
 #program-section tr td.selected {
-  background-color: #e8e8e8;
+  background-color: var(--highlight-grey);
 }
 
 [data-event][onclick]:hover {
-  background: #eee;
+  background: var(--highlight-grey-light);
 }
 
 #program-section table td:first-child {
@@ -379,7 +379,7 @@ input[type='checkbox']:checked ~ #menu li a div {
 }
 
 #program-section td.event-row {
-  background-color: #e8e8e8;
+  background-color: var(--highlight-grey);
 
   .event-row-container {
     display: flex;
@@ -414,6 +414,81 @@ input[type='checkbox']:checked ~ #menu li a div {
 
       div:last-child {
         margin-bottom: 1em;
+      }
+    }
+  }
+}
+
+#program-start-end>div {
+  display: grid;
+  grid-template-columns: minmax(9em, 30%) 1fr;
+  border: 1px solid var(--highlight-grey-dark);
+  padding: 1em;
+  margin: 2em 0;
+  background: var(--highlight-grey);
+  container-type: inline-size;
+
+  .time-column {
+    margin-right: 1em;
+    display: flex;
+    flex-direction: column;
+
+    .img-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-grow: 1;
+      max-width: 180px;
+    }
+  }
+
+  .only-mobile {
+    display: none;
+  }
+}
+
+@container (min-width: 780px) {
+  #program-start-end>div {
+    .time-column {
+      flex-direction: row;
+
+      .img-container {
+        width: 0;
+        padding-left: 1em;
+        align-items: end;
+
+        img {
+          width: 150px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #program-start-end>div {
+    grid-template-columns: 1fr;
+
+    .time-column {
+      display: none;
+    }
+
+    .time-title {
+      display: flex;
+      gap: 0.5em;
+    }
+
+    .only-mobile {
+      display: unset;
+    }
+
+    .img-container {
+      width: 100%;
+
+      img {
+        width: 100%;
+        max-width: 140px;
+        margin-top: 1em;
       }
     }
   }

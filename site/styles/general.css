@@ -5,6 +5,9 @@
   --site-main-color: var(--kvk-main-color);
   --site-hover-color: #d70e3e;
   --site-active-color: rgba(134, 29, 61, 0.5);
+  --highlight-grey: #f1f1f1;
+  --highlight-grey-light: #f3f3f3;
+  --highlight-grey-dark: #afafaf;
 }
 
 body {
@@ -92,4 +95,12 @@ strong {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+}
+
+img {
+  object-fit: contain;
+}
+
+.bold {
+  font-weight: bold;
 }
