@@ -35,7 +35,7 @@
       .forEach(e => e.classList.remove('current'))
 
     const eventId = element.getAttribute('data-event')
-    // let eventRow = document.querySelector(`tr[data-event="${eventId}"]`)
+
     let eventRow = element
       .closest('table')
       .querySelector(`tr[data-event="${eventId}"]`)
@@ -67,4 +67,14 @@
   }
 
   window.toggleEventRow = toggleEventRow
+
+  function toggleStartEndEvent(element) {
+    element.querySelector('.arrow').classList.toggle('arrow-open')
+
+    element.querySelectorAll('.toggle').forEach(e => {
+      e.classList.toggle('toggle-on')
+    })
+  }
+
+  window.toggleStartEndEvent = toggleStartEndEvent
 })()

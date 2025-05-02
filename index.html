@@ -104,7 +104,7 @@
           </button> -->
           <div id="gallery-container">
             <div id="program-start-end">
-              <div>
+              <div onclick="toggleStartEndEvent(this)">
                 <div class="time-column">
                   <div style="width: 9em;">Auftakt <span class="time">16.30</span></div>
                   <div class="img-container">
@@ -116,22 +116,23 @@
                 <div>
                   <div class="time-title">
                     <div class="only-mobile">Auftakt <span class="time">16.30</span></div>
-                    <div class="bold">Turmbläser</div>
+                    <div class="bold">&#x1F3B5; Turmbläser</div>
+                    <div class="only-mobile arrow">❯</div>
                   </div>
-                  <div style="margin: 0.2em 0">
+                  <div style="margin: 0.2em 0" class="toggle">
                     Das Kulturnacht-OK eröffnet die Kulturnacht Küsnacht 2025
                     mit Barockmusik, gespielt von der Fanfare Terrible auf dem
                     Kirchturm.
                   </div>
-                  <div style="font-size: 0.8em">
+                  <div style="font-size: 0.8em" class="toggle">
                     Fanfare Terrible: Christian Meier, Trompete, Roland Hofer,
                     Trompete, Christoph Collet, Posaune, Reto Kappeler, Posaune.
                   </div>
-                  <div class="location">
+                  <div class="location toggle">
                     Reformierte Kirche, Untere Heslibachstrasse 2, Kirchturm
                   </div>
                 </div>
-                <div class="img-container only-mobile">
+                <div class="img-container only-mobile toggle">
                   <img
                     src="/site/resources/program-images/small/Foto 8d_Fanfare Terrible.jpg"
                   />
@@ -141,18 +142,19 @@
                 <div class="time-column">
                   <div style="width: 9em;">Finale <span class="time">23.00</span></div>
                 </div>
-                <div>
+                <div onclick="toggleStartEndEvent(this)">
                   <div class="time-title">
                     <div class="only-mobile">Finale <span class="time">23.00</span></div>
-                    <div class="bold">Magische Licht- und Musik-Show</div>
+                    <div class="bold">&#x1F386; Magische Licht- und Musik-Show</div>
+                    <div class="only-mobile arrow">❯</div>
                   </div>
-                  <div style="margin: 0.2em 0">
+                  <div style="margin: 0.2em 0" class="toggle">
                     Das Finale der Kulturnacht Küsnacht 2025 mit dem Fanfare Terrible, Roland Schatt und Effekte.ch, präsentiert vom Kulturnacht-OK und der Gemeinde Küsnacht.
                   </div>
-                  <div style="font-size: 0.8em">
+                  <div style="font-size: 0.8em" class="toggle">
                     Effekte.ch sowie die Fanfare Terrible und Roland Schatt, Schlagzeug
                   </div>
-                  <div class="location">
+                  <div class="location toggle">
                     Kulturnacht-Finale, Küsnachter Horn
                   </div>
                 </div>
