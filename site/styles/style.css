@@ -444,17 +444,28 @@ input[type='checkbox']:checked ~ #menu li a div {
   position: relative;
 
   .location-number {
-    position: absolute;
-    right: 0;
-    bottom: 0;
     width: 2em;
     height: 2em;
-    background: var(--kvk-main-color);
+    background: var(--location-bubble-red);
     color: white;
     font-weight: bold;
-    display:flex;
+    display:inline-flex;
     justify-content: center;
     align-items: center;
+    border-radius: 50%;
+    font-size: 0.9em;
+
+    span {
+      position: relative;
+      top: 0.5px;
+    }
+
+    &.only-mobile {
+      position: absolute;
+      right: 0.5em;
+      top: 0.5em;
+      font-size: 0.8em;
+    }
   }
 
   &:has(.img-container) {
@@ -509,7 +520,7 @@ input[type='checkbox']:checked ~ #menu li a div {
 @media screen and (min-width: 500px) {
   #program-start-end {
     .only-mobile {
-      display: none;
+      display: none !important;
     }
 
     .arrow {
