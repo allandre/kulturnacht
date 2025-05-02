@@ -421,12 +421,18 @@ input[type='checkbox']:checked ~ #menu li a div {
 
 #program-start-end > div {
   display: grid;
-  grid-template-columns: minmax(9em, 30%) 1fr;
+  grid-template-columns: minmax(9em, 35%) 1fr;
   border: 1px solid var(--highlight-grey-dark);
   padding: 1em;
   margin: 2em 0;
   background: var(--highlight-grey);
   container-type: inline-size;
+  max-width: 1000px;
+
+  .time {
+    font-weight: bold;
+    color: var(--kvk-main-color)
+  }
 
   .time-column {
     margin-right: 1em;
@@ -445,6 +451,12 @@ input[type='checkbox']:checked ~ #menu li a div {
   .only-mobile {
     display: none;
   }
+
+  .location {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-top: 0.5em;
+  }
 }
 
 @container (min-width: 780px) {
@@ -454,11 +466,11 @@ input[type='checkbox']:checked ~ #menu li a div {
 
       .img-container {
         width: 0;
-        padding-left: 1em;
         align-items: end;
+        width: 150px;
 
         img {
-          width: 150px;
+          width: 100%;
         }
       }
     }
