@@ -213,7 +213,7 @@ input[type='checkbox']:checked ~ #menu li a div {
 
 #plan-section img {
   width: 100%;
-  max-width: 60em;
+  max-width: 600px;
   margin-top: 3em;
 }
 
@@ -441,6 +441,21 @@ input[type='checkbox']:checked ~ #menu li a div {
   container-type: inline-size;
   max-width: 1000px;
   grid-template-columns: 7em 1fr;
+  position: relative;
+
+  .location-number {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 2em;
+    height: 2em;
+    background: var(--kvk-main-color);
+    color: white;
+    font-weight: bold;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   &:has(.img-container) {
     grid-template-columns: minmax(9em, 35%) 1fr;
@@ -469,6 +484,7 @@ input[type='checkbox']:checked ~ #menu li a div {
     font-size: 0.8em;
     font-weight: bold;
     margin-top: 0.5em;
+    width: calc(100% - 2em);
   }
 }
 
@@ -499,6 +515,10 @@ input[type='checkbox']:checked ~ #menu li a div {
     .arrow {
       display: none;
     }
+
+    >div {
+      cursor: auto;
+    }
   }
 }
 
@@ -521,6 +541,8 @@ input[type='checkbox']:checked ~ #menu li a div {
       &:has(.arrow-open) {
         margin-bottom: 1em;
       }
+
+      width: calc(100% - 2em);
     }
 
     .img-container {

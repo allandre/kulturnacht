@@ -62,6 +62,11 @@
             </a>
           </li>
           <li>
+            <a href="#plan-anchor">
+              <div>Übersichtsplan</div>
+            </a>
+          </li>
+          <li>
             <a href="#program-anchor">
               <div>Programm</div>
             </a>
@@ -95,6 +100,14 @@
           </p>
         </section>
 
+        <a id="plan-anchor" class="anchor"></a>
+        <section id="plan-section">
+            <h1>Die Veranstaltungsorte im Dorfzentrum</h1>
+            <div>
+                <img src="site/resources/PROGRAMMHEFT 2025_Übersichtskarte_mp_klein.jpg">
+            </div>
+        </section>
+
         <a id="program-anchor" class="anchor"></a>
         <section id="program-section">
           <h1>Programm</h1>
@@ -105,6 +118,7 @@
           <div id="gallery-container">
             <div id="program-start-end">
               <div onclick="toggleStartEndEvent(this)">
+                <div class="location-number">8</div>
                 <div class="time-column">
                   <div style="width: 9em;">Auftakt <span class="time">16.30</span></div>
                   <div class="img-container">
@@ -138,12 +152,13 @@
                   />
                 </div>
               </div>
-              <div>
+              <div onclick="toggleStartEndEvent(this)">
+                <div class="location-number">21</div>
                 <div class="time-column">
                   <div style="width: 9em;">Finale <span class="time">23.00</span></div>
                 </div>
-                <div onclick="toggleStartEndEvent(this)">
-                  <div class="time-title">
+                <div>
+                    <div class="time-title">
                     <div class="only-mobile">Finale <span class="time">23.00</span></div>
                     <div class="bold">&#x1F386; Magische Licht- und Musik-Show</div>
                     <div class="only-mobile arrow">❯</div>
