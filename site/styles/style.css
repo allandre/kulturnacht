@@ -421,13 +421,17 @@ input[type='checkbox']:checked ~ #menu li a div {
 
 #program-start-end > div {
   display: grid;
-  grid-template-columns: minmax(9em, 35%) 1fr;
   border: 1px solid var(--highlight-grey-dark);
   padding: 1em;
   margin: 2em 0;
   background: var(--highlight-grey);
   container-type: inline-size;
   max-width: 1000px;
+  grid-template-columns: 7em 1fr;
+
+  &:has(.img-container) {
+    grid-template-columns: minmax(9em, 35%) 1fr;
+  }
 
   .time {
     font-weight: bold;
@@ -479,7 +483,7 @@ input[type='checkbox']:checked ~ #menu li a div {
 
 @media screen and (max-width: 500px) {
   #program-start-end > div {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
 
     .time-column {
       display: none;

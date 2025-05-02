@@ -381,13 +381,13 @@
     "location": "dorfplatz",
     "host": "Kulturnacht-OK"
   },
-  {
-    "title": "Magische Licht- und Musik-Show",
-    "description": "Das Finale der Kulturnacht Küsnacht 2025 mit dem Fanfare Terrible, Roland Schatt und Effekte.ch, präsentiert vom Kulturnacht-OK und der Gemeinde Küsnacht.",
-    "team": "Effekte.ch sowie die Fanfare Terrible und Roland Schatt, Schlagzeug",
-    "categories": "finale",
-    "times": 23,
-    "location": "finale",
-    "host": "Kulturelle Vereinigung Küsnacht & Gemeinde Küsnacht"
-  }
+  // { // is done in its own box
+  //   "title": "Magische Licht- und Musik-Show",
+  //   "description": "Das Finale der Kulturnacht Küsnacht 2025 mit dem Fanfare Terrible, Roland Schatt und Effekte.ch, präsentiert vom Kulturnacht-OK und der Gemeinde Küsnacht.",
+  //   "team": "Effekte.ch sowie die Fanfare Terrible und Roland Schatt, Schlagzeug",
+  //   "categories": "finale",
+  //   "times": 23,
+  //   "location": "finale",
+  //   "host": "Kulturelle Vereinigung Küsnacht & Gemeinde Küsnacht"
+  // }
 ]
