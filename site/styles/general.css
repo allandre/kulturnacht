@@ -51,7 +51,6 @@ h1,
 h2,
 h3,
 p {
-  text-align: justify;
   text-justify: inter-word;
   max-width: 800px;
   margin: auto;
@@ -104,4 +103,8 @@ img {
 
 .bold {
   font-weight: bold;
+}
+
+.hidden {
+  display: none !important;
 }

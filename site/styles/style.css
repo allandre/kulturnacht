@@ -419,6 +419,40 @@ input[type='checkbox']:checked ~ #menu li a div {
   }
 }
 
+#program-section .location-number {
+  width: 2em;
+  height: 2em;
+  background: var(--location-bubble-red);
+  color: white;
+  font-weight: bold;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 0.9em;
+
+  &[data-number="4"], &[data-number="12"], &[data-number="20"] {
+    background-color: #d3008e;
+  }
+
+  span {
+    position: relative;
+    top: 0.5px;
+  }
+}
+
+#program-section .only-mobile .location-number {
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
+  font-size: 0.8em;
+}
+
+#program-section td:has(.location-number) {
+  border-right: none;
+  padding-right: 0;
+}
+
 #program-start-end {
   .arrow {
     display: flex;
@@ -442,31 +476,6 @@ input[type='checkbox']:checked ~ #menu li a div {
   max-width: 1000px;
   grid-template-columns: 7em 1fr;
   position: relative;
-
-  .location-number {
-    width: 2em;
-    height: 2em;
-    background: var(--location-bubble-red);
-    color: white;
-    font-weight: bold;
-    display:inline-flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    font-size: 0.9em;
-
-    span {
-      position: relative;
-      top: 0.5px;
-    }
-
-    &.only-mobile {
-      position: absolute;
-      right: 0.5em;
-      top: 0.5em;
-      font-size: 0.8em;
-    }
-  }
 
   &:has(.img-container) {
     grid-template-columns: minmax(9em, 35%) 1fr;
@@ -577,10 +586,6 @@ input[type='checkbox']:checked ~ #menu li a div {
 
 #program-section .mobile th {
   width: 100%;
-}
-
-#program-section .mobile td {
-  width: 50%;
 }
 
 #program-section .mobile .time-cell {

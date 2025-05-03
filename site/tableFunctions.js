@@ -69,11 +69,16 @@
   window.toggleEventRow = toggleEventRow
 
   function toggleStartEndEvent(element) {
-    element.querySelector('.arrow').classList.toggle('arrow-open')
+    const arrowElement = element.querySelector('.arrow')
+    arrowElement.classList.toggle('arrow-open')
 
     element.querySelectorAll('.toggle').forEach(e => {
       e.classList.toggle('toggle-on')
     })
+
+    arrowElement.parentElement
+      .querySelector('.location-number')
+      .classList.toggle('hidden')
   }
 
   window.toggleStartEndEvent = toggleStartEndEvent

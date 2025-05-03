@@ -9,6 +9,9 @@ import fillMobileDataTable from './fillMobileDataTable.mjs'
 import { addEventRow, addShuttlebusRow, tableTitleForEvent } from './utils.mjs'
 import { fileURLToPath } from 'node:url'
 import { locationData } from './readData.mjs'
+import locationNumberSpan from '../../site/serverAndClientHelpers.js'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const { document } = new JSDOM().window
 
@@ -68,7 +71,9 @@ for (const location of locationData) {
     continue
   }
 
-  const locationCell = addRowElementDesktop(location.address, 2)
+  addRowElementDesktop(locationNumberSpan(location.number))
+
+  const locationCell = addRowElementDesktop(location.address)
   locationCell.classList.add('locationCell')
 
   let times = [
@@ -175,8 +180,6 @@ for (const location of locationData) {
 }
 
 await fillMobileDataTable(programTableMobile, mobileData)
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 await fs.writeFile(
   path.join(__dirname, '../../site/generated/program-table.html'),
