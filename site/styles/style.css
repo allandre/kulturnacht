@@ -369,11 +369,6 @@ input[type='checkbox']:checked ~ #menu li a div {
   border-right: 1px dotted var(--site-main-color);
 }
 
-#program-section table img {
-  width: 10vw;
-  min-width: 10em;
-}
-
 #program-section tr.shuttlebus {
   background-color: #ffffd9b0;
 }
@@ -385,18 +380,20 @@ input[type='checkbox']:checked ~ #menu li a div {
     display: flex;
     gap: 2em;
     padding: 1em 1.5em;
+    container-type: inline-size;
 
     .image-container {
       display: flex;
       gap: 1em;
 
-      div {
+      > div {
         display: flex;
         flex-direction: column;
         justify-content: center;
 
         img {
-          object-fit: contain;
+          max-height: 30em;
+          width: 100%;
         }
       }
     }
@@ -431,7 +428,9 @@ input[type='checkbox']:checked ~ #menu li a div {
   border-radius: 50%;
   font-size: 0.9em;
 
-  &[data-number="4"], &[data-number="12"], &[data-number="20"] {
+  &[data-number='4'],
+  &[data-number='12'],
+  &[data-number='20'] {
     background-color: #d3008e;
   }
 
@@ -483,7 +482,7 @@ input[type='checkbox']:checked ~ #menu li a div {
 
   .time {
     font-weight: bold;
-    color: var(--kvk-main-color)
+    color: var(--kvk-main-color);
   }
 
   .time-column {
@@ -536,7 +535,7 @@ input[type='checkbox']:checked ~ #menu li a div {
       display: none;
     }
 
-    >div {
+    > div {
       cursor: auto;
     }
   }
@@ -599,6 +598,17 @@ input[type='checkbox']:checked ~ #menu li a div {
 
   #program-section table.mobile {
     display: table;
+  }
+
+  #program-section {
+    .event-row-container {
+      flex-direction: column;
+
+      .image-container > div {
+        width: 0;
+        flex-grow: 1;
+      }
+    }
   }
 }
 

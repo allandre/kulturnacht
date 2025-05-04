@@ -21,12 +21,8 @@
 Program 2025:
 - click on image in event-row to open big one (modal; also draggable to desktop)
 - add participant gallery
-- fix table to be in sync with word docuemt (mainly locations)
-- add geländeplan and add numbers to program (or show them next to the gelände plan)
-  - maybe click on number in gelände plan to open events there
-- multi image in event leads to leaft/right scrolling in event row on iphone mini
-- replace 10vw with 10cqw in images in event-row
 - make all time columns same width on desktop
+- make table shrink on small desktop size (we probably need to switch from table to grid for this)
 
 
 Other:
