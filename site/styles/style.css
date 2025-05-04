@@ -612,7 +612,7 @@ button.gallery-toggler:hover {
   color: var(--site-main-color);
 }
 
-.contact-section {
+.contact-section > div {
   max-width: 800px;
   margin: auto;
 }
@@ -723,17 +723,92 @@ button.gallery-toggler:hover {
   padding: 1em 0.5em;
 }
 
-#schererHeizungen {
-  max-height: 12vw;
-}
-
-#STFS {
-  max-height: 12vw;
-}
-
 #sponsoren-section a {
   text-decoration: none;
   color: black;
+}
+
+#sponsoren-section {
+  .sponsoren-block {
+    container-type: inline-size;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  #ernstco {
+    width: 20cqw;
+    padding: 0 1em;
+  }
+
+  #gemeinde-kuesnacht {
+    width: 30cqw;
+  }
+
+  #max-martha {
+    font-size: 1.5em;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    color: #8BCBC8;
+    padding: 0 1em;
+  }
+
+  #walter-haefner {
+    width: 33cqw;
+  }
+
+  #world-of-bonnie {
+    width: 30cqw;
+    height: 15cqw;
+  }
+
+  #mediumsatz {
+    width: 20cqw;
+    height: 10cqw;
+  }
+
+  #kuesnachter {
+    width: max(20cqw, 180px);
+    height: max(10cqw, 100px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #sponsoren-section {
+    a {
+      img {
+        width: 80cqw !important;
+      }
+    }
+
+    #ernstco {
+      width: min(70cqw, 230px) !important;
+    }
+
+    #gemeinde-kuesnacht {
+      padding: 2em 0;
+    }
+
+    #max-martha {
+      font-size: 5cqw;
+      padding-bottom: 1em;
+    }
+
+    #world-of-bonnie {
+      height: 40cqw;
+    }
+
+    #mediumsatz {
+      height: 30cqw;
+    }
+
+    #kuesnachter {
+      height: min(25cqw, 90px);
+    }
+  }
 }
 
 /* SPONSOREN SECTION end */

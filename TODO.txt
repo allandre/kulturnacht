@@ -26,11 +26,13 @@ Program 2025:
 
 
 Other:
-- Sponsoren
 - Standort foto zeigen (und adresse) bei klick auf eine nummer auf der Karte. Vllt start und schlussveranstaltung bei desktop von anfang an expanded. Evtl box neben karte mit linie zur Box.
 - bei klick auf location number ausserhalb der karte, eine linie malen die zu der gleichen nummer auf der Karte führt.
 - add playwright visual regression tests (especially for archive)
 - add google map to Anreise section
 - animate height of hamburger menu opening and closing
 - disable body scroll when hamburger menu is open
+- fix highlight on scroll in navigation
+
+
 
