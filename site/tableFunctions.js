@@ -1,4 +1,14 @@
 ;(function () {
+  function collapseAllEventDetailRows() {
+    document.querySelectorAll('tr[data-event]').forEach(e => {
+      e.style.display = 'none'
+    })
+
+    document
+      .querySelectorAll('td.current')
+      .forEach(e => e.classList.remove('current'))
+  }
+
   const expandTime = clickedElement => {
     const time = clickedElement.getAttribute('data-time')
 
@@ -13,6 +23,8 @@
     for (const e of document.querySelectorAll('tr.event-row')) {
       e.style.display = 'none'
     }
+
+    collapseAllEventDetailRows()
 
     if (currentlyCollapsed) {
       arrowDiv.classList.add('collapse')
@@ -30,12 +42,10 @@
   function toggleEventRow(element) {
     const currentlyHidden = !element.classList.contains('current')
 
-    document
-      .querySelectorAll('td.current')
-      .forEach(e => e.classList.remove('current'))
+    collapseAllEventDetailRows()
 
     const eventId = element.getAttribute('data-event')
-    // let eventRow = document.querySelector(`tr[data-event="${eventId}"]`)
+
     let eventRow = element
       .closest('table')
       .querySelector(`tr[data-event="${eventId}"]`)
@@ -47,10 +57,6 @@
         `tr[data-event="${eventId}"][data-time="${time}"]`
       )
     }
-
-    document.querySelectorAll('tr[data-event]').forEach(e => {
-      e.style.display = 'none'
-    })
 
     if (currentlyHidden) {
       eventRow.querySelectorAll('img').forEach(img => {
@@ -67,4 +73,19 @@
   }
 
   window.toggleEventRow = toggleEventRow
+
+  function toggleStartEndEvent(element) {
+    const arrowElement = element.querySelector('.arrow')
+    arrowElement.classList.toggle('arrow-open')
+
+    element.querySelectorAll('.toggle').forEach(e => {
+      e.classList.toggle('toggle-on')
+    })
+
+    arrowElement.parentElement
+      .querySelector('.location-number')
+      .classList.toggle('hidden')
+  }
+
+  window.toggleStartEndEvent = toggleStartEndEvent
 })()

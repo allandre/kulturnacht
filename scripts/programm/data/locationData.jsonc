@@ -6,102 +6,117 @@
   // },
   {
     "id": "ortsmuseum_küsnacht",
-    "address": "Ortsmuseum Küsnacht, Tobelweg 1, UG"
+    "address": "Ortsmuseum Küsnacht, Tobelweg 1, UG",
+    "number": "1"
   },
   {
     "id": "musikschule",
-    "address": "Musikschule, Tobelweg 1, Dachsaal"
+    "address": "Musikschule, Tobelweg 1, Dachsaal",
+    "number": "1"
   },
   {
     "id": "mehrzweckraum",
-    "address": "Mehrzweckraum, Tobelweg 4, 4. OG"
+    "address": "Mehrzweckraum, Tobelweg 4, 4. OG",
+    "number": "2"
   },
   {
     "id": "vorplatz",
-    "address": "Vorplatz Garage, Tobelweg 4"
+    "address": "Vorplatz Garage, Tobelweg 4",
+    "number": "3"
   },
   {
     "id": "kulturbistro",
-    "address": "Kulturbistro Tobelweg, Tobelweg 1-4, Vorplatz"
+    "address": "Kulturbistro Tobelweg, Tobelweg 1-4, Vorplatz",
+    "number": "4"
   },
   {
     "id": "chrottegrotte",
-    "address": "Chrottegrotte, Obere Dorfstrasse 27a"
+    "address": "Chrottegrotte, Obere Dorfstrasse 27a",
+    "number": "5"
   },
   {
     "id": "jürgehuus",
-    "address": "Jürgehuus, Untere Heslibachstrasse 2, JuKa"
+    "address": "Jürgehuus, Untere Heslibachstrasse 2, JuKa",
+    "number": "6"
   },
   {
     "id": "reformiertes_kirchgemeindehaus",
-    "address": "Reformiertes Kirchgemeindehaus, Untere Heslibachstrasse 5, OG"
+    "address": "Reformiertes Kirchgemeindehaus, Untere Heslibachstrasse 5, OG",
+    "number": "7"
   },
   {
     "id": "reformiertes_kirchgemeindehaus_eg",
-    "address": "Reformiertes Kirchgemeindehaus, Untere Heslibachstrasse 5, EG"
+    "address": "Reformiertes Kirchgemeindehaus, Untere Heslibachstrasse 5, EG",
+    "number": "7"
   },
   {
     "id": "reformierte_kirche",
-    "address": "Reformierte Kirche, Untere Heslibachstrasse 2"
-  },
-  {
-    "id": "reformierte_kirche_kirchturm",
-    "address": "Reformierte Kirche, Untere Heslibachstrasse 2, Kirchturm"
+    "address": "Reformierte Kirche, Untere Heslibachstrasse 2",
+    "number": "8"
   },
   {
     "id": "bibliothek",
-    "address": "Bibliothek Küsnacht, Untere Heslibachstrasse 33"
+    "address": "Bibliothek Küsnacht, Untere Heslibachstrasse 33",
+    "number": "9"
   },
   {
     "id": "salzsilo_garage",
-    "address": "Salzsilo-Garage, Untere Heslibachstrasse 30"
+    "address": "Salzsilo-Garage, Untere Heslibachstrasse 30",
+    "number": "10"
   },
   {
     "id": "fussgängerunterführung",
-    "address": "Fussgängerunterführung, Dorfstrasse"
+    "address": "Fussgängerunterführung, Dorfstrasse",
+    "number": "11"
   },
   {
     "id": "kantonsschule_küsnacht",
-    "address": "Kantonsschule Küsnacht, Dorfstrasse 30, Italienische Villa"
+    "address": "Kantonsschule Küsnacht, Dorfstrasse 30, Italienische Villa",
+    "number": "12"
   },
   {
     "id": "kantonsschule_küsnacht_semihalle",
-    "address": "Kantonsschule Küsnacht, Dorfstrasse 30, Semihalle"
+    "address": "Kantonsschule Küsnacht, Dorfstrasse 30, Semihalle",
+    "number": "13"
   },
   {
     "id": "katholisches_pfarreizentrum",
-    "address": "Katholisches Pfarreizentrum, Kirchstrasse 2"
+    "address": "Katholisches Pfarreizentrum, Kirchstrasse 2",
+    "number": "14"
   },
   {
     "id": "museum_haus_c_g_jung",
-    "address": "Museum Haus C.G. Jung, Seestrasse 228"
+    "address": "Museum Haus C.G. Jung, Seestrasse 228",
+    "number": "15"
   },
   {
     "id": "seehof",
-    "address": "Seehof, Hornweg 28, OG"
+    "address": "Seehof, Hornweg 28, OG",
+    "number": "16"
   },
   {
     "id": "seehof_ug",
-    "address": "Seehof, Hornweg 28, UG"
+    "address": "Seehof, Hornweg 28, UG",
+    "number": "16"
   },
   {
     "id": "wolf_buchhandlung",
-    "address": "Wolf Buchhandlung, Zürichstrasse 149 (neben Migros)"
+    "address": "Wolf Buchhandlung, Zürichstrasse 149 (neben Migros)",
+    "number": "17"
   },
   {
     "id": "wangensbach",
-    "address": "Wangensbach, Gewölbekeller, Alte Landstrasse 136"
+    "address": "Wangensbach, Gewölbekeller, Alte Landstrasse 136",
+    "number": "18"
   },
   {
     "id": "gemeindehaus",
-    "address": "Gemeindehaus, Obere Dorfstrasse 32"
+    "address": "Gemeindehaus, Obere Dorfstrasse 32",
+    "number": "19"
   },
   {
     "id": "dorfplatz",
-    "address": "Kulinarischer Treffpunkt, Dorfplatz"
-  },
-  {
-    "id": "finale",
-    "address": "Kulturnacht-Finale, Küsnachter Horn"
+    "address": "Kulinarischer Treffpunkt, Dorfplatz",
+    "number": "20"
   }
 ]

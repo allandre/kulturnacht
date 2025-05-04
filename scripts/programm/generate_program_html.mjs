@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 // call like "node generate_program_html.mjs"
 
 import fs from 'node:fs/promises'
@@ -8,6 +9,9 @@ import fillMobileDataTable from './fillMobileDataTable.mjs'
 import { addEventRow, addShuttlebusRow, tableTitleForEvent } from './utils.mjs'
 import { fileURLToPath } from 'node:url'
 import { locationData } from './readData.mjs'
+import locationNumberSpan from '../../site/serverAndClientHelpers.js'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const { document } = new JSDOM().window
 
@@ -39,17 +43,14 @@ addHeaderRowElementDesktop('19.00')
 addHeaderRowElementDesktop('20.00')
 addHeaderRowElementDesktop('21.00')
 addHeaderRowElementDesktop('22.00')
-addHeaderRowElementDesktop('23.00')
 
 const mobileData = {
-  '16.30': [],
   '17.00': [],
   '18.00': [],
   '19.00': [],
   '20.00': [],
   '21.00': [],
-  '22.00': [],
-  '23.00': []
+  '22.00': []
 }
 
 for (const location of locationData) {
@@ -65,33 +66,15 @@ for (const location of locationData) {
     return td
   }
 
-  const introEventIndex = location.events.findIndex(
-    event => event.times === 1630
-  )
-
-  if (introEventIndex >= 0) {
-    const locationCell = addRowElementDesktop(location.address)
-    locationCell.classList.add('locationCell')
-
-    const introEvent = location.events[introEventIndex]
-    const rowElement = addRowElementDesktop(
-      '16.30: ' + tableTitleForEvent(introEvent)
-    )
-    rowElement.setAttribute('data-event', introEvent.id)
-    rowElement.setAttribute('onclick', 'toggleEventRow(this)')
-
-    await addEventRow(tableBodyDesktop, introEvent, true)
-
-    location.events.splice(introEventIndex, 1)
-
-    mobileData['16.30'].push({
-      event: introEvent,
-      location: location
-    })
-  } else {
-    const locationCell = addRowElementDesktop(location.address, 2)
-    locationCell.classList.add('locationCell')
+  if (location.events === undefined) {
+    console.log(`Warning: location ${location.id} does not have any events`)
+    continue
   }
+
+  addRowElementDesktop(locationNumberSpan(location.number))
+
+  const locationCell = addRowElementDesktop(location.address)
+  locationCell.classList.add('locationCell')
 
   let times = [
     undefined, // 17
@@ -99,8 +82,7 @@ for (const location of locationData) {
     undefined, // 19
     undefined, // 20
     undefined, // 21
-    undefined, // 22
-    undefined // 23
+    undefined // 22
   ]
 
   for (const event of location.events) {
@@ -198,8 +180,6 @@ for (const location of locationData) {
 }
 
 await fillMobileDataTable(programTableMobile, mobileData)
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 await fs.writeFile(
   path.join(__dirname, '../../site/generated/program-table.html'),

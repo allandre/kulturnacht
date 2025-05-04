@@ -33,8 +33,10 @@
     <meta name="msapplication-TileColor" content="#ed1255" />
     <title>Kulturnacht Küsnacht</title>
     <link href="site/styles/reset.css" rel="stylesheet" />
+    <link href="site/styles/general.css" rel="stylesheet" />
     <link href="site/styles/style.css" rel="stylesheet" />
     <script src="site/script.js"></script>
+    <script src="site/serverAndClientHelpers.js"></script>
     <script src="site/tableFunctions.js"></script>
   </head>
 
@@ -58,6 +60,11 @@
           <li>
             <a href="#info-anchor">
               <div>Info</div>
+            </a>
+          </li>
+          <li>
+            <a href="#plan-anchor">
+              <div>Übersichtsplan</div>
             </a>
           </li>
           <li>
@@ -94,6 +101,16 @@
           </p>
         </section>
 
+        <a id="plan-anchor" class="anchor"></a>
+        <section id="plan-section">
+          <h1>Die Veranstaltungsorte im Dorfzentrum</h1>
+          <div>
+            <img
+              src="site/resources/PROGRAMMHEFT 2025_Übersichtskarte_mp_klein.jpg"
+            />
+          </div>
+        </section>
+
         <a id="program-anchor" class="anchor"></a>
         <section id="program-section">
           <h1>Programm</h1>
@@ -102,6 +119,95 @@
             Galerie aller Mitwirkenden anzeigen
           </button> -->
           <div id="gallery-container">
+            <div id="program-start-end">
+              <div onclick="toggleStartEndEvent(this)">
+                <div class="time-column">
+                  <div style="width: 9em">
+                    Auftakt <span class="time">16.30</span>
+                  </div>
+                  <div class="img-container">
+                    <img
+                      src="/site/resources/program-images/small/Foto 8d_Fanfare Terrible.jpg"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div class="time-title">
+                    <div class="only-mobile">
+                      Auftakt <span class="time">16.30</span>
+                    </div>
+                    <div class="bold">&#x1F3B5; Turmbläser</div>
+                    <div class="only-mobile arrow">❯</div>
+                    <div class="only-mobile">
+                      <script>
+                        document.write(locationNumberSpan(8))
+                      </script>
+                    </div>
+                  </div>
+                  <div style="margin: 0.2em 0" class="toggle">
+                    Das Kulturnacht-OK eröffnet die Kulturnacht Küsnacht 2025
+                    mit Barockmusik, gespielt von der Fanfare Terrible auf dem
+                    Kirchturm.
+                  </div>
+                  <div style="font-size: 0.8em" class="toggle">
+                    Fanfare Terrible: Christian Meier, Trompete, Roland Hofer,
+                    Trompete, Christoph Collet, Posaune, Reto Kappeler, Posaune.
+                  </div>
+                  <div class="location toggle">
+                    <script>
+                      document.write(locationNumberSpan(8))
+                    </script>
+                    <span
+                      >Reformierte Kirche, Untere Heslibachstrasse 2,
+                      Kirchturm</span
+                    >
+                  </div>
+                </div>
+                <div class="img-container only-mobile toggle">
+                  <img
+                    src="/site/resources/program-images/small/Foto 8d_Fanfare Terrible.jpg"
+                  />
+                </div>
+              </div>
+              <div onclick="toggleStartEndEvent(this)">
+                <div class="time-column">
+                  <div style="width: 9em">
+                    Finale <span class="time">23.00</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="time-title">
+                    <div class="only-mobile">
+                      Finale <span class="time">23.00</span>
+                    </div>
+                    <div class="bold">
+                      &#x1F386; Magische Licht- und Musik-Show
+                    </div>
+                    <div class="only-mobile arrow">❯</div>
+                    <div class="only-mobile">
+                      <script>
+                        document.write(locationNumberSpan(21))
+                      </script>
+                    </div>
+                  </div>
+                  <div style="margin: 0.2em 0" class="toggle">
+                    Das Finale der Kulturnacht Küsnacht 2025 mit dem Fanfare
+                    Terrible, Roland Schatt und Effekte.ch, präsentiert vom
+                    Kulturnacht-OK und der Gemeinde Küsnacht.
+                  </div>
+                  <div style="font-size: 0.8em" class="toggle">
+                    Effekte.ch sowie die Fanfare Terrible und Roland Schatt,
+                    Schlagzeug
+                  </div>
+                  <div class="location toggle">
+                    <script>
+                      document.write(locationNumberSpan(21))
+                    </script>
+                    <span>Kulturnacht-Finale, Küsnachter Horn</span>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div id="program-legend" class="legend"></div>
             <div id="participant-gallery"></div>
           </div>
@@ -132,44 +238,27 @@
             Die Kulturnacht Küsnacht 2025 wird von einem Nonprofit-Team
             organisiert:
           </h3>
-          <ul id="organisator-list" class="in-section-list">
-            <li>
-              <span style="display: inline-block; width: 15em"
-                >Koordination Veranstalter:</span
-              >Martine Peyer
-            </li>
-            <li>
-              <span style="display: inline-block; width: 15em"
-                >PR / Medien:</span
-              >Elisabeth Abgottspon
-            </li>
-            <li>
-              <span style="display: inline-block; width: 15em"
-                >Gastronomie:</span
-              >Kim Wyder
-            </li>
-            <li>
-              <span style="display: inline-block; width: 15em"
-                >Infrastruktur / Bewilligungen:</span
-              >Hans-Peter Fehr
-            </li>
-            <li>
-              <span style="display: inline-block; width: 15em">Sponsoring:</span
-              >Felix Günthardt
-            </li>
-            <li>
-              <span style="display: inline-block; width: 15em">Finanzen:</span
-              >Ilka Allenspach
-            </li>
-          </ul>
-          <p></p>
-          <p>
+          <div id="organisator-list">
+            <div>Koordination Veranstalter:</div>
+            <div>Martine Peyer</div>
+            <div>PR / Medien:</div>
+            <div>Elisabeth Abgottspon</div>
+            <div>Gastronomie:</div>
+            <div>Kim Wyder</div>
+            <div>Infrastruktur / Bewilligungen:</div>
+            <div>Hans-Peter Fehr</div>
+            <div>Sponsoring:</div>
+            <div>Felix Günthardt</div>
+            <div>Finanzen:</div>
+            <div>Ilka Allenspach</div>
+          </div>
+          <div class="text-justify">
             Die Kulturelle Vereinigung Küsnacht gewährleistet zusammen mit der
             Gemeinde die Sammlung und den Betrieb des Ortsmuseums Küsnacht,
             betreut die Galerie im Höchhuus und veranstaltet Vorträge und
             Ausflüge mit kulturgeschichtlichem Hintergrund und gibt
             Publikationen zu ortsgeschichtlichen Themen heraus.
-          </p>
+          </div>
         </section>
       </div>
       <footer>

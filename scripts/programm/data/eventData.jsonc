@@ -176,16 +176,16 @@
     "location": "reformierte_kirche",
     "host": "Reformierte Kirche"
   },
-  {
-    "title": "Turmbläser – Auftakt zur Kulturnacht",
-    "description": "Das Kulturnacht-OK eröffnet die Kulturnacht Küsnacht 2025 mit Barockmusik, gespielt von der Fanfare Terrible auf dem Kirchturm.",
-    "team": "Fanfare Terrible: Christian Meier, Trompete, Roland Hofer, Trompete, Christoph Collet, Posaune, Reto Kappeler, Posaune.",
-    "categories": "music",
-    "images": "Foto 8d",
-    "times": 1630,
-    "location": "reformierte_kirche_kirchturm",
-    "host": "Kulturelle Vereinigung Küsnacht"
-  },
+  // { // this is now hardcoded
+  //   "title": "Turmbläser – Auftakt zur Kulturnacht",
+  //   "description": "Das Kulturnacht-OK eröffnet die Kulturnacht Küsnacht 2025 mit Barockmusik, gespielt von der Fanfare Terrible auf dem Kirchturm.",
+  //   "team": "Fanfare Terrible: Christian Meier, Trompete, Roland Hofer, Trompete, Christoph Collet, Posaune, Reto Kappeler, Posaune.",
+  //   "categories": "music",
+  //   "images": "Foto 8d",
+  //   "times": 1630,
+  //   "location": "reformierte_kirche_kirchturm",
+  //   "host": "Kulturelle Vereinigung Küsnacht"
+  // },
   {
     "title": "Amerika gibt es nicht! – feiner Humor",
     "description": "In der Erzählung von Peter Bichsel leugnet ein Mann die Existenz Amerikas; er hat es nie gesehen. Erleben Sie die preisgekrönte darstellende Künstlerin Nicole Knuth in einer fesselnden Performance.",
@@ -380,14 +380,14 @@
     "times": "17-23",
     "location": "dorfplatz",
     "host": "Kulturnacht-OK"
-  },
-  {
-    "title": "Magische Licht- und Musik-Show",
-    "description": "Das Finale der Kulturnacht Küsnacht 2025 mit dem Fanfare Terrible, Roland Schatt und Effekte.ch, präsentiert vom Kulturnacht-OK und der Gemeinde Küsnacht.",
-    "team": "Effekte.ch sowie die Fanfare Terrible und Roland Schatt, Schlagzeug",
-    "categories": "finale",
-    "times": 23,
-    "location": "finale",
-    "host": "Kulturelle Vereinigung Küsnacht & Gemeinde Küsnacht"
   }
+  // { // is done in its own box
+  //   "title": "Magische Licht- und Musik-Show",
+  //   "description": "Das Finale der Kulturnacht Küsnacht 2025 mit dem Fanfare Terrible, Roland Schatt und Effekte.ch, präsentiert vom Kulturnacht-OK und der Gemeinde Küsnacht.",
+  //   "team": "Effekte.ch sowie die Fanfare Terrible und Roland Schatt, Schlagzeug",
+  //   "categories": "finale",
+  //   "times": 23,
+  //   "location": "finale",
+  //   "host": "Kulturelle Vereinigung Küsnacht & Gemeinde Küsnacht"
+  // }
 ]

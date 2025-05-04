@@ -1,5 +1,6 @@
 import { JSDOM } from 'jsdom'
 import { addEventRow, addShuttlebusRow, tableTitleForEvent } from './utils.mjs'
+import locationNumberSpan from '../../site/serverAndClientHelpers.js'
 
 async function fillMobileDataTable(tableElement, data) {
   const { document } = new JSDOM().window
@@ -13,7 +14,7 @@ async function fillMobileDataTable(tableElement, data) {
 
     const th = document.createElement('th')
     th.classList.add('time-cell')
-    th.colSpan = 2
+    th.colSpan = 100
     th.setAttribute('data-time', time)
     th.setAttribute('onclick', 'expandTime(this)')
     row.appendChild(th)
@@ -35,6 +36,12 @@ async function fillMobileDataTable(tableElement, data) {
       singleRow.classList.add('event-row')
       singleRow.setAttribute('data-time', time)
       tableBody.appendChild(singleRow)
+
+      const locationnumberTd = document.createElement('td')
+      locationnumberTd.innerHTML = locationNumberSpan(
+        singleData.location.number
+      )
+      singleRow.appendChild(locationnumberTd)
 
       const locationTd = document.createElement('td')
       locationTd.innerHTML = singleData.location.address
