@@ -29,6 +29,9 @@ Other:
 - Sponsoren
 - Standort foto zeigen (und adresse) bei klick auf eine nummer auf der Karte. Vllt start und schlussveranstaltung bei desktop von anfang an expanded. Evtl box neben karte mit linie zur Box.
 - bei klick auf location number ausserhalb der karte, eine linie malen die zu der gleichen nummer auf der Karte führt.
-
+- fix highlight on scroll in navigation
+- fix broken images auf allandre.github.io/kulturnacht
+- fix archive css
+- add playwright visual regression tests (especially for archive)
 
 
