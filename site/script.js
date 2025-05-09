@@ -132,6 +132,10 @@
     const programLegend = document.querySelector('#program-legend')
     const programTable = document.querySelector('#program-table')
 
+    if (!programTable) {
+      return // happens on archive page
+    }
+
     try {
       try {
         await insertProgramLegend(programLegend)
