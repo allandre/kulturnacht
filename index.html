@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0 width=device-width" />
     <meta
       name="description"
-      content="Dies ist die Webseite der Kulturnacht Küsnacht 2017."
+      content="Dies ist die Webseite der Kulturnacht Küsnacht 2025."
     />
     <!-- Für Apple-Geräte -->
     <link
@@ -32,9 +32,17 @@
     />
     <meta name="msapplication-TileColor" content="#ed1255" />
     <title>Kulturnacht Küsnacht</title>
+    <script>
+      // ensure we are on / or something/ otherwise loading the css and js files does not work.
+      const pathname = document.location.pathname
+      if (!pathname.endsWith('/')) {
+        window.location = window.location.href.replace(pathname, pathname + '/')
+      }
+    </script>
     <link href="site/styles/reset.css" rel="stylesheet" />
     <link href="site/styles/general.css" rel="stylesheet" />
     <link href="site/styles/style.css" rel="stylesheet" />
+    <script src="site/script-general.js"></script>
     <script src="site/script.js"></script>
     <script src="site/serverAndClientHelpers.js"></script>
     <script src="site/tableFunctions.js"></script>
@@ -127,7 +135,7 @@
                   </div>
                   <div class="img-container">
                     <img
-                      src="/site/resources/program-images/small/Foto 8d_Fanfare Terrible.jpg"
+                      src="site/resources/program-images/small/Foto 8d_Fanfare Terrible.jpg"
                     />
                   </div>
                 </div>
@@ -165,7 +173,7 @@
                 </div>
                 <div class="img-container only-mobile toggle">
                   <img
-                    src="/site/resources/program-images/small/Foto 8d_Fanfare Terrible.jpg"
+                    src="site/resources/program-images/small/Foto 8d_Fanfare Terrible.jpg"
                   />
                 </div>
               </div>

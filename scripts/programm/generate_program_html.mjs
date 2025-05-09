@@ -13,6 +13,16 @@ import locationNumberSpan from '../../site/serverAndClientHelpers.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
+const currentNodeVersion = process.versions.node
+const wantedNodeVersion = (
+  await fs.readFile(path.join(__dirname, '../../.nvmrc'), { encoding: 'utf8' })
+).replace(/^v/, '')
+if (!currentNodeVersion.startsWith(wantedNodeVersion)) {
+  console.log(
+    `Error: current Node version is ${currentNodeVersion}, but should match ${wantedNodeVersion}`
+  )
+}
+
 const { document } = new JSDOM().window
 
 const programTableMobile = document.createElement('table')

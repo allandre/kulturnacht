@@ -66,7 +66,7 @@ async function addEventRow(tableBody, event, mobile = false) {
       // custom lazy loading hack since normal loading="lazy" did not work.
       img.setAttribute(
         'data-src',
-        '/site/resources/program-images/small/' + imageFileName
+        'site/resources/program-images/small/' + imageFileName
       )
       imageWrapper.appendChild(img)
 
