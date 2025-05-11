@@ -31,5 +31,6 @@ Other:
 - bei klick auf location number ausserhalb der karte, eine linie malen die zu der gleichen nummer auf der Karte führt.
 - fix highlight on scroll in navigation
 - add playwright visual regression tests (especially for archive)
+- add google map to Anreise section
 
 
