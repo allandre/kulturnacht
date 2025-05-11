@@ -50,6 +50,7 @@ nav {
   text-decoration: none;
   background-color: var(--kvk-main-color);
   padding-right: 10px;
+  flex-shrink: 0;
 }
 
 #logo-K {
