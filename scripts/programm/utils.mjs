@@ -2,7 +2,7 @@ import { JSDOM } from 'jsdom'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import categories from '../../site/categories.json' with { type: 'json' }
+import categories from '../../site/resources/categories.json' with { type: 'json' }
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 

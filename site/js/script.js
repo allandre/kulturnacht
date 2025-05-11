@@ -34,7 +34,7 @@
   }
 
   async function insertProgramLegend(element) {
-    const response = await fetch('site/categories.json')
+    const response = await fetch('site/resources/categories.json')
     const categories = await response.json()
 
     const header = document.createElement('h6')

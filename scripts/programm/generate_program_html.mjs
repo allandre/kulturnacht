@@ -9,7 +9,7 @@ import fillMobileDataTable from './fillMobileDataTable.mjs'
 import { addEventRow, addShuttlebusRow, tableTitleForEvent } from './utils.mjs'
 import { fileURLToPath } from 'node:url'
 import { locationData } from './readData.mjs'
-import locationNumberSpan from '../../site/serverAndClientHelpers.js'
+import locationNumberSpan from '../../site/js/serverAndClientHelpers.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 

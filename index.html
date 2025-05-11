@@ -39,13 +39,16 @@
         window.location = window.location.href.replace(pathname, pathname + '/')
       }
     </script>
+
     <link href="site/styles/reset.css" rel="stylesheet" />
     <link href="site/styles/general.css" rel="stylesheet" />
     <link href="site/styles/style.css" rel="stylesheet" />
-    <script src="site/script-general.js"></script>
-    <script src="site/script.js"></script>
-    <script src="site/serverAndClientHelpers.js"></script>
-    <script src="site/tableFunctions.js"></script>
+    <link href="site/styles/hamburger.css" rel="stylesheet" />
+ 
+    <script src="site/js/script.js"></script>
+    <script src="site/js/hamburger.js" defer></script>
+    <script src="site/js/serverAndClientHelpers.js"></script>
+    <script src="site/js/tableFunctions.js"></script>
   </head>
 
   <body>
@@ -58,39 +61,7 @@
             >Kulturelle Vereinigung Küsnacht</span
           >
         </a>
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span id="hamburger-wrapper">
-            <span class="hamburger"></span>
-          </span>
-        </label>
-        <ul id="menu" onclick="hideMenu()">
-          <li>
-            <a href="#info-anchor">
-              <div>Info</div>
-            </a>
-          </li>
-          <li>
-            <a href="#plan-anchor">
-              <div>Übersichtsplan</div>
-            </a>
-          </li>
-          <li>
-            <a href="#program-anchor">
-              <div>Programm</div>
-            </a>
-          </li>
-          <li>
-            <a href="#contact-anchor">
-              <div>Kontakt</div>
-            </a>
-          </li>
-          <li>
-            <a href="site/archive.html">
-              <div>Archiv ></div>
-            </a>
-          </li>
-        </ul>
+        <div id="hamburger"></div>
       </nav>
       <div id="main">
         <section id="title-section">
@@ -109,7 +80,7 @@
           </p>
         </section>
 
-        <a id="plan-anchor" class="anchor"></a>
+        <a id="plan-anchor" class="anchor" data-label="Übersichtsplan"></a>
         <section id="plan-section">
           <h1>Die Veranstaltungsorte im Dorfzentrum</h1>
           <div>
@@ -119,7 +90,7 @@
           </div>
         </section>
 
-        <a id="program-anchor" class="anchor"></a>
+        <a id="program-anchor" class="anchor" data-label="Programm"></a>
         <section id="program-section">
           <h1>Programm</h1>
           <!-- todo: not yet implemented -->

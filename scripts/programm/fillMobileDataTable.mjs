@@ -1,6 +1,6 @@
 import { JSDOM } from 'jsdom'
 import { addEventRow, addShuttlebusRow, tableTitleForEvent } from './utils.mjs'
-import locationNumberSpan from '../../site/serverAndClientHelpers.js'
+import locationNumberSpan from '../../site/js/serverAndClientHelpers.js'
 
 async function fillMobileDataTable(tableElement, data) {
   const { document } = new JSDOM().window
