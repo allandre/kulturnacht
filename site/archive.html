@@ -5,19 +5,46 @@
     <meta name="viewport" content="initial-scale=1.0 width=device-width" />
     <meta
       name="description"
-      content="Dies ist die Webseite der Kulturnacht Küsnacht 2017."
+      content="Dies ist das Archiv der Webseite der Kulturnacht Küsnacht."
+    />
+     <!-- Für Apple-Geräte -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon-180x180.png"
+    />
+    <!-- Für Browser -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="favicon/favicon-32x32.ico"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="favicon/favicon-96x96.png"
+    />
+    <!-- Für Windows Metro -->
+    <meta
+      name="msapplication-square310x310logo"
+      content="favicon/mstile-310x310.png"
     />
     <title>Archiv der Kulturnacht Küsnacht</title>
+    
     <link href="styles/reset.css" rel="stylesheet" />
+    <link href="styles/general.css" rel="stylesheet" />
     <link href="styles/style.css" rel="stylesheet" />
     <link href="archive/style.css" rel="stylesheet" />
     <link href="archive/2017/style.css" rel="stylesheet" />
     <link href="archive/2021/style.css" rel="stylesheet" />
+    <link href="styles/hamburger.css" rel="stylesheet" />
+ 
     <!-- include jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="script.js"></script>
     <script src="archive/2017/script.js"></script>
     <script src="archive/2021/script.js"></script>
+    <script src="js/hamburger.js" defer></script>
     <!-- bootstrap icons. Used for example for the close icon -->
     <link
       rel="stylesheet"
@@ -34,33 +61,11 @@
             >Kulturelle Vereinigung Küsnacht</span
           >
         </a>
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span id="hamburger-wrapper">
-            <span class="hamburger"></span>
-          </span>
-        </label>
-        <ul id="menu" onclick="hideMenu()">
-          <li>
-            <a href="/" class="no-navigation">
-              <div>< Aktuell</div>
-            </a>
-          </li>
-          <li class="current">
-            <a href="#2021-anchor">
-              <div>2021</div>
-            </a>
-          </li>
-          <li>
-            <a href="#2017-anchor">
-              <div>2017</div>
-            </a>
-          </li>
-        </ul>
+        <div id="hamburger"></div>
       </nav>
 
       <div id="main">
-        <a id="2021-anchor" class="anchor"></a>
+        <a id="2021-anchor" class="anchor" data-label="2021"></a>
         <section>
           <h1 class="title-h1">Impressionen der Kulturnacht 2021</h1>
 
@@ -99,7 +104,7 @@
           </div>
         </section>
 
-        <a id="2017-anchor" class="anchor"></a>
+        <a id="2017-anchor" class="anchor" data-label="2017"></a>
         <section id="impression-section">
           <h1>Impressionen der Kulturnacht 2017</h1>
           <div id="impression-div" onclick="loadNextImage()">
@@ -118,20 +123,27 @@
       <footer>
         <p style="flex-shrink: 2">
           <a
-            href="http://www.kulturelle-vereinigung-kuesnacht.ch/"
+            href="https://www.kvk-online.ch/"
             target="_blank"
-            >&copy; 2024 KVK</a
+            >&copy;
+            <script>
+              document.write(new Date().getFullYear())
+            </script>
+            KVK</a
           >
         </p>
         <p style="flex-shrink: 2">
-          <a href="resources/KVK_Datenschutzerklaerung.pdf" target="_blank">
+          <a
+            href="resources/KVK_Datenschutzerklaerung.pdf"
+            target="_blank"
+          >
             Datenschutzerklärung
           </a>
         </p>
         <p style="flex-shrink: 2">Titelfoto: Thomas Ernst</p>
         <div>
           <div>Webseite:</div>
-          <a href="http://www.milanbombsch.ch" target="_blank">M. Bombsch</a>,
+          <a href="https://www.milanbombsch.ch" target="_blank">M. Bombsch</a>,
           <span>A. Allenspach</span>
         </div>
       </footer>

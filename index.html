@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0 width=device-width" />
     <meta
       name="description"
-      content="Dies ist die Webseite der Kulturnacht Küsnacht 2017."
+      content="Dies ist die Webseite der Kulturnacht Küsnacht 2025."
     />
     <!-- Für Apple-Geräte -->
     <link
@@ -32,12 +32,24 @@
     />
     <meta name="msapplication-TileColor" content="#ed1255" />
     <title>Kulturnacht Küsnacht</title>
+    <script>
+      // ensure we are on / or something/ otherwise loading the css and js files does not work.
+      const pathname = document.location.pathname
+      if (!pathname.endsWith('/')) {
+        window.location = window.location.href.replace(pathname, pathname + '/')
+      }
+    </script>
+
     <link href="site/styles/reset.css" rel="stylesheet" />
     <link href="site/styles/general.css" rel="stylesheet" />
     <link href="site/styles/style.css" rel="stylesheet" />
-    <script src="site/script.js"></script>
-    <script src="site/serverAndClientHelpers.js"></script>
-    <script src="site/tableFunctions.js"></script>
+    <link href="site/styles/anresie.css" rel="stylesheet" />
+    <link href="site/styles/hamburger.css" rel="stylesheet" />
+ 
+    <script src="site/js/script.js"></script>
+    <script src="site/js/hamburger.js" defer></script>
+    <script src="site/js/serverAndClientHelpers.js"></script>
+    <script src="site/js/tableFunctions.js"></script>
   </head>
 
   <body>
@@ -50,46 +62,14 @@
             >Kulturelle Vereinigung Küsnacht</span
           >
         </a>
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span id="hamburger-wrapper">
-            <span class="hamburger"></span>
-          </span>
-        </label>
-        <ul id="menu" onclick="hideMenu()">
-          <li>
-            <a href="#info-anchor">
-              <div>Info</div>
-            </a>
-          </li>
-          <li>
-            <a href="#plan-anchor">
-              <div>Übersichtsplan</div>
-            </a>
-          </li>
-          <li>
-            <a href="#program-anchor">
-              <div>Programm</div>
-            </a>
-          </li>
-          <li>
-            <a href="#contact-anchor">
-              <div>Kontakt</div>
-            </a>
-          </li>
-          <li>
-            <a href="site/archive.html">
-              <div>Archiv ></div>
-            </a>
-          </li>
-        </ul>
+        <div id="hamburger"></div>
       </nav>
       <div id="main">
         <section id="title-section">
           <div id="countdown">Noch ... Tage</div>
           <img src="site/resources/title-image-1600.png" />
         </section>
-        <a id="info-anchor" class="anchor"></a>
+        <a id="info-anchor" class="anchor" data-label="Info"></a>
         <section>
           <h1>Willkommen an der Kulturnacht Küsnacht</h1>
           <p>
@@ -101,7 +81,7 @@
           </p>
         </section>
 
-        <a id="plan-anchor" class="anchor"></a>
+        <a id="plan-anchor" class="anchor" data-label="Übersichtsplan" data-prio="3"></a>
         <section id="plan-section">
           <h1>Die Veranstaltungsorte im Dorfzentrum</h1>
           <div>
@@ -111,7 +91,7 @@
           </div>
         </section>
 
-        <a id="program-anchor" class="anchor"></a>
+        <a id="program-anchor" class="anchor" data-label="Programm" data-prio="4"></a>
         <section id="program-section">
           <h1>Programm</h1>
           <!-- todo: not yet implemented -->
@@ -127,7 +107,7 @@
                   </div>
                   <div class="img-container">
                     <img
-                      src="/site/resources/program-images/small/Foto 8d_Fanfare Terrible.jpg"
+                      src="site/resources/program-images/small/Foto 8d_Fanfare Terrible.jpg"
                     />
                   </div>
                 </div>
@@ -165,7 +145,7 @@
                 </div>
                 <div class="img-container only-mobile toggle">
                   <img
-                    src="/site/resources/program-images/small/Foto 8d_Fanfare Terrible.jpg"
+                    src="site/resources/program-images/small/Foto 8d_Fanfare Terrible.jpg"
                   />
                 </div>
               </div>
@@ -218,7 +198,26 @@
           </div>
         </section>
 
-        <a id="contact-anchor" class="anchor"></a>
+        <a id="anreise-anchor" class="anchor" data-label="Anreise" data-prio="2"></a>
+        <section id="anreise-section">
+          <h1>Anreise  – Gemeinsam nachhaltig unterwegs</h1>
+          <div>
+            <div class="text-justify">
+              Damit Sie entspannt zur Kulturnacht kommen, empfehlen wir Ihnen die Anreise mit den öffentlichen Verkehrsmitteln. Als auswärtige Besucherinnen und Besucher erreichen Sie Küsnacht bequem mit der S-Bahn oder dem Bus.
+            </div>
+            <div>
+              <strong>🚆 Mit der Bahn:</strong> Die S-Bahn-Linien S6 und S16 bringen Sie direkt zum Bahnhof Küsnacht. Von dort sind es nur wenige Gehminuten zu den Veranstaltungsorten.
+            </div>
+            <div>
+              <strong>🚌 Mit dem Bus:</strong> Bus 916 bis Haltestelle «Oberwacht» oder «Obere Heslibachstrasse». Bus 912 bis Haltstelle «Schiedhaldenstrasse». 
+            </div>
+            <div>
+              <strong>🚗 Mit dem Auto:</strong> Bitte beachten Sie, dass die Parkmöglichkeiten beschränkt sind. Wenige Parkplätze beim Bahnhof oder hinter dem Gemeindehaus. 
+            </div>
+          </div>
+        </section>
+
+        <a id="contact-anchor" class="anchor" data-label="Kontakt"></a>
         <section class="contact-section">
           <h1>Kontakt</h1>
           <p>
@@ -264,7 +263,7 @@
       <footer>
         <p style="flex-shrink: 2">
           <a
-            href="http://www.kulturelle-vereinigung-kuesnacht.ch/"
+            href="https://www.kvk-online.ch/"
             target="_blank"
             >&copy;
             <script>
@@ -284,7 +283,7 @@
         <p style="flex-shrink: 2">Titelfoto: Thomas Ernst</p>
         <div>
           <div>Webseite:</div>
-          <a href="http://www.milanbombsch.ch" target="_blank">M. Bombsch</a>,
+          <a href="https://www.milanbombsch.ch" target="_blank">M. Bombsch</a>,
           <span>A. Allenspach</span>
         </div>
       </footer>

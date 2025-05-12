@@ -11,7 +11,8 @@ export default [
     languageOptions: {
       globals: {
         ...globals.browser,
-        ...globals.jquery
+        ...globals.jquery,
+        ...globals.node
       }
     },
     plugins: {

@@ -1,13 +1,5 @@
 // dont pollute global namespace. Also this way we can better check what is used inside and what outside of this script.
 ;(function () {
-  const hamburgerMenuWidth = 1045
-
-  let currentPosition = null
-  function hideMenu() {
-    const navTrigger = document.getElementById('nav-trigger')
-    navTrigger.checked = false
-  }
-
   // calculate days until eventDate, and display on title image
   function showCountdown() {
     const eventDate = new Date(2025, 8, 5) // 5.9.25 // month is 0 indexed.
@@ -41,51 +33,8 @@
     }
   }
 
-  function updateNavigation() {
-    const nav = document.getElementsByTagName('nav')[0]
-    // reset state
-    const navListItems = nav.querySelectorAll('li:not(:has(.no-navigation))')
-    for (const navListItem of navListItems) {
-      navListItem.classList.remove('current')
-    }
-
-    const html = document.querySelector('html')
-    const windowOffset = html.scrollTop
-    const windowHeight = window.innerHeight
-    const navHeight = nav.clientHeight
-
-    currentPosition = null
-    const anchors = Array.from(document.querySelectorAll('a.anchor'))
-
-    for (let i = 0; i < anchors.length; i++) {
-      const anchor = anchors[i]
-      const anchorTop = anchor.getBoundingClientRect().top
-
-      if (anchorTop - windowOffset < (windowHeight - navHeight) / 2) {
-        currentPosition = { anchor: anchor, index: i }
-        if (anchorTop > windowOffset) {
-          // I am completely contained in the top half. Take me!
-          break
-        }
-      } else {
-        break
-      }
-    }
-
-    let newHash = '#'
-    if (currentPosition !== null) {
-      navListItems[currentPosition.index].classList.add('current')
-
-      newHash = '#' + currentPosition.anchor.id
-    }
-
-    if (newHash != window.location.hash) {
-      history.replaceState(undefined, undefined, newHash)
-    }
-  }
-
   async function insertProgramLegend(element) {
-    const response = await fetch('/site/categories.json')
+    const response = await fetch('site/resources/categories.json')
     const categories = await response.json()
 
     const header = document.createElement('h6')
@@ -132,6 +81,12 @@
     const programLegend = document.querySelector('#program-legend')
     const programTable = document.querySelector('#program-table')
 
+    if (!programTable) {
+      // eslint-disable-next-line no-console
+      console.log('Error: Could not find the program table element.')
+      return
+    }
+
     try {
       try {
         await insertProgramLegend(programLegend)
@@ -140,7 +95,7 @@
         throw e
       }
 
-      const response = await fetch('/site/generated/program-table.html')
+      const response = await fetch('site/generated/program-table.html')
       programTable.innerHTML = await response.text()
     } catch (e) {
       programTable.innerHTML =
@@ -149,31 +104,8 @@
     }
   }
 
-  // global and exported stuff
   window.addEventListener('load', () => {
     showCountdown()
     loadProgramTable()
   })
-
-  window.addEventListener('resize', () => {
-    const container = document.getElementById('container')
-    const containerWidth = container.clientWidth
-    if (containerWidth > hamburgerMenuWidth) {
-      hideMenu()
-    }
-  })
-
-  const debounce = (callback, wait) => {
-    let timeoutId = null
-    return (...args) => {
-      window.clearTimeout(timeoutId)
-      timeoutId = window.setTimeout(() => {
-        callback(...args)
-      }, wait)
-    }
-  }
-
-  window.addEventListener('scroll', debounce(updateNavigation, 100))
-
-  window.hideMenu = hideMenu
 })()

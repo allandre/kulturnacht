@@ -1,0 +1,8 @@
+#anreise-section > div {
+  max-width: 800px;
+  margin: auto;
+
+  div {
+    margin: 1.5em 0;
+  }
+}

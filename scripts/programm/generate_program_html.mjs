@@ -9,9 +9,19 @@ import fillMobileDataTable from './fillMobileDataTable.mjs'
 import { addEventRow, addShuttlebusRow, tableTitleForEvent } from './utils.mjs'
 import { fileURLToPath } from 'node:url'
 import { locationData } from './readData.mjs'
-import locationNumberSpan from '../../site/serverAndClientHelpers.js'
+import locationNumberSpan from '../../site/js/serverAndClientHelpers.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
+const currentNodeVersion = process.versions.node
+const wantedNodeVersion = (
+  await fs.readFile(path.join(__dirname, '../../.nvmrc'), { encoding: 'utf8' })
+).replace(/^v/, '')
+if (!currentNodeVersion.startsWith(wantedNodeVersion)) {
+  console.log(
+    `Error: current Node version is ${currentNodeVersion}, but should match ${wantedNodeVersion}`
+  )
+}
 
 const { document } = new JSDOM().window
 

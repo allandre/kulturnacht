@@ -2,7 +2,7 @@ import { JSDOM } from 'jsdom'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import categories from '../../site/categories.json' with { type: 'json' }
+import categories from '../../site/resources/categories.json' with { type: 'json' }
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -66,7 +66,7 @@ async function addEventRow(tableBody, event, mobile = false) {
       // custom lazy loading hack since normal loading="lazy" did not work.
       img.setAttribute(
         'data-src',
-        '/site/resources/program-images/small/' + imageFileName
+        'site/resources/program-images/small/' + imageFileName
       )
       imageWrapper.appendChild(img)
 
