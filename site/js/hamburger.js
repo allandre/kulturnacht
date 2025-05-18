@@ -80,7 +80,9 @@
     const nav = document.getElementsByTagName('nav')[0]
 
     // reset state
-    const hamburgerLinks = nav.querySelectorAll('#hamburger-links a.actual-anchor')
+    const hamburgerLinks = nav.querySelectorAll(
+      '#hamburger-links a.actual-anchor'
+    )
     hamburgerLinks.forEach(l => l.classList.remove('current'))
 
     const windowHeight = window.innerHeight
@@ -144,6 +146,8 @@
       if (menuLine.scrollWidth > menuLine.getBoundingClientRect().width) {
         entry.style.display = 'none'
         hamburger.style.display = 'block'
+        // Next line is needed for Safari as otherwise the hamburger icon is not visible (but clickable) on window resizing and on iPhone. From https://stackoverflow.com/a/21947628
+        hamburger.style.transform = 'translateZ(0)'
       } else {
         break
       }

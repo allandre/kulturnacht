@@ -32,5 +32,5 @@ Other:
 - add playwright visual regression tests (especially for archive)
 - add google map to Anreise section
 - animate height of hamburger menu opening and closing
-
+- disable body scroll when hamburger menu is open
 

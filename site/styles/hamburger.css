@@ -4,15 +4,19 @@
   justify-content: space-between;
   font-size: 1.1em;
   overflow: hidden;
+
+  a:visited {
+    color: white;
+  }
 }
 
 .hamburger-icon-wrapper {
   width: 3em;
   flex-shrink: 0;
 
-  &.expanded .hamburger-icon{
+  &.expanded .hamburger-icon {
     border: none;
-    
+
     &:before {
       content: 'x';
       border: none;
@@ -51,11 +55,12 @@
   padding: 0 1em;
 
   .current {
-      background-color: var(--site-active-color);
+    background-color: var(--site-active-color);
   }
 }
 
-#hamburger-links, #hamburger-expanded {
+#hamburger-links,
+#hamburger-expanded {
   a {
     color: white;
     text-decoration: none;
