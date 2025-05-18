@@ -77,7 +77,7 @@
   },
   {
     "title": "Mit Groove und Swing durch die Welt",
-    "description": "Die Pianistin Sandra Becker begeistert am E-Piano im Tobelweg.",
+    "description": "Die Pianistin Sandra Becker begeistert am E-Piano am Tobelweg.",
     "team": "Sandra Becker, Piano.",
     "categories": ["music"],
     "images": "Foto 3b",
@@ -137,7 +137,7 @@
   },
   {
     "title": "Wir Artisocken?",
-    "description": "Artischock zeigt kunstvoll hergestellte und verzierte «ArtiSocken». Unsere Mitglieder gestalten exklusive Strümpfe und Socken jeglicher Couleur und Materialen, welche von den Besuchern bewundert und auch gekauft werden dürfen.",
+    "description": "Artischock zeigt kunstvoll hergestellte und verzierte «ArtiSocken». Unsere Mitglieder gestalten exklusive Strümpfe und Socken jeglicher Couleur und Materialen, welche von den Besucher:innen bewundert und auch gekauft werden dürfen.",
     "team": "Mitglieder des Kunstverein Artischock",
     "categories": "exposition",
     "images": "Foto 7c",
@@ -157,7 +157,7 @@
   },
   {
     "title": "Klang und Gesang",
-    "description": "Jane in Flames, ehemalige Küsnachter Konfirmandin, schreibt ihre mehrsprachige Indie-Pop/Folk-Songs selbst. Ihr neues Album \"Whole\" ist ein persönliches Statement über das Ankommen bei sich selbst.",
+    "description": "Jane in Flames, ehemalige Küsnachter Konfirmandin, schreibt ihre mehrsprachige Indie-Pop/Folk-Songs selbst. Ihr neues Album «Whole» ist ein persönliches Statement über das Ankommen bei sich selbst.",
     "team": "Jane in Flames, Singer-Songwriterin.",
     "categories": "music",
     "images": "Foto 8b",
@@ -168,7 +168,7 @@
   },
   {
     "title": "Klang und Gesang",
-    "description": "Florian Fox, ehemaliger Küsnachter Konfirmand, gründete mit 15 Jahren die Country-Rockabilly-Band „The Black Barons“, gilt als «Schweizer Johnny Cash» und ist Texas Sounds Int. Country Music Award Winner.",
+    "description": "Florian Fox, ehemaliger Küsnachter Konfirmand, gründete mit 15 Jahren die Country-Rockabilly-Band «The Black Barons», gilt als «Schweizer Johnny Cash» und ist Texas Sounds Int. Country Music Award Winner.",
     "team": "Florian Fox, Vocalist, Performer und Songwriter.",
     "categories": "music",
     "images": "Foto 8c",
@@ -176,16 +176,6 @@
     "location": "reformierte_kirche",
     "host": "Reformierte Kirche"
   },
-  // { // this is now hardcoded
-  //   "title": "Turmbläser – Auftakt zur Kulturnacht",
-  //   "description": "Das Kulturnacht-OK eröffnet die Kulturnacht Küsnacht 2025 mit Barockmusik, gespielt von der Fanfare Terrible auf dem Kirchturm.",
-  //   "team": "Fanfare Terrible: Christian Meier, Trompete, Roland Hofer, Trompete, Christoph Collet, Posaune, Reto Kappeler, Posaune.",
-  //   "categories": "music",
-  //   "images": "Foto 8d",
-  //   "times": 1630,
-  //   "location": "reformierte_kirche_kirchturm",
-  //   "host": "Kulturelle Vereinigung Küsnacht"
-  // },
   {
     "title": "Amerika gibt es nicht! – feiner Humor",
     "description": "In der Erzählung von Peter Bichsel leugnet ein Mann die Existenz Amerikas; er hat es nie gesehen. Erleben Sie die preisgekrönte darstellende Künstlerin Nicole Knuth in einer fesselnden Performance.",
@@ -208,8 +198,8 @@
     "host": "Musikschule Küsnacht"
   },
   {
-    "title": "A-cappella-Lieder quer durch alle Genres",
-    "description": "Wir sind ein gemischter A-cappella-Chor mit vielseitigem und dynamischem Repertoire. Wir musizieren ausschliesslich mit unseren Stimmen.",
+    "title": "A-Cappella-Lieder quer durch alle Genres",
+    "description": "Wir sind ein gemischter A-Cappella-Chor mit vielseitigem und dynamischem Repertoire. Wir musizieren ausschliesslich mit unseren Stimmen.",
     "team": "b-live Chor Küsnacht",
     "categories": "music",
     "images": "Foto 11",
@@ -219,7 +209,7 @@
   },
   {
     "title": "Die Ukraine zu Gast an der Kantonsschule Küsnacht",
-    "description": "Die Kantonsschule öffnet die Türen dem Sonnenhof. In der Villa wird bei festlicher Salonmusik ein köstlicher, ukrainischer Apero Riche angeboten. Dazu lokale Weine vom Weingut Diederik Küsnacht und auch alkoholfreie Getränke.",
+    "description": "Die Kantonsschule öffnet die Türen dem Sonnenhof. In der Villa wird bei festlicher Salonmusik ein köstlicher, ukrainischer Apéro riche angeboten. Dazu lokale Weine vom Weingut Diederik Küsnacht und auch alkoholfreie Getränke.",
     "team": "Kammerorchester der Kantonsschule, Leitung Sabine Furrer, und Mütter vom Wohnheim Sonnenhof.",
     "categories": ["music", "food", "food-vine", "food-coffee"],
     "images": ["Foto 12-1", "Foto 12-2"],
@@ -229,8 +219,8 @@
   },
   {
     "title": "Ukrainische Gesänge",
-    "description": "Der ukrainische Chor PERESPIV verzaubert seine Zuhörer mit ukrainischen Gesängen. Er wurde 2022 gegründet. PERESPIV bietet fast ausschliesslich ukrainische Musikliteratur aus verschiedenen Epochen und Stilrichtungen dar.",
-    "team": "Chor PERESPIV, Leitung  Zoryana Masko",
+    "description": "Der ukrainische Chor «Perespiv» verzaubert seine Zuhörer mit ukrainischen Gesängen. Er wurde 2022 gegründet. «Perespiv» bietet fast ausschliesslich ukrainische Musikliteratur aus verschiedenen Epochen und Stilrichtungen dar.",
+    "team": "Chor «Perespiv», Leitung  Zoryana Masko",
     "categories": "music",
     "images": "Foto 13a",
     "times": [17, 22],
@@ -248,9 +238,9 @@
     "host": "Wohnheim Sonnenhof"
   },
   {
-    "title": "Ukrainische Volkstanzgruppe GOLUBKA",
-    "description": "Der Tanz ist die emotionale Sprache der Seele des Volkstanzensembles „GOLUBKA“. Er ist Quelle der Inspiration in Zeiten tragischer Ereignisse und gibt uns die Möglichkeit, unsere Identität zu bewahren und sie mit der Welt zu teilen.",
-    "team": "Volkstanzgruppe GOLUBKA. Leitung Elena Heydemann.",
+    "title": "Ukrainische Volkstanzgruppe «Golubka»",
+    "description": "Der Tanz ist die emotionale Sprache der Seele des Volkstanzensembles «Golubka». Er ist Quelle der Inspiration in Zeiten tragischer Ereignisse und gibt uns die Möglichkeit, unsere Identität zu bewahren und sie mit der Welt zu teilen.",
+    "team": "Volkstanzgruppe «Golubka». Leitung Elena Heydemann.",
     "categories": "music",
     "images": "Foto 13c",
     "times": [19, 21],
@@ -329,7 +319,7 @@
   },
   {
     "title": "Buchpräsentation «Der Reisläufer und das Blutgericht von Zürich»",
-    "description": "Der Zürcher Historiker präsentiert bei WOLF seinen historischen Roman über einen Küsnachter Bauernsohn, der auf den Schlachtfeldern Norditaliens Zeuge von Bestechungen wurde, die zur Niederlage bei Marignano führen.",
+    "description": "Der Zürcher Historiker präsentiert bei WOLF seinen historischen Roman über einen Küsnachter Bauernsohn, der auf den Schlachtfeldern Norditaliens Zeuge von Bestechungen wurde, die zur Niederlage bei Marignano führten.",
     "team": "Peter Neumann, Autor",
     "categories": "language",
     "images": "Foto 17",
@@ -339,7 +329,7 @@
   },
   {
     "title": "«Königinnen von Frankreich» von Thornton Wilder",
-    "description": "Was geschah nach der französischen Revolution mit dem Königsgeschlecht? In Thornton Wilders Einakter „Königinnen von Frankreich“ sucht ein Anwalt aus New Orleans eine legitime Nachfolgerin – der Nachweis gestaltet sich schwierig.",
+    "description": "Was geschah nach der französischen Revolution mit dem Königsgeschlecht? In Thornton Wilders Einakter «Königinnen von Frankreich» sucht ein Anwalt aus New Orleans eine legitime Nachfolgerin – der Nachweis gestaltet sich schwierig.",
     "team": "Die Schauspielgruppe DIE KULISSE, Küsnacht. Spiel: Felix Helmrich, Eva Polgar, Tina Kym, Stephanie Aerni, Monica Gütermann. Regie: Nora von Bergen. Ausstattung: Flurin Helmrich, Monica Gütermann.",
     "categories": "theater",
     "images": "Foto 18a",
@@ -368,8 +358,8 @@
     "host": "Kulturkommission Küsnacht"
   },
   {
-    "title": "Verpflegungs-Oase auf dem Dorfplatz",
-    "description": "Für den grossen und kleinen Hunger bieten verschiedene Foodtrucks eine breite Palette an salzigen und süssen Speisen und diversen Getränken.",
+    "title": "Bewirtung auf dem Dorfplatz",
+    "description": "Food Trucks bieten ein vielfältiges Angebot an Speis und Trank.",
     "team": "Kulturnacht-OK & Plattform Foodtrucks Schweiz",
     "categories": ["food", "food-ice", "food-coffee", "food-vine"],
     "images": [
@@ -381,13 +371,4 @@
     "location": "dorfplatz",
     "host": "Kulturnacht-OK"
   }
-  // { // is done in its own box
-  //   "title": "Magische Licht- und Musik-Show",
-  //   "description": "Das Finale der Kulturnacht Küsnacht 2025 mit dem Fanfare Terrible, Roland Schatt und Effekte.ch, präsentiert vom Kulturnacht-OK und der Gemeinde Küsnacht.",
-  //   "team": "Effekte.ch sowie die Fanfare Terrible und Roland Schatt, Schlagzeug",
-  //   "categories": "finale",
-  //   "times": 23,
-  //   "location": "finale",
-  //   "host": "Kulturelle Vereinigung Küsnacht & Gemeinde Küsnacht"
-  // }
 ]

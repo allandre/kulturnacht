@@ -34,4 +34,3 @@ Other:
 - animate height of hamburger menu opening and closing
 - disable body scroll when hamburger menu is open
 
-
