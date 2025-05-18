@@ -144,6 +144,8 @@
       if (menuLine.scrollWidth > menuLine.getBoundingClientRect().width) {
         entry.style.display = 'none'
         hamburger.style.display = 'block'
+        // Next line is needed for Safari as otherwise the hamburger icon is not visible (but clickable) on window resizing and on iPhone. From https://stackoverflow.com/a/21947628
+        hamburger.style.transform = 'translateZ(0)'
       } else {
         break
       }

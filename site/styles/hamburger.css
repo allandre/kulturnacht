@@ -4,6 +4,10 @@
   justify-content: space-between;
   font-size: 1.1em;
   overflow: hidden;
+
+  a:visited {
+    color: white;
+  }
 }
 
 .hamburger-icon-wrapper {
