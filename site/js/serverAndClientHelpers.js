@@ -4,5 +4,5 @@ function locationNumberSpan(number) {
 
 // hack to be able to import this file in node and in the browser
 if (typeof module !== 'undefined') {
-  module.exports = locationNumberSpan // eslint-disable-line no-undef
+  module.exports = locationNumberSpan
 }

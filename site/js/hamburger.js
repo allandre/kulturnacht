@@ -80,7 +80,9 @@
     const nav = document.getElementsByTagName('nav')[0]
 
     // reset state
-    const hamburgerLinks = nav.querySelectorAll('#hamburger-links a.actual-anchor')
+    const hamburgerLinks = nav.querySelectorAll(
+      '#hamburger-links a.actual-anchor'
+    )
     hamburgerLinks.forEach(l => l.classList.remove('current'))
 
     const windowHeight = window.innerHeight
