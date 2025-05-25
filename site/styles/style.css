@@ -76,32 +76,6 @@ nav {
 
 /* LOGO end */
 
-/* TITLE SECTION start */
-
-#title-section {
-  padding: 0;
-  background-color: var(--site-main-color);
-}
-
-#countdown {
-  position: absolute;
-  top: 30%;
-  border-radius: 5px;
-  color: rgba(255, 255, 255, 0.7);
-  background-color: rgba(0, 0, 0, 0.8);
-  font-size: max(14px, min(3.4vw, 85px));
-  text-align: center;
-  left: 3%;
-  padding: 0 0.8em;
-  max-width: 94%;
-}
-
-#title-section img {
-  width: 100%;
-}
-
-/* TITLE SECTION end */
-
 /* PLAN SECTION start */
 
 #plan-section div {
@@ -350,6 +324,8 @@ nav {
 }
 
 #program-start-end {
+  margin-bottom: 3em;
+
   .arrow {
     display: flex;
     flex-direction: column;
@@ -366,7 +342,7 @@ nav {
   display: grid;
   border: 1px solid var(--highlight-grey-dark);
   padding: 1em;
-  margin: 2em 0;
+  margin: 2em auto;
   background: var(--highlight-grey);
   container-type: inline-size;
   max-width: 1000px;
@@ -439,6 +415,10 @@ nav {
 }
 
 @media screen and (max-width: 500px) {
+  #program-start-end {
+    margin-bottom: 2em;
+  }
+
   #program-start-end > div {
     grid-template-columns: 1fr !important;
 
@@ -612,17 +592,18 @@ button.gallery-toggler:hover {
   color: var(--site-main-color);
 }
 
-.contact-section {
+.contact-section > div {
   max-width: 800px;
   margin: auto;
 }
 
 .contact-section h3 {
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 .contact-section p {
-  margin-top: 0;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
 }
 
 .contact-section li {
@@ -631,10 +612,14 @@ button.gallery-toggler:hover {
 
 .contact-section img {
   display: block;
-  width: min(80%, 400px);
-  margin-top: 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
   margin-left: auto;
   margin-right: auto;
+  width: 80%;
+  aspect-ratio: 1.2;
+  object-fit: cover;
+  object-position: 84%;
 }
 
 #location {
@@ -681,11 +666,12 @@ button.gallery-toggler:hover {
 #sponsoren-section {
   padding-left: 3%;
   padding-right: 3%;
+  padding-bottom: 3em;
 }
 
 #sponsoren-section h2 {
   margin-top: 3em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   border-bottom: 1px solid grey;
 }
 
@@ -710,10 +696,6 @@ button.gallery-toggler:hover {
   margin: auto;
 }
 
-.sponsoren-block:nth-of-type(2) img {
-  height: 50px;
-}
-
 .sponsoren-block img {
   width: unset;
   max-width: unset;
@@ -723,17 +705,111 @@ button.gallery-toggler:hover {
   padding: 1em 0.5em;
 }
 
-#schererHeizungen {
-  max-height: 12vw;
-}
-
-#STFS {
-  max-height: 12vw;
-}
-
 #sponsoren-section a {
   text-decoration: none;
   color: black;
+}
+
+#sponsoren-section {
+  .sponsoren-block {
+    container-type: inline-size;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .gold {
+    margin-bottom: 0;
+  }
+
+  .silber {
+    margin-bottom: 0;
+  }
+
+  h2.bronze {
+    margin-top: 0;
+    margin-bottom: 2em;
+  }
+
+  .bronze.sponsoren-block {
+    gap: 1em;
+  }
+
+  .goenner.sponsoren-block {
+    gap: 1em;
+  }
+
+  #ernstco {
+    width: 20cqw;
+    padding: 0 1em;
+  }
+
+  #gemeinde-kuesnacht {
+    width: 30cqw;
+    max-width: 181px;
+    padding-bottom: 0;
+  }
+
+  #walter-haefner {
+    width: 33cqw;
+    padding-bottom: 0;
+  }
+
+  #world-of-bonnie {
+    width: 30cqw;
+    height: 15cqw;
+  }
+
+  #zkb {
+    height: 63px;
+  }
+
+  #mediumsatz {
+    width: max(26cqw, 221px);
+    height: unset;
+  }
+
+  #kuesnachter {
+    width: max(20cqw, 180px);
+    height: max(10cqw, 100px);
+  }
+
+  .text-sponsor {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #sponsoren-section {
+    a {
+      img {
+        width: 80cqw !important;
+      }
+    }
+
+    h2.gold {
+      margin-bottom: 1em;
+    }
+
+    #ernstco {
+      width: min(70cqw, 230px) !important;
+    }
+
+    #world-of-bonnie {
+      height: 40cqw;
+    }
+
+    #mediumsatz {
+      height: 30cqw;
+    }
+
+    #kuesnachter {
+      height: min(25cqw, 90px);
+    }
+  }
 }
 
 /* SPONSOREN SECTION end */
@@ -747,7 +823,7 @@ footer {
   padding: 0.7em;
   background-color: var(--site-main-color);
   color: white;
-  margin-top: 100px;
+  margin-top: 50px;
   overflow: hidden;
   hyphens: auto;
   word-break: break-word; /* needed for Safari */

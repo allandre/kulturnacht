@@ -1,0 +1,9 @@
+#info-section > div {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 1.5em;
+
+  .time {
+    color: var(--kvk-main-color);
+  }
+}

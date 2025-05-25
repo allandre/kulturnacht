@@ -101,10 +101,20 @@ img {
   object-fit: contain;
 }
 
+/* "Tailwind" */
+
 .bold {
   font-weight: bold;
 }
 
 .hidden {
   display: none !important;
+}
+
+.block {
+  display: block;
+}
+
+.black {
+  color: black !important;
 }

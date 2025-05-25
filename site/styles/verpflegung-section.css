@@ -1,0 +1,10 @@
+#verpflegung-section > div {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 1em;
+}
+
+#verpflegung-section > div:first-of-type {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}

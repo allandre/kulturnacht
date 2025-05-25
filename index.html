@@ -43,7 +43,10 @@
     <link href="site/styles/reset.css" rel="stylesheet" />
     <link href="site/styles/general.css" rel="stylesheet" />
     <link href="site/styles/style.css" rel="stylesheet" />
-    <link href="site/styles/anresie.css" rel="stylesheet" />
+    <link href="site/styles/title-section.css" rel="stylesheet" />
+    <link href="site/styles/info-section.css" rel="stylesheet" />
+    <link href="site/styles/verpflegung-section.css" rel="stylesheet" />
+    <link href="site/styles/anreise-section.css" rel="stylesheet" />
     <link href="site/styles/hamburger.css" rel="stylesheet" />
 
     <script src="site/js/script.js"></script>
@@ -67,18 +70,49 @@
       <div id="main">
         <section id="title-section">
           <div id="countdown">Noch ... Tage</div>
-          <img src="site/resources/title-image-1600.png" />
+          <img src="site/resources/title-image-1600.jpg" class="block" />
+          <div id="time-information">
+            <div>
+              <div>Freitag, 5. September 2025</div>
+              <div>Ab 17 Uhr im Dorfzentrum</div>
+            </div>
+          </div>
         </section>
+
         <a id="info-anchor" class="anchor" data-label="Info"></a>
-        <section>
+        <section id="info-section">
           <h1>Willkommen an der Kulturnacht Küsnacht</h1>
-          <p>
-            Reservieren Sie sich den <b>Abend am Freitag, 5. September 2025!</b>
-          </p>
-          <p>
-            Von <b>17 bis 24 Uhr</b> steht das Küsnachter Dorfzentrum im Zeichen
-            der Kultur.
-          </p>
+          <div>
+            Am <strong>5. September 2025</strong> begrüssen wir Sie im Namen der
+            <a href="https://www.kvk.ch">Kulturellen Vereinigung (KVK)</a>
+            herzlich zur <b>dritten Kulturnacht</b> in Küsnacht.
+          </div>
+          <div>
+            Vom Auftakt vom Kirchturm der reformierten Kirche um
+            <b class="time">16.30 Uhr</b> bis zum Finale am Küsnachter Horn um
+            <b class="time">23 Uhr</b> erwartet Sie im Küsnachter Dorfzentrum ab
+            17 Uhr im Stundentakt ein Abend voller Kultur. Die Darbietungen
+            dauern maximal 30 Minuten, danach ist genügend Zeit für einen
+            Ortswechsel. Alle <b>Eintritte sind frei</b>.
+          </div>
+          <div>
+            Dank der grosszügigen Unterstützung der
+            <a href="#sponsoren-anchor" class="black"><b>Sponsoren</b></a
+            >, des grossen Engagements unserer
+            <b>Veranstaltungspartner</b> sowie der freiwilligen
+            <b>Helferinnen und Helfer</b> wird diese Nacht ein einmaliges
+            Erlebnis.
+          </div>
+          <div>
+            Die Kulturnacht Küsnacht 2025 ist auch ein
+            <b>Fest der Begegnung</b> und des gemeinsamen Erlebens. Wir
+            empfehlen die Anreise mit den
+            <a class="black" href="#anreise-anchor"
+              >öffentlichen Verkehrsmitteln</a
+            >
+            und laden Sie ein, mit uns zu feiern und die
+            <b>bunte Kulturlandschaft</b> in unserer Gemeinde zu entdecken.
+          </div>
         </section>
 
         <a
@@ -208,6 +242,37 @@
           </div>
         </section>
 
+        <a id="verpflegung-anchor" class="anchor" data-label="Verpflegung"></a>
+        <section id="verpflegung-section">
+          <h2>Verpflegung</h2>
+          <div>
+            Zwischen den kulturellen Darbietungen laden Sie verschiedene
+            Verpflegungsangebote zum Geniessen ein:
+          </div>
+          <div>
+            1. <strong>Dorfplatz:</strong> In der
+            <strong>Verpflegungs-Oase</strong> auf dem Dorfplatz bieten
+            Foodtrucks eine vielfältige Auswahl an salzigen und süssen Speisen
+            sowie Getränken an.
+          </div>
+          <div>
+            2. <strong>Tobelweg:</strong> Das
+            <strong>Kulturbistro</strong> mitten auf dem Platz lädt ein, sich
+            mit Kaffee und Kuchen, Würsten vom Grill, Wein und Popcorn zu
+            stärken und der Pianomusik zu lauschen.
+          </div>
+          <div>
+            3. <strong>Kantonsschule Küsnacht:</strong> In der
+            <strong>Villa</strong> erwartet Sie bei festlicher Salonmusik ein
+            feiner ukrainisch-schweizerischer Apéro riche. Dazu gibt es lokale
+            Weine und alkoholfreie Getränke.
+          </div>
+          <div>
+            4. Beachten Sie zudem die weiteren kulinarischen Angebote bei den
+            <strong>Veranstaltungsorten</strong>.
+          </div>
+        </section>
+
         <a
           id="anreise-anchor"
           class="anchor"
@@ -241,49 +306,133 @@
           </div>
         </section>
 
+        <a id="sponsoren-anchor" class="anchor" data-label="Sponsoren"></a>
+        <section id="sponsoren-section">
+          <h1>
+            Herzlichen Dank unseren Sponsoren und Gönnern für die finanzielle
+            Unterstützung!
+          </h1>
+          <h2 class="gold">Goldsponsoren</h2>
+          <div class="sponsoren-block">
+            <a href="https://www.ernstco.ch/" target="_blank">
+              <img
+                id="ernstco"
+                src="site/resources/sponsoren/Logo_Ernst-Logo.png"
+              />
+            </a>
+            <a>
+              <img
+                id="walter-haefner"
+                src="site/resources/sponsoren/Logo_whs namenszug_cmyk_neu 2018.png"
+              />
+            </a>
+            <a href="https://bonnie.ch/" target="_blank">
+              <img
+                id="world-of-bonnie"
+                src="site/resources/sponsoren/Logo_World of Bonnie (130 x 70 mm).png"
+              />
+            </a>
+            <a href="https://www.zkb.ch/" target="_blank">
+              <img
+                id="zkb"
+                src="site/resources/sponsoren/Logo_ZKB_100mm_CMYK.png"
+              />
+            </a>
+          </div>
+          <h2 class="silber">Silbersponsoren</h2>
+          <div class="sponsoren-block">
+            <a href="https://mediumsatz.ch/" target="_blank">
+              <img
+                id="mediumsatz"
+                src="site/resources/sponsoren/Logo_ms_mediumsatz-Logo.1.png"
+              />
+            </a>
+          </div>
+          <h2 class="bronze">Bronzesponsoren</h2>
+          <div class="bronze sponsoren-block">
+            <a
+              href="https://www.apotheke-hotz.ch/"
+              target="_blank"
+              class="text-sponsor"
+              >Apotheke Hotz</a
+            >
+            <a
+              href="https://colonels-club-foundation.ch/"
+              target="_blank"
+              class="text-sponsor"
+              >Colonels Club Foundation</a
+            >
+          </div>
+          <h2 class="goenner">Gönner:innen</h2>
+          <div class="goenner sponsoren-block">
+            <a href="https://www.kuesnacht.ch/" target="_blank">
+              <img
+                id="gemeinde-kuesnacht"
+                src="site/resources/sponsoren/Logo_kuesnacht_logo_rgb_quer_2025.jpg"
+              />
+            </a>
+            <a class="text-sponsor"> Norbert Cajochen, Treuhand </a>
+            <a class="text-sponsor"> SK Stiftung, Küsnacht </a>
+          </div>
+          <h2>Medienpartner</h2>
+          <div class="sponsoren-block">
+            <a href="https://www.derkuesnachter.ch/" target="_blank">
+              <img
+                id="kuesnachter"
+                src="site/resources/sponsoren/Logo_Kuesnachter_amtlich 2021.png"
+              />
+            </a>
+          </div>
+        </section>
+
         <a id="contact-anchor" class="anchor" data-label="Kontakt"></a>
         <section class="contact-section">
-          <h1>Kontakt</h1>
-          <p>
-            Um mit uns in Kontakt zu treten, schicken Sie bitte eine E-mail an
-            <a href="mailto:vorstand@kulturelle-vereinigung-kuesnacht.ch"
-              >vorstand@kulturelle-vereinigung-kuesnacht.ch</a
-            >
-          </p>
-          <h3>
-            Die Kulturnacht Küsnacht ist ein Projekt der Kulturellen Vereinigung
-            Küsnacht (KVK).
-          </h3>
           <div>
-            <img src="site/resources/OKKulturnJan24_03.jpg" />
-          </div>
-          <h3>
-            Die Kulturnacht Küsnacht 2025 wird von einem Nonprofit-Team
-            organisiert:
-          </h3>
-          <div id="organisator-list">
-            <div>Koordination Veranstalter:</div>
-            <div>Martine Peyer</div>
-            <div>PR / Medien:</div>
-            <div>Elisabeth Abgottspon</div>
-            <div>Gastronomie:</div>
-            <div>Kim Wyder</div>
-            <div>Infrastruktur / Bewilligungen:</div>
-            <div>Hans-Peter Fehr</div>
-            <div>Sponsoring:</div>
-            <div>Felix Günthardt</div>
-            <div>Finanzen:</div>
-            <div>Ilka Allenspach</div>
-          </div>
-          <div class="text-justify">
-            Die Kulturelle Vereinigung Küsnacht gewährleistet zusammen mit der
-            Gemeinde die Sammlung und den Betrieb des Ortsmuseums Küsnacht,
-            betreut die Galerie im Höchhuus und veranstaltet Vorträge und
-            Ausflüge mit kulturgeschichtlichem Hintergrund und gibt
-            Publikationen zu ortsgeschichtlichen Themen heraus.
+            <h1>Kontakt</h1>
+            <p>
+              Um mit uns in Kontakt zu treten, schicken Sie bitte eine E-mail an
+              <a href="mailto:vorstand@kulturelle-vereinigung-kuesnacht.ch"
+                >vorstand@kulturelle-vereinigung-kuesnacht.ch</a
+              >
+            </p>
+            <h3>
+              Die Kulturnacht Küsnacht ist ein Projekt der
+              <a href="https://www.kvk.ch" class="black"
+                >Kulturellen Vereinigung Küsnacht (KVK)</a
+              >.
+            </h3>
+            <div>
+              <img src="site/resources/FotoOKKulturnacht.jpg" />
+            </div>
+            <h3>
+              Die Kulturnacht Küsnacht 2025 wird von einem Nonprofit-Team
+              organisiert:
+            </h3>
+            <div id="organisator-list">
+              <div>Koordination Veranstalter:</div>
+              <div>Martine Peyer</div>
+              <div>PR / Medien:</div>
+              <div>Elisabeth Abgottspon</div>
+              <div>Gastronomie:</div>
+              <div>Kim Wyder</div>
+              <div>Infrastruktur / Bewilligungen:</div>
+              <div>Hans-Peter Fehr</div>
+              <div>Sponsoring:</div>
+              <div>Felix Günthardt</div>
+              <div>Finanzen:</div>
+              <div>Ilka Allenspach</div>
+            </div>
+            <div class="text-justify">
+              Die Kulturelle Vereinigung Küsnacht gewährleistet zusammen mit der
+              Gemeinde die Sammlung und den Betrieb des Ortsmuseums Küsnacht,
+              betreut die Galerie im Höchhuus und veranstaltet Vorträge und
+              Ausflüge mit kulturgeschichtlichem Hintergrund und gibt
+              Publikationen zu ortsgeschichtlichen Themen heraus.
+            </div>
           </div>
         </section>
       </div>
+
       <footer>
         <p style="flex-shrink: 2">
           <a href="https://www.kvk-online.ch/" target="_blank"
