@@ -32,7 +32,4 @@ Other:
 - add google map to Anreise section
 - animate height of hamburger menu opening and closing
 - disable body scroll when hamburger menu is open
-- fix highlight on scroll in navigation
-
-
 
