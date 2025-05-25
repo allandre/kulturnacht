@@ -101,6 +101,8 @@ img {
   object-fit: contain;
 }
 
+/* "Tailwind" */
+
 .bold {
   font-weight: bold;
 }
@@ -111,4 +113,8 @@ img {
 
 .block {
   display: block;
+}
+
+.black {
+  color: black !important;
 }

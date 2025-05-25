@@ -598,11 +598,12 @@ button.gallery-toggler:hover {
 }
 
 .contact-section h3 {
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 .contact-section p {
-  margin-top: 0;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
 }
 
 .contact-section li {
@@ -611,7 +612,8 @@ button.gallery-toggler:hover {
 
 .contact-section img {
   display: block;
-  margin-top: 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
@@ -664,7 +666,7 @@ button.gallery-toggler:hover {
 #sponsoren-section {
   padding-left: 3%;
   padding-right: 3%;
-  padding-bottom: 2em;
+  padding-bottom: 3em;
 }
 
 #sponsoren-section h2 {
@@ -774,6 +776,10 @@ button.gallery-toggler:hover {
     width: max(20cqw, 180px);
     height: max(10cqw, 100px);
   }
+
+  .text-sponsor {
+    font-size: 1.2em;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -817,7 +823,7 @@ footer {
   padding: 0.7em;
   background-color: var(--site-main-color);
   color: white;
-  margin-top: 100px;
+  margin-top: 50px;
   overflow: hidden;
   hyphens: auto;
   word-break: break-word; /* needed for Safari */
