@@ -76,32 +76,6 @@ nav {
 
 /* LOGO end */
 
-/* TITLE SECTION start */
-
-#title-section {
-  padding: 0;
-  background-color: var(--site-main-color);
-}
-
-#countdown {
-  position: absolute;
-  top: 30%;
-  border-radius: 5px;
-  color: rgba(255, 255, 255, 0.7);
-  background-color: rgba(0, 0, 0, 0.8);
-  font-size: max(14px, min(3.4vw, 85px));
-  text-align: center;
-  left: 3%;
-  padding: 0 0.8em;
-  max-width: 94%;
-}
-
-#title-section img {
-  width: 100%;
-}
-
-/* TITLE SECTION end */
-
 /* PLAN SECTION start */
 
 #plan-section div {
