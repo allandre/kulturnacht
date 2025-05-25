@@ -611,10 +611,13 @@ button.gallery-toggler:hover {
 
 .contact-section img {
   display: block;
-  width: min(80%, 400px);
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
+  width: 80%;
+  aspect-ratio: 1.2;
+  object-fit: cover;
+  object-position: 84%;
 }
 
 #location {
