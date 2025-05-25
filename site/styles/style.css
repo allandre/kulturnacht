@@ -664,11 +664,12 @@ button.gallery-toggler:hover {
 #sponsoren-section {
   padding-left: 3%;
   padding-right: 3%;
+  padding-bottom: 2em;
 }
 
 #sponsoren-section h2 {
   margin-top: 3em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   border-bottom: 1px solid grey;
 }
 
@@ -691,10 +692,6 @@ button.gallery-toggler:hover {
   flex-wrap: wrap;
   max-width: 1000px;
   margin: auto;
-}
-
-.sponsoren-block:nth-of-type(2) img {
-  height: 50px;
 }
 
 .sponsoren-block img {
@@ -722,6 +719,27 @@ button.gallery-toggler:hover {
     }
   }
 
+  .gold {
+    margin-bottom: 0;
+  }
+
+  .silber {
+    margin-bottom: 0;
+  }
+
+  h2.bronze {
+    margin-top: 0;
+    margin-bottom: 2em;
+  }
+
+  .bronze.sponsoren-block {
+    gap: 1em;
+  }
+
+  .goenner.sponsoren-block {
+    gap: 1em;
+  }
+
   #ernstco {
     width: 20cqw;
     padding: 0 1em;
@@ -729,18 +747,13 @@ button.gallery-toggler:hover {
 
   #gemeinde-kuesnacht {
     width: 30cqw;
-  }
-
-  #max-martha {
-    font-size: 1.5em;
-    font-family: 'Roboto';
-    text-transform: uppercase;
-    color: #8bcbc8;
-    padding: 0 1em;
+    max-width: 181px;
+    padding-bottom: 0;
   }
 
   #walter-haefner {
     width: 33cqw;
+    padding-bottom: 0;
   }
 
   #world-of-bonnie {
@@ -748,9 +761,13 @@ button.gallery-toggler:hover {
     height: 15cqw;
   }
 
+  #zkb {
+    height: 63px;
+  }
+
   #mediumsatz {
-    width: 20cqw;
-    height: 10cqw;
+    width: max(26cqw, 221px);
+    height: unset;
   }
 
   #kuesnachter {
@@ -767,17 +784,12 @@ button.gallery-toggler:hover {
       }
     }
 
+    h2.gold {
+      margin-bottom: 1em;
+    }
+
     #ernstco {
       width: min(70cqw, 230px) !important;
-    }
-
-    #gemeinde-kuesnacht {
-      padding: 2em 0;
-    }
-
-    #max-martha {
-      font-size: 5cqw;
-      padding-bottom: 1em;
     }
 
     #world-of-bonnie {
