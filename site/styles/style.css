@@ -311,10 +311,13 @@ nav {
   }
 }
 
+#program-section .only-mobile:has(.location-number) {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row-reverse;
+}
+
 #program-section .only-mobile .location-number {
-  position: absolute;
-  right: 0.5em;
-  top: 0.5em;
   font-size: 0.8em;
 }
 
@@ -437,8 +440,6 @@ nav {
       &:has(.arrow-open) {
         margin-bottom: 1em;
       }
-
-      width: calc(100% - 2em);
     }
 
     .img-container {
