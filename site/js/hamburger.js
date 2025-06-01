@@ -55,22 +55,28 @@
   hamburgerExpanded.style.top = `${navbarHeight}px`
   hamburgerDiv.parentElement.appendChild(hamburgerExpanded)
 
+  // getComputedStyle needs to happen after appendChild
+  const computedStyle = getComputedStyle(hamburgerExpanded)
+  const minusHeight =
+    parseFloat(computedStyle.top) +
+    parseFloat(computedStyle.paddingTop) +
+    parseFloat(computedStyle.paddingBottom)
+  hamburgerExpanded.style.maxHeight = `calc(100dvh - ${minusHeight}px)`
+
   function toggleHamburger(forceOff = false) {
-    const hamburgerEpanded = document.querySelector('#hamburger-expanded')
-    const currentlyHidden =
-      getComputedStyle(hamburgerEpanded).getPropertyValue('display') === 'none'
+    const hamburgerExpanded = document.querySelector('#hamburger-expanded')
     const hamburgerIconWrapper = document.querySelector(
       '.hamburger-icon-wrapper'
     )
 
-    if (currentlyHidden && !forceOff) {
+    if (!hamburgerMenuCurrentlyOpen() && !forceOff) {
       document.querySelectorAll('#hamburger-links a').forEach(e => {
         e.style.display = 'none'
       })
-      hamburgerEpanded.style.display = 'flex'
+      hamburgerExpanded.classList.add('flex')
       hamburgerIconWrapper.classList.add('expanded')
     } else {
-      hamburgerEpanded.style.removeProperty('display')
+      hamburgerExpanded.classList.remove('flex')
       hamburgerIconWrapper.classList.remove('expanded')
       reshapeMenu()
     }
@@ -120,10 +126,12 @@
     }
   }
 
+  function hamburgerMenuCurrentlyOpen() {
+    return hamburgerExpanded.classList.contains('flex')
+  }
+
   function reshapeMenu() {
-    const hamburgerExpanded =
-      document.querySelector('#hamburger-expanded').style.display === 'flex'
-    if (hamburgerExpanded) {
+    if (hamburgerMenuCurrentlyOpen()) {
       return
     }
 
