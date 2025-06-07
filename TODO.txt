@@ -1,15 +1,13 @@
-- add github pipeline for linting
 - add github action for deploying
-- add possibility for feature envs on github
-- put hamburger menu more to the right on mobile (refactor the whole thing^^)
+  - add ?v=$commitHash to all ressources which are loaded in index.html
+- add possibility for feature envs (on github)
 - two columns of videos in archive on iphone 13 mini
-- opening animation for menu and video expansions.
+- Archive: opening animation for menu and video expansions.
 - switch to sftp in deploy script
 - fix broken colors in dark mode
   - especially Archiv
   - esp Huawei Android; iPhone and Desktop look fine
 - get rid of jquery
-- add commit hash to deploy script and in html
 - load nav and footer via js to have the same on Home and Archiv
   - maybe use alpine.js but probably overkill
   - maybe better: write (bash) script to check that head and footer (maybe nav) are the same on all pages.
@@ -21,7 +19,7 @@
 Program 2025:
 - click on image in event-row to open big one (modal; also draggable to desktop)
 - add participant gallery
-- make all time columns same width on desktop
+- make all time columns same width on desktop (we probably need to switch from table to grid for this)
 - make table shrink on small desktop size (we probably need to switch from table to grid for this)
 
 
@@ -31,5 +29,7 @@ Other:
 - add playwright visual regression tests (especially for archive)
 - add google map to Anreise section
 - animate height of hamburger menu opening and closing
-- disable body scroll when hamburger menu is open
+- Noch 96 Tage bis zur -> Noch 96 Tage?
+- on window width resizing make sure the center of the window always contains the same element. Currently it is jumping around quite a bit.
+- animated scroll when clicking on Sponoren in welcome text.
 

@@ -118,3 +118,7 @@ img {
 .black {
   color: black !important;
 }
+
+.flex {
+  display: flex;
+}
