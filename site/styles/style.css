@@ -781,6 +781,7 @@ button.gallery-toggler:hover {
   /* Ublock origin gfallt de class name .text-sponsor nöd */
   .text-only-sponsor {
     font-size: 1.2em;
+    padding: 0.5em 0;
   }
 }
 
