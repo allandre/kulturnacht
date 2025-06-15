@@ -20,4 +20,4 @@ fi
 
 export LFTP_PASSWORD=$ftpPassword
 
-lftp -e "set ssl:verify-certificate/36:9A:EB:45:25:E5:47:FE:8E:29:75:87:C4:86:F1:E8:0E:31:B5:7F no; mirror --reverse --exclude='.DS_Store' --delete './site' /httpdocs/site; put -O /httpdocs/ './index.html'; quit" --env-password "ftp://$ftpUsername@$ftpHost"
+lftp -e "set ssl:verify-certificate/37:44:88:26:9E:00:30:93:00:1A:D7:C8:12:99:1F:4C:B6:75:33:CF no; mirror --reverse --exclude='.DS_Store' --delete './site' /httpdocs/site; put -O /httpdocs/ './index.html'; quit" --env-password "ftp://$ftpUsername@$ftpHost"
