@@ -704,6 +704,7 @@ button.gallery-toggler:hover {
   /*71*/
   max-height: unset;
   padding: 1em 0.5em;
+  margin: auto;
 }
 
 #sponsoren-section a {
@@ -773,6 +774,10 @@ button.gallery-toggler:hover {
     height: unset;
   }
 
+  #effektech {
+    width: 80%;
+  }
+
   #kuesnachter {
     width: max(20cqw, 180px);
     height: max(10cqw, 100px);
@@ -782,6 +787,7 @@ button.gallery-toggler:hover {
   .text-only-sponsor {
     font-size: 1.2em;
     padding: 0.5em 0;
+    text-align: center;
   }
 }
 
