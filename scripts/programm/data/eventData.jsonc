@@ -81,7 +81,7 @@
     "team": "Sandra Becker, Piano.",
     "categories": ["music"],
     "images": "Foto 3b",
-    "times": [21, 22],
+    "times": [20, 21],
     "location": "vorplatz",
     "host": "Musikschule Küsnacht"
   },
@@ -99,7 +99,7 @@
     "title": "Çiçek Taksi",
     "description": "Mit dem gekonnten Zusammenspiel aus türkischer Lyrik und akustischer Begleitung erschafft Çiçek Taksi eine einzigartige Stimmung, die sowohl die schwermütigen als auch die lebensfrohen Geister in einem zu erwecken vermag.",
     "team": "Çiçek Taksi: Selin Dettwiler, Gesang; Bidu Rüegsegger, Bass; Simeon Schwab, Klarinette; Kaspar Eggimann, Akkordeon",
-    "categories": ["language", "music", "food-brezel", "food-vine"],
+    "categories": ["music", "food-brezel", "food-vine"],
     "images": "Foto 5",
     "times": [19, 20, 21],
     "location": "chrottegrotte",
@@ -116,8 +116,8 @@
     "host": "Kurt Steffens"
   },
   {
-    "title": "Ein Fuss in der Klassik – einer im Volks",
-    "description": "Musik von Brahms, Britten, Dvořák und ein Seitensprung in die Volksmusik füllen den Raum mit unterschiedlichsten Emotionen und laden sogar das Publikum ein, ein paar Tänze mit Orchesterbegleitung zu wagen.",
+    "title": "Saitenspass",
+    "description": "Musik von Brahms, Britten, Dvořák und ein Seitensprung in die Folk-Szene füllen den Raum mit unterschiedlichsten Emotionen und laden sogar das Publikum ein, ein paar Tänze mit Orchesterbegleitung zu wagen.",
     "team": "Kammerorchester Männedorf-Küsnacht. Dirigent und Akkordeon: Luca Fiorini.",
     "categories": "music",
     "images": "Foto 7a",
@@ -136,7 +136,7 @@
     "host": "Harmonie Eintracht Küsnacht"
   },
   {
-    "title": "Wir ArtiSocken?",
+    "title": "Wir ArtiSocken",
     "description": "Artischock zeigt kunstvoll hergestellte und verzierte «ArtiSocken». Unsere Mitglieder gestalten exklusive Strümpfe und Socken jeglicher Couleur und Materialen, welche von den Besucher:innen bewundert und auch gekauft werden dürfen.",
     "team": "Mitglieder des Kunstverein Artischock",
     "categories": "exposition",
@@ -198,8 +198,8 @@
     "host": "Musikschule Küsnacht"
   },
   {
-    "title": "A-Cappella-Lieder quer durch alle Genres",
-    "description": "Wir sind ein gemischter A-Cappella-Chor mit vielseitigem und dynamischem Repertoire. Wir musizieren ausschliesslich mit unseren Stimmen.",
+    "title": "A-cappella Lieder quer durch alle Genres",
+    "description": "Wir sind ein gemischter A-cappella Chor mit vielseitigem und dynamischem Repertoire. Wir musizieren ausschliesslich mit unseren Stimmen.",
     "team": "b-live Chor Küsnacht",
     "categories": "music",
     "images": "Foto 11",
@@ -220,10 +220,10 @@
   {
     "title": "Ukrainische Gesänge",
     "description": "Der ukrainische Chor «Perespiv» verzaubert seine Zuhörer mit ukrainischen Gesängen. Er wurde 2022 gegründet. «Perespiv» bietet fast ausschliesslich ukrainische Musikliteratur aus verschiedenen Epochen und Stilrichtungen dar.",
-    "team": "Chor «Perespiv», Leitung  Zoryana Masko",
+    "team": "Chor «Perespiv», Leitung  Zoryana Mazko",
     "categories": "music",
     "images": "Foto 13a",
-    "times": [17, 22],
+    "times": [17, 20],
     "location": "kantonsschule_küsnacht_semihalle",
     "host": "Wohnheim Sonnenhof"
   },
@@ -233,7 +233,7 @@
     "team": "Theatergruppe Sonnenhof. Regie: Sabine Kipfer, Hanelore Fischer-Knuth, Marie-Helen Lüchinger. Schauspieler: Kinder und Erwachsene aus dem Sonnenhof, Küsnacht",
     "categories": "theater",
     "images": "Foto 13b",
-    "times": [18, 20],
+    "times": [19, 22],
     "location": "kantonsschule_küsnacht_semihalle",
     "host": "Wohnheim Sonnenhof"
   },
@@ -243,7 +243,7 @@
     "team": "Volkstanzgruppe «Golubka». Leitung Elena Heydemann.",
     "categories": "music",
     "images": "Foto 13c",
-    "times": [19, 21],
+    "times": [18, 21],
     "location": "kantonsschule_küsnacht_semihalle",
     "host": "Wohnheim Sonnenhof"
   },
@@ -289,8 +289,8 @@
   },
   {
     "title": "Nostalgia",
-    "description": "Spannende und entspannende, liebliche und fröhliche Melodien – gekonnt und mit Charme präsentiert vom Streichquartett A la Q’ART. Die vier Musikerinnen laden ihr Publikum mit dem abwechslungsreichen Kurz-Programm zum Träumen und Mitswingen ein.",
-    "team": "Streichquartett «A la Q’ART»: Jemma Abrahamyan, Violine; Brigitta Barandun, Violine; Astrid Leuthold, Viola; Sandi Toka Nova, Violoncello.",
+    "description": "Spannende und entspannende, liebliche und fröhliche Melodien – gekonnt und mit Charme präsentiert vom Streichquartett A la Q’Art. Die vier Musikerinnen laden ihr Publikum mit dem abwechslungsreichen Kurz-Programm zum Träumen und Mitswingen ein.",
+    "team": "Streichquartett «A la Q’Art»: Jemma Abrahamyan, Violine; Brigitta Barandun, Violine; Astrid Leuthold, Viola; Sandi Toka Nova, Violoncello.",
     "categories": "music",
     "images": "Foto 16a",
     "times": [18, 19],
@@ -339,8 +339,8 @@
   },
   {
     "title": "Männerstimmen verführen in den Klanghimmel",
-    "description": "Zwischen zarten Schattierungen und leuchtenden Klangfarben bewegt sich Voicemale aus Winterthur. Fünf Männer verleihen Popsongs aus fünf Jahrzehnten ihre eigene Färbung. Gesang in reinster Form – ohne Instrumente und Elektronik.",
-    "team": "Voicemale. Stimmen: Rainer Baer, Ivan Colaci, Chris Huber, Christoph Rottmeier, Christoph von Ah.",
+    "description": "Zwischen zarten Schattierungen und leuchtenden Klangfarben bewegt sich das A-Capella-Ensemble Voicemale aus Winterthur. Fünf Männer verleihen Popsongs aus fünf Jahrzehnten ihre eigene Färbung. Gesang in reinster Form – ohne Instrumente und Elektronik.",
+    "team": "A-Capella-Ensemble Voicemale: Rainer Baer, Ivan Colaci, Chris Huber, Christoph Rottmeier, Christoph von Ah.",
     "categories": "music",
     "images": "Foto 18b",
     "times": [18, 20, 22],
@@ -358,7 +358,7 @@
     "host": "Kulturkommission Küsnacht"
   },
   {
-    "title": "Bewirtung auf dem Dorfplatz",
+    "title": "Verpflegungs-Oase Dorfplatz",
     "description": "Food Trucks bieten ein vielfältiges Angebot an Speis und Trank.",
     "team": "Kulturnacht-OK & Plattform Foodtrucks Schweiz",
     "categories": ["food", "food-ice", "food-coffee", "food-vine"],

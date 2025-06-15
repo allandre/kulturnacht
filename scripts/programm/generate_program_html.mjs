@@ -19,7 +19,7 @@ const wantedNodeVersion = (
 ).replace(/^v/, '')
 if (!currentNodeVersion.startsWith(wantedNodeVersion)) {
   console.log(
-    `Error: current Node version is ${currentNodeVersion}, but should match ${wantedNodeVersion}`
+    `Error: current Node version is ${currentNodeVersion}, but should match ${wantedNodeVersion}. You probably need to run 'nvm use'.`
   )
 }
 
