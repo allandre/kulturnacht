@@ -29,7 +29,6 @@ Other:
 - add playwright visual regression tests (especially for archive)
 - add google map to Anreise section
 - animate height of hamburger menu opening and closing
-- Noch 96 Tage bis zur -> Noch 96 Tage?
 - on window width resizing make sure the center of the window always contains the same element. Currently it is jumping around quite a bit.
 - animated scroll when clicking on Sponoren in welcome text.
 

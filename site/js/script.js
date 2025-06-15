@@ -11,7 +11,7 @@
 
     const countdownElement = document.getElementById('countdown')
     if (countdownElement) {
-      let text = 'Noch ' + diffDays + ' Tage bis zur'
+      let text = 'Noch ' + diffDays + ' Tage'
 
       switch (diffDays) {
         case 2:
@@ -26,7 +26,7 @@
       }
 
       if (diffDays < 0) {
-        text = "Das war's! Bis zum nächsten Mal bei der"
+        text = "Das war's! Bis zum nächsten Mal!"
       }
 
       countdownElement.innerHTML = text
