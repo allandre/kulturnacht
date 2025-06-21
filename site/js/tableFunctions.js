@@ -41,6 +41,8 @@
 
   function toggleEventRow(element) {
     const currentlyHidden = !element.classList.contains('current')
+    const oldXPosition = element.getBoundingClientRect().left
+    const oldYPosition = element.getBoundingClientRect().top
 
     collapseAllEventDetailRows()
 
@@ -69,6 +71,16 @@
 
       element.classList.add('current')
       eventRow.style.removeProperty('display')
+    }
+
+    const newXPosition = element.getBoundingClientRect().left
+    const newYPosition = element.getBoundingClientRect().top
+
+    if (newXPosition !== oldXPosition || newYPosition !== oldYPosition) {
+      // This mainly happens on macOS Firefox
+      window.scrollBy(newXPosition - oldXPosition, newYPosition - oldYPosition)
+      // eslint-disable-next-line no-console -- Should anyway only happen locally and it is good to know when it happens.
+      console.log('Info: Corrected the scroll position of the program table.')
     }
   }
 
