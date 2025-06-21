@@ -77,10 +77,8 @@
     const newYPosition = element.getBoundingClientRect().top
 
     if (newXPosition !== oldXPosition || newYPosition !== oldYPosition) {
-      // This mainly happens on macOS Firefox
+      // On macOS Firefox after the above code somehow the window often (not always) scrolls down to the Anreise section. When it happens, it only happens on the first click on an event element after loading the page.
       window.scrollBy(newXPosition - oldXPosition, newYPosition - oldYPosition)
-      // eslint-disable-next-line no-console -- Should anyway only happen locally and it is good to know when it happens.
-      console.log('Info: Corrected the scroll position of the program table.')
     }
   }
 
