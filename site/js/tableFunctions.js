@@ -41,6 +41,8 @@
 
   function toggleEventRow(element) {
     const currentlyHidden = !element.classList.contains('current')
+    const oldXPosition = element.getBoundingClientRect().left
+    const oldYPosition = element.getBoundingClientRect().top
 
     collapseAllEventDetailRows()
 
@@ -69,6 +71,14 @@
 
       element.classList.add('current')
       eventRow.style.removeProperty('display')
+    }
+
+    const newXPosition = element.getBoundingClientRect().left
+    const newYPosition = element.getBoundingClientRect().top
+
+    if (newXPosition !== oldXPosition || newYPosition !== oldYPosition) {
+      // On macOS Firefox after the above code somehow the window often (not always) scrolls down to the Anreise section. When it happens, it only happens on the first click on an event element after loading the page.
+      window.scrollBy(newXPosition - oldXPosition, newYPosition - oldYPosition)
     }
   }
 
