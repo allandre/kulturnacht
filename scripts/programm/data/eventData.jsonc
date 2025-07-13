@@ -43,7 +43,8 @@
     "images": ["Foto 1c"],
     "times": [17, 18, 19, 20, 21, 22],
     "location": "musikschule",
-    "host": "Freihof Küsnacht"
+    "host": "Freihof Küsnacht",
+    "image_credits": "Dres Hubacher"
   },
   {
     "title": "S’Tobel duruf – ein Musikspiel für Familien",

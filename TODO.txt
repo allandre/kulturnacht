@@ -32,3 +32,6 @@ Other:
 - on window width resizing make sure the center of the window always contains the same element. Currently it is jumping around quite a bit.
 - animated scroll when clicking on Sponoren in welcome text.
 
+UX improvements:
+- make start and end event box more clearly clickable (like adding part of the descrition and ad ... or add a More lick text)
+- make event table entries moree clearly clickable (especially on mobile). Maybe add light grey arrow similar to other clickboxes on the site.
