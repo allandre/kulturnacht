@@ -14,6 +14,10 @@
 - fix 2017 gallery
   - esp on iphone
   - also better styling for everyone.
+- add Github (icon) to fotter. and make it clickable to reach repo.
+- always keep names in footer on one line (font-scaling). Especially our names.
+- make archive in menu with a dropdown for the different years
+- on archive only load videos on click so the site loads faster
 
 
 Program 2025:
