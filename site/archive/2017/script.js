@@ -57,37 +57,4 @@
     'IMG_8602.jpg',
     'Lesung1.jpg'
   ]
-  let index = 0
-
-  function loadImpressionGallery(index) {
-    const $cache = $('#image-cache')
-    const $impression = $('#impression-image')
-
-    $impression.attr('src', impressionsFolder + '/' + impressions[index])
-    $cache.attr(
-      'src',
-      impressionsFolder + '/' + impressions[++index & impressions.length]
-    )
-  }
-
-  function loadPrevImage() {
-    index -= 1
-    if (index < 0) {
-      index = impressions.length - 1
-    }
-    loadImpressionGallery(index)
-  }
-
-  function loadNextImage() {
-    loadImpressionGallery(++index % impressions.length)
-  }
-
-  // global stuff
-  $(document).ready(function () {
-    loadImpressionGallery(index)
-  })
-
-  // exports
-  window.loadPrevImage = loadPrevImage
-  window.loadNextImage = loadNextImage
 })()
