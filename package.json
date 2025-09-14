@@ -10,18 +10,18 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.7.0",
-    "@stylistic/eslint-plugin-js": "^4.2.0",
+    "@stylistic/eslint-plugin": "^5.3.1",
     "@types/eslint__js": "^8.42.3",
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/jsdom": "^21.1.7",
-    "eslint": "^9.25.1",
-    "eslint-config-prettier": "^10.1.2",
-    "eslint-plugin-prettier": "^5.2.6",
+    "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-sort-keys-custom-order": "^2.2.1",
-    "globals": "^16.0.0",
-    "htmlfy": "^0.7.2",
+    "globals": "^16.4.0",
+    "htmlfy": "^0.7.5",
     "jsdom": "^26.1.0",
     "jsonc-parser": "^3.3.1",
-    "prettier": "^3.5.3"
+    "prettier": "^3.6.2"
   }
 }

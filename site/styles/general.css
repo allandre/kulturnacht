@@ -16,7 +16,8 @@ body {
   font-family: 'Helvetica', sans-serif;
 }
 
-[onclick], button:enabled {
+[onclick],
+button:enabled {
   cursor: pointer;
 }
 
