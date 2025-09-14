@@ -1,6 +1,6 @@
 ;(function () {
-  const impressionsFolder = 'archive/2017/resources/impressions'
-  const impressions = [
+  window.impressionsFolder = 'archive/2017/resources/impressions'
+  window.impressionsFileNames = [
     'Artischock Seehof 2.jpg',
     'Artischock Seehof.jpg',
     'fanfare terrible.jpg',

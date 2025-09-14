@@ -45,6 +45,8 @@
     <script src="archive/2017/script.js"></script>
     <script src="archive/2021/script.js"></script>
     <script src="js/hamburger.js" defer></script>
+    <script src="js/impressions.js"></script>
+
     <!-- bootstrap icons. Used for example for the close icon -->
     <link
       rel="stylesheet"
@@ -107,16 +109,7 @@
         <a id="2017-anchor" class="anchor" data-label="2017"></a>
         <section id="impressions-section">
           <h1>Impressionen der Kulturnacht 2017</h1>
-          <div id="impressions-div" onclick="loadNextImage()">
-            <img id="impressions-image" />
-          </div>
-
-          <img id="image-cache" />
-
-          <div id="controls">
-            <button type="button" onclick="loadPrevImage()">&lt;</button>
-            <button type="button" onclick="loadNextImage()">&gt;</button>
-          </div>
+          <div id="impressions"></div>
         </section>
       </div>
 

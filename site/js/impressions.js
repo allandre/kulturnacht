@@ -7,6 +7,7 @@
   const imageCache = document.createElement('img')
   const previousButton = document.createElement('button')
   const nextButton = document.createElement('button')
+  const counter = document.createElement('div')
 
   function loadImpressionGallery() {
     impressionImg.src = impressionsFolder + '/' + impressionsFileNames[index]
@@ -21,6 +22,8 @@
     if (index == impressionsFileNames.length - 1) {
       nextButton.disabled = true
     }
+
+    counter.innerHTML = `${index + 1} / ${impressionsFileNames.length}`
   }
 
   function loadPreviousImage() {
@@ -61,6 +64,9 @@
     previousButton.onclick = loadPreviousImage
     previousButton.innerHTML = '&lt;'
     controls.appendChild(previousButton)
+
+    counter.classList.add('counter')
+    controls.appendChild(counter)
 
     nextButton.type = 'button'
     nextButton.onclick = loadNextImage
