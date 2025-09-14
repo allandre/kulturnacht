@@ -1,5 +1,5 @@
 ;(function () {
-  const impressionsFolder = 'archive/2017/ressources/impressions'
+  const impressionsFolder = 'archive/2017/resources/impressions'
   const impressions = [
     'Artischock Seehof 2.jpg',
     'Artischock Seehof.jpg',

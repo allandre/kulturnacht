@@ -53,6 +53,7 @@
     <script src="site/js/hamburger.js" defer></script>
     <script src="site/js/serverAndClientHelpers.js"></script>
     <script src="site/js/tableFunctions.js"></script>
+    <script src="site/js/script-impressionen-2025.js"></script>
   </head>
 
   <body>
@@ -76,6 +77,21 @@
               <div>Freitag, 5. September 2025</div>
               <div>Ab 17 Uhr im Dorfzentrum</div>
             </div>
+          </div>
+        </section>
+
+        <a id="impressionen-anchor" class="anchor" data-label="Impressionen"></a>
+        <section id="impressionen-section">
+          <h1>Impressionen der Kulturnacht 2025</h1>
+          <div id="impression-div" onclick="loadNextImage()">
+            <img id="impression-image" />
+          </div>
+
+          <img id="image-cache" />
+
+          <div id="controls">
+            <button type="button" onclick="loadPrevImage()">&lt;</button>
+            <button type="button" onclick="loadNextImage()">&gt;</button>
           </div>
         </section>
 
