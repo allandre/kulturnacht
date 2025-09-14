@@ -48,6 +48,7 @@
     <link href="site/styles/verpflegung-section.css" rel="stylesheet" />
     <link href="site/styles/anreise-section.css" rel="stylesheet" />
     <link href="site/styles/hamburger.css" rel="stylesheet" />
+    <link href="site/styles/impressions.css" rel="stylesheet" />
 
     <script src="site/js/script.js"></script>
     <script src="site/js/hamburger.js" defer></script>
@@ -80,8 +81,8 @@
           </div>
         </section>
 
-        <a id="impressionen-anchor" class="anchor" data-label="Impressionen"></a>
-        <section id="impressionen-section">
+        <a id="impression-anchor" class="anchor" data-label="Impressionen"></a>
+        <section id="impression-section">
           <h1>Impressionen der Kulturnacht 2025</h1>
           <div id="impression-div" onclick="loadNextImage()">
             <img id="impression-image" />
@@ -90,8 +91,8 @@
           <img id="image-cache" />
 
           <div id="controls">
-            <button type="button" onclick="loadPrevImage()">&lt;</button>
-            <button type="button" onclick="loadNextImage()">&gt;</button>
+            <button type="button" class="previous-button" onclick="loadPrevImage()">&lt;</button>
+            <button type="button" class="next-button" onclick="loadNextImage()">&gt;</button>
           </div>
         </section>
 

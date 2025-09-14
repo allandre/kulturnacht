@@ -1,5 +1,5 @@
 ;(function () {
-  const impressionsFolder = 'resources/impression-images'
+  const impressionsFolder = 'site/resources/impression-images'
   const impressions = [
     '8G9A0646.jpg',
     '8G9A0204.jpg',
@@ -23,30 +23,45 @@
   ]
   let index = 0
 
-  function loadImpressionGallery(index) {
+  function loadImpressionGallery() {
     const cache = document.querySelector('#image-cache')
     const impression = document.querySelector('#impression-image')
 
     impression.src = impressionsFolder + '/' + impressions[index]
-    cache.src =
-      impressionsFolder + '/' + impressions[++index & impressions.length]
+    const cacheIndex = Math.min(index + 1, impressions.length - 1)
+    cache.src = impressionsFolder + '/' + impressions[cacheIndex]
+
+    const previousButton = document.querySelector('.previous-button')
+    const nextButton = document.querySelector('.next-button')
+    previousButton.disabled = false
+    nextButton.disabled = false
+    if (index == 0) {
+      previousButton.disabled = true
+    }
+    if (index == impressions.length - 1) {
+      nextButton.disabled = true
+    }
   }
 
   function loadPrevImage() {
     index -= 1
-    if (index < 0) {
-      index = impressions.length - 1
+    if (index <= 0) {
+      index = 0
     }
-    loadImpressionGallery(index)
+    loadImpressionGallery()
   }
 
   function loadNextImage() {
-    loadImpressionGallery(++index % impressions.length)
+    index += 1
+    if (index >= impressions.length - 1) {
+      index = impressions.length - 1
+    }
+    loadImpressionGallery()
   }
 
   // global stuff
   window.addEventListener('load', () => {
-    loadImpressionGallery(index)
+    loadImpressionGallery()
   })
 
   // exports
