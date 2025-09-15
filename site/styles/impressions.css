@@ -1,11 +1,9 @@
-/* IMPRESSION SECTION start */
-
-#impression-section #impression-div {
+#impressions-section #impressions-div {
   margin: 2em auto;
   height: max(300px, 75vh);
 }
 
-#impression-section #impression-image {
+#impressions-section #impressions-image {
   display: block;
   position: relative;
 
@@ -19,7 +17,7 @@
   object-fit: contain;
 }
 
-#impression-section #credit {
+#impressions-section #credit {
   float: right;
   margin: 0;
   margin-top: -2em;
@@ -27,21 +25,25 @@
   color: grey;
 }
 
-#impression-section #image-cache {
+#impressions-section #image-cache {
   display: none;
 }
 
-#impression-section #controls {
+#impressions-section #controls {
   display: flex;
-
   justify-content: center;
 }
 
-#impression-section #controls button {
+#impressions-section #controls button {
   margin: 0 2rem;
   padding: 0px 30px;
   padding-bottom: 5px;
   font-size: 200%;
 }
 
-/* IMPRESSION SECTION end */
+#impressions-section .counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+}

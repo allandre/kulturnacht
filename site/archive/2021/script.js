@@ -30,8 +30,10 @@
         subtitleDiv.innerHTML = act.details
         actDiv.appendChild(subtitleDiv)
 
-        // exmaple of a youtube iframe:
-        // <iframe width="560" height="315" src="https://www.youtube.com/embed/qC7G4k7HN0o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        /*
+         * exmaple of a youtube iframe:
+         * <iframe width="560" height="315" src="https://www.youtube.com/embed/qC7G4k7HN0o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         */
         const iframe = document.createElement('iframe')
         if (act.youtubeID) {
           actDiv.appendChild(iframe)

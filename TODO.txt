@@ -1,5 +1,5 @@
 - add github action for deploying
-  - add ?v=$commitHash to all ressources which are loaded in index.html
+  - add ?v=$commitHash to all resources which are loaded in index.html
 - add possibility for feature envs (on github)
 - two columns of videos in archive on iphone 13 mini
 - Archive: opening animation for menu and video expansions.
