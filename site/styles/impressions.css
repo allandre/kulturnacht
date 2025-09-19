@@ -1,6 +1,7 @@
 #impressions-section #impressions-div {
   margin: 2em auto;
-  height: max(300px, 75vh);
+  height: max(300px, 50svh);
+  cursor: pointer;
 }
 
 #impressions-section #impressions-image {
@@ -35,10 +36,23 @@
 }
 
 #impressions-section #controls button {
-  margin: 0 2rem;
+  touch-action: manipulation;
   padding: 0px 30px;
   padding-bottom: 5px;
   font-size: 200%;
+  border: none;
+  background-color: var(--site-main-color);
+  color: white;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--site-hover-color);
+    }
+  }
+
+  &:disabled {
+    background-color: var(--highlight-grey-dark);
+  }
 }
 
 #impressions-section .counter {

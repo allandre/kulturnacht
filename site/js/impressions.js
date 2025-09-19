@@ -48,6 +48,7 @@
     const imageDiv = document.createElement('div')
     imageDiv.id = 'impressions-div'
     imageDiv.onload = loadNextImage
+    imageDiv.onclick = loadNextImage
     impressionsDiv.appendChild(imageDiv)
 
     impressionImg.id = 'impressions-image'
